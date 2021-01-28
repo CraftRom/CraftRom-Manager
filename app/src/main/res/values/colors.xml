@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_300">#64B5F6</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_700">#1976D2</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#212121</color>
+    <color name="white">#fafafa</color>
+
+    <color name="colorPrimaryDark">#e0e0e0</color>
+    <color name="colorStroke">#DADCE0</color>
+    <color name="colorBattery">#2196F3</color>
+    <color name="colorChidori">#4CAF50</color>
+    <color name="colorPerformance">#FF9800</color>
+    <color name="colorGame">#F44336</color>
+    <color name="colorHead">#757575</color>
+    <color name="colorAboutIcon">#434343</color>
+    <color name="black_overlay">#66000000</color>
+</resources>
