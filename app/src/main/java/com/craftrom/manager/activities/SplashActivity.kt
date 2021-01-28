@@ -25,17 +25,13 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             // Tamper Checking and restrictions for installing the application on rooted devices
               if (rootCheck) {
-                  if (isFirstTime || isLogout == true) {
                       Constants.showToastMessage(this, "Your Device Is Rooted")
                       Constants.changeActivity<MainActivity>(this@SplashActivity)
-                      overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out) } else {
-                      Constants.showToastMessage(this, "Your Device Is Rooted")
-                      Constants.changeActivity<MainActivity>(this@SplashActivity)
-                      overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-                  }
+                      finish()
                 } else {
                     Constants.showToastMessage(this, "Your Device Is NOT Rooted")
-                  Constants.changeActivity<NoRootActivity>(this@SplashActivity)
+                    Constants.changeActivity<NoRootActivity>(this@SplashActivity)
+                  finish()
                 }
 
         }, Constants.SPLASH_TIME_OUT)
