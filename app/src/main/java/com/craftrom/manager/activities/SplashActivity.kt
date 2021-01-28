@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
@@ -12,6 +13,7 @@ import com.craftrom.manager.utils.root.CheckRoot
 
 class SplashActivity : AppCompatActivity() {
     private val splashTime = 3000L // 3 seconds
+    private val rootCheck = CheckRoot.isDeviceRooted
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,9 +21,11 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             FileUtils.setFilePermissions().submit {
-                if (CheckRoot.isDeviceRooted) {
+                if (rootCheck) {
+                    Toast.makeText(this, "DANGEROUS! Device Rooted! ", Toast.LENGTH_SHORT).show()
                     gotoMainActivity()
                 } else {
+                    Toast.makeText(this, "Device NOT Rooted! ", Toast.LENGTH_SHORT).show()
                     gotoNoRootActivity()
                 }
 
