@@ -1,6 +1,8 @@
 package com.craftrom.manager.utils
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.widget.Toast
 
@@ -12,6 +14,21 @@ class Constants {
         private lateinit var sharedPreferences: SharedPreferences
         const val IS_FIRST_TIME: String = "IS_FIRST_TIME"
         const val IS_LOG_OUT: String = "IS_LOG_OUT"
+
+        inline fun <reified T : Activity> changeActivity(activity: Activity) {
+            val intent = Intent(activity, T::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            activity.startActivity(intent)
+        }
+
+        inline fun <reified T : Activity> changeActivityAndFinish(activity: Activity) {
+            val intent = Intent(activity, T::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            activity.startActivity(intent)
+            activity.finish()
+        }
+
 
         fun showToastMessage(context: Context?, message: String?) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show()
