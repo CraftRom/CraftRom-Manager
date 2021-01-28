@@ -8,29 +8,36 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
+import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.FileUtils
 import com.craftrom.manager.utils.root.CheckRoot
 
 class SplashActivity : AppCompatActivity() {
-    private val splashTime = 3000L // 3 seconds
+    private var isFirstTime: Boolean = true
+    private var isLogout: Boolean ?= null
     private val rootCheck = CheckRoot.isDeviceRooted
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        isFirstTime = Constants.getIsFirstTime(this@SplashActivity)
+        isLogout = Constants.getIsLogout(this@SplashActivity)
         Handler(Looper.getMainLooper()).postDelayed({
-            FileUtils.setFilePermissions().submit {
-                if (rootCheck) {
-                    Toast.makeText(this, "DANGEROUS! Device Rooted! ", Toast.LENGTH_SHORT).show()
-                    gotoMainActivity()
+            // Tamper Checking and restrictions for installing the application on rooted devices
+              if (rootCheck) {
+                  if (isFirstTime || isLogout == true) {
+                      Constants.showToastMessage(this, "Your Device Is Rooted")
+                    gotoMainActivity() } else {
+                      Constants.showToastMessage(this, "Your Device Is Rooted")
+                      gotoMainActivity()
+                  }
                 } else {
                     Toast.makeText(this, "Device NOT Rooted! ", Toast.LENGTH_SHORT).show()
                     gotoNoRootActivity()
                 }
 
-            }
-        }, splashTime)
+        }, Constants.SPLASH_TIME_OUT)
 
     }
 
