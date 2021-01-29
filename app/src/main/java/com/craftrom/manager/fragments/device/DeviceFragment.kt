@@ -1,5 +1,6 @@
 package com.craftrom.manager.fragments.device
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
@@ -37,21 +38,27 @@ class DeviceFragment : Fragment() {
         return root
     }
 
-     fun InitUI() {
+     @Suppress("DEPRECATION")
+     @SuppressLint("SetTextI18n")
+     private fun InitUI() {
         val kernelString = "<b> Kernel: </b>" + Device.getKernelVersion(true)
         kernel_name.text = Html.fromHtml(kernelString, Html.FROM_HTML_MODE_LEGACY)
-        oem_name.setText(Device.getVendor().toString() + " " + Device.getModel())
+        oem_name.text = Device.getVendor().toString() + " " + Device.getModel()
 
         if (isDiskEncrypted) {
             disk_status.text = getString(R.string.disk_encrypted)
+            disk_status.setTextColor(resources.getColor(R.color.colorTrue))
         } else {
             disk_status.text = getString(R.string.disk_not_encrypted)
+            disk_status.setTextColor(resources.getColor(R.color.colorFalse))
         }
 
         if (CheckRoot.isDeviceRooted) {
             root_status.text = getString(R.string.device_rooted)
+            root_status.setTextColor(resources.getColor(R.color.colorTrue))
         } else {
             root_status.text = getString(R.string.device_not_rooted)
+            root_status.setTextColor(resources.getColor(R.color.colorFalse))
         }
 
     }
