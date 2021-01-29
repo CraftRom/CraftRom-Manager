@@ -1,4 +1,4 @@
-package com.craftrom.manager.fragments.home
+package com.craftrom.manager.fragments.device
 
 import android.os.Bundle
 import android.text.Html
@@ -6,19 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.root.CheckRoot
-import com.craftrom.manager.utils.security.MagiskDetector
 import com.craftrom.manager.utils.storage.isDiskEncrypted
-import javax.inject.Inject
 
-class HomeFragment : Fragment() {
+class DeviceFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+
     private lateinit var  kernel_name: TextView
     private lateinit var  oem_name: TextView
     private lateinit var disk_status: TextView
@@ -32,9 +28,7 @@ class HomeFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val root = inflater.inflate(R.layout.fragment_device, container, false)
         kernel_name = root.findViewById(R.id.kernel_name)
         oem_name = root.findViewById(R.id.oem_name)
         disk_status = root.findViewById(R.id.disk_status)
