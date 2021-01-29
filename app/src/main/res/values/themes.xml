@@ -25,4 +25,18 @@
     <style name="Theme.CraftRomManager.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.CraftRomManager.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="WidgetFoundation.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="android:focusable">auto</item>
+        <item name="cardBackgroundColor">?colorSurfaceVariant</item>
+        <item name="cardCornerRadius">@dimen/l_50</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardPreventCornerOverlap">false</item>
+    </style>
+
+    <style name="WidgetFoundation.Card.Elevated">
+        <item name="cardBackgroundColor">?colorSurfaceSurfaceVariant</item>
+        <item name="cardCornerRadius">@dimen/l_50</item>
+        <item name="cardElevation">@dimen/l_125</item>
+    </style>
 </resources>

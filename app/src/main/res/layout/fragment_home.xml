@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center">
 
 
@@ -44,65 +45,144 @@
 
         </LinearLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/kernel_card"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="50dp" >
-            <LinearLayout
-        android:id="@+id/ll_updater"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/ripple"
-        android:padding="12dp"
-        android:scrollbars="vertical"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_generic"
+            android:layout_marginEnd="@dimen/margin_generic"
+            style="@style/WidgetFoundation.Card.Elevated"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?android:attr/colorBackground"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp"
+            app:strokeWidth="@dimen/cardStrokeWidth"
+            app:cardElevation="@dimen/no_card_elevation"
+            app:strokeColor="@color/colorStroke">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="6">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="5">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="6"
+                    android:baselineAligned="false">
 
-                <ImageView
-                    android:id="@+id/logo"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="6dp"
-                    android:src="@drawable/linux" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5">
 
-            </RelativeLayout>
+                        <ImageView
+                            android:id="@+id/logo"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="6dp"
+                            android:src="@drawable/linux"
+                            android:contentDescription="@string/todo" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/oem_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/kernel_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/info_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_generic"
+            android:layout_marginEnd="@dimen/margin_generic"
+            style="@style/WidgetFoundation.Card.Elevated"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?android:attr/colorBackground"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp"
+            app:strokeWidth="@dimen/cardStrokeWidth"
+            app:cardElevation="@dimen/no_card_elevation"
+            app:strokeColor="@color/colorStroke">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/oem_name"
+                    android:id="@+id/disk_head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold" />
+                    android:textSize="16sp"
+                    android:text="@string/disk_status"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/kernel_name"
+                    android:id="@+id/disk_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp" />
+                    android:layout_marginStart="4dp"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/disk_head"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/root_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/root_status"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/disk_head" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/root_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/root_head"
+                    app:layout_constraintTop_toBottomOf="@id/disk_head" />
 
-    </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

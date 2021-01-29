@@ -15,4 +15,15 @@
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Open source licenses</string>
     <string name="opn_src_desc">Open source libraries and their license</string>
+
+    <string name="root_status">Root status</string>
+    <string name="device_not_rooted">Device not rooted</string>
+    <string name="device_rooted">Device rooted</string>
+    <string name="magisk_status">Magisk status</string>
+    <string name="magisk_not_detected">Magisk not present</string>
+    <string name="magisk_detected">Magisk detected</string>
+    <string name="disk_status">Disk status</string>
+    <string name="disk_not_encrypted">Disk not encrypted</string>
+    <string name="disk_encrypted">Disk encrypted</string>
+    <string name="todo">TODO</string>
 </resources>
