@@ -18,6 +18,6 @@
 
     <dimen name="r1">8dp</dimen>
 
-    <dimen name="cardStrokeWidth">1.5dp</dimen>
+    <dimen name="cardStrokeWidth">0.5dp</dimen>
     <dimen name="settingSep">52dp</dimen>
 </resources>

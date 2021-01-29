@@ -72,8 +72,7 @@ class AboutFragment: Fragment(), View.OnClickListener {
 
     private fun gotoOSLActivity() {
         val intent = Intent(context, OSLActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
+                startActivity(intent)
         (Utils.context as Activity).overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 

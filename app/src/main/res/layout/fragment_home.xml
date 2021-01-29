@@ -98,13 +98,15 @@
                             android:id="@+id/oem_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
 
                         <TextView
                             android:id="@+id/kernel_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="13sp" />
+                            android:textSize="13sp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
 
                     </LinearLayout>
 
@@ -133,18 +135,18 @@
             app:cardElevation="@dimen/no_card_elevation"
             app:strokeColor="@color/colorStroke">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/disk_head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
                     android:text="@string/disk_status"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -153,7 +155,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:textSize="16sp"
+                    android:textSize="13sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                     app:layout_constraintStart_toEndOf="@id/disk_head"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -163,9 +166,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/root_status"
-                    android:textSize="16sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+                    android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/disk_head" />
 
@@ -175,12 +178,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
-                    android:textSize="16sp"
+                    android:textSize="13sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                     app:layout_constraintStart_toEndOf="@id/root_head"
                     app:layout_constraintTop_toBottomOf="@id/disk_head" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
