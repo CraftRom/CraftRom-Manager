@@ -19,6 +19,11 @@
     <string name="opn_src_txt">Open source licenses</string>
     <string name="opn_src_desc">Open source libraries and their license</string>
 
+    <string name="head_codename">Android Codename</string>
+    <string name="rom_head">ROM</string>
+    <string name="head_version">Android Version</string>
+    <string name="head_fingerprint">Fingerprint</string>
+
     <string name="root_status">Root status</string>
     <string name="device_not_rooted">Not rooted</string>
     <string name="error_root">Failed to get root access</string>
@@ -27,7 +32,8 @@
     <string name="magisk_not_detected">Magisk not present</string>
     <string name="magisk_detected">Detected</string>
     <string name="disk_status">Disk status</string>
-    <string name="disk_not_encrypted">Disk not encrypted</string>
+    <string name="disk_not_encrypted">Not encrypted</string>
+    <string name="disk_not_permission">Not permission</string>
     <string name="disk_encrypted">Encrypted</string>
     <string name="todo">TODO</string>
 </resources>

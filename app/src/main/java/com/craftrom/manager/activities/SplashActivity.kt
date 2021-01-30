@@ -23,9 +23,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             /*
-             * If root or busybox/toybox are available,
-             * launch text activity which let the user know
-             * what the problem is.
+             * If root are available
              */
             if (rootAccess()) {
                 Constants.changeActivity<MainActivity>(this@SplashActivity)
@@ -38,7 +36,7 @@ class SplashActivity : AppCompatActivity() {
                     * */
                 if (!FileUtils.mHasRoot || !FileUtils.mHasBusybox) {
                     Constants.showToastMessage(this, resources.getString(R.string.error_root))
-                    Constants.changeActivity<NoRootActivity>(this@SplashActivity)
+                    Constants.changeActivity<MainActivity>(this@SplashActivity)
                     finish()
                 }
             }

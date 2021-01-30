@@ -3,9 +3,7 @@ package com.craftrom.manager.utils
 import android.os.Build
 import android.os.Build.VERSION_CODES
 import com.craftrom.manager.utils.root.RootUtils
-import com.craftrom.manager.utils.root.RootUtils.getProp
 import com.craftrom.manager.utils.root.RootUtils.runCommand
-import java.lang.reflect.Field
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -14,6 +12,7 @@ import java.util.regex.Pattern
  * Created by willi on 31.12.15.
  */
 object Device {
+
     fun getKernelVersion(extended: Boolean): String {
         return getKernelVersion(extended, true)
     }
@@ -21,11 +20,7 @@ object Device {
     fun getKernelVersion(extended: Boolean, root: Boolean): String {
         val version: String = FileUtils.readFile("/proc/version", root).toString()
         if (extended)  {
-            if (version != null) {
-                return version
-            }else{
-                runCommand("uname -a")
-            }
+            return version
         }
         val matcher: Matcher = Pattern.compile("Linux version (\\S+).+").matcher(version)
         return if (matcher.matches() && matcher.groupCount() === 1) {
@@ -41,26 +36,25 @@ object Device {
         get() = Build.BOOTLOADER
     val baseBand: String
         get() = Build.getRadioVersion()
-    val codename: String
-        get() {
-            var codeName = ""
-            val fields: Array<Field> = VERSION_CODES::class.java.fields
-            for (field in fields) {
-                val fieldName: String = field.getName()
-                var fieldValue = -1
-                try {
-                    fieldValue = field.getInt(Any())
-                } catch (ignored: IllegalArgumentException) {
-                } catch (ignored: IllegalAccessException) {
-                } catch (ignored: NullPointerException) {
-                }
-                if (fieldValue == Build.VERSION.SDK_INT) {
-                    codeName = fieldName
-                    break
-                }
+    fun getCodename(): String? {
+        var codeName: String? = ""
+        val fields = VERSION_CODES::class.java.fields
+        for (field in fields) {
+            val fieldName = field.name
+            var fieldValue = -1
+            try {
+                fieldValue = field.getInt(Any())
+            } catch (ignored: IllegalArgumentException) {
+            } catch (ignored: IllegalAccessException) {
+            } catch (ignored: NullPointerException) {
             }
-            return codeName
+            if (fieldValue == Build.VERSION.SDK_INT) {
+                codeName = fieldName
+                break
+            }
         }
+        return codeName
+    }
     val sDK: Int
         get() = Build.VERSION.SDK_INT
     private val sBoardFormatters: HashMap<String, BoardFormatter> = HashMap()
@@ -143,13 +137,18 @@ object Device {
                     "ro.pac.version",
                     "ro.carbon.version",
                     "ro.slim.version",
-                    "ro.mod.version")
+                    "ro.mod.version",
+                    "ro.lineage.version",
+                    "ro.rr.version",
+                    "ro.oxygen.version",
+                    "ro.mk.version"
+            )
         }
 
         init {
             for (prop in sProps) {
-                this.version = getProp(prop)
-                if (this.version != null && !version!!.isEmpty()) {
+                version = RootUtils.getProp(prop)
+                if (!version!!.isEmpty()) {
                     break
                 }
             }
