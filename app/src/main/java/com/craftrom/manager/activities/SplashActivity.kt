@@ -1,6 +1,5 @@
 package com.craftrom.manager.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
-import com.craftrom.manager.utils.root.CheckRoot
+import com.craftrom.manager.utils.FileUtils
+import com.craftrom.manager.utils.root.RootUtils.rootAccess
 
 class SplashActivity : AppCompatActivity() {
     private var isFirstTime: Boolean = true
-    private var isLogout: Boolean ?= null
-    private val rootCheck = CheckRoot.isDeviceRooted
+    private var isLogout: Boolean? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,18 +22,29 @@ class SplashActivity : AppCompatActivity() {
         isLogout = Constants.getIsLogout(this@SplashActivity)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            // Tamper Checking and restrictions for installing the application on rooted devices
-              if (rootCheck) {
-                      Constants.showToastMessage(this, "Your Device Is Rooted")
-                      Constants.changeActivity<MainActivity>(this@SplashActivity)
-                      finish()
-                } else {
-                    Constants.showToastMessage(this, "Your Device Is NOT Rooted")
+            /*
+             * If root or busybox/toybox are available,
+             * launch text activity which let the user know
+             * what the problem is.
+             */
+            if (rootAccess()) {
+                Constants.changeActivity<MainActivity>(this@SplashActivity)
+                finish()
+            } else {
+                /*
+                    * If root or busybox/toybox are not available,
+                    * * launch text activity which let the user know
+                    * * what the problem is.
+                    * */
+                if (!FileUtils.mHasRoot || !FileUtils.mHasBusybox) {
+                    Constants.showToastMessage(this, resources.getString(R.string.error_root))
                     Constants.changeActivity<NoRootActivity>(this@SplashActivity)
-                  finish()
+                    finish()
                 }
+            }
+
 
         }, Constants.SPLASH_TIME_OUT)
-
     }
 }
+

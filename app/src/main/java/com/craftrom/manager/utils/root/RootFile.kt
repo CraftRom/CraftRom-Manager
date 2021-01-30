@@ -20,15 +20,19 @@
 package com.craftrom.manager.utils.root
 
 import com.craftrom.manager.utils.FileUtils
+import com.craftrom.manager.utils.root.RootUtils.chmod
+import com.craftrom.manager.utils.root.RootUtils.runAndGetOutput
+import com.craftrom.manager.utils.root.RootUtils.runCommand
 import com.topjohnwu.superuser.Shell
 import java.io.File
 import java.util.*
+
 
 /**
  * Created by willi on 30.12.15.
  */
 // TODO: 22/04/20 Perhaps use com.github.topjohnwu.libsu:io
-class RootFile(private val mFile: String?) {
+class RootFile(private val mFile: String) {
     val name: String
         get() = File(mFile).name
 
@@ -45,17 +49,17 @@ class RootFile(private val mFile: String?) {
         Shell.su("cp -r '$mFile' '$path'").exec()
     }
 
-    fun write(text: String?, append: Boolean) {
-        val array = text!!.split("\\r?\\n".toRegex()).toTypedArray()
+    fun write(text: String, append: Boolean) {
+        val array = text.split("\\r?\\n".toRegex()).toTypedArray()
         if (!append) delete()
         for (line in array) {
             Shell.su("echo '$line' >> $mFile").exec()
         }
-        RootUtils.chmod(mFile.toString(), "755")
+        chmod(mFile, "755")
     }
 
     fun execute() {
-        RootUtils.runCommand("sh $mFile")
+        runCommand("sh $mFile")
     }
 
     fun delete() {
@@ -64,14 +68,11 @@ class RootFile(private val mFile: String?) {
 
     fun list(): List<String> {
         val list: MutableList<String> = ArrayList()
-        val files = RootUtils.runAndGetOutput("ls '$mFile/'")
+        val files = runAndGetOutput("ls '$mFile/'")
         if (!files.isEmpty()) {
             // Make sure the files exists
             for (file in files.split("\\r?\\n".toRegex()).toTypedArray()) {
-                if (file != null && !file.isEmpty() && FileUtils.existFile(
-                        "$mFile/$file"
-                    )
-                ) {
+                if (file != null && !file.isEmpty() && FileUtils.existFile("$mFile/$file")) {
                     list.add(file)
                 }
             }
@@ -81,14 +82,11 @@ class RootFile(private val mFile: String?) {
 
     fun listFiles(): List<RootFile> {
         val list: MutableList<RootFile> = ArrayList()
-        val files = RootUtils.runAndGetOutput("ls '$mFile/'")
+        val files = runAndGetOutput("ls '$mFile/'")
         if (!files.isEmpty()) {
             // Make sure the files exists
             for (file in files.split("\\r?\\n".toRegex()).toTypedArray()) {
-                if (file != null && !file.isEmpty() && FileUtils.existFile(
-                        "$mFile/$file"
-                    )
-                ) {
+                if (file != null && !file.isEmpty() && FileUtils.existFile("$mFile/$file")) {
                     list.add(RootFile(if (mFile == "/") mFile + file else "$mFile/$file"))
                 }
             }
@@ -97,18 +95,18 @@ class RootFile(private val mFile: String?) {
     }
 
     val isEmpty: Boolean
-        get() = "false" == RootUtils.runAndGetOutput("find '$mFile' -mindepth 1 | read || echo false")
+        get() = "false" == runAndGetOutput("find '$mFile' -mindepth 1 | read || echo false")
 
     fun exists(): Boolean {
-        val output = RootUtils.runAndGetOutput("[ -e $mFile ] && echo true")
+        val output = runAndGetOutput("[ -e $mFile ] && echo true")
         return !output.isEmpty() && output == "true"
     }
 
     fun readFile(): String {
-        return RootUtils.runAndGetOutput("cat '$mFile'")
+        return runAndGetOutput("cat '$mFile'")
     }
 
     override fun toString(): String {
-        return mFile.toString()
+        return mFile
     }
 }

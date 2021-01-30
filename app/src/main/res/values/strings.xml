@@ -21,6 +21,7 @@
 
     <string name="root_status">Root status</string>
     <string name="device_not_rooted">Not rooted</string>
+    <string name="error_root">Failed to get root access</string>
     <string name="device_rooted">Rooted</string>
     <string name="magisk_status">Magisk status</string>
     <string name="magisk_not_detected">Magisk not present</string>

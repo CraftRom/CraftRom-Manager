@@ -25,6 +25,7 @@ import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ShellUtils
 import java.util.*
 
+
 /**
  * Created by willi on 30.12.15.
  */
@@ -38,15 +39,16 @@ object RootUtils {
     }
 
     private fun existBinary(binary: String): Boolean {
-        val paths: String?
-        paths = if (System.getenv("PATH") != null) {
+        val paths: String? = if (System.getenv("PATH") != null) {
             System.getenv("PATH")
         } else {
             "/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin"
         }
-        assert(paths != null)
+        if (BuildConfig.DEBUG && paths == null) {
+            error("Assertion failed")
+        }
         for (path in paths!!.split(":".toRegex()).toTypedArray()) {
-            if (!path.endsWith("/"))
+            if (!path.endsWith("/")) "$path/"
             if (FileUtils.existFile(path + binary, false) || FileUtils.existFile(path + binary)) {
                 return true
             }
@@ -54,7 +56,7 @@ object RootUtils {
         return false
     }
 
-    public fun chmod(file: String, permission: String) {
+    fun chmod(file: String, permission: String) {
         Shell.su("chmod $permission $file").submit()
     }
 
@@ -73,7 +75,7 @@ object RootUtils {
 
     fun closeSU() {
         try {
-            Objects.requireNonNull(Shell.getCachedShell())?.close()
+            Objects.requireNonNull(Shell.getCachedShell())!!.close()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -81,6 +83,10 @@ object RootUtils {
 
     fun runCommand(command: String?) {
         Shell.su(command).exec()
+    }
+
+    fun runAndGetLiveOutput(command: String?, output: List<String?>?) {
+        Shell.su(command).to(output, output).exec()
     }
 
     fun runAndGetOutput(command: String?): String {
@@ -125,6 +131,4 @@ object RootUtils {
         Shell.Config.verboseLogging(BuildConfig.DEBUG)
         Shell.Config.setTimeout(10)
     }
-
-
 }

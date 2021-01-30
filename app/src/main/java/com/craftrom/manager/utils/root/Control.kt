@@ -19,22 +19,15 @@
  */
 package com.craftrom.manager.utils.root
 
-import java.util.*
-import java.util.concurrent.Executor
-import java.util.concurrent.Executors
-
 /**
  * Created by willi on 02.05.16.
  */
 class Control {
-    private val mProfileMode = false
-    private val mProfileCommands = LinkedHashMap<String, String>()
-    private val mExecutor: Executor = Executors.newSingleThreadExecutor()
 
     companion object {
         private val TAG = Control::class.java.simpleName
         private var sControl: Control? = null
-        fun setProp(prop: String, value: String): String {
+        private fun setProp(prop: String, value: String): String {
             return "setprop $prop $value"
         }
 
