@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Craft Rom - Manager</string>
+    <string name="app_name" translatable="false">Craft Rom - Manager</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">@string/app_name</string>
@@ -9,10 +9,28 @@
 
     <string name="menu_device">Device</string>
     <string name="welcome">The task always takes longer than expected to complete, even if you have considered Hofstader\'s Law.</string>
-    <string name="menu_kernel">Chidori Kernel</string>
+    <string name="menu_kernel" translatable="false">Chidori Kernel</string>
     <string name="welc_kernel">Kernel with excellent optimization and balance of performance to autonomy.</string>
     <string name="menu_module">Magisk Module</string>
     <string name="welc_module">List of useful modules for all occasions.</string>
+
+    <!-- Title of the Terminal activity. -->
+    <string name="menu_terminal" translatable="false">Terminal</string>
+    <string name="cancel">Cancel</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="exit">Exit</string>
+    <string name="exit_confirmation">Exit sTerminal?</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="network_unavailable">Failed to connect to the internet!</string>
+    <string name="press_back">Press back again to exit</string>
+    <string name="root_status_available">Congrats! Root Access is already available for this app!</string>
+    <string name="root_status_unavailable">Unfortunately, Root Access is either unavailable on your device or denied to this app. Please check with you\'re root management application to know more!</string>
+    <string name="share_with">Share With</string>
+    <string name="stop_command_question">Stop executing \'%s\' &amp; exit sTerminal?</string>
+    <string name="tab_count">Tab %s</string>
+    <string name="translations">Translations</string>
+    <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in english.</string>
+
 
     <string name="menu_about">About</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
