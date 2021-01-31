@@ -18,6 +18,10 @@
 
     <dimen name="r1">8dp</dimen>
 
+    <dimen name="sum">8</dimen>
+    <dimen name="size_min">6</dimen>
+    <dimen name="size_max">2</dimen>
+
     <dimen name="cardStrokeWidth">0.5dp</dimen>
     <dimen name="settingSep">52dp</dimen>
 </resources>

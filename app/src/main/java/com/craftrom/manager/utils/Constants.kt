@@ -4,9 +4,10 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.view.View
 import android.widget.Toast
 import com.craftrom.manager.R
-import com.topjohnwu.superuser.internal.Utils
+import com.google.android.material.snackbar.Snackbar
 
 class Constants {
 
@@ -49,5 +50,14 @@ class Constants {
                 true
             }
         }
+
+        fun showSnackbar(view: View?, message: String?) {
+            val snackbar = Snackbar.make(view!!, message!!, Snackbar.LENGTH_LONG)
+                .setAction(R.string.dismiss, object : View.OnClickListener {
+                    override fun onClick(view: View?) {}
+                })
+            snackbar.show()
+        }
+
     }
 }

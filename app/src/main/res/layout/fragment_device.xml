@@ -10,183 +10,283 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?android:attr/colorBackground"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:padding="10dp"
-        android:orientation="vertical" >
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:text="@string/app_name"
-                android:textColor="?attr/colorOnPrimary"
                 android:background="?android:attr/colorPrimary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_marginTop="4dp"
-                android:text="@string/welcome"
                 android:id="@+id/br"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="?attr/colorOnPrimary"
-                android:background="?android:attr/colorPrimary"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="?android:attr/colorPrimary"
+                android:text="@string/welcome"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/kernel_card"
+            style="@style/WidgetFoundation.Card.Elevated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_generic"
             android:layout_marginEnd="@dimen/margin_generic"
-            style="@style/WidgetFoundation.Card.Elevated"
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="?android:attr/colorBackground"
+            app:cardElevation="@dimen/no_card_elevation"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
             app:contentPadding="16dp"
-            app:strokeWidth="@dimen/cardStrokeWidth"
-            app:cardElevation="@dimen/no_card_elevation"
-            app:strokeColor="@color/colorStroke">
+            app:strokeColor="@color/colorStroke"
+            app:strokeWidth="@dimen/cardStrokeWidth">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/oem_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
+                <LinearLayout
+                    android:id="@+id/layout_oem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:textAlignment="center"
+                    android:weightSum="8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/head_codename"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/head_codename"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/oem_name"/>
-
-            <TextView
-                android:id="@+id/android_codename"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:textSize="13sp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                app:layout_constraintStart_toEndOf="@id/head_codename"
-                app:layout_constraintTop_toBottomOf="@id/oem_name" />
-
-            <TextView
-                android:id="@+id/rom_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/rom_head"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/head_codename" />
-
-            <TextView
-                android:id="@+id/rom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
-                android:textSize="13sp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                app:layout_constraintStart_toEndOf="@id/rom_head"
-                app:layout_constraintTop_toBottomOf="@id/android_codename" />
-
-            <TextView
-                android:id="@+id/head_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/head_version"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rom_head" />
-
-            <TextView
-                android:id="@+id/android_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
-                android:textSize="13sp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                app:layout_constraintStart_toEndOf="@id/head_version"
-                app:layout_constraintTop_toBottomOf="@id/rom" />
-
-            <TextView
-                android:id="@+id/head_fingerprint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/head_fingerprint"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/head_version" />
-
-            <TextView
-                android:id="@+id/fingerprint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
-                android:textSize="13sp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                app:layout_constraintStart_toEndOf="@id/head_fingerprint"
-                app:layout_constraintTop_toBottomOf="@id/android_version" />
+                    <TextView
+                        android:id="@+id/oem_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/head_codename"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:id="@+id/layout_codename"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:weightSum="@dimen/sum"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_oem">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_min">
+
+                        <TextView
+                            android:id="@+id/head_codename"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/head_codename"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_max"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/android_codename"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_rom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:weightSum="@dimen/sum"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_codename">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_min">
+
+                        <TextView
+                            android:id="@+id/rom_head"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/rom_head"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_max"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toEndOf="@id/rom_head"
+                            app:layout_constraintTop_toBottomOf="@id/android_codename" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:weightSum="@dimen/sum"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_rom">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_min">
+
+                        <TextView
+                            android:id="@+id/head_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/head_version"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_max"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/android_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_fingerprint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:weightSum="@dimen/sum"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_version">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_min">
+
+                        <TextView
+                            android:id="@+id/head_fingerprint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/head_fingerprint"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="@dimen/size_max"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/fingerprint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/info_card"
+            style="@style/WidgetFoundation.Card.Elevated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_generic"
             android:layout_marginEnd="@dimen/margin_generic"
-            style="@style/WidgetFoundation.Card.Elevated"
             android:clickable="true"
             android:focusable="true"
             app:cardBackgroundColor="?android:attr/colorBackground"
+            app:cardElevation="@dimen/no_card_elevation"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
             app:contentPadding="16dp"
-            app:strokeWidth="@dimen/cardStrokeWidth"
-            app:cardElevation="@dimen/no_card_elevation"
-            app:strokeColor="@color/colorStroke">
+            app:strokeColor="@color/colorStroke"
+            app:strokeWidth="@dimen/cardStrokeWidth">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -208,8 +308,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:textSize="13sp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    android:textSize="13sp"
                     app:layout_constraintStart_toEndOf="@id/disk_head"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -231,8 +331,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="4dp"
-                    android:textSize="13sp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    android:textSize="13sp"
                     app:layout_constraintStart_toEndOf="@id/root_head"
                     app:layout_constraintTop_toBottomOf="@id/disk_status" />
 
@@ -240,6 +340,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
-</LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

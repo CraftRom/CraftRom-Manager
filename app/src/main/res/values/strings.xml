@@ -19,14 +19,14 @@
     <string name="cancel">Cancel</string>
     <string name="dismiss">Dismiss</string>
     <string name="exit">Exit</string>
-    <string name="exit_confirmation">Exit sTerminal?</string>
+    <string name="exit_confirmation">Exit Terminal?</string>
     <string name="invite_friends">Invite Friends</string>
     <string name="network_unavailable">Failed to connect to the internet!</string>
     <string name="press_back">Press back again to exit</string>
     <string name="root_status_available">Congrats! Root Access is already available for this app!</string>
     <string name="root_status_unavailable">Unfortunately, Root Access is either unavailable on your device or denied to this app. Please check with you\'re root management application to know more!</string>
     <string name="share_with">Share With</string>
-    <string name="stop_command_question">Stop executing \'%s\' &amp; exit sTerminal?</string>
+    <string name="stop_command_question">Stop executing \'%s\' &amp; exit Terminal?</string>
     <string name="tab_count">Tab %s</string>
     <string name="translations">Translations</string>
     <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in english.</string>
@@ -37,9 +37,9 @@
     <string name="opn_src_txt">Open source licenses</string>
     <string name="opn_src_desc">Open source libraries and their license</string>
 
-    <string name="head_codename">Android Codename</string>
+    <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>
-    <string name="head_version">Android Version</string>
+    <string name="head_version">Android</string>
     <string name="head_fingerprint">Fingerprint</string>
 
     <string name="root_status">Root status</string>

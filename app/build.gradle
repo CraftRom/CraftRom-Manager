@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 
@@ -9,21 +10,21 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("cr.jks")
-            storePassword "melles1991"
-            keyAlias "carftrom_key0"
-            keyPassword "Melles1991"
+            storeFile file("CarftRomKey.jks")
+            storePassword "Melles1991"
+            keyAlias "key0"
+            keyPassword "11111991"
         }
     }
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.craftrom.manager"
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 29
-        versionName "ALPHA 1"
+        versionName "0.1.beta"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -70,6 +71,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'javax.inject:javax.inject:1'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     def libsuVersion = '3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
