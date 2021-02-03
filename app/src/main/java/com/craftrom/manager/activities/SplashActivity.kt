@@ -7,50 +7,46 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
+import com.craftrom.manager.activities.into.IntoWelcomeActivity
 import com.craftrom.manager.utils.Constants
-import com.craftrom.manager.utils.FileUtils
-import com.craftrom.manager.utils.root.RootUtils.rootAccess
+import com.craftrom.manager.utils.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class SplashActivity : AppCompatActivity() {
-    private var isFirstTime: Boolean = true
-    private var isLogout: Boolean? = null
     private var coordLayout: CoordinatorLayout? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.coordinator_splash)
-
         coordLayout = findViewById(R.id.content)
 
-        isFirstTime = Constants.getIsFirstTime(this@SplashActivity)
-        isLogout = Constants.getIsLogout(this@SplashActivity)
+        if(!SharedPreferenceUtils.getBooleanPreferenceValue(this,"isFirstTimeExecution")){
+            SharedPreferenceUtils.setBooleanPreferenceValue(this,"isFirstTimeExecution",true)
+             // do your first time execution stuff here,
+            Handler(Looper.getMainLooper()).postDelayed({
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            /*
-             * If root are available
-             */
-            if (rootAccess()) {
+                Constants.changeActivity<IntoWelcomeActivity>(this@SplashActivity)
+                finish()
+
+            }, Constants.SPLASH_TIME_OUT)
+        } else {
+            Handler(Looper.getMainLooper()).postDelayed({
+
                 Constants.changeActivity<MainActivity>(this@SplashActivity)
                 finish()
-            } else {
-                /*
-                    * If root or busybox/toybox are not available,
-                    * * launch text activity which let the user know
-                    * * what the problem is.
-                    * */
-                if (!FileUtils.mHasRoot || !FileUtils.mHasBusybox) {
-                    Constants.showSnackbar(coordLayout, getString(R.string.error_root,)
-                    )
-                    Constants.changeActivity<MainActivity>(this@SplashActivity)
-                    finish()
-                }
-            }
+
+            }, Constants.SPLASH_TIME_OUT)
+        }
 
 
-        }, Constants.SPLASH_TIME_OUT)
+
+
+
+
     }
+
+
 }
 

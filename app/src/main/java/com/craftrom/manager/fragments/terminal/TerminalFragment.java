@@ -42,7 +42,7 @@ public class TerminalFragment extends Fragment {
     private AppCompatImageButton mUpButtom;
     private boolean mExit, mRunning = false, mSU = false;
     private CharSequence mHistory = null;
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private MaterialTextView mShellCommandTitle, mShellOutput;
     private int i;
     private List<String> mLastCommand = null, PWD = null, mResult, whoAmI = null;

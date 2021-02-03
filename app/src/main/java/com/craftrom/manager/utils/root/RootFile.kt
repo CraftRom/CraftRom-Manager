@@ -72,7 +72,7 @@ class RootFile(private val mFile: String) {
         if (!files.isEmpty()) {
             // Make sure the files exists
             for (file in files.split("\\r?\\n".toRegex()).toTypedArray()) {
-                if (file != null && !file.isEmpty() && FileUtils.existFile("$mFile/$file")) {
+                if (!file.isEmpty() && FileUtils.existFile("$mFile/$file")) {
                     list.add(file)
                 }
             }
@@ -86,7 +86,7 @@ class RootFile(private val mFile: String) {
         if (!files.isEmpty()) {
             // Make sure the files exists
             for (file in files.split("\\r?\\n".toRegex()).toTypedArray()) {
-                if (file != null && !file.isEmpty() && FileUtils.existFile("$mFile/$file")) {
+                if (!file.isEmpty() && FileUtils.existFile("$mFile/$file")) {
                     list.add(RootFile(if (mFile == "/") mFile + file else "$mFile/$file"))
                 }
             }

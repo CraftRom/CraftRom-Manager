@@ -52,7 +52,7 @@ class Control {
         }
 
         private val instance: Control?
-            private get() {
+            get() {
                 if (sControl == null) {
                     sControl = Control()
                 }
