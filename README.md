@@ -34,17 +34,17 @@ Default string resources for CraftRom Kernel Manager are located here:
 
     Copyright (C) 2020-2021 melles1991 <melles.android@gmail.com>
 
-    CraftRom Kernel Manager is a free softwares: you can redistribute
+    CraftRom Manager is a free softwares: you can redistribute
     it and/or modify it under the terms of the GNU General Public License as
     published by the Free Software Foundation, either version 3 of the License,
     or (at your option) any later version.
 
-    CraftRom Kernel Manager is distributed in the hope that it will be useful,
+    CraftRom Manager is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
     or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
     details.
 
     You should have received a copy of the GNU General Public License along with
-    CraftRom Kernel Manager. If not, see <http://www.gnu.org/licenses/>.
+    CraftRom Manager. If not, see <http://www.gnu.org/licenses/>.
 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
