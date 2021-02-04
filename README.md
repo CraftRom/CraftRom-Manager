@@ -4,14 +4,18 @@
 ![](https://img.shields.io/github/license/craftrom/CraftRom-Manager)
 
 # Introduction
-Welcome to the <strong>stable</strong> development channel of CraftRom Manager.
+Welcome!  The application is distributed <strong>without ads</strong> and was created solely to simplify the interaction of the community with Craft Rom projects
 
 ## Features
-* 
+* Chidori Kernel Update for Supported Devices
+* Updating OxyAdditionals for the current version of Android device
+* Craft Rom Site News
 
 ## Android Version Support
 
 - Android 10+
+- Root access
+- Availability of Magisk v20+
 
 ## Credits
 
