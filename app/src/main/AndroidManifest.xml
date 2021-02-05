@@ -23,12 +23,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/Theme.CraftRomManager.NoActionBar"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
+            android:noHistory="true"
             android:theme="@style/Theme.CraftRomManager.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,9 +43,5 @@
         <activity android:name=".activities.into.IntoFinalActivity"/>
         <activity android:name="MainActivity"/>
         <activity android:name=".activities.OSLActivity"/>
-        <activity
-            android:name=".activities.NoRootActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.CraftRomManager.Splash"/>
 </application>
 </manifest>

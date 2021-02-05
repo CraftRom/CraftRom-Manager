@@ -39,4 +39,8 @@
         <item name="cardCornerRadius">@dimen/l_50</item>
         <item name="cardElevation">@dimen/l_125</item>
     </style>
+
+    <style name="SelectableBackground">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
 </resources>
