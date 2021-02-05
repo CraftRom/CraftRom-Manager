@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">Craft Rom - Manager</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">@string/app_name</string>
+    <string name="nav_header_title" translatable="false">@string/app_name</string>
     <string name="nav_header_subtitle">Anything that can go wrong has already gone wrong.</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -11,7 +11,7 @@
     <string name="welcome">The task always takes longer than expected to complete, even if you have considered Hofstader\'s Law.</string>
     <string name="menu_kernel" translatable="false">Chidori Kernel</string>
     <string name="welc_kernel">Kernel with excellent optimization and balance of performance to autonomy.</string>
-    <string name="menu_module">Magisk Module</string>
+    <string name="menu_module" translatable="false">Magisk Module</string>
     <string name="welc_module">List of useful modules for all occasions.</string>
 
     <!-- Into -->
@@ -35,7 +35,7 @@
     <string name="root_status_unavailable">Unfortunately, Root Access is either unavailable on your device or denied to this app. Please check with you\'re root management application to know more!</string>
     <string name="share_with">Share With</string>
     <string name="stop_command_question">Stop executing \'%s\' &amp; exit Terminal?</string>
-    <string name="tab_count">Tab %s</string>
+    <string name="tab_count" translatable="false">Tab %s</string>
     <string name="translations">Translations</string>
     <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in english.</string>
 
@@ -47,8 +47,8 @@
 
     <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>
-    <string name="head_version">Android</string>
-    <string name="head_fingerprint">Fingerprint</string>
+    <string name="head_version" translatable="false">Android</string>
+    <string name="head_fingerprint" translatable="false">Fingerprint</string>
 
     <string name="root_status">Root status</string>
     <string name="device_not_rooted">Not rooted</string>
@@ -61,5 +61,5 @@
     <string name="disk_not_encrypted">Not encrypted</string>
     <string name="disk_not_permission">Not permission</string>
     <string name="disk_encrypted">Encrypted</string>
-    <string name="todo">TODO</string>
+    <string name="todo" translatable="false">TODO</string>
 </resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigation_drawer_open">Відкрити панель навігації</string>
+    <string name="navigation_drawer_close">Закрити панель навігації</string>
+    <string name="nav_header_title">@string/app_name</string>
+    <string name="nav_header_subtitle">Все, що може піти не так, вже пішло не так.</string>
+    <string name="nav_header_desc">Заголовок панелі навігації</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="menu_device">Пристрій (Automatic Translation)</string>
+    <string name="welcome">Це завдання завжди займає більше часу, ніж очікувалося завершити, навіть якщо ви вважали закон Гофстадера.</string>
+    <string name="welc_kernel">Ядро з відмінною оптимізацією та балансом продуктивності до самостійності.</string>
+    <string name="menu_module">Magisk Module</string>
+    <string name="welc_module">Перелік корисних модулів для будь-якого випадку.</string>
+    <!-- Into -->
+    <string name="next">Далі</string>
+    <string name="into_welcome">Ласкаво просимо до ремесла Р, вам потрібен доступ до root-прав для роботи належним чином!</string>
+    <string name="finish">Готово</string>
+    <string name="final_expl">Вся інформація та файли - як у вихідному, так і в компільованому вигляді - надаються як є. Ніяких гарантій чи гарантій не дається і не передбачається. Користувач бере на себе всі ризики будь-якої шкоди, яка може статися, включаючи, але не обмежуючись втратою даних, пошкодженням обладнання та втратою прибутку від бізнесу. Будь ласка, використовуйте на свій страх і ризик. Зауважте, що якщо явно не дозволено гарантією, що охоплює ваш пристрій, слід вважати, що будь-яка гарантія, що супроводжує ваш пристрій, буде анульована, якщо ви втручаєтесь у системне програмне забезпечення чи обладнання.</string>
+    <string name="final_pre_expl">ВІДМОВА ВІД ВІДПОВІДАЛЬНОСТІ</string>
+    <string name="into_open_source_project">Додаток є проектом з відкритим вихідним кодом, який розповсюджується безкоштовно та без реклами.</string>
+    <!-- Title of the Terminal activity. -->
+    <string name="cancel">Скасувати</string>
+    <string name="dismiss">Закрити</string>
+    <string name="exit">Вийти</string>
+    <string name="exit_confirmation">Вийти з терміналу?</string>
+    <string name="invite_friends">Запросити друзів</string>
+    <string name="network_unavailable">Не вдалося підключитися до Інтернету!</string>
+    <string name="press_back">Натисність \"Назад\" ще раз для виходу</string>
+    <string name="root_status_available">Вітаємо! Root доступ вже доступний для цього додатку!</string>
+    <string name="root_status_unavailable">Unfortunately, Root Access is either unavailable on your device or denied to this app. Please check with you\'re root management application to know more!</string>
+    <string name="share_with">Поділитися через</string>
+    <string name="stop_command_question">Зупинити виконання \'%s &amp; вийти з терміналу?</string>
+    <string name="tab_count">Tab %s</string>
+    <string name="translations">Переклад</string>
+    <string name="translations_summary">Допоможіть мені перекласти цей додаток! Натисніть тут, щоб побачити вихідні рядки мов англійською.</string>
+    <string name="menu_about">Про додаток</string>
+    <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
+    <string name="opn_src_txt">Ліцензії Open Source</string>
+    <string name="opn_src_desc">Бібліотеки з відкритим кодом та їх ліцензія</string>
+    <string name="head_codename">Кодова назва</string>
+    <string name="rom_head">Прошивка</string>
+    <string name="head_version">Android</string>
+    <string name="head_fingerprint">Fingerprint</string>
+    <string name="root_status">Root-статус</string>
+    <string name="device_not_rooted">Немає прав</string>
+    <string name="error_root">Не вдалося отримати root-права.</string>
+    <string name="device_rooted">Рутований</string>
+    <string name="magisk_status">Magisk status</string>
+    <string name="magisk_not_detected">Magisk відсутній</string>
+    <string name="magisk_detected">Знайдено</string>
+    <string name="disk_status">Статус диску</string>
+    <string name="disk_not_encrypted">Не зашифровано</string>
+    <string name="disk_not_permission">Недостатньо прав</string>
+    <string name="disk_encrypted">Зашифровано</string>
+    <string name="todo">TODO</string>
+</resources>

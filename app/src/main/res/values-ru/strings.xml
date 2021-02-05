@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigation_drawer_open">Открыть боковое меню</string>
+    <string name="navigation_drawer_close">Закрыть боковое меню</string>
+    <string name="nav_header_title">@string/app_name</string>
+    <string name="nav_header_subtitle">Все, что может пойти не так, уже пошло не так.</string>
+    <string name="nav_header_desc">Панель навигации</string>
+    <string name="action_settings">Настройки</string>
+    <string name="menu_device">Устройство</string>
+    <string name="welcome">Выполнение задачи всегда занимает больше времени, чем ожидалось, даже если вы учли закон Хофстадера.</string>
+    <string name="welc_kernel">Ядро с отличной оптимизацией и равновесием работы до автономии.</string>
+    <string name="menu_module">Magisk Module</string>
+    <string name="welc_module">Список полезных модулей для всех случаев.</string>
+    <!-- Into -->
+    <string name="next">След</string>
+    <string name="into_welcome">Добро пожаловать в Craft Rom, вам нужен root доступ для корректной работы всех функций!</string>
+    <string name="finish">Готово</string>
+    <string name="final_expl">Вся информация и файлы - как в исходной, так и в скомпилированной форме - предоставляются как есть. Никаких гарантий или гарантий не дается и не подразумевается. Пользователь принимает на себя все риски любого ущерба, который может произойти, включая, помимо прочего, потерю данных, повреждение оборудования или потерю коммерческой прибыли. Пожалуйста используйте на свой страх и риск. Обратите внимание: если это явно не разрешено гарантией на ваше устройство, следует предполагать, что любая гарантия, сопровождающая ваше устройство, будет аннулирована, если вы вмешаетесь в системное программное обеспечение или оборудование.</string>
+    <string name="final_pre_expl">ОТКАЗ ОТ ОТВЕТСТВЕННОСТИ</string>
+    <string name="into_open_source_project">Приложение является проектом с открытым исходным кодом и распространяется бесплатно и без рекламы.</string>
+    <!-- Title of the Terminal activity. -->
+    <string name="cancel">Отмена</string>
+    <string name="dismiss">Отклонить</string>
+    <string name="exit">Выйти</string>
+    <string name="exit_confirmation">Выйти из терминала?</string>
+    <string name="invite_friends">Пригласить друзей</string>
+    <string name="network_unavailable">Не удалось подключиться к Интернету!</string>
+    <string name="press_back">Нажмите «Назад» ещё раз, чтобы выйти</string>
+    <string name="root_status_available">Поздравляем! Рут-доступ уже доступен для этого приложения!</string>
+    <string name="root_status_unavailable">К сожалению, Root доступ либо недоступен на вашем устройстве, либо запрещен в этом приложении. Пожалуйста, проверьте приложение для рут-доступа, чтобы узнать больше!</string>
+    <string name="share_with">Поделиться с помощью</string>
+    <string name="stop_command_question">Остановить выполнение \'%s\' &amp; выйти из Терминала?</string>
+    <string name="tab_count">Tab %s</string>
+    <string name="translations">Локализация</string>
+    <string name="translations_summary">Помогите мне перевести это приложение! Нажмите здесь, чтобы получить исходные тексты на английском языке.</string>
+    <string name="menu_about">О программе</string>
+    <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
+    <string name="opn_src_txt">Лицензии открытого ПО</string>
+    <string name="opn_src_desc">Библиотеки с открытым исходным кодом и их лицензия</string>
+    <string name="head_codename">Кодовое имя</string>
+    <string name="rom_head">Прошивка</string>
+    <string name="head_version">Android</string>
+    <string name="head_fingerprint">Fingerprint</string>
+    <string name="root_status">Root-статус</string>
+    <string name="device_not_rooted">Нет Root прав</string>
+    <string name="error_root">Не удалось получить рут-доступ</string>
+    <string name="device_rooted">Rooted</string>
+    <string name="magisk_status">Статус Magisk</string>
+    <string name="magisk_not_detected">Magisk отсутствует</string>
+    <string name="magisk_detected">Определено автоматически</string>
+    <string name="disk_status">Статус диска</string>
+    <string name="disk_not_encrypted">Не зашифровано</string>
+    <string name="disk_not_permission">Недостаточно прав</string>
+    <string name="disk_encrypted">Зашифрованный</string>
+    <string name="todo">TODO</string>
+</resources>

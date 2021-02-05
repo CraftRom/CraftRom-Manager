@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigation_drawer_open">Navigációs sáv megnyitása</string>
+    <string name="navigation_drawer_close">Navigációs sáv bezárása</string>
+    <string name="nav_header_title">@string/app_name</string>
+    <string name="nav_header_subtitle">Bármi ami elromolhat már rossz.</string>
+    <string name="nav_header_desc">Navigációs sáv</string>
+    <string name="action_settings">Beállítások</string>
+    <string name="menu_device">Eszköz</string>
+    <string name="welcome">A feladat végrehajtása a vártnál hosszabb ideig tart. akkor is ha figyelembe vette a Hofstader törvényt.</string>
+    <string name="welc_kernel">A Kernel kiváló optimalizálással és a teljesítmény egyensúlyával az autonómiáig.</string>
+    <string name="menu_module">Magiks Modul</string>
+    <string name="welc_module">Hasznos modulok listája mindenre.</string>
+    <!-- Into -->
+    <string name="next">Következő</string>
+    <string name="into_welcome">Üdvözöl a Craft Rom, minden funkció használatához szükséged lesz root jogokra!</string>
+    <string name="finish">Befejezés</string>
+    <string name="final_expl">Minden információt és fájlokat - mind forrás-, mind pedig összeállított formában - a jelenlegi állapot alapján adunk meg. Nincsenek garanciák vagy garanciák. A felhasználó vállalja az esetleges károk kockázatát, ideértve, de nem kizárólag, az adatok elvesztését, a hardver károsodását vagy a üzleti profit elvesztését. Kérjük, saját felelősségére használja. Ne feledje, hogy hacsak az eszközére vonatkozó garancia kifejezetten nem engedélyezi, feltételezzük, hogy a készüléket kísérő minden garancia érvényét veszti, ha a rendszerszoftvert vagy a hardvert megváltoztatja.</string>
+    <string name="final_pre_expl">Felelősséget kizáró nyilatkozat</string>
+    <string name="into_open_source_project">Az alkalmazás nyílt forráskódú projekt, amelyet ingyenesen reklámok nélkül terjeszthet.</string>
+    <!-- Title of the Terminal activity. -->
+    <string name="cancel">Mégse</string>
+    <string name="dismiss">Mégsem</string>
+    <string name="exit">Kilépés</string>
+    <string name="exit_confirmation">Kilépés a terminálból?</string>
+    <string name="invite_friends">Barátok meghívása</string>
+    <string name="network_unavailable">Nem sikerült az internethez csatlakozni!</string>
+    <string name="press_back">A kilépéshez érintse meg a vissza gombot</string>
+    <string name="root_status_available">Gratulálunk! A root hozzáférés elérhető az alkalmazáshoz!</string>
+    <string name="root_status_unavailable">Sajnos a Roothozzáférés vagy nem érhető el az eszközén, vagy nem engedélyezett az alkalmazás számára. Kérjük, további információkért forduljon a root kezelő alkalmazáshoz!</string>
+    <string name="share_with">Megosztás vele</string>
+    <string name="stop_command_question">A (z) \'% s\' &amp; amp; végrehajtásának leállítása kilépni a terminálból?</string>
+    <string name="tab_count">Fül %s</string>
+    <string name="translations">Fordítások</string>
+    <string name="translations_summary">Segítsen nekünk lefordítani az alkalmazást! Kattintson ide az eredeti nyelvi karakterláncok angol nyelvű megszerzéséhez.</string>
+    <string name="menu_about">Névjegy</string>
+    <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
+    <string name="opn_src_txt">Nyílt forráskódú licencek</string>
+    <string name="opn_src_desc">Nyílt forráskódú könyvtárak és licencük</string>
+    <string name="head_codename">Kódnév</string>
+    <string name="rom_head">ROM</string>
+    <string name="head_version">Android</string>
+    <string name="head_fingerprint">Ujjlenyomat</string>
+    <string name="root_status">Root állapot</string>
+    <string name="device_not_rooted">Nem rootolt</string>
+    <string name="error_root">Nem sikerült root jogosultságot szerezni</string>
+    <string name="device_rooted">Rootolt</string>
+    <string name="magisk_status">Magiks Státusz</string>
+    <string name="magisk_not_detected">Magiks jelenleg nincs</string>
+    <string name="magisk_detected">Észlelt</string>
+    <string name="disk_status">Magiks Státusz</string>
+    <string name="disk_not_encrypted">Nem titkosított</string>
+    <string name="disk_not_permission">Nincs engedély</string>
+    <string name="disk_encrypted">Titkosított</string>
+    <string name="todo">Hátra van</string>
+</resources>
