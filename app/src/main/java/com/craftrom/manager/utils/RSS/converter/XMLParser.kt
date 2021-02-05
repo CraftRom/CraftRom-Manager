@@ -3,6 +3,7 @@ package com.craftrom.manager.utils.RSS.converter
 import org.xml.sax.Attributes
 import org.xml.sax.SAXException
 import org.xml.sax.helpers.DefaultHandler
+import java.util.*
 
 /**
  * RSS Feed XML parser
@@ -29,7 +30,7 @@ internal class XMLParser : DefaultHandler() {
     override fun startElement(uri: String, localName: String, qName: String,
                               attributes: Attributes?) {
         elementOn = true
-        when (localName.toLowerCase()) {
+        when (localName.toLowerCase(Locale.getDefault())) {
             ITEM -> rssItem = RssItem()
             TITLE -> if (!qName.contains(MEDIA)) {
                 parsingTitle = true
@@ -57,7 +58,7 @@ internal class XMLParser : DefaultHandler() {
     override fun endElement(uri: String, localName: String, qName: String) {
         elementOn = false
         if (rssItem != null) {
-            when (localName.toLowerCase()) {
+            when (localName.toLowerCase(Locale.getDefault())) {
                 ITEM -> {
                     rssItem = RssItem()
                     rssItem?.let {

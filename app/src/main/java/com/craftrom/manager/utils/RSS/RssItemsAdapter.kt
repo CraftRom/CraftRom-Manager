@@ -3,13 +3,10 @@ package com.craftrom.manager.utils.RSS
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.RSS.converter.RssItem
-import com.squareup.picasso.Picasso
 import java.util.*
 
 
@@ -43,13 +40,7 @@ internal class RssItemsAdapter(private val listener: OnItemClickListener) : Recy
             textTitle.text = item.title
             textPubDate.text = item.publishDate
 
-            if (item.image != null) {
-                Picasso.get()
-                        .load(item.image)
-                        .fit()
-                        .centerCrop()
-                        .into(imageThumb)
-            }
+
             itemView.setOnClickListener {
                 listener.onItemSelected(item)
             }
@@ -67,7 +58,5 @@ internal class RssItemsAdapter(private val listener: OnItemClickListener) : Recy
     internal class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textTitle: TextView = itemView.findViewById(R.id.tvTitle)
         val textPubDate: TextView = itemView.findViewById(R.id.tvPubDate)
-        val imageThumb: ImageView = itemView.findViewById(R.id.ivThumb)
-        val llTextContainer: RelativeLayout = itemView.findViewById(R.id.llTextContainer)
-    }
+        }
 }

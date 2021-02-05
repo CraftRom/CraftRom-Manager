@@ -22,7 +22,7 @@ import com.craftrom.manager.utils.RSS.converter.RssItem
 import com.craftrom.manager.utils.root.CheckRoot
 import com.craftrom.manager.utils.root.RootUtils
 import com.craftrom.manager.utils.storage.isDiskEncrypted
-import kotlinx.android.synthetic.main.fragment_rss.*
+import kotlinx.android.synthetic.main.fragment_device.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,7 +45,8 @@ RssItemsAdapter.OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        feedUrl = arguments?.getString(DeviceFragment.KEY_FEED)
+        feedUrl = arguments?.getString(KEY_FEED)
+
     }
 
     override fun onCreateView(
@@ -64,9 +65,21 @@ RssItemsAdapter.OnItemClickListener {
 
         InitUI()
         return root
+
     }
 
-     @Suppress("DEPRECATION")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mAdapter = RssItemsAdapter(this)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = mAdapter
+        swRefresh.setOnRefreshListener(this)
+
+        fetchRss()
+    }
+
+    @Suppress("DEPRECATION")
      @SuppressLint("SetTextI18n")
      private fun InitUI() {
          oem_name.text = Device.getVendor() + " " + Device.getModel()
@@ -100,23 +113,12 @@ RssItemsAdapter.OnItemClickListener {
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        mAdapter = RssItemsAdapter(this)
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.adapter = mAdapter
-        swRefresh.setOnRefreshListener(this)
-
-        fetchRss()
-    }
-
     /**
      * Fetches Rss Feed Url
      */
     private fun fetchRss() {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://www.craft-rom.ml/feed/")
+            .baseUrl("https://www.craft-rom.ml/")
             .addConverterFactory(RssConverterFactory.create())
             .build()
 
