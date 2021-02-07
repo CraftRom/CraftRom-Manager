@@ -27,7 +27,8 @@
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_launcher_2"
                 android:layout_width="80dp"
-                android:layout_height="80dp"/>
+                android:layout_height="80dp"
+                android:contentDescription="@string/todo" />
 
         </RelativeLayout>
 
@@ -77,20 +78,22 @@
 
 
             <RelativeLayout
-                android:layout_marginTop="24dp"
+                android:layout_margin="@dimen/default_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
                     android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    tools:ignore="UselessParent">
 
                     <ImageView
                         android:id="@+id/tg_link"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/ic_telegram"/>
+                        android:src="@drawable/ic_telegram"
+                        android:contentDescription="@string/todo"/>
 
                     <ImageView
                         android:id="@+id/gh_link"
@@ -98,7 +101,8 @@
                         android:layout_height="35dp"
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/tg_link"
-                        android:src="@drawable/ic_github"/>
+                        android:src="@drawable/ic_github"
+                        android:contentDescription="@string/todo"/>
 
                     <ImageView
                         android:id="@+id/web_link"
@@ -106,7 +110,8 @@
                         android:layout_height="35dp"
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/gh_link"
-                        android:src="@drawable/ic_www"/>
+                        android:src="@drawable/ic_www"
+                        android:contentDescription="@string/todo" />
 
                 </RelativeLayout>
 
@@ -130,7 +135,8 @@
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    tools:ignore="UselessParent">
 
                     <LinearLayout
                         android:id="@+id/ll_osl"
@@ -141,7 +147,8 @@
                         android:background="@drawable/ripple"
                         android:weightSum="12"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false">
 
                         <RelativeLayout
                             android:layout_weight="10"
@@ -149,17 +156,18 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:layout_marginTop="2dp"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/ic_osi" />
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="2dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_osl" />
 
                         </RelativeLayout>
 
                         <LinearLayout
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="4dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="4dp"
                             android:layout_weight="2"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
@@ -181,6 +189,246 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lang_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:gravity="center"
+                        android:text="@string/lang_head"
+                        android:textColor="?attr/colorPrimary"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/translate"
+                        android:padding="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/ripple"
+                        android:weightSum="12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false">
+
+                        <RelativeLayout
+                            android:layout_weight="10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="2dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_translation" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/translations_summary"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:baselineAligned="false"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:baselineAligned="false"
+                            android:weightSum="6"
+                            tools:ignore="InefficientWeight">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                tools:ignore="NestedWeights">
+
+                                <ImageView
+                                    android:id="@+id/ru_ua_ico"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/ic_lang_ru_ua" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/ru_ua"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Russian/Ukrainian"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/ru_ua_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="CraftRom"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:baselineAligned="false"
+                            android:weightSum="6"
+                            tools:ignore="InefficientWeight">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                tools:ignore="NestedWeights">
+
+                                <ImageView
+                                    android:id="@+id/alb_ico"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/ic_lang_albania" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/albanian"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Albanian"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/albanian_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Arbri Çoçka"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:baselineAligned="false"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:baselineAligned="false"
+                            android:weightSum="6"
+                            tools:ignore="InefficientWeight">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                tools:ignore="NestedWeights">
+
+                                <ImageView
+                                    android:id="@+id/hung_ico"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/ic_lang_no_ico" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/hung"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hungarian"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/hung_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="David Bodnar"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 

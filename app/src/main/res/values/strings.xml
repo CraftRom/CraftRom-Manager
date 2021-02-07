@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">Craft Rom - Manager</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -37,13 +37,15 @@
     <string name="stop_command_question">Stop executing \'%s\' &amp; exit Terminal?</string>
     <string name="tab_count" translatable="false">Tab %s</string>
     <string name="translations">Translations</string>
-    <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in english.</string>
+    <string name="translations_summary">Help me translate this app! Click here to go to the translation service.</string>
 
 
     <string name="menu_about">About</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Open source licenses</string>
     <string name="opn_src_desc">Open source libraries and their license</string>
+    <string name="lang_head">Translators</string>
+
 
     <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>

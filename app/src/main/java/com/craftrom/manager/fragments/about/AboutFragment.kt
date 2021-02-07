@@ -19,6 +19,7 @@ class AboutFragment: Fragment(), View.OnClickListener {
 
 
     private lateinit var osl: LinearLayout
+    private lateinit var translate: LinearLayout
     private lateinit var imageView: ImageView
     private lateinit var ghimg: ImageView
     private lateinit var webimg: ImageView
@@ -38,6 +39,8 @@ class AboutFragment: Fragment(), View.OnClickListener {
         ghimg.setOnClickListener(this)
         webimg = root.findViewById(R.id.web_link)
         webimg.setOnClickListener(this)
+        translate = root.findViewById(R.id.translate)
+        translate.setOnClickListener(this)
 
         versionApp = root.findViewById(R.id.version)
 
@@ -63,6 +66,11 @@ class AboutFragment: Fragment(), View.OnClickListener {
         val intent = Intent(Intent.ACTION_VIEW, uri)
         startActivity(intent)
     }
+    private fun openTranslate() {
+        val uri = Uri.parse("https://crowdin.com/project/craft-rom-km")
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        startActivity(intent)
+    }
 
 
     override fun onClick(v: View) {
@@ -71,6 +79,7 @@ class AboutFragment: Fragment(), View.OnClickListener {
             R.id.gh_link -> openGH()
             R.id.web_link -> openWeb()
             R.id.ll_osl ->  startActivity(Intent(context, OSLActivity::class.java))
+            R.id.translate -> openTranslate()
         }
     }
 
