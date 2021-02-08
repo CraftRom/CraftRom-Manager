@@ -24,7 +24,7 @@ android {
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 29
-        versionName "0.3 BETA"
+        versionName "0.4 BETA"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -90,11 +90,11 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
 
     // glide
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     // parsing html
-    implementation 'org.jsoup:jsoup:1.11.2'
+    implementation 'org.jsoup:jsoup:1.13.1'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
