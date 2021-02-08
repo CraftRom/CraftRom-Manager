@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:padding="@dimen/l_50"
     android:layout_marginLeft="@dimen/l_50"
     android:layout_marginRight="@dimen/l_50"
     android:layout_marginBottom="@dimen/l_50"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/l_50"
     android:background="?attr/colorPrimary"
     >
-
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,15 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-
-        <ImageView
-            android:id="@+id/featuredImg"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:minWidth="250dp"
-            android:minHeight="180dp"
-            android:scaleType="centerCrop" />
-
         <TextView
             android:id="@+id/txtTitle"
             android:text="@string/title_txt"
@@ -37,16 +27,14 @@
 
         <TextView
             android:id="@+id/txtPubdate"
-            android:layout_marginTop="@dimen/l_50"
             android:text="@string/publication_date_txt"
             android:textStyle="italic"
             android:textSize="@dimen/l_75"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/txtContent"
-            android:layout_marginTop="@dimen/l_25"
             android:textStyle="normal"
             android:text="content"
             android:textSize="@dimen/fourteen_sp"
@@ -56,20 +44,10 @@
         <TextView
             android:id="@+id/txtLink"
             android:textStyle="normal"
-            android:text="content"
-            android:visibility="gone"
+            android:text="link"
             android:textSize="@dimen/fourteen_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/butLink"
-            android:text="View"
-            android:layout_marginTop="@dimen/l_50"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

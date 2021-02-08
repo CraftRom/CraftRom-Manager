@@ -240,8 +240,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/translations_summary"
-                                android:textSize="16sp" />
+                                android:text="@string/translations_summary"/>
 
                         </LinearLayout>
 
