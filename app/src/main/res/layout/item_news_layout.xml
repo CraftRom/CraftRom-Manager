@@ -2,51 +2,87 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="@dimen/l_50"
-    android:layout_marginLeft="@dimen/l_50"
-    android:layout_marginRight="@dimen/l_50"
-    android:layout_marginBottom="@dimen/l_50"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorPrimary"
-    >
+    android:layout_marginBottom="5dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:background="?attr/colorPrimary"    >
 
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_margin="@dimen/l_50"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-
-        <ImageView
-            android:id="@+id/featuredImg"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:minWidth="250dp"
-            android:minHeight="180dp"
-            android:scaleType="centerCrop" />
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txtTitle"
             android:text="@string/title_txt"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:maxLines="2"
             android:textSize="@dimen/eighteen_sp"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="@string/publication_author_txt"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/l_75"
+            android:textStyle="italic" />
+
         <TextView
             android:id="@+id/txtPubdate"
-            android:layout_marginTop="@dimen/l_50"
-            android:text="@string/publication_date_txt"
-            android:textStyle="italic"
-            android:textSize="@dimen/l_75"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="@string/publication_date_txt"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/l_75"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/featuredImg"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:minWidth="250dp"
+            android:minHeight="180dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/txtContent"
-            android:layout_marginTop="@dimen/l_25"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
             android:textStyle="normal"
             android:text="content"
             android:textSize="@dimen/fourteen_sp"
@@ -64,8 +100,10 @@
 
         <Button
             android:id="@+id/butLink"
-            android:text="View"
-            android:layout_marginTop="@dimen/l_50"
+            android:text="@string/view_but"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

@@ -193,14 +193,14 @@
                     <TextView
                         android:id="@+id/lang_head"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/default_margin"
                         android:layout_marginBottom="@dimen/default_margin"
                         android:gravity="center"
                         android:text="@string/lang_head"
-                        android:textColor="?attr/colorPrimary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                        android:textSize="18sp"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <LinearLayout

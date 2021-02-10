@@ -1,7 +1,6 @@
 package com.craftrom.manager.fragments.device
 
 import android.annotation.SuppressLint
-import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,16 +12,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.adapter.RssItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Device
+import com.craftrom.manager.utils.RSS.RssFeedFetcher
 import com.craftrom.manager.utils.RSS.RssItem
-import com.craftrom.manager.utils.RSS.RssParser
+import com.craftrom.manager.utils.dummy.DummyContent
 import com.craftrom.manager.utils.root.CheckRoot
 import com.craftrom.manager.utils.root.RootUtils
 import com.craftrom.manager.utils.storage.isDiskEncrypted
-import java.io.IOException
-import java.io.InputStream
-import java.lang.ref.WeakReference
 import java.net.URL
-import javax.net.ssl.HttpsURLConnection
 
 class DeviceFragment : Fragment() {
     private lateinit var  oem_name: TextView
@@ -37,7 +33,7 @@ class DeviceFragment : Fragment() {
     // TODO: Customize parameters
     private var columnCount = 1
     private var listener: OnListFragmentInteractionListener? = null
-    val RSS_FEED_LINK = "https://www.craft-rom.ml/feed.xml"
+    private val RSS_FEED_LINK = "https://www.craft-rom.ml/feed.xml"
     var adapter: RssItemRecyclerViewAdapter? = null
     var rssItems = ArrayList<RssItem>()
     var listV: RecyclerView ?= null
@@ -98,6 +94,7 @@ class DeviceFragment : Fragment() {
 
     }
 
+    @Suppress("DEPRECATION")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -110,56 +107,13 @@ class DeviceFragment : Fragment() {
     }
 
     fun updateRV(rssItemsL: List<RssItem>) {
-        if (rssItemsL != null && !rssItemsL.isEmpty()) {
+        if (!rssItemsL.isEmpty()) {
             rssItems.addAll(rssItemsL)
             adapter?.notifyDataSetChanged()
         }
     }
 
-    class RssFeedFetcher(val context: DeviceFragment) : AsyncTask<URL, Void, List<RssItem>>() {
-        val reference = WeakReference(context)
-        private var stream: InputStream? = null;
-        override fun doInBackground(vararg params: URL?): List<RssItem>? {
-            val connect = params[0]?.openConnection() as HttpsURLConnection
-            connect.readTimeout = 8000
-            connect.connectTimeout = 8000
-            connect.requestMethod = "GET"
-            connect.connect();
-
-            val responseCode: Int = connect.responseCode;
-            var rssItems: List<RssItem>? = null
-            if (responseCode == 200) {
-                stream = connect.inputStream;
-
-
-                try {
-                    val parser = RssParser()
-                    rssItems = parser.parse(stream!!)
-
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-
-
-            }
-
-            return rssItems
-
-        }
-
-
-        override fun onPostExecute(result: List<RssItem>?) {
-            super.onPostExecute(result)
-            if (result != null && !result.isEmpty()) {
-                reference.get()?.updateRV(result)
-            }
-
-        }
-
-    }
-
-
     interface OnListFragmentInteractionListener {
-        fun onListFragmentInteraction(item: RssItem?)
+        fun onListFragmentInteraction(item: DummyContent.DummyItem)
     }
 }

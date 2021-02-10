@@ -46,8 +46,12 @@
     <string name="opn_src_desc">Open source libraries and their license</string>
     <string name="lang_head">Translators</string>
 
-    <string name="title_txt">Title</string>
-    <string name="publication_date_txt">Publication Date</string>
+    <string name="title_txt" translatable="false">Title</string>
+    <string name="publication_date_txt" translatable="false">Publication Date</string>
+    <string name="publication_author_txt" translatable="false">Publication Author</string>
+    <string name="view_but">View</string>
+    <string name="open_link">The page will open in your device\'s default Browser!</string>
+    <string name="head_news">CraftRom News</string>
 
     <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>

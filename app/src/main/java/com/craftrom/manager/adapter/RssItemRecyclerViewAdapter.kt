@@ -1,10 +1,14 @@
 package com.craftrom.manager.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
@@ -19,13 +23,6 @@ class RssItemRecyclerViewAdapter(
 ) : RecyclerView.Adapter<RssItemRecyclerViewAdapter.ViewHolder>() {
 
 
-    private val mOnClickListener: View.OnClickListener = View.OnClickListener { v ->
-        // val item = v.tag as DummyContent.DummyItem
-       // Notify the active callbacks interface (the activity, if the fragment is attached to
-        // one) that an item has been selected.
-        // mListener?.onListFragmentInteraction(item)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_news_layout, parent, false)
@@ -38,20 +35,31 @@ class RssItemRecyclerViewAdapter(
         holder.linkTV?.text = item.link
         holder.contentTV?.text  = item.description
         holder.pubDateTV?.text = item.pubDate
+        holder.pubAuthorTV?.text = item.author
 
 
 
-        if(item.image != null) {
-            Picasso.get()
-                .load(item.image)
-                .fit()
-                .centerCrop()
-                .into(holder.featuredImg)
-        }
+        Picasso.get()
+            .load(item.image)
+            .fit()
+            .centerCrop()
+            .into(holder.featuredImg)
 
-        with(holder.mView) {
-            tag = item
-            setOnClickListener(mOnClickListener)
+//        holder.mView.setOnClickListener { _ ->
+//
+//            Toast.makeText(
+//                context, "Вы нажали на кнопку",
+//                Toast.LENGTH_SHORT).show()
+//        }
+        holder.butLink?.setOnClickListener { _ ->
+            val url = item.link
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(url)
+            context?.startActivity(i)
+
+            Toast.makeText(
+                context, R.string.open_link,
+                Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -62,7 +70,9 @@ class RssItemRecyclerViewAdapter(
         val linkTV: TextView? = mView.findViewById(R.id.txtLink)
         val contentTV: TextView? = mView.findViewById(R.id.txtContent)
         val pubDateTV: TextView? = mView.findViewById(R.id.txtPubdate)
-        val featuredImg: ImageView? = mView.findViewById(R.id.featuredImg);
+        val pubAuthorTV: TextView? = mView.findViewById(R.id.txtAuthor)
+        val featuredImg: ImageView? = mView.findViewById(R.id.featuredImg)
+        val butLink: Button? = mView.findViewById(R.id.butLink)
     }
 
 

@@ -46,7 +46,9 @@ class RssParser {
                         rssItem!!.pubDate = text.toString()
                     } else if (foundItem && tagname.equals("image", ignoreCase = true)) {
                         rssItem!!.image = text.toString()
-                }
+                    } else if (foundItem && tagname.equals("author", ignoreCase = true)) {
+                        rssItem!!.author = text.toString()
+                    }
                 }
 
                 eventType = parser.next()

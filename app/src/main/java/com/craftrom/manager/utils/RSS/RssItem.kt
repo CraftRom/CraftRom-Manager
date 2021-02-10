@@ -6,8 +6,9 @@ class RssItem {
     var description = ""
     var pubDate = ""
     var image = ""
+    var author = ""
 
     override fun toString(): String {
-        return "RssItem(title='$title', link='$link', description='$description', pubDate='$pubDate', image='$image')"
+        return "RssItem(title='$title', link='$link', description='$description', pubDate='$pubDate', image='$image', author='$author')"
     }
 }
