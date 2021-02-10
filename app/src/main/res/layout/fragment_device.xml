@@ -355,7 +355,7 @@
                 android:layout_marginBottom="@dimen/default_margin"
                 android:gravity="center"
                 android:textColor="?attr/colorPrimary"
-                android:text="@string/title_txt"
+                android:text="@string/head_news"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
