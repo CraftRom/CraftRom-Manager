@@ -3,8 +3,10 @@ package com.craftrom.manager.utils
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.view.View
 import android.widget.Toast
 import com.craftrom.manager.R
+import com.google.android.material.snackbar.Snackbar
 
 
 open class Constants {
@@ -22,6 +24,12 @@ open class Constants {
 
         fun showToastMessage(context: Context?, message: String?) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        }
+
+        fun showSnackbarK (view: View?, message: String?) {
+            val snackbar = Snackbar.make(view!!, message!!, Snackbar.LENGTH_LONG)
+            snackbar.setAction(R.string.dismiss) { v -> snackbar.dismiss() }
+            snackbar.show()
         }
     }
 }

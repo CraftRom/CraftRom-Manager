@@ -1,5 +1,6 @@
 package com.craftrom.manager.utils.security
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.util.Log
@@ -7,6 +8,7 @@ import android.util.Log
 
 class MagiskDetector(context: Context) {
     val pm = context.packageManager
+    @SuppressLint("QueryPermissionsNeeded")
     val packages = pm.getInstalledPackages(PackageManager.GET_META_DATA or PackageManager.GET_ACTIVITIES)
 
     fun checkForMagisk(): Boolean {

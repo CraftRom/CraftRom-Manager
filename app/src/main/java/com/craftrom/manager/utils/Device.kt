@@ -121,6 +121,7 @@ object Device {
 
     class ROMInfo private constructor() {
         var version: String? = null
+        var name: String? = null
 
         companion object {
             private var sInstance: ROMInfo? = null
@@ -132,22 +133,19 @@ object Device {
                     return sInstance
                 }
             private val sProps = arrayOf(
-                    "ro.cm.version",
-                    "ro.pa.version",
-                    "ro.pac.version",
-                    "ro.carbon.version",
-                    "ro.slim.version",
-                    "ro.mod.version",
-                    "ro.lineage.version",
-                    "ro.rr.version",
-                    "ro.oxygen.version",
-                    "ro.mk.version"
+                    "ro.product.system.name"
             )
+
+
         }
 
         init {
             for (prop in sProps) {
-                version = RootUtils.getProp(prop)
+                name = RootUtils.getProp(prop)
+                val n = name!!.split("_"[0])
+                val verProp = "ro.$n.version"
+                version =RootUtils.getProp(verProp)
+
                 if (!version!!.isEmpty()) {
                     break
                 }

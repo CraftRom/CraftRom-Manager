@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="navigation_drawer_open">Hap sirtarin e navigimit</string>
     <string name="navigation_drawer_close">Mbyll sirtarin e navigimit</string>
-    <string name="nav_header_title">@string/app_name</string>
     <string name="nav_header_subtitle">Çdo gjë që mund të shkojë keq tashmë ka shkuar keq.</string>
     <string name="nav_header_desc">Koka e lundrimit</string>
     <string name="action_settings">Konfigurimet</string>
     <string name="menu_device">Pajisja</string>
     <string name="welcome">Detyra zgjat gjithnjë më shumë sesa pritej të kryhej, edhe nëse e keni marrë parasysh Ligjin e Hofstader.</string>
     <string name="welc_kernel">Kernel me optimizim të shkëlqyeshëm dhe ekuilibër të performancës në autonomi.</string>
-    <string name="menu_module">Modulet e Magisk</string>
     <string name="welc_module">Lista e moduleve të dobishëm për të gjitha rastet.</string>
     <!-- Into -->
     <string name="next">Tjetër</string>
@@ -20,7 +18,7 @@
     <string name="into_open_source_project">Aplikacioni është një projekt me burim të hapur dhe shpërndahet falas dhe pa reklama.</string>
     <!-- Title of the Terminal activity. -->
     <string name="cancel">Anullo</string>
-    <string name="dismiss">Largoje</string>
+    <string name="dismiss">Hiqe</string>
     <string name="exit">Dil</string>
     <string name="exit_confirmation">Dil nga Terminal?</string>
     <string name="invite_friends">Fto miqtë</string>
@@ -30,17 +28,18 @@
     <string name="root_status_unavailable">Për fat të keq, Root Access është ose i padisponueshëm në pajisjen tuaj ose i refuzohet këtij aplikacioni.  Ju lutemi kontrolloni me programin e menaxhimit të rrënjës për të ditur më shumë!</string>
     <string name="share_with">Ndaje me</string>
     <string name="stop_command_question">Ndaloni ekzekutimin \'%s\' &amp; dil nga Terminal?</string>
-    <string name="tab_count">Tab %s</string>
     <string name="translations">Përkëthimet</string>
-    <string name="translations_summary">Më ndihmo ta përkthej këtë aplikacion!  Klikoni këtu për të marrë vargjet e gjuhës origjinale në anglisht.</string>
+    <string name="translations_summary">Më ndihmo ta përkthej këtë aplikacion!  Klikoni këtu për të shkuar te shërbimi i përkthimit.</string>
     <string name="menu_about">Rreth</string>
     <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
     <string name="opn_src_txt">Licencat me burim të hapur</string>
     <string name="opn_src_desc">Bibliotekat me burim të hapur dhe licenca e tyre</string>
+    <string name="lang_head">Përkthyesit</string>
+    <string name="view_but">Shiko</string>
+    <string name="open_link">Faqja do të hapet në Shfletuesin e parazgjedhur të pajisjes suaj!</string>
+    <string name="head_news">CraftRom News</string>
     <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>
-    <string name="head_version">Android</string>
-    <string name="head_fingerprint">Fingerprint</string>
     <string name="root_status">Statusi i Rrënjës</string>
     <string name="device_not_rooted">Nuk është rrënjosur</string>
     <string name="error_root">Dështoi në marrjen e hyrjes në rrënjë</string>
@@ -52,5 +51,4 @@
     <string name="disk_not_encrypted">Nuk është e koduar</string>
     <string name="disk_not_permission">S\'ka lejë</string>
     <string name="disk_encrypted">E kodifikuar</string>
-    <string name="todo">TODO</string>
 </resources>

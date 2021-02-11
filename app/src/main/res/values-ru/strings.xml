@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="navigation_drawer_open">Открыть боковое меню</string>
     <string name="navigation_drawer_close">Закрыть боковое меню</string>
-    <string name="nav_header_title">@string/app_name</string>
     <string name="nav_header_subtitle">Все, что может пойти не так, уже пошло не так.</string>
     <string name="nav_header_desc">Панель навигации</string>
     <string name="action_settings">Настройки</string>
     <string name="menu_device">Устройство</string>
     <string name="welcome">Выполнение задачи всегда занимает больше времени, чем ожидалось, даже если вы учли закон Хофстадера.</string>
     <string name="welc_kernel">Ядро с отличной оптимизацией и равновесием работы до автономии.</string>
-    <string name="menu_module">Magisk Module</string>
     <string name="welc_module">Список полезных модулей для всех случаев.</string>
     <!-- Into -->
     <string name="next">След</string>
@@ -30,17 +28,18 @@
     <string name="root_status_unavailable">К сожалению, Root доступ либо недоступен на вашем устройстве, либо запрещен в этом приложении. Пожалуйста, проверьте приложение для рут-доступа, чтобы узнать больше!</string>
     <string name="share_with">Поделиться с помощью</string>
     <string name="stop_command_question">Остановить выполнение \'%s\' &amp; выйти из Терминала?</string>
-    <string name="tab_count">Tab %s</string>
     <string name="translations">Локализация</string>
-    <string name="translations_summary">Помогите мне перевести это приложение! Нажмите здесь, чтобы получить исходные тексты на английском языке.</string>
+    <string name="translations_summary">Помогите мне перевести это приложение! Нажмите здесь, чтобы перейти к сервису перевода.</string>
     <string name="menu_about">О программе</string>
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
     <string name="opn_src_txt">Лицензии открытого ПО</string>
     <string name="opn_src_desc">Библиотеки с открытым исходным кодом и их лицензия</string>
+    <string name="lang_head">Переводчики</string>
+    <string name="view_but">Смотреть</string>
+    <string name="open_link">Страница откроется в браузере по умолчанию вашего устройства!</string>
+    <string name="head_news">Новости CraftRom</string>
     <string name="head_codename">Кодовое имя</string>
     <string name="rom_head">Прошивка</string>
-    <string name="head_version">Android</string>
-    <string name="head_fingerprint">Fingerprint</string>
     <string name="root_status">Root-статус</string>
     <string name="device_not_rooted">Нет Root прав</string>
     <string name="error_root">Не удалось получить рут-доступ</string>
@@ -52,5 +51,4 @@
     <string name="disk_not_encrypted">Не зашифровано</string>
     <string name="disk_not_permission">Недостаточно прав</string>
     <string name="disk_encrypted">Зашифрованный</string>
-    <string name="todo">TODO</string>
 </resources>
