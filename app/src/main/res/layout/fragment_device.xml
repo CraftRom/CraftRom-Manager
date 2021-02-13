@@ -358,7 +358,6 @@
                 android:text="@string/head_news"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
             <androidx.recyclerview.widget.RecyclerView
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/listV"
@@ -368,7 +367,6 @@
                 android:layout_marginRight="10dp"
                 app:layoutManager="LinearLayoutManager"
                 tools:listitem="@layout/item_news_layout" />
-
         </LinearLayout>
 
     </LinearLayout>

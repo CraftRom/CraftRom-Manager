@@ -1,3 +1,5 @@
+@file:Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "DEPRECATED_IDENTITY_EQUALS")
+
 package com.craftrom.manager.utils
 
 import android.os.Build
@@ -17,7 +19,7 @@ object Device {
         return getKernelVersion(extended, true)
     }
 
-    fun getKernelVersion(extended: Boolean, root: Boolean): String {
+    private fun getKernelVersion(extended: Boolean, root: Boolean): String {
         val version: String = FileUtils.readFile("/proc/version", root).toString()
         if (extended)  {
             return version
@@ -27,6 +29,7 @@ object Device {
             matcher.group(1)
         } else "unknown"
     }
+
 
     val architecture: String
         get() = runCommand("uname -m").toString()
@@ -123,6 +126,7 @@ object Device {
         var version: String? = null
         var name: String? = null
 
+
         companion object {
             private var sInstance: ROMInfo? = null
             val instance: ROMInfo?
@@ -133,7 +137,9 @@ object Device {
                     return sInstance
                 }
             private val sProps = arrayOf(
-                    "ro.product.system.name"
+                    "ro.product.system.name",
+                    "ro.product.product.name",
+                    "ro.product.system_ext.name"
             )
 
 
@@ -142,11 +148,11 @@ object Device {
         init {
             for (prop in sProps) {
                 name = RootUtils.getProp(prop)
-                val n = name!!.split("_"[0])
-                val verProp = "ro.$n.version"
-                version =RootUtils.getProp(verProp)
+                val n = name!!.split("_")[0]
+                val verProp = "ro.$n.name"
+                version = RootUtils.getProp(verProp)
 
-                if (!version!!.isEmpty()) {
+                if (version!!.isNotEmpty()) {
                     break
                 }
             }

@@ -13,6 +13,7 @@ class RssFeedFetcher(val context: DeviceFragment) : AsyncTask<URL, Void, List<Rs
     private val reference = WeakReference(context)
     private var stream: InputStream? = null
     override fun doInBackground(vararg params: URL?): List<RssItem>? {
+
         val connect = params[0]?.openConnection() as HttpURLConnection
         connect.readTimeout = 8000
         connect.connectTimeout = 8000

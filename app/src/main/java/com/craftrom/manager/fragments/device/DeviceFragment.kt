@@ -14,13 +14,13 @@ import com.craftrom.manager.adapter.RssItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.RSS.RssFeedFetcher
 import com.craftrom.manager.utils.RSS.RssItem
+import com.craftrom.manager.utils.device.CheckRoot.isDeviceRooted
 import com.craftrom.manager.utils.dummy.DummyContent
-import com.craftrom.manager.utils.root.CheckRoot
 import com.craftrom.manager.utils.root.RootUtils
 import com.craftrom.manager.utils.storage.isDiskEncrypted
 import java.net.URL
 
-class DeviceFragment : Fragment() {
+class DeviceFragment : Fragment(){
     private lateinit var  oem_name: TextView
     private lateinit var disk_status: TextView
     private lateinit var root_status: TextView
@@ -65,7 +65,7 @@ class DeviceFragment : Fragment() {
     private fun InitUI() {
         oem_name.text = Device.getVendor() + " " + Device.getModel()
         if (RootUtils.rootAccess()){
-            rom.text = Device.ROMInfo.instance!!.version
+            rom.text = "Null"
             if (isDiskEncrypted) {
                 disk_status.text = getString(R.string.disk_encrypted)
                 disk_status.setTextColor(resources.getColor(R.color.colorTrue))
@@ -76,12 +76,13 @@ class DeviceFragment : Fragment() {
         } else {
             disk_status.text = getString(R.string.disk_not_permission)
             disk_status.setTextColor(resources.getColor(R.color.colorPermission))
-            rom.text = getString(R.string.disk_not_permission)
+ //           rom.text = getString(R.string.disk_not_permission)
+            rom.text = "Null"
             rom.setTextColor(resources.getColor(R.color.colorPermission))
         }
 
 
-        if (CheckRoot.isDeviceRooted) {
+        if (isDeviceRooted()) {
             root_status.text = getString(R.string.device_rooted)
             root_status.setTextColor(resources.getColor(R.color.colorTrue))
         } else {
@@ -104,14 +105,17 @@ class DeviceFragment : Fragment() {
 
         val url = URL(RSS_FEED_LINK)
         RssFeedFetcher(this).execute(url)
+
+
     }
 
     fun updateRV(rssItemsL: List<RssItem>) {
-        if (!rssItemsL.isEmpty()) {
+        if (rssItemsL.isNotEmpty()) {
             rssItems.addAll(rssItemsL)
             adapter?.notifyDataSetChanged()
         }
     }
+
 
     interface OnListFragmentInteractionListener {
         fun onListFragmentInteraction(item: DummyContent.DummyItem)

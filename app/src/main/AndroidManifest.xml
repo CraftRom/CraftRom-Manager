@@ -27,7 +27,7 @@
         android:theme="@style/Theme.CraftRomManager.NoActionBar"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".splash.SplashActivity"
             android:screenOrientation="portrait"
             android:noHistory="true"
             android:theme="@style/Theme.CraftRomManager.Splash">

@@ -14,8 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-
-    <style name="Theme.CraftRomManager.Splash" parent="Theme.CraftRomManager.NoActionBar">
-        <item name="colorPrimary">@color/black</item>
-    </style>
 </resources>

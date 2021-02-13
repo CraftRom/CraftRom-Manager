@@ -18,8 +18,15 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.CraftRomManager.Splash" parent="Theme.CraftRomManager.NoActionBar">
-        <item name="colorPrimary">@color/white</item>
+
+    <!-- Splash activity theme. -->
+    <style name="Theme.CraftRomManager.Splash" parent="Theme.CraftRomManager">
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:windowBackground">?attr/colorPrimary</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.CraftRomManager.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -1,42 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="?attr/colorPrimaryVariant"
-    android:gravity="center">
+    android:gravity="center"
+    tools:context=".splash.SplashActivity">
+
 
     <ImageView
-        android:id="@+id/logo_splash"
+        android:id="@+id/imageBackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:height="36dp"
-        android:width="36dp"
-        android:paddingBottom="36dp"
-        app:srcCompat="@drawable/ic_launcher_2"
-        android:contentDescription="TODO" />
+        android:layout_height="match_parent"
+        android:scaleType="center">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+    </ImageView>
+
+    <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            android:contentDescription="@string/todo" />
+
+    <com.craftrom.manager.ui.view.TypefaceTextView
+        android:id="@+id/textViewSlogan"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/logo_splash"
-        android:layout_centerHorizontal="true"
-        android:indeterminate="true"
-        android:indeterminateTint="#FFFFFF" />
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:ellipsize="end"
+        android:maxEms="14"
+        android:maxLines="3"
+        android:text="@string/text_logo"
 
-    <TextView
-        android:id="@+id/progressBarText"
+        android:textAlignment="center"
+        android:textSize="@dimen/headline_6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402"
+        app:typeface="PermanentMarker-Regular.ttf" />
+
+    <com.craftrom.manager.ui.view.TypefaceTextView
+        android:id="@+id/textViewCopyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/progressBar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColor="?attr/colorPrimary"
-        android:textSize="18sp" />
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="2dp"
+        android:ellipsize="end"
+        android:maxEms="14"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:text="@string/copyright"
+        android:textSize="@dimen/overline"
+        app:layout_constraintBottom_toTopOf="@id/textViewVersion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+    <com.craftrom.manager.ui.view.TypefaceTextView
+        android:id="@+id/textViewVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxEms="20"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:text="@string/app_name_version"
+        android:textSize="@dimen/overline"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

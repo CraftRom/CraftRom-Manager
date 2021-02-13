@@ -3,4 +3,9 @@
     <attr name="colorSurfaceVariant" format="color" />
     <attr name="colorOnSurfaceVariant" format="color" />
     <attr name="colorSurfaceSurfaceVariant" format="color" />
+
+    <declare-styleable name="TypefaceTextView">
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+
 </resources>
