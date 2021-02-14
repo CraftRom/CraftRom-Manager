@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="text_logo">Код налагодження подібний полюванню. Полюванню на помилки.</string>
+    <string name="app_name_version">%s версія: %s </string>
     <string name="navigation_drawer_open">Відкрити панель навігації</string>
     <string name="navigation_drawer_close">Закрити панель навігації</string>
     <string name="nav_header_subtitle">Все, що може піти не так, вже пішло не так.</string>
@@ -36,8 +38,8 @@
     <string name="opn_src_desc">Бібліотеки з відкритим кодом та їх ліцензія</string>
     <string name="lang_head">Перекладачі</string>
     <string name="view_but">Переглянути</string>
-    <string name="open_link">The page will open in your device\'s default Browser!</string>
-    <string name="head_news">CraftRom News</string>
+    <string name="open_link">Сторінка відкриється у браузері вашого пристрою за замовчуванням!</string>
+    <string name="head_news">Новини CraftRom</string>
     <string name="head_codename">Кодова назва</string>
     <string name="rom_head">Прошивка</string>
     <string name="root_status">Root-статус</string>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="text_logo">Отладка кода похожа на охоту. Охоту на баги.</string>
+    <string name="app_name_version">%s версия: %s </string>
     <string name="navigation_drawer_open">Открыть боковое меню</string>
     <string name="navigation_drawer_close">Закрыть боковое меню</string>
     <string name="nav_header_subtitle">Все, что может пойти не так, уже пошло не так.</string>
@@ -43,7 +45,7 @@
     <string name="root_status">Root-статус</string>
     <string name="device_not_rooted">Нет Root прав</string>
     <string name="error_root">Не удалось получить рут-доступ</string>
-    <string name="device_rooted">Rooted</string>
+    <string name="device_rooted">Рутирован</string>
     <string name="magisk_status">Статус Magisk</string>
     <string name="magisk_not_detected">Magisk отсутствует</string>
     <string name="magisk_detected">Определено автоматически</string>

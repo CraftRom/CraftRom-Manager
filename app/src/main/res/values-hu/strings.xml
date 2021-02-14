@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="text_logo">A hibakeresési kód olyan, mint a vadászat. Hiba keresés.</string>
+    <string name="app_name_version">%s verzió: %s </string>
     <string name="navigation_drawer_open">Navigációs sáv megnyitása</string>
     <string name="navigation_drawer_close">Navigációs sáv bezárása</string>
     <string name="nav_header_subtitle">Bármi ami elromolhat már rossz.</string>
@@ -29,15 +31,15 @@
     <string name="share_with">Megosztás vele</string>
     <string name="stop_command_question">A (z) \'% s\' &amp; amp; végrehajtásának leállítása kilépni a terminálból?</string>
     <string name="translations">Fordítások</string>
-    <string name="translations_summary">Help me translate this app! Click here to go to the translation service.</string>
+    <string name="translations_summary">Kattintson ide a fordítási szolgáltatás eléréséhez.</string>
     <string name="menu_about">Névjegy</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Nyílt forráskódú licencek</string>
     <string name="opn_src_desc">Nyílt forráskódú könyvtárak és licencük</string>
-    <string name="lang_head">Translators</string>
-    <string name="view_but">View</string>
-    <string name="open_link">The page will open in your device\'s default Browser!</string>
-    <string name="head_news">CraftRom News</string>
+    <string name="lang_head">Fordítók</string>
+    <string name="view_but">Megtekintés</string>
+    <string name="open_link">Az oldal az eszköz alapértelmezett böngészőjében nyílik meg!</string>
+    <string name="head_news">CraftRom hírek</string>
     <string name="head_codename">Kódnév</string>
     <string name="rom_head">ROM</string>
     <string name="root_status">Root állapot</string>

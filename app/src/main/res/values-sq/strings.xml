@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
+    <string name="app_name_version">%s version: %s </string>
     <string name="navigation_drawer_open">Hap sirtarin e navigimit</string>
     <string name="navigation_drawer_close">Mbyll sirtarin e navigimit</string>
     <string name="nav_header_subtitle">Çdo gjë që mund të shkojë keq tashmë ka shkuar keq.</string>
