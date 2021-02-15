@@ -28,7 +28,6 @@ class DeviceFragment : Fragment(){
     private lateinit var android_codename: TextView
     private lateinit var rom: TextView
     private lateinit var android_version: TextView
-    private lateinit var fingerprint: TextView
 
     // TODO: Customize parameters
     private var columnCount = 1
@@ -53,7 +52,6 @@ class DeviceFragment : Fragment(){
         android_codename = root.findViewById(R.id.android_codename)
         rom = root.findViewById(R.id.rom)
         android_version = root.findViewById(R.id.android_version)
-        fingerprint = root.findViewById(R.id.fingerprint)
         listV = root.findViewById(R.id.listV)
 
         InitUI()
@@ -91,7 +89,6 @@ class DeviceFragment : Fragment(){
         }
         android_codename.text  = Device.getDeviceName()
         android_version.text = Device.getVersion()
-        fingerprint.text = Device.getFingerprint()
 
     }
 

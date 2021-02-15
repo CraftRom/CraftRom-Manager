@@ -73,4 +73,7 @@
     <string name="disk_not_permission">Not permission</string>
     <string name="disk_encrypted">Encrypted</string>
     <string name="todo" translatable="false">TODO</string>
+
+    <string name="download" translatable="false">Download</string>
+    <string name="module_version_author" translatable="false">%s by %s</string>
 </resources>

@@ -37,7 +37,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:ellipsize="end"
-        android:maxEms="14"
+        android:maxEms="12"
         android:maxLines="3"
         android:text="@string/text_logo"
 

@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="?android:attr/colorBackground"
         android:orientation="vertical">
 
@@ -40,11 +40,27 @@
                 android:textColor="?attr/colorOnPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/listView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            tools:layout_marginTop="@dimen/l_50"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_module_layout" />
+
+        </LinearLayout>
+
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

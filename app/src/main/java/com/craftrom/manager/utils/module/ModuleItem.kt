@@ -1,20 +1,14 @@
 package com.craftrom.manager.utils.module
 
-class ModuleItem{
-        lateinit var title:String
-        lateinit var description:String
-        lateinit var pubDate:String
-        lateinit var author:String
-        lateinit var link:String
+class ModuleItem {
+    var title = ""
+    var link = ""
+    var description = ""
+    var pubDate = ""
+    var author = ""
+    var version = ""
 
-
-        constructor(title: String,description:String,pubDate:String,author:String) {
-            this.title = title
-            this.description = description
-            this.pubDate = pubDate
-            this.author = author
-            this.link = author
-        }
-
-        constructor()
+    override fun toString(): String {
+        return "RssItem(title='$title', link='$link', description='$description', pubDate='$pubDate', author='$author', version='$version')"
+    }
 }
