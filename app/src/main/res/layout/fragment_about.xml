@@ -160,6 +160,7 @@
                                 android:layout_height="30dp"
                                 android:layout_centerVertical="true"
                                 android:layout_marginTop="2dp"
+                                android:layout_marginStart="20dp"
                                 android:contentDescription="@string/todo"
                                 android:src="@drawable/ic_osl" />
 
@@ -224,6 +225,7 @@
                                 android:layout_height="30dp"
                                 android:layout_centerVertical="true"
                                 android:layout_marginTop="2dp"
+                                android:layout_marginStart="20dp"
                                 android:contentDescription="@string/todo"
                                 android:src="@drawable/ic_translation" />
 
@@ -247,18 +249,16 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="4dp"
-                        android:baselineAligned="false"
-                        android:weightSum="3">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="@dimen/fab_margin"
+                        android:layout_marginEnd="@dimen/fab_margin">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:baselineAligned="false"
-                            android:weightSum="6"
                             tools:ignore="InefficientWeight">
 
                             <RelativeLayout
@@ -308,11 +308,11 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
                             android:baselineAligned="false"
-                            android:weightSum="6"
                             tools:ignore="InefficientWeight">
 
                             <RelativeLayout
@@ -366,18 +366,16 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="4dp"
-                        android:baselineAligned="false"
-                        android:weightSum="3">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="@dimen/fab_margin"
+                        android:layout_marginEnd="@dimen/fab_margin">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:baselineAligned="false"
-                            android:weightSum="6"
                             tools:ignore="InefficientWeight">
 
                             <RelativeLayout
@@ -394,7 +392,7 @@
                                     android:layout_marginTop="3dp"
                                     android:layout_marginBottom="3dp"
                                     android:contentDescription="@string/todo"
-                                    android:src="@drawable/ic_lang_no_ico" />
+                                    android:src="@drawable/ic_lang_hungaria" />
 
                             </RelativeLayout>
 
@@ -416,6 +414,60 @@
 
                                 <TextView
                                     android:id="@+id/hung_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="David Bodnar"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:visibility="invisible"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:baselineAligned="false"
+                            tools:ignore="InefficientWeight">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                tools:ignore="NestedWeights">
+
+                                <ImageView
+                                    android:id="@+id/test_ico"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/ic_lang_no_ico" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/test"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hungarian"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/test_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="David Bodnar"
