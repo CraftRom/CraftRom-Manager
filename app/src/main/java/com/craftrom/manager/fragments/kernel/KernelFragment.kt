@@ -136,12 +136,15 @@ class KernelFragment : Fragment() {
                             "EEE MMM dd, yyyy HH:mm:ss",
                             Locale.ENGLISH
                         ).parse(response.getString("builtAt"))
+                        val prevDate: Date = SimpleDateFormat(
+                            "EEE MMM dd, yyyy HH:mm:ss",
+                            Locale.ENGLISH
+                        ).parse(response.getString("prevDate"))
                         val latestFDate: String =
-                            SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH).format(
+                            SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).format(
                                 latestDate
                             )
                         val codeName = response.getString("codeName")
-                        val buildTDate = response.getString("buildDate")
                         val cafTag = response.getString("cafTag")
                         val linuxVersion = response.getString("linuxVersion")
                         val buildFdate = SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH).format(
@@ -149,35 +152,35 @@ class KernelFragment : Fragment() {
                         )
                         val editor = sp.edit()
 
-                        if (latestDate.after(buildDate)) {
+                        if (latestDate.after(prevDate)) {
                             editor.putString("codeName", codeName)
                             editor.putString("cafTag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)
-                            editor.putString("buildDate", latestFDate)
+                            editor.putString("buildDate", prevDate.toString())
                             editor.apply()
 
                             codeNameTv.text = codeName
                             cafTagTv.text = cafTag
                             linuxVersionTv.text = linuxVersion
-                            buildDateTv.text = buildTDate
+                            buildDateTv.text = prevDate.toString()
 
                             updateBuildDateTv.text = getString(R.string.build_at)+" $buildFdate"
                             updateBuildDateTv.visibility = View.VISIBLE
                             stopLoading(true, response.getString("downloadLink"))
                         } else {
                             stopLoading(false)
-                            if (!areStatsStored()) {
+
                                 editor.putString("codeName", codeName)
                                 editor.putString("cafTag", cafTag)
                                 editor.putString("linuxVersion", linuxVersion)
-                                editor.putString("buildDate", latestFDate)
+                                editor.putString("buildDate", prevDate.toString())
                                 editor.apply()
 
                                 codeNameTv.text = codeName
                                 cafTagTv.text = cafTag
                                 linuxVersionTv.text = linuxVersion
-                                buildDateTv.text = buildTDate
-                            }
+                                buildDateTv.text = prevDate.toString()
+
                         }
                     }
 
