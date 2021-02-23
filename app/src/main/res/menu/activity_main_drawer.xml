@@ -25,7 +25,13 @@
         <item
             android:id="@+id/nav_terminal"
             android:title="@string/menu_terminal" />
-
+        <item
+            android:id="@+id/nav_log"
+            android:title="@string/action_log" />
+    </group>
+    <group
+        android:id="@+id/group3"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/action_settings"
             android:title="@string/action_settings" />

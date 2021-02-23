@@ -13,6 +13,9 @@ open class Constants {
 
     companion object {
         const val SPLASH_TIME_OUT: Long = 1000 * 1 // 3 sec
+        const val HOST_REFERENCE = "https://raw.githubusercontent.com/CraftRom/KernelUpdates/android-10/host"
+        const val KERNEL_NAME = "Chidori"
+        const val CURRENT_YEAR = "2021"
 
         inline fun <reified T : Activity> changeActivity(activity: Activity) {
             val intent = Intent(activity, T::class.java)
@@ -28,7 +31,7 @@ open class Constants {
 
         fun showSnackbarK (view: View?, message: String?) {
             val snackbar = Snackbar.make(view!!, message!!, Snackbar.LENGTH_LONG)
-            snackbar.setAction(R.string.dismiss) { v -> snackbar.dismiss() }
+            snackbar.setAction(R.string.dismiss) { _ -> snackbar.dismiss() }
             snackbar.show()
         }
     }

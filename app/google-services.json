@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "516067548857",
+    "project_id": "craftrom-manager",
+    "storage_bucket": "craftrom-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516067548857:android:44a168f3660032ff088568",
+        "android_client_info": {
+          "package_name": "com.craftrom.manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516067548857-8dvskgcrlbb8hd9ojhqaqvlbeaa1st5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzr6JbRJPsWaWuB6h2cAED7wTkXnpTWV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516067548857-8dvskgcrlbb8hd9ojhqaqvlbeaa1st5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

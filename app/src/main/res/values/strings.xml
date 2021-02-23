@@ -42,6 +42,13 @@
     <string name="translations">Translations</string>
     <string name="translations_summary">Help me translate this app! Click here to go to the translation service.</string>
 
+    <!-- Title of the Log activity. -->
+    <string name="action_log" translatable="false">last_kmsg</string>
+    <string name="action_save">Save</string>
+    <string name="action_search">Search</string>
+    <string name="msg_pleaseWait">Please wait …</string>
+    <string name="msg_textHighlighted">Text highlighted in yellow</string>
+    <string name="msg_textNotFound">Nothing found</string>
 
     <string name="menu_about">About</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
@@ -76,4 +83,7 @@
 
     <string name="download" translatable="false">Download</string>
     <string name="module_version_author" translatable="false">%s by %s</string>
+    <string name="new_update">An update is available!</string>
+    <string name="build_at">Build at</string>
+    <string name="download_update">Download Update</string>
 </resources>

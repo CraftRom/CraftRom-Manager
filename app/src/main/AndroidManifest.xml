@@ -25,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CraftRomManager.NoActionBar"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:fullBackupContent="@xml/backup_descriptor"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".splash.SplashActivity"
             android:screenOrientation="portrait"
@@ -42,5 +43,6 @@
         <activity android:name=".activities.into.IntoFinalActivity"/>
         <activity android:name="MainActivity"/>
         <activity android:name=".activities.OSLActivity"/>
+        <activity android:name=".activities.LogActivity"/>
 </application>
 </manifest>

@@ -9,7 +9,7 @@
     <dimen name="overline">10sp</dimen>
     <dimen name="headline_6">20sp</dimen>
 
-    <dimen name="margin_generic">16dp</dimen>
+    <dimen name="margin_generic">7.5dp</dimen>
     <dimen name="no_card_elevation">0dp</dimen>
     <dimen name="l_125">2dp</dimen>
     <dimen name="l_25">4dp</dimen>

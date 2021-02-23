@@ -30,5 +30,10 @@
         android:name="com.craftrom.manager.fragments.terminal.TerminalFragment"
         android:label="@string/menu_terminal"
         tools:layout="@layout/fragment_terminal" />
+    <activity
+        android:id="@+id/nav_log"
+        android:name="com.craftrom.manager.activities.LogActivity"
+        android:label="@string/action_log"
+        tools:layout="@layout/log_layout"/>
 
 </navigation>
