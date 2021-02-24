@@ -77,13 +77,8 @@ class KernelFragment : Fragment() {
 
 
 
-        val buildDate: Date? = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(
-            kernelVersion.substring(
-                kernelVersion.lastIndexOf(
-                    "PREEMPT"
-                )
-            ).substring(12, 20) + " ${Constants.CURRENT_YEAR}"
-        )
+        val buildDate: Date  = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(kernelVersion.substring(kernelVersion.lastIndexOf("PREEMPT")).substring(12, 20)+ " ${Constants.CURRENT_YEAR}")
+
 
         AndroidNetworking
             .get(Constants.HOST_REFERENCE)
@@ -92,7 +87,7 @@ class KernelFragment : Fragment() {
             .getAsString(object : StringRequestListener {
                 override fun onResponse(response: String) {
                     host = response
-                    checkForUpdates(buildDate!!)
+                    checkForUpdates(buildDate)
                 }
 
                 override fun onError(anError: ANError?) {
@@ -132,55 +127,42 @@ class KernelFragment : Fragment() {
                 .getAsJSONObject(object : JSONObjectRequestListener {
                     @SuppressLint("SetTextI18n")
                     override fun onResponse(response: JSONObject) {
-                        val latestDate: Date = SimpleDateFormat(
-                            "EEE MMM dd, yyyy HH:mm:ss",
-                            Locale.ENGLISH
-                        ).parse(response.getString("builtAt"))
-                        val prevDate: Date = SimpleDateFormat(
-                            "EEE MMM dd, yyyy HH:mm:ss",
-                            Locale.ENGLISH
-                        ).parse(response.getString("prevDate"))
-                        val latestFDate: String =
-                            SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).format(
-                                latestDate
-                            )
+                        val latestBuidDate: Date = SimpleDateFormat("E MMM dd HH:mm:ss yyyy", Locale.ENGLISH).parse(response.getString("builtAt"))
+                        val latestDate: Date = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(response.getString("latestDate") + " ${Constants.CURRENT_YEAR}")
+                        val latestFDate = SimpleDateFormat("MMM d, HH:mm yyyy", Locale.ENGLISH).format(latestBuidDate)
                         val codeName = response.getString("codeName")
                         val cafTag = response.getString("cafTag")
                         val linuxVersion = response.getString("linuxVersion")
-                        val buildFdate = SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH).format(
-                            latestDate
-                        )
+                        val buildFdate = SimpleDateFormat("MMM d, HH:mm yyyy", Locale.ENGLISH).format(latestBuidDate)
                         val editor = sp.edit()
 
-                        if (latestDate.after(prevDate)) {
+                        if(latestDate.after(buildDate)){
                             editor.putString("codeName", codeName)
                             editor.putString("cafTag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)
-                            editor.putString("buildDate", prevDate.toString())
+                            editor.putString("buildDate", latestFDate)
                             editor.apply()
 
                             codeNameTv.text = codeName
                             cafTagTv.text = cafTag
                             linuxVersionTv.text = linuxVersion
-                            buildDateTv.text = prevDate.toString()
+                            buildDateTv.text = buildFdate
 
-                            updateBuildDateTv.text = getString(R.string.build_at)+" $buildFdate"
+                            updateBuildDateTv.text = "built at: $buildFdate"
                             updateBuildDateTv.visibility = View.VISIBLE
                             stopLoading(true, response.getString("downloadLink"))
                         } else {
                             stopLoading(false)
-
                                 editor.putString("codeName", codeName)
                                 editor.putString("cafTag", cafTag)
                                 editor.putString("linuxVersion", linuxVersion)
-                                editor.putString("buildDate", prevDate.toString())
+                                editor.putString("buildDate", latestFDate)
                                 editor.apply()
 
                                 codeNameTv.text = codeName
                                 cafTagTv.text = cafTag
                                 linuxVersionTv.text = linuxVersion
-                                buildDateTv.text = prevDate.toString()
-
+                                buildDateTv.text = latestFDate
                         }
                     }
 
@@ -223,7 +205,7 @@ class KernelFragment : Fragment() {
             versionString = Device.getKernelVersion(true)
         } else
         {
-            versionString = RootUtils.runCommand("uname -a").toString()
+            versionString = RootUtils.runCommand("uname -av").toString()
         }
 
         val kernelString = "<b> Kernel: </b>" + versionString

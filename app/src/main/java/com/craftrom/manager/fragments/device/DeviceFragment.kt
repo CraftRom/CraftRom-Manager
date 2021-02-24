@@ -15,6 +15,7 @@ import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.RSS.RssFeedFetcher
 import com.craftrom.manager.utils.RSS.RssItem
 import com.craftrom.manager.utils.device.CheckRoot.isDeviceRooted
+import com.craftrom.manager.utils.device.RomUtils
 import com.craftrom.manager.utils.dummy.DummyContent
 import com.craftrom.manager.utils.root.RootUtils
 import com.craftrom.manager.utils.storage.isDiskEncrypted
@@ -62,8 +63,8 @@ class DeviceFragment : Fragment(){
     @SuppressLint("SetTextI18n")
     private fun InitUI() {
         oem_name.text = Device.getVendor() + " " + Device.getModel()
+        rom.text = RomUtils.romInfo!!.name + " " + RomUtils.romInfo!!.version
         if (RootUtils.rootAccess()){
-            rom.text = "Null"
             if (isDiskEncrypted) {
                 disk_status.text = getString(R.string.disk_encrypted)
                 disk_status.setTextColor(resources.getColor(R.color.colorTrue))
@@ -74,9 +75,6 @@ class DeviceFragment : Fragment(){
         } else {
             disk_status.text = getString(R.string.disk_not_permission)
             disk_status.setTextColor(resources.getColor(R.color.colorPermission))
- //           rom.text = getString(R.string.disk_not_permission)
-            rom.text = "Null"
-            rom.setTextColor(resources.getColor(R.color.colorPermission))
         }
 
 

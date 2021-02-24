@@ -227,7 +227,6 @@ class RomUtils private constructor() {
          */
         val romInfo: RomInfo?
             get() {
-                if (bean != null) return bean
                 bean = RomInfo()
                 val brand = brand
                 val manufacturer = manufacturer
@@ -322,7 +321,7 @@ class RomUtils private constructor() {
 
         /**/
         private val manufacturer: String
-            private get() {
+            get() {
                 try {
                     val manufacturer = Build.MANUFACTURER
                     if (!TextUtils.isEmpty(manufacturer)) {
@@ -335,7 +334,7 @@ class RomUtils private constructor() {
 
         /**/
         private val brand: String
-            private get() {
+            get() {
                 try {
                     val brand = Build.BRAND
                     if (!TextUtils.isEmpty(brand)) {
