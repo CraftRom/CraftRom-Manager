@@ -19,6 +19,7 @@ import com.androidnetworking.interfaces.StringRequestListener
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.Device
+import com.craftrom.manager.utils.notification.NotificationUtils
 import com.craftrom.manager.utils.root.RootUtils
 import com.onesignal.OneSignal
 import com.topjohnwu.superuser.internal.Utils
@@ -119,7 +120,7 @@ class KernelFragment : Fragment() {
 
     private fun areStatsStored() = sp.getString("codeName", "rip") != "rip"
 
-    private fun checkForUpdates(buildDate: Date){
+    fun checkForUpdates(buildDate: Date){
         AndroidNetworking
                 .get("$host/kernel.json")
                 .doNotCacheResponse()
@@ -133,10 +134,11 @@ class KernelFragment : Fragment() {
                         val codeName = response.getString("codeName")
                         val cafTag = response.getString("cafTag")
                         val linuxVersion = response.getString("linuxVersion")
-                        val buildFdate = SimpleDateFormat("MMM d, HH:mm yyyy", Locale.ENGLISH).format(latestBuidDate)
+                        val buildFdate = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).format(latestDate)
                         val editor = sp.edit()
 
                         if(latestDate.after(buildDate)){
+                            NotificationUtils.notify(getString(R.string.new_update), getString(R.string.new_update_message) + " Cidori Kernel " + linuxVersion)
                             editor.putString("codeName", codeName)
                             editor.putString("cafTag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)

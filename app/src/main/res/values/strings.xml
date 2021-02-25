@@ -86,4 +86,6 @@
     <string name="new_update">An update is available!</string>
     <string name="build_at">Build at</string>
     <string name="download_update">Download Update</string>
+    <string name="new_update_message">New kernel version </string>
+
 </resources>
