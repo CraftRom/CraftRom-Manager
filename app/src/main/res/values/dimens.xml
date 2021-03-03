@@ -9,6 +9,11 @@
     <dimen name="overline">10sp</dimen>
     <dimen name="headline_6">20sp</dimen>
 
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_fab">16dp</dimen>
+    <dimen name="padding_text_icon">8dp</dimen>
+    <dimen name="text_size_fab">16sp</dimen>
+
     <dimen name="margin_generic">7.5dp</dimen>
     <dimen name="no_card_elevation">0dp</dimen>
     <dimen name="l_125">2dp</dimen>

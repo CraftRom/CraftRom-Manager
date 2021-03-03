@@ -12,6 +12,13 @@ import com.google.android.material.snackbar.Snackbar
 open class Constants {
 
     companion object {
+
+        const val PREF_AUTO_UPDATES_CHECK_INTERVAL = "auto_updates_check_interval"
+        const val AUTO_UPDATES_CHECK_INTERVAL_NEVER = 0
+        const val AUTO_UPDATES_CHECK_INTERVAL_DAILY = 1
+        const val AUTO_UPDATES_CHECK_INTERVAL_WEEKLY = 2
+        const val AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3
+
         const val SPLASH_TIME_OUT: Long = 1000 * 1 // 3 sec
         const val HOST_REFERENCE = "https://raw.githubusercontent.com/CraftRom/KernelUpdates/android-10/host"
         const val KERNEL_NAME = "Chidori"
@@ -29,7 +36,7 @@ open class Constants {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show()
         }
 
-        fun showSnackbarK (view: View?, message: String?) {
+        fun showSnackbarK(view: View?, message: String?) {
             val snackbar = Snackbar.make(view!!, message!!, Snackbar.LENGTH_LONG)
             snackbar.setAction(R.string.dismiss) { _ -> snackbar.dismiss() }
             snackbar.show()

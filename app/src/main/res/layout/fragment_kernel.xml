@@ -209,203 +209,229 @@
             </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
-                android:id="@+id/kernel_version"
-                style="@style/WidgetFoundation.Card.Elevated"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_generic"
-                android:layout_marginEnd="@dimen/margin_generic"
-                app:cardBackgroundColor="?android:attr/colorBackground"
-                app:cardElevation="@dimen/no_card_elevation"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                app:contentPadding="16dp"
-                app:strokeColor="@color/colorStroke"
-                app:strokeWidth="@dimen/cardStrokeWidth">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/codename"
+                        android:id="@+id/kernel_version"
+                        style="@style/WidgetFoundation.Card.Elevated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/fab_margin"
-                        android:layout_marginEnd="@dimen/fab_margin"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        android:layout_marginStart="@dimen/margin_generic"
+                        android:layout_marginEnd="@dimen/margin_generic"
+                        app:cardBackgroundColor="?android:attr/colorBackground"
+                        app:cardElevation="@dimen/no_card_elevation"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:contentPadding="16dp"
+                        app:strokeColor="@color/colorStroke"
+                        app:strokeWidth="@dimen/cardStrokeWidth">
 
-                        <TextView
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="codename: "
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:id="@+id/layout_update_info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fab_margin"
+                                android:layout_marginEnd="@dimen/fab_margin"
+                                android:orientation="horizontal"
+                                android:textAlignment="center"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
 
-                        <TextView
-                            android:id="@+id/codeNameTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Loading..."
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp" />
+                            <TextView
+                                android:id="@+id/update_info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/update_info"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                android:textSize="8sp"
+                                android:layout_marginBottom="6dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SmallSp" />
+                            </LinearLayout>
 
-                    </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/codename"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fab_margin"
+                                android:layout_marginEnd="@dimen/fab_margin"
+                                android:orientation="horizontal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/layout_update_info">
 
-                    <LinearLayout
-                        android:id="@+id/caf"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/fab_margin"
-                        android:layout_marginEnd="@dimen/fab_margin"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/codename">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:text="codename: "
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="caf tag: "
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/codeNameTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Loading..."
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
 
-                        <TextView
-                            android:id="@+id/cafTagTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Loading..."
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp" />
+                            </LinearLayout>
 
-                    </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/caf"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fab_margin"
+                                android:layout_marginEnd="@dimen/fab_margin"
+                                android:orientation="horizontal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/codename">
 
-                    <LinearLayout
-                        android:id="@+id/date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/fab_margin"
-                        android:layout_marginEnd="@dimen/fab_margin"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/caf">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:text="caf tag: "
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="date: "
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/cafTagTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Loading..."
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
 
-                        <TextView
-                            android:id="@+id/buildDateTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Loading..."
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp" />
+                            </LinearLayout>
 
-                    </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fab_margin"
+                                android:layout_marginEnd="@dimen/fab_margin"
+                                android:orientation="horizontal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/caf">
 
-                    <LinearLayout
-                        android:id="@+id/linux"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/fab_margin"
-                        android:layout_marginEnd="@dimen/fab_margin"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/date">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:text="date: "
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="linux: "
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/buildDateTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Loading..."
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
 
-                        <TextView
-                            android:id="@+id/linuxVersionTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Loading..."
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp" />
+                            </LinearLayout>
 
-                    </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/linux"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fab_margin"
+                                android:layout_marginEnd="@dimen/fab_margin"
+                                android:orientation="horizontal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/date">
 
-                    <LinearLayout
-                        android:id="@+id/build"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/fab_margin"
-                        android:layout_marginEnd="@dimen/fab_margin"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/linux">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:text="linux: "
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="build: "
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/linuxVersionTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Loading..."
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="nightly"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp" />
+                            </LinearLayout>
 
-                    </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/build"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fab_margin"
+                                android:layout_marginEnd="@dimen/fab_margin"
+                                android:orientation="horizontal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/linux">
 
-                    <LinearLayout
-                        android:id="@+id/device"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/fab_margin"
-                        android:layout_marginEnd="@dimen/fab_margin"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/build">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:text="build: "
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:text="device: "
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="nightly"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="onclite"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="13sp" />
+                            </LinearLayout>
 
-                    </LinearLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.card.MaterialCardView>
+                            <LinearLayout
+                                android:id="@+id/device"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fab_margin"
+                                android:layout_marginEnd="@dimen/fab_margin"
+                                android:orientation="horizontal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/build">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:text="device: "
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="onclite"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
@@ -414,5 +440,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

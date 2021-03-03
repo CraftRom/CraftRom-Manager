@@ -1,4 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Directory where the update files will be downloaded and stored.
+     WARNING: The application can and will delete any unknown file. -->
+    <string name="download_path_chidori" translatable="false">/data/chidori_updates/</string>
+    <!--
+       Optional placeholders replaced at runtime:
+         {device} - Device name
+         {android}, {android_mini} - Android Version
+         {date} - Date
+   -->
+    <string name="updater_server_url" translatable="false">https://netactuate.dl.sourceforge.net/project/exodusos/Chidori%20Kernel/{device}/{android}/Chidori-Kernel-{android_mini}-{device}-{date}.zip</string>
     <string name="app_name" translatable="false">Craft Rom - Manager</string>
     <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
     <string name="copyright" translatable="false">© 2020-2021 All Right Reserved.</string>
@@ -87,5 +97,8 @@
     <string name="build_at">Build at</string>
     <string name="download_update">Download Update</string>
     <string name="new_update_message">New kernel version </string>
+    <string name="update_info">Сlick to check for updates</string>
+
+
 
 </resources>

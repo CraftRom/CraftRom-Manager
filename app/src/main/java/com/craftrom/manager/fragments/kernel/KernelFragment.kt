@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
@@ -43,6 +44,7 @@ class KernelFragment : Fragment() {
     lateinit var host: String
     var sp = Utils.context.getSharedPreferences("com.craftrom.manager", Context.MODE_PRIVATE)
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,8 +52,23 @@ class KernelFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_kernel, container, false)
         kernel_name = root.findViewById(R.id.kernel_name)
-
+        val checkUpdate = root.findViewById<CardView>(R.id.kernel_version)
+        val kernelVersion = readKernelVersion()
+        val buildDate: Date  = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(
+            kernelVersion.substring(
+                kernelVersion.lastIndexOf(
+                    "PREEMPT"
+                )
+            ).substring(12, 20) + " ${Constants.CURRENT_YEAR}"
+        )
         InitUI()
+
+        checkUpdate.setOnClickListener(View.OnClickListener {
+            content.visibility = View.GONE
+            loader.visibility = View.VISIBLE
+
+            checkForUpdates(buildDate)
+        })
 
         AndroidNetworking.initialize(context)
 
@@ -73,13 +90,6 @@ class KernelFragment : Fragment() {
                     )
                 ).build()
         )
-
-        val kernelVersion = readKernelVersion()
-
-
-
-        val buildDate: Date  = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(kernelVersion.substring(kernelVersion.lastIndexOf("PREEMPT")).substring(12, 20)+ " ${Constants.CURRENT_YEAR}")
-
 
         AndroidNetworking
             .get(Constants.HOST_REFERENCE)
@@ -105,7 +115,6 @@ class KernelFragment : Fragment() {
 
         private fun stopLoading(updateAvailable: Boolean, downloadLink: String = ""){
         loader.visibility = View.GONE
-
         if(updateAvailable){
             updateStatusImg.setImageDrawable(this.requireContext().getDrawable(R.drawable.crossfix))
             updateStatusTv.text = getString(R.string.new_update)
@@ -128,17 +137,33 @@ class KernelFragment : Fragment() {
                 .getAsJSONObject(object : JSONObjectRequestListener {
                     @SuppressLint("SetTextI18n")
                     override fun onResponse(response: JSONObject) {
-                        val latestBuidDate: Date = SimpleDateFormat("E MMM dd HH:mm:ss yyyy", Locale.ENGLISH).parse(response.getString("builtAt"))
-                        val latestDate: Date = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(response.getString("latestDate") + " ${Constants.CURRENT_YEAR}")
-                        val latestFDate = SimpleDateFormat("MMM d, HH:mm yyyy", Locale.ENGLISH).format(latestBuidDate)
+                        val latestBuidDate: Date = SimpleDateFormat(
+                            "E MMM dd HH:mm:ss yyyy",
+                            Locale.ENGLISH
+                        ).parse(response.getString("builtAt"))
+                        val latestDate: Date =
+                            SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(
+                                response.getString(
+                                    "latestDate"
+                                ) + " ${Constants.CURRENT_YEAR}"
+                            )
+                        val latestFDate =
+                            SimpleDateFormat("MMM d, HH:mm yyyy", Locale.ENGLISH).format(
+                                latestBuidDate
+                            )
                         val codeName = response.getString("codeName")
                         val cafTag = response.getString("cafTag")
                         val linuxVersion = response.getString("linuxVersion")
-                        val buildFdate = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).format(latestDate)
+                        val buildFdate = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).format(
+                            latestDate
+                        )
                         val editor = sp.edit()
 
-                        if(latestDate.after(buildDate)){
-                            NotificationUtils.notify(getString(R.string.new_update), getString(R.string.new_update_message) + " Cidori Kernel " + linuxVersion)
+                        if (latestDate.after(buildDate)) {
+                            NotificationUtils.notify(
+                                getString(R.string.new_update),
+                                getString(R.string.new_update_message) + " Cidori Kernel " + linuxVersion
+                            )
                             editor.putString("codeName", codeName)
                             editor.putString("cafTag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)
@@ -155,16 +180,16 @@ class KernelFragment : Fragment() {
                             stopLoading(true, response.getString("downloadLink"))
                         } else {
                             stopLoading(false)
-                                editor.putString("codeName", codeName)
-                                editor.putString("cafTag", cafTag)
-                                editor.putString("linuxVersion", linuxVersion)
-                                editor.putString("buildDate", latestFDate)
-                                editor.apply()
+                            editor.putString("codeName", codeName)
+                            editor.putString("cafTag", cafTag)
+                            editor.putString("linuxVersion", linuxVersion)
+                            editor.putString("buildDate", latestFDate)
+                            editor.apply()
 
-                                codeNameTv.text = codeName
-                                cafTagTv.text = cafTag
-                                linuxVersionTv.text = linuxVersion
-                                buildDateTv.text = latestFDate
+                            codeNameTv.text = codeName
+                            cafTagTv.text = cafTag
+                            linuxVersionTv.text = linuxVersion
+                            buildDateTv.text = latestFDate
                         }
                     }
 
