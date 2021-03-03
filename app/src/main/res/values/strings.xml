@@ -98,7 +98,7 @@
     <string name="download_update">Download Update</string>
     <string name="new_update_message">New kernel version </string>
     <string name="update_info">Сlick to check for updates</string>
-
-
+    <string name="update_status">Latest version is installed!</string>
+    <string name="device_not_support">This device is not supported!</string>
 
 </resources>

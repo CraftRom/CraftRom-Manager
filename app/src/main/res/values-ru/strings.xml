@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Directory where the update files will be downloaded and stored.
+     WARNING: The application can and will delete any unknown file. -->
+    <!--
+       Optional placeholders replaced at runtime:
+         {device} - Device name
+         {android}, {android_mini} - Android Version
+         {date} - Date
+   -->
     <string name="text_logo">Отладка кода похожа на охоту. Охоту на баги.</string>
     <string name="app_name_version">%s версия: %s </string>
     <string name="navigation_drawer_open">Открыть боковое меню</string>
@@ -32,6 +40,12 @@
     <string name="stop_command_question">Остановить выполнение \'%s\' &amp; выйти из Терминала?</string>
     <string name="translations">Локализация</string>
     <string name="translations_summary">Помогите мне перевести это приложение! Нажмите здесь, чтобы перейти к сервису перевода.</string>
+    <!-- Title of the Log activity. -->
+    <string name="action_save">Сохранить</string>
+    <string name="action_search">Поиск</string>
+    <string name="msg_pleaseWait">Подождите…</string>
+    <string name="msg_textHighlighted">Текст выделен желтым</string>
+    <string name="msg_textNotFound">Ничего не найдено</string>
     <string name="menu_about">О программе</string>
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
     <string name="opn_src_txt">Лицензии открытого ПО</string>
@@ -53,4 +67,11 @@
     <string name="disk_not_encrypted">Не зашифровано</string>
     <string name="disk_not_permission">Недостаточно прав</string>
     <string name="disk_encrypted">Зашифрованный</string>
+    <string name="new_update">Доступно обновление!</string>
+    <string name="build_at">Дата сборки</string>
+    <string name="download_update">Скачать обновление</string>
+    <string name="new_update_message">Новая версия ядра </string>
+    <string name="update_info">Нажмите для проверки обновления</string>
+    <string name="update_status">Установлена последняя версия!</string>
+    <string name="device_not_support">Это устройство не поддерживается!</string>
 </resources>

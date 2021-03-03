@@ -42,6 +42,7 @@ class KernelFragment : Fragment() {
 
     private lateinit var  kernel_name: TextView
     lateinit var host: String
+    lateinit var device: String
     var sp = Utils.context.getSharedPreferences("com.craftrom.manager", Context.MODE_PRIVATE)
 
 
@@ -52,7 +53,7 @@ class KernelFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_kernel, container, false)
         kernel_name = root.findViewById(R.id.kernel_name)
-        val checkUpdate = root.findViewById<CardView>(R.id.kernel_version)
+        val checkUpdate: CardView = root.findViewById(R.id.kernel_version)
         val kernelVersion = readKernelVersion()
         val buildDate: Date  = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(
             kernelVersion.substring(
@@ -98,6 +99,7 @@ class KernelFragment : Fragment() {
             .getAsString(object : StringRequestListener {
                 override fun onResponse(response: String) {
                     host = response
+                    device  = Device.getDeviceName().toString()
                     checkForUpdates(buildDate)
                 }
 
@@ -110,6 +112,7 @@ class KernelFragment : Fragment() {
                     finish
                 }
             })
+
         return root
     }
 
@@ -131,7 +134,7 @@ class KernelFragment : Fragment() {
 
     fun checkForUpdates(buildDate: Date){
         AndroidNetworking
-                .get("$host/kernel.json")
+                .get("$host/$device.json")
                 .doNotCacheResponse()
                 .build()
                 .getAsJSONObject(object : JSONObjectRequestListener {
@@ -194,13 +197,19 @@ class KernelFragment : Fragment() {
                     }
 
                     override fun onError(anError: ANError?) {
+                        kernel_version.visibility = View.GONE
+                        loader.visibility = View.GONE
+                        updateStatusImg.setImageDrawable(context?.getDrawable(R.drawable.warn))
+                        updateStatusTv.text = getString(R.string.device_not_support)
+                        content.visibility = View.VISIBLE
                         Toast.makeText(
                             context,
-                            "Please check your internet connection! ${anError?.errorDetail.toString()}",
+                            getString(R.string.device_not_support) + device,
                             Toast.LENGTH_LONG
                         ).show()
+
                         finish
-                    }
+                       }
                 })
     }
 

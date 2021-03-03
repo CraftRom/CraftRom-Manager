@@ -100,7 +100,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="Latest version is installed!"
+                        android:text="@string/update_status"
                         android:textColor="#fbfbfb"
                         android:textSize="18.5sp"
                         tools:ignore="MissingPrefix" />
@@ -247,7 +247,7 @@
                                 android:textAlignment="center"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                                 android:textSize="10sp"
-                                android:textColor="#B6B6B6"
+                                android:textColor="@color/colorPermission"
                                 android:layout_marginBottom="6dp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Directory where the update files will be downloaded and stored.
+     WARNING: The application can and will delete any unknown file. -->
+    <!--
+       Optional placeholders replaced at runtime:
+         {device} - Device name
+         {android}, {android_mini} - Android Version
+         {date} - Date
+   -->
     <string name="text_logo">Код налагодження подібний полюванню. Полюванню на помилки.</string>
     <string name="app_name_version">%s версія: %s </string>
     <string name="navigation_drawer_open">Відкрити панель навігації</string>
@@ -32,6 +40,12 @@
     <string name="stop_command_question">Зупинити виконання \'%s &amp; вийти з терміналу?</string>
     <string name="translations">Переклад</string>
     <string name="translations_summary">Допоможіть мені перекласти цю програму! Натисніть тут, щоб перейти до сервісу перекладу.</string>
+    <!-- Title of the Log activity. -->
+    <string name="action_save">Зберегти</string>
+    <string name="action_search">Пошук</string>
+    <string name="msg_pleaseWait">Будь ласка, зачекайте…</string>
+    <string name="msg_textHighlighted">Виділений текст жовтим</string>
+    <string name="msg_textNotFound">Нічого не знайдено</string>
     <string name="menu_about">Про додаток</string>
     <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
     <string name="opn_src_txt">Ліцензії Open Source</string>
@@ -53,4 +67,11 @@
     <string name="disk_not_encrypted">Не зашифровано</string>
     <string name="disk_not_permission">Недостатньо прав</string>
     <string name="disk_encrypted">Зашифровано</string>
+    <string name="new_update">Доступно оновлення!</string>
+    <string name="build_at">Дата збірки</string>
+    <string name="download_update">Завантажити оновлення</string>
+    <string name="new_update_message">Нова версія ядра </string>
+    <string name="update_info">Помилка перевірки оновлень</string>
+    <string name="update_status">Встановлена остання версія!</string>
+    <string name="device_not_support">Цей пристрій не підтримується!</string>
 </resources>
