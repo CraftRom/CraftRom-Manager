@@ -54,7 +54,9 @@ class DeviceFragment : Fragment(){
         rom = root.findViewById(R.id.rom)
         android_version = root.findViewById(R.id.android_version)
         listV = root.findViewById(R.id.listV)
-
+        arguments?.let {
+            columnCount = it.getInt(ARG_COLUMN_COUNT)
+        }
         InitUI()
         return root
     }
@@ -97,6 +99,7 @@ class DeviceFragment : Fragment(){
         adapter = RssItemRecyclerViewAdapter(rssItems, listener, activity)
         listV?.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         listV?.adapter = adapter
+        adapter!!.notifyDataSetChanged()
 
         val url = URL(RSS_FEED_LINK)
         RssFeedFetcher(this).execute(url)
@@ -106,6 +109,7 @@ class DeviceFragment : Fragment(){
 
     fun updateRV(rssItemsL: List<RssItem>) {
         if (rssItemsL.isNotEmpty()) {
+            rssItems.clear()
             rssItems.addAll(rssItemsL)
             adapter?.notifyDataSetChanged()
         }
@@ -114,5 +118,20 @@ class DeviceFragment : Fragment(){
 
     interface OnListFragmentInteractionListener {
         fun onListFragmentInteraction(item: DummyContent.DummyItem)
+    }
+
+    companion object {
+
+        // TODO: Customize parameter argument names
+        const val ARG_COLUMN_COUNT = "column-count"
+
+        // TODO: Customize parameter initialization
+        @JvmStatic
+        fun newInstance(columnCount: Int) =
+            DeviceFragment().apply {
+                arguments = Bundle().apply {
+                    putInt(ARG_COLUMN_COUNT, columnCount)
+                }
+            }
     }
 }

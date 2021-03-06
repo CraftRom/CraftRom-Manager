@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.adapter.ModuleItemRecyclerViewAdapter
+import com.craftrom.manager.fragments.device.DeviceFragment
 import com.craftrom.manager.utils.dummy.DummyContent
 import com.craftrom.manager.utils.module.ModuleFeedFetcher
 import com.craftrom.manager.utils.module.ModuleItem
@@ -34,6 +35,9 @@ class ModuleFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_module, container, false)
         listV = root.findViewById(R.id.listV)
+        arguments?.let {
+            columnCount = it.getInt(DeviceFragment.ARG_COLUMN_COUNT)
+        }
         return root
     }
     @Suppress("DEPRECATION")
@@ -43,6 +47,7 @@ class ModuleFragment : Fragment() {
         adapter = ModuleItemRecyclerViewAdapter(moduleItems, listener, activity)
         listV?.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         listV?.adapter = adapter
+        adapter!!.notifyDataSetChanged()
 
         val url = URL(RSS_FEED_LINK)
         ModuleFeedFetcher(this).execute(url)
@@ -52,6 +57,7 @@ class ModuleFragment : Fragment() {
 
     fun updateRV(rssItemsL: List<ModuleItem>) {
         if (rssItemsL.isNotEmpty()) {
+            moduleItems.clear()
             moduleItems.addAll(rssItemsL)
             adapter?.notifyDataSetChanged()
         }
@@ -61,4 +67,20 @@ class ModuleFragment : Fragment() {
     interface OnListFragmentInteractionListener {
         fun onListFragmentInteraction(item: DummyContent.DummyItem)
     }
+
+    companion object {
+
+        // TODO: Customize parameter argument names
+        const val ARG_COLUMN_COUNT = "column-count"
+
+        // TODO: Customize parameter initialization
+        @JvmStatic
+        fun newInstance(columnCount: Int) =
+            DeviceFragment().apply {
+                arguments = Bundle().apply {
+                    putInt(ARG_COLUMN_COUNT, columnCount)
+                }
+            }
+    }
+
 }
