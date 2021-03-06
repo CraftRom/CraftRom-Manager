@@ -122,12 +122,13 @@ class KernelFragment : Fragment() {
             updateStatusImg.setImageDrawable(this.requireContext().getDrawable(R.drawable.crossfix))
             updateStatusTv.text = getString(R.string.new_update)
             updateButton.visibility = View.VISIBLE
+            changelog.visibility = View.VISIBLE
             updateButton.setOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(downloadLink)))
             }
         }
+            content.visibility = View.VISIBLE
 
-        content.visibility = View.VISIBLE
     }
 
     private fun areStatsStored() = sp.getString("codeName", "rip") != "rip"
@@ -157,6 +158,7 @@ class KernelFragment : Fragment() {
                         val codeName = response.getString("codeName")
                         val cafTag = response.getString("cafTag")
                         val linuxVersion = response.getString("linuxVersion")
+                        val changelog = response.getString("changelog")
                         val buildFdate = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).format(
                             latestDate
                         )
@@ -171,12 +173,14 @@ class KernelFragment : Fragment() {
                             editor.putString("cafTag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)
                             editor.putString("buildDate", latestFDate)
+                            editor.putString("changelog", changelog)
                             editor.apply()
 
                             codeNameTv.text = codeName
                             cafTagTv.text = cafTag
                             linuxVersionTv.text = linuxVersion
                             buildDateTv.text = buildFdate
+                            changelogText.text= changelog
 
                             updateBuildDateTv.text = "built at: $buildFdate"
                             updateBuildDateTv.visibility = View.VISIBLE

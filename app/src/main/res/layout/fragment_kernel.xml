@@ -146,67 +146,92 @@
                     android:orientation="vertical" >
 
                     <com.google.android.material.card.MaterialCardView
-                android:id="@+id/kernel_card"
-                style="@style/WidgetFoundation.Card.Elevated"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_generic"
-                android:layout_marginEnd="@dimen/margin_generic"
-                app:cardBackgroundColor="?android:attr/colorBackground"
-                app:cardElevation="@dimen/no_card_elevation"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                app:contentPadding="16dp"
-                app:strokeColor="@color/colorStroke"
-                app:strokeWidth="@dimen/cardStrokeWidth">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
+                        android:id="@+id/changelog"
+                        style="@style/WidgetFoundation.Card.Elevated"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:baselineAligned="false"
-                        android:weightSum="6">
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_generic"
+                        android:layout_marginEnd="@dimen/margin_generic"
+                        app:cardBackgroundColor="?android:attr/colorBackground"
+                        app:cardElevation="@dimen/no_card_elevation"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="16dp"
+                        app:strokeColor="@color/colorStroke"
+                        app:strokeWidth="@dimen/cardStrokeWidth"
+                        android:visibility="gone">
 
-                        <RelativeLayout
+                        <TextView
+                            android:id="@+id/changelogText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/kernel_card"
+                        style="@style/WidgetFoundation.Card.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_generic"
+                        android:layout_marginEnd="@dimen/margin_generic"
+                        app:cardBackgroundColor="?android:attr/colorBackground"
+                        app:cardElevation="@dimen/no_card_elevation"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="16dp"
+                        app:strokeColor="@color/colorStroke"
+                        app:strokeWidth="@dimen/cardStrokeWidth">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="5">
+                            android:layout_height="wrap_content">
 
-                            <ImageView
-                                android:id="@+id/logo"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginTop="6dp"
-                                android:contentDescription="@string/todo"
-                                android:src="@drawable/linux" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:baselineAligned="false"
+                                android:weightSum="6">
 
-                        </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="5">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                                    <ImageView
+                                        android:id="@+id/logo"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="6dp"
+                                        android:contentDescription="@string/todo"
+                                        android:src="@drawable/linux" />
 
-                            <TextView
-                                android:id="@+id/kernel_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                                android:textSize="13sp" />
+                                </RelativeLayout>
 
-                        </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
-                    </LinearLayout>
+                                    <TextView
+                                        android:id="@+id/kernel_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                        android:textSize="13sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
 
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/kernel_version"
