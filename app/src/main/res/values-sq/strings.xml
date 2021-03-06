@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
-    <string name="app_name_version">%s version: %s </string>
+    <!-- Directory where the update files will be downloaded and stored.
+     WARNING: The application can and will delete any unknown file. -->
+    <!--
+       Optional placeholders replaced at runtime:
+         {device} - Device name
+         {android}, {android_mini} - Android Version
+         {date} - Date
+   -->
+    <string name="text_logo">Kodi i korrigjimit të gabimeve është si gjuetia. Gjuetia e gabimeve.</string>
+    <string name="app_name_version">%s versioni: %s </string>
     <string name="navigation_drawer_open">Hap sirtarin e navigimit</string>
     <string name="navigation_drawer_close">Mbyll sirtarin e navigimit</string>
     <string name="nav_header_subtitle">Çdo gjë që mund të shkojë keq tashmë ka shkuar keq.</string>
@@ -32,6 +40,12 @@
     <string name="stop_command_question">Ndaloni ekzekutimin \'%s\' &amp; dil nga Terminal?</string>
     <string name="translations">Përkëthimet</string>
     <string name="translations_summary">Më ndihmo ta përkthej këtë aplikacion!  Klikoni këtu për të shkuar te shërbimi i përkthimit.</string>
+    <!-- Title of the Log activity. -->
+    <string name="action_save">Ruaj</string>
+    <string name="action_search">Kërko</string>
+    <string name="msg_pleaseWait">Ju lutem prisni…</string>
+    <string name="msg_textHighlighted">Teksti i theksuar në të verdhë</string>
+    <string name="msg_textNotFound">Nuk u gjet gjë</string>
     <string name="menu_about">Rreth</string>
     <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
     <string name="opn_src_txt">Licencat me burim të hapur</string>
@@ -53,4 +67,11 @@
     <string name="disk_not_encrypted">Nuk është e koduar</string>
     <string name="disk_not_permission">S\'ka lejë</string>
     <string name="disk_encrypted">E kodifikuar</string>
+    <string name="new_update">Një përditësim është në disponim!</string>
+    <string name="build_at">Ndërtuar në</string>
+    <string name="download_update">Shkarko përditësimin</string>
+    <string name="new_update_message">Version i ri i kernelit </string>
+    <string name="update_info">Kliko këtu për të kontrolluar për përditësime</string>
+    <string name="update_status">Versioni i fundit është instaluar!</string>
+    <string name="device_not_support">Kjo pajisje nuk mbështetet!</string>
 </resources>
