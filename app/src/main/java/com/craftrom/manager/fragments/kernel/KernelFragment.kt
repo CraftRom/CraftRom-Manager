@@ -43,6 +43,7 @@ class KernelFragment : Fragment() {
     private lateinit var  kernel_name: TextView
     lateinit var host: String
     lateinit var device: String
+    lateinit var android: String
     var sp = Utils.context.getSharedPreferences("com.craftrom.manager", Context.MODE_PRIVATE)
 
 
@@ -100,6 +101,8 @@ class KernelFragment : Fragment() {
                 override fun onResponse(response: String) {
                     host = response
                     device  = Device.getDeviceName().toString()
+                    android = Device.getVersion().toString()
+
                     checkForUpdates(buildDate)
                 }
 
@@ -124,7 +127,7 @@ class KernelFragment : Fragment() {
             updateButton.visibility = View.VISIBLE
             changelog.visibility = View.VISIBLE
             updateButton.setOnClickListener {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(downloadLink)))
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(downloadLink + "$device/android-$android")))
             }
         }
             content.visibility = View.VISIBLE
