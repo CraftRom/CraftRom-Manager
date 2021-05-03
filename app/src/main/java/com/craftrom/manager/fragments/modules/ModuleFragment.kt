@@ -20,7 +20,7 @@ class ModuleFragment : Fragment() {
     // TODO: Customize parameters
     private var columnCount = 1
     private var listener: ModuleFragment.OnListFragmentInteractionListener? = null
-    private val RSS_FEED_LINK = "https://raw.githubusercontent.com/CraftRom/KernelUpdates/android-10/modules.xml"
+    private val RSS_FEED_LINK = "https://raw.githubusercontent.com/CraftRom/host_updater/android-10/modules.xml"
     var adapter: ModuleItemRecyclerViewAdapter? = null
     var moduleItems = ArrayList<ModuleItem>()
     var listV: RecyclerView?= null

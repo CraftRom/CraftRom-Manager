@@ -14,8 +14,6 @@ import com.craftrom.manager.adapter.RssItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.RSS.RssFeedFetcher
 import com.craftrom.manager.utils.RSS.RssItem
-import com.craftrom.manager.utils.device.CheckRoot.isDeviceRooted
-import com.craftrom.manager.utils.device.RomUtils
 import com.craftrom.manager.utils.dummy.DummyContent
 import com.craftrom.manager.utils.root.RootUtils
 import com.craftrom.manager.utils.storage.isDiskEncrypted
@@ -24,10 +22,8 @@ import java.net.URL
 class DeviceFragment : Fragment(){
     private lateinit var  oem_name: TextView
     private lateinit var disk_status: TextView
-    private lateinit var root_status: TextView
     private lateinit var magisk_status: TextView
     private lateinit var android_codename: TextView
-    private lateinit var rom: TextView
     private lateinit var android_version: TextView
 
     // TODO: Customize parameters
@@ -49,9 +45,7 @@ class DeviceFragment : Fragment(){
         val root = inflater.inflate(R.layout.fragment_device, container, false)
         oem_name = root.findViewById(R.id.oem_name)
         disk_status = root.findViewById(R.id.disk_status)
-        root_status = root.findViewById(R.id.root_status)
         android_codename = root.findViewById(R.id.android_codename)
-        rom = root.findViewById(R.id.rom)
         android_version = root.findViewById(R.id.android_version)
         listV = root.findViewById(R.id.listV)
         arguments?.let {
@@ -65,7 +59,6 @@ class DeviceFragment : Fragment(){
     @SuppressLint("SetTextI18n")
     private fun InitUI() {
         oem_name.text = Device.getVendor() + " " + Device.getModel()
-        rom.text = RomUtils.romInfo!!.name + " " + RomUtils.romInfo!!.version
         if (RootUtils.rootAccess()){
             if (isDiskEncrypted) {
                 disk_status.text = getString(R.string.disk_encrypted)
@@ -79,14 +72,6 @@ class DeviceFragment : Fragment(){
             disk_status.setTextColor(resources.getColor(R.color.colorPermission))
         }
 
-
-        if (isDeviceRooted()) {
-            root_status.text = getString(R.string.device_rooted)
-            root_status.setTextColor(resources.getColor(R.color.colorTrue))
-        } else {
-            root_status.text = getString(R.string.device_not_rooted)
-            root_status.setTextColor(resources.getColor(R.color.colorFalse))
-        }
         android_codename.text  = Device.getDeviceName()
         android_version.text = Device.getVersion()
 

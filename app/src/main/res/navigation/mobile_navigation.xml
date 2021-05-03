@@ -25,6 +25,11 @@
             app:destination="@id/nav_about"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_nav_device_to_nav_setting"
+            app:destination="@id/nav_setting"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/nav_kernel"
@@ -41,6 +46,11 @@
             app:destination="@id/nav_about"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_nav_kernel_to_nav_setting"
+            app:destination="@id/nav_setting"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/nav_module"
@@ -50,6 +60,11 @@
         <action
             android:id="@+id/action_nav_module_to_nav_about"
             app:destination="@id/nav_about"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_nav_module_to_nav_setting"
+            app:destination="@id/nav_setting"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out" />
     </fragment>
@@ -68,5 +83,16 @@
         android:name="com.craftrom.manager.activities.LogActivity"
         android:label="@string/action_log"
         tools:layout="@layout/log_layout"/>
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.craftrom.manager.fragments.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_nav_module_to_nav_about"
+            app:destination="@id/nav_about"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
 
 </navigation>

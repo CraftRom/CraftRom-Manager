@@ -17,7 +17,7 @@
     <string name="action_settings">Настройки</string>
     <string name="menu_device">Устройство</string>
     <string name="welcome">Выполнение задачи всегда занимает больше времени, чем ожидалось, даже если вы учли закон Хофстадера.</string>
-    <string name="welc_kernel">Ядро с отличной оптимизацией и равновесием работы до автономии.</string>
+    <string name="welc_kernel">Ядро с отличной оптимизацией и автономнистью.</string>
     <string name="welc_module">Список полезных модулей для всех случаев.</string>
     <!-- Into -->
     <string name="next">След</string>
@@ -63,7 +63,7 @@
     <string name="magisk_status">Статус Magisk</string>
     <string name="magisk_not_detected">Magisk отсутствует</string>
     <string name="magisk_detected">Определено автоматически</string>
-    <string name="disk_status">Статус диска</string>
+    <string name="disk_status">Статус /data</string>
     <string name="disk_not_encrypted">Не зашифровано</string>
     <string name="disk_not_permission">Недостаточно прав</string>
     <string name="disk_encrypted">Зашифрованный</string>

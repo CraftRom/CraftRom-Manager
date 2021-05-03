@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Directory where the update files will be downloaded and stored.
+     WARNING: The application can and will delete any unknown file. -->
+    <!--
+       Optional placeholders replaced at runtime:
+         {device} - Device name
+         {android}, {android_mini} - Android Version
+         {date} - Date
+   -->
+    <string name="text_logo">O código de depuração é como uma caça. caçada aos bugs.</string>
+    <string name="app_name_version">%s versão: %s </string>
+    <string name="navigation_drawer_open">Abrir painel de navegação</string>
+    <string name="navigation_drawer_close">Fechar painel de navegação</string>
+    <string name="nav_header_subtitle">Tudo o que puder dar errado já deu errado.</string>
+    <string name="nav_header_desc">Barra de navegação</string>
+    <string name="action_settings">Configurações</string>
+    <string name="menu_device">Dispositivo</string>
+    <string name="welcome">A tarefa sempre leva mais tempo do que o esperado para ser concluída, mesmo que você tenha considerado a Lei de Hofstader.</string>
+    <string name="welc_kernel">Kernel com excelente otimização e equilíbrio de desempenho para autonomia.</string>
+    <string name="welc_module">Lista de módulos úteis para todas as ocasiões.</string>
+    <!-- Into -->
+    <string name="next">Próximo</string>
+    <string name="into_welcome">Bem-vindo ao Craft Rom, você precisa de acesso root para que todas as funções funcionem corretamente!</string>
+    <string name="finish">Finalizar</string>
+    <string name="final_expl">Todas as informações e arquivos — tanto em codigo fonte quanto compilado — são fornecidos como está. Nenhuma garantia é dada ou implícita. O usuário assume todos os riscos de qualquer dano que possa ocorrer, incluindo, perda de dados, danos ao hardware ou perda de lucros do negócio. Por favor, use por sua conta e risco. Note que, a menos que explicitamente seja permitido pela garantia, cobrindo o seu dispositivo, deve-se presumir que qualquer garantia que acompanhe o seu dispositivo será anulada se você adulterar o software do sistema ou o hardware.</string>
+    <string name="final_pre_expl">AVISO</string>
+    <string name="into_open_source_project">A aplicação é um projeto de código aberto e é distribuída gratuitamente e sem anúncios.</string>
+    <!-- Title of the Terminal activity. -->
+    <string name="cancel">Cancelar</string>
+    <string name="dismiss">Descartar</string>
+    <string name="exit">Sair</string>
+    <string name="exit_confirmation">Sair do terminal?</string>
+    <string name="invite_friends">Convidar amigos</string>
+    <string name="network_unavailable">Não foi possível conectar-se à internet!</string>
+    <string name="press_back">Pressione voltar novamente para sair</string>
+    <string name="root_status_available">Parabéns! O acesso root já está disponível para este aplicativo!</string>
+    <string name="root_status_unavailable">Infelizmente, o Acesso Root não está disponível no seu dispositivo ou está negado a este app. Por favor, verifique com seu aplicativo de gerenciamento de root para saber mais!</string>
+    <string name="share_with">Compartilhar com</string>
+    <string name="stop_command_question">Parar a execução \'%s\' &amp; sair do Terminal?</string>
+    <string name="translations">Traduções</string>
+    <string name="translations_summary">Ajude-me a traduzir este aplicativo! Clique aqui para ir para o serviço de tradução.</string>
+    <!-- Title of the Log activity. -->
+    <string name="action_save">Salvar</string>
+    <string name="action_search">Pesquisar</string>
+    <string name="msg_pleaseWait">Por favor aguarde…</string>
+    <string name="msg_textHighlighted">Texto destacado em amarelo</string>
+    <string name="msg_textNotFound">Nada foi encontrado</string>
+    <string name="menu_about">Sobre</string>
+    <string name="love"><![CDATA[</> com ❤️ por melles1991]]></string>
+    <string name="opn_src_txt">Licenças de código aberto</string>
+    <string name="opn_src_desc">Bibliotecas de código aberto e sua licença</string>
+    <string name="lang_head">Tradutores</string>
+    <string name="view_but">Exibir</string>
+    <string name="open_link">A página será aberta no navegador padrão do seu dispositivo!</string>
+    <string name="head_news">Notícias do CraftRom</string>
+    <string name="head_codename">Codinome</string>
+    <string name="rom_head">ROM</string>
+    <string name="root_status">Status do root</string>
+    <string name="device_not_rooted">Sem root</string>
+    <string name="error_root">Não foi possível obter o acesso a root</string>
+    <string name="device_rooted">Rooted</string>
+    <string name="magisk_status">Status do Magisk</string>
+    <string name="magisk_not_detected">Magisk não está presente</string>
+    <string name="magisk_detected">Detectado</string>
+    <string name="disk_status">Status do /data</string>
+    <string name="disk_not_encrypted">Não criptografado</string>
+    <string name="disk_not_permission">Sem permissão</string>
+    <string name="disk_encrypted">Criptografado</string>
+    <string name="new_update">Uma atualização está disponível!</string>
+    <string name="build_at">Data da compilação</string>
+    <string name="download_update">Baixar Atualização</string>
+    <string name="new_update_message">Nova versão do kernel </string>
+    <string name="update_info">Clique aqui para verificar as atualizações</string>
+    <string name="update_status">A versão mais recente está instalada!</string>
+    <string name="device_not_support">Seu dispositivo não é suportado!</string>
+</resources>

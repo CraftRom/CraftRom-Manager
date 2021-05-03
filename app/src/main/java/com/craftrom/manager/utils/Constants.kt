@@ -19,6 +19,8 @@ open class Constants {
         const val AUTO_UPDATES_CHECK_INTERVAL_WEEKLY = 2
         const val AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3
 
+        val NOTIFICATION_CHANNEL_BOOT = "notification_channel_boot"
+
         const val SPLASH_TIME_OUT: Long = 1000 * 1 // 3 sec
         const val HOST_REFERENCE = "https://raw.githubusercontent.com/CraftRom/KernelUpdates/android-10/host"
         const val KERNEL_NAME = "Chidori"

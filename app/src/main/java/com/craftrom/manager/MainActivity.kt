@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_module,
                 R.id.nav_terminal,
                 R.id.nav_log,
+                R.id.nav_setting,
                 R.id.nav_about
             ), drawerLayout
         )

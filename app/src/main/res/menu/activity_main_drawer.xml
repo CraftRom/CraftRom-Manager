@@ -33,7 +33,7 @@
         android:id="@+id/group3"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/action_settings"
+            android:id="@+id/nav_setting"
             android:title="@string/action_settings" />
         <item
             android:id="@+id/nav_about"

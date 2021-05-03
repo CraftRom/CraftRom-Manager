@@ -63,7 +63,7 @@
     <string name="magisk_status">Statusi i Magisk</string>
     <string name="magisk_not_detected">Magisk nuk eshte prezent</string>
     <string name="magisk_detected">Diktuar</string>
-    <string name="disk_status">Statusi i Disk</string>
+    <string name="disk_status">Statusi i /data</string>
     <string name="disk_not_encrypted">Nuk është e koduar</string>
     <string name="disk_not_permission">S\'ka lejë</string>
     <string name="disk_encrypted">E kodifikuar</string>

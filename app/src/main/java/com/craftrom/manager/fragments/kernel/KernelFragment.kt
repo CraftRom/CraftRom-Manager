@@ -65,14 +65,36 @@ class KernelFragment : Fragment() {
         )
         InitUI()
 
-        checkUpdate.setOnClickListener(View.OnClickListener {
+        AndroidNetworking.initialize(context)
+
+        checkUpdate.setOnClickListener {
             content.visibility = View.GONE
             loader.visibility = View.VISIBLE
 
-            checkForUpdates(buildDate)
-        })
+            AndroidNetworking
+                .get(Constants.HOST_REFERENCE)
+                .doNotCacheResponse()
+                .build()
+                .getAsString(object : StringRequestListener {
+                    override fun onResponse(response: String) {
+                        host = response
+                        device  = Device.getDeviceName().toString()
+                        android = Device.getVersion().toString()
 
-        AndroidNetworking.initialize(context)
+                        checkForUpdates(buildDate)
+                    }
+
+                    override fun onError(anError: ANError?) {
+                        Toast.makeText(
+                            context,
+                            "Please check your internet connection.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        finish
+                    }
+                })
+
+        }
 
         //onesignal init
         OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
@@ -119,10 +141,11 @@ class KernelFragment : Fragment() {
         return root
     }
 
+        @SuppressLint("UseCompatLoadingForDrawables")
         private fun stopLoading(updateAvailable: Boolean, downloadLink: String = ""){
         loader.visibility = View.GONE
         if(updateAvailable){
-            updateStatusImg.setImageDrawable(this.requireContext().getDrawable(R.drawable.crossfix))
+            updateStatusImg.setImageDrawable(this.requireContext().getDrawable(R.drawable.warn))
             updateStatusTv.text = getString(R.string.new_update)
             updateButton.visibility = View.VISIBLE
             changelog.visibility = View.VISIBLE
@@ -162,6 +185,8 @@ class KernelFragment : Fragment() {
                         val cafTag = response.getString("cafTag")
                         val linuxVersion = response.getString("linuxVersion")
                         val changelog = response.getString("changelog")
+                        val device = response.getString("device")
+                        val type = response.getString("type")
                         val buildFdate = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).format(
                             latestDate
                         )
@@ -177,6 +202,8 @@ class KernelFragment : Fragment() {
                             editor.putString("linuxVersion", linuxVersion)
                             editor.putString("buildDate", latestFDate)
                             editor.putString("changelog", changelog)
+                            editor.putString("type", type)
+                            editor.putString("device", device)
                             editor.apply()
 
                             codeNameTv.text = codeName
@@ -184,6 +211,8 @@ class KernelFragment : Fragment() {
                             linuxVersionTv.text = linuxVersion
                             buildDateTv.text = buildFdate
                             changelogText.text= changelog
+                            deviceTv.text = device
+                            typeTv.text = type
 
                             updateBuildDateTv.text = "built at: $buildFdate"
                             updateBuildDateTv.visibility = View.VISIBLE
@@ -194,19 +223,24 @@ class KernelFragment : Fragment() {
                             editor.putString("cafTag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)
                             editor.putString("buildDate", latestFDate)
+                            editor.putString("type", type)
+                            editor.putString("device", device)
                             editor.apply()
 
                             codeNameTv.text = codeName
                             cafTagTv.text = cafTag
                             linuxVersionTv.text = linuxVersion
                             buildDateTv.text = latestFDate
+                            deviceTv.text = device
+                            typeTv.text = type
                         }
                     }
 
+                    @SuppressLint("UseCompatLoadingForDrawables")
                     override fun onError(anError: ANError?) {
                         kernel_version.visibility = View.GONE
                         loader.visibility = View.GONE
-                        updateStatusImg.setImageDrawable(context?.getDrawable(R.drawable.warn))
+                        updateStatusImg.setImageDrawable(context?.getDrawable(R.drawable.crossfix))
                         updateStatusTv.text = getString(R.string.device_not_support)
                         content.visibility = View.VISIBLE
                         Toast.makeText(

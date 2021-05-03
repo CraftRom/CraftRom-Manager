@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Directory where the update files will be downloaded and stored.
+     WARNING: The application can and will delete any unknown file. -->
+    <!--
+       Optional placeholders replaced at runtime:
+         {device} - Device name
+         {android}, {android_mini} - Android Version
+         {date} - Date
+   -->
     <string name="text_logo">A hibakeresési kód olyan, mint a vadászat. Hiba keresés.</string>
     <string name="app_name_version">%s verzió: %s </string>
     <string name="navigation_drawer_open">Navigációs sáv megnyitása</string>
@@ -32,6 +40,12 @@
     <string name="stop_command_question">A (z) \'% s\' &amp; amp; végrehajtásának leállítása kilépni a terminálból?</string>
     <string name="translations">Fordítások</string>
     <string name="translations_summary">Kattintson ide a fordítási szolgáltatás eléréséhez.</string>
+    <!-- Title of the Log activity. -->
+    <string name="action_save">Mentés</string>
+    <string name="action_search">Keresés</string>
+    <string name="msg_pleaseWait">Kérem várjon…</string>
+    <string name="msg_textHighlighted">A szöveg sárgával kiemelve</string>
+    <string name="msg_textNotFound">Nincs találat</string>
     <string name="menu_about">Névjegy</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Nyílt forráskódú licencek</string>
@@ -49,8 +63,15 @@
     <string name="magisk_status">Magiks Státusz</string>
     <string name="magisk_not_detected">Magiks jelenleg nincs</string>
     <string name="magisk_detected">Észlelt</string>
-    <string name="disk_status">Magiks Státusz</string>
+    <string name="disk_status">/data Státusz</string>
     <string name="disk_not_encrypted">Nem titkosított</string>
     <string name="disk_not_permission">Nincs engedély</string>
     <string name="disk_encrypted">Titkosított</string>
+    <string name="new_update">Egy frissítés elérhető!</string>
+    <string name="build_at">Build dátuma</string>
+    <string name="download_update">Frissítés letöltése</string>
+    <string name="new_update_message">Új kernel verzió </string>
+    <string name="update_info">A frissítések ellenőrzése nem sikerült</string>
+    <string name="update_status">A legfrissebb verzió van telepítve!</string>
+    <string name="device_not_support">A készüléked nem támogatott!</string>
 </resources>

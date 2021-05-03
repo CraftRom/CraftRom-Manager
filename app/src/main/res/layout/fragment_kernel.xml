@@ -56,7 +56,7 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/margin_generic"
-                app:cardBackgroundColor="?attr/colorOnBackground"
+                app:cardBackgroundColor="@color/cardview_shadow_end_color"
                 app:cardElevation="@dimen/no_card_elevation"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true"
@@ -65,6 +65,7 @@
 
                 <RelativeLayout
                     android:id="@+id/loader"
+                    android:background="@drawable/craftrom_gradient"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -83,6 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:background="@drawable/craftrom_gradient"
                     android:padding="15dp"
                     android:visibility="gone">
 
@@ -303,7 +305,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Loading..."
+                                    android:text="@string/loading"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                                     android:textSize="13sp" />
 
@@ -333,7 +335,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Loading..."
+                                    android:text="@string/loading"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                                     android:textSize="13sp" />
 
@@ -363,7 +365,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Loading..."
+                                    android:text="@string/loading"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                                     android:textSize="13sp" />
 
@@ -393,7 +395,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Loading..."
+                                    android:text="@string/loading"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                                     android:textSize="13sp" />
 
@@ -419,10 +421,11 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/typeTv"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="nightly"
+                                    android:text="@string/loading"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                                     android:textSize="13sp" />
 
@@ -448,10 +451,11 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/deviceTv"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="onclite"
+                                    android:text="@string/loading"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                                     android:textSize="13sp" />
 

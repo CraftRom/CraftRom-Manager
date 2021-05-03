@@ -44,9 +44,18 @@
         <activity android:name="MainActivity"/>
         <activity android:name=".activities.OSLActivity"/>
         <activity android:name=".activities.LogActivity"/>
-        <receiver android:name=".UpdatesCheck">
+        <receiver android:name=".service.UpdateCheck">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".service.OnBoot"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 </application>

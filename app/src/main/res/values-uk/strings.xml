@@ -63,7 +63,7 @@
     <string name="magisk_status">Magisk status</string>
     <string name="magisk_not_detected">Magisk відсутній</string>
     <string name="magisk_detected">Знайдено</string>
-    <string name="disk_status">Статус диску</string>
+    <string name="disk_status">Статус /data</string>
     <string name="disk_not_encrypted">Не зашифровано</string>
     <string name="disk_not_permission">Недостатньо прав</string>
     <string name="disk_encrypted">Зашифровано</string>

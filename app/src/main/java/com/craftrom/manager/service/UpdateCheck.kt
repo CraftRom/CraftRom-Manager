@@ -30,11 +30,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class UpdateCheck : BroadcastReceiver() {
+abstract class UpdateCheck : BroadcastReceiver() {
+    companion object {
     lateinit var host: String
     var sp = context.getSharedPreferences("com.craftrom.manager", Context.MODE_PRIVATE)
 
-    override fun onReceive(context: Context, intent: Intent) {
+     fun Update(context: Context, intent: Intent) {
          if (Intent.ACTION_BOOT_COMPLETED.equals(intent.action)) {
             // Set a repeating alarm on boot to check for new updates once per day
             scheduleRepeatingUpdatesCheck(context)
@@ -125,7 +126,7 @@ class UpdateCheck : BroadcastReceiver() {
 
     }
 
-    companion object {
+
         private const val TAG = "UpdatesCheckReceiver"
         private const val DAILY_CHECK_ACTION = "daily_check_action"
         private const val ONESHOT_CHECK_ACTION = "oneshot_check_action"

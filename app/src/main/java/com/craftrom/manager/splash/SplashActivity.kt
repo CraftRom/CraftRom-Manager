@@ -1,5 +1,6 @@
 package com.craftrom.manager.splash
 
+import android.content.Context
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
@@ -11,10 +12,14 @@ import com.craftrom.manager.BuildConfig
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
+import com.topjohnwu.superuser.internal.Utils.context
 import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.fragment_kernel.*
+import java.util.*
 
 
 class SplashActivity : AppCompatActivity() {
+    val updateSharedPreferences = context?.getSharedPreferences("update", Context.MODE_PRIVATE)
     private var coordLayout: CoordinatorLayout? = null
     private val splashDuration = 5 * 1000L
 
@@ -44,7 +49,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
         initView()
 
     }
