@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/CraftRom%20Manager-ALPHA-blue)](https://github.com/CraftRom/CraftRom-Manager/releases)
+[![](https://img.shields.io/badge/CraftRom%20Manager-BETA-blue)](https://github.com/CraftRom/CraftRom-Manager/releases)
 ![](https://img.shields.io/github/contributors/craftrom/CraftRom-Manager)
 [![Crowdin](https://badges.crowdin.net/craft-rom-km/localized.svg)](https://crowdin.com/project/craft-rom-km)
 ![](https://img.shields.io/github/license/craftrom/CraftRom-Manager)
