@@ -24,6 +24,7 @@
     <string name="check_upd_start">Check for updates on App startup</string>
     <string name="beta_sign">Check for beta releases</string>
     <string name="upd_checking">Checking for updates…</string>
+    <string name="setting_null">We have not yet figured out which settings to add.</string>
     <string name="test">TEST</string>
 
     <string name="menu_device">Device</string>

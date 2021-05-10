@@ -99,7 +99,7 @@
             style="@style/WidgetFoundation.Icon.Primary"
             android:layout_width="wrap_content"
             android:contentDescription="@string/download"
-            android:nextFocusLeft="@id/module_info"
+            android:nextFocusLeft="@id/module_pubDate"
             android:paddingStart="@dimen/l_50"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

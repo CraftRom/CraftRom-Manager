@@ -9,10 +9,12 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
+import com.craftrom.manager.utils.MovieGifView
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 class SettingsFragment : Fragment() {
 
+    private var gifViewPlayer: MovieGifView? = null
     private lateinit var updStartup: SwitchMaterial
     private lateinit var updChannel: SwitchMaterial
 
@@ -21,8 +23,11 @@ class SettingsFragment : Fragment() {
         val sharedPreferences = context?.getSharedPreferences("update", Context.MODE_PRIVATE)
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
+        gifViewPlayer  = view.findViewById(R.id.gifView)
         updStartup = view.findViewById(R.id.upd_start)
         updChannel = view.findViewById(R.id.beta_sign)
+
+        gifViewPlayer?.setMovieAssets("emoji/thinking-emoji.gif")
 
         if(sharedPreferences != null) {
 

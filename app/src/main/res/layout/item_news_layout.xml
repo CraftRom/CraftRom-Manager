@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/WidgetFoundation.Card.Elevated"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginStart="10dp"
     android:layout_marginTop="5dp"
-    android:background="?attr/colorPrimary"    >
+    android:background="?attr/colorPrimary"
+    android:layout_marginStart="@dimen/margin_generic"
+    android:layout_marginEnd="@dimen/margin_generic"
+    app:cardBackgroundColor="?android:attr/colorBackground"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardPreventCornerOverlap="true"
+    app:strokeColor="@color/colorStroke"
+    app:strokeWidth="@dimen/cardStrokeWidth">
 
 
     <LinearLayout
@@ -100,6 +105,7 @@
             android:layout_height="wrap_content" />
 
         <Button
+            android:layout_gravity="end"
             android:id="@+id/butLink"
             android:text="@string/view_but"
             android:layout_marginStart="10dp"
