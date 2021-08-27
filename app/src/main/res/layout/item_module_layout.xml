@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:nextFocusRight="@id/module_info"
+    android:nextFocusRight="@id/module_download"
     android:layout_marginBottom="5dp"
     android:layout_marginEnd="10dp"
     android:layout_marginStart="10dp"
@@ -75,24 +75,10 @@
             android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/module_info"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/module_divider"
             tools:ignore="SmallSp"
             tools:text="@tools:sample/date/ddmmyy" />
-
-        <ImageView
-            android:id="@+id/module_info"
-            style="@style/WidgetFoundation.Icon"
-            android:layout_width="wrap_content"
-            android:alpha=".5"
-            android:nextFocusLeft="@id/module_pubDate"
-            android:paddingEnd="@dimen/l_50"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/module_download"
-            app:layout_constraintEnd_toStartOf="@+id/module_download"
-            app:layout_constraintTop_toTopOf="@+id/module_download"
-            app:srcCompat="@drawable/ic_info" />
 
         <ImageView
             android:id="@+id/module_download"
@@ -100,7 +86,7 @@
             android:layout_width="wrap_content"
             android:contentDescription="@string/download"
             android:nextFocusLeft="@id/module_pubDate"
-            android:paddingStart="@dimen/l_50"
+            android:padding="@dimen/l_50"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/module_divider"

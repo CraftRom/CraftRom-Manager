@@ -14,7 +14,14 @@
     <string name="navigation_drawer_close">Закрыть боковое меню</string>
     <string name="nav_header_subtitle">Все, что может пойти не так, уже пошло не так.</string>
     <string name="nav_header_desc">Панель навигации</string>
+    <!-- Settings -->
     <string name="action_settings">Настройки</string>
+    <string name="welc_settings">Oddly enough, but these are all application settings.</string>
+    <string name="check_upd_start">Проверять обновления при старте приложения</string>
+    <string name="beta_sign">Проверять наличие бета-релизов</string>
+    <string name="upd_checking">Проверка обновлений…</string>
+    <string name="setting_null">Мы еще не определили, какие настройки нужно добавить.</string>
+    <string name="test">ТЕСТ</string>
     <string name="menu_device">Устройство</string>
     <string name="welcome">Выполнение задачи всегда занимает больше времени, чем ожидалось, даже если вы учли закон Хофстадера.</string>
     <string name="welc_kernel">Ядро с отличной оптимизацией и автономнистью.</string>
@@ -63,7 +70,7 @@
     <string name="magisk_status">Статус Magisk</string>
     <string name="magisk_not_detected">Magisk отсутствует</string>
     <string name="magisk_detected">Определено автоматически</string>
-    <string name="disk_status">Статус /data</string>
+    <string name="disk_status">/data статус</string>
     <string name="disk_not_encrypted">Не зашифровано</string>
     <string name="disk_not_permission">Недостаточно прав</string>
     <string name="disk_encrypted">Зашифрованный</string>
@@ -74,4 +81,5 @@
     <string name="update_info">Нажмите для проверки обновления</string>
     <string name="update_status">Установлена последняя версия!</string>
     <string name="device_not_support">Это устройство не поддерживается!</string>
+    <string name="loading">Загрузка...</string>
 </resources>

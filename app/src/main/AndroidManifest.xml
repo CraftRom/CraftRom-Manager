@@ -43,7 +43,7 @@
         <activity android:name=".activities.into.IntoFinalActivity"/>
         <activity android:name="MainActivity"/>
         <activity android:name=".activities.OSLActivity"/>
-        <activity android:name=".activities.LogActivity"/>
+
         <receiver android:name=".service.UpdateCheck">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>

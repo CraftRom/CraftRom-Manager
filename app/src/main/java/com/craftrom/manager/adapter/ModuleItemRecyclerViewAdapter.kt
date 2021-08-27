@@ -16,9 +16,9 @@ import com.craftrom.manager.utils.RSS.RssItem
 import com.craftrom.manager.utils.module.ModuleItem
 
 class ModuleItemRecyclerViewAdapter(
-        private val mValues: List<ModuleItem>,
-        private val mListener: ModuleFragment.OnListFragmentInteractionListener?,
-        private val context: FragmentActivity?
+    private val mValues: List<ModuleItem>,
+    private val mListener: ModuleFragment.OnListFragmentInteractionListener?,
+    private val context: FragmentActivity?
 ) : RecyclerView.Adapter<ModuleItemRecyclerViewAdapter.ViewHolder>() {
 
 

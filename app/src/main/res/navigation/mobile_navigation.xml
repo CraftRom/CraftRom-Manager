@@ -78,11 +78,6 @@
         android:name="com.craftrom.manager.fragments.terminal.TerminalFragment"
         android:label="@string/menu_terminal"
         tools:layout="@layout/fragment_terminal" />
-    <activity
-        android:id="@+id/nav_log"
-        android:name="com.craftrom.manager.activities.LogActivity"
-        android:label="@string/action_log"
-        tools:layout="@layout/log_layout"/>
     <fragment
         android:id="@+id/nav_setting"
         android:name="com.craftrom.manager.fragments.settings.SettingsFragment"
@@ -94,5 +89,10 @@
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_rom"
+        android:name="com.craftrom.manager.fragments.rom.RomFragment"
+        android:label="@string/menu_rom"
+        tools:layout="@layout/fragment_rom" />
 
 </navigation>

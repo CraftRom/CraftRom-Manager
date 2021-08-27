@@ -15,6 +15,10 @@
             android:icon="@drawable/ic_menu_kernel"
             android:title="@string/menu_kernel" />
         <item
+            android:id="@+id/nav_rom"
+            android:icon="@drawable/ic_menu_update"
+            android:title="@string/menu_rom" />
+        <item
             android:id="@+id/nav_module"
             android:icon="@drawable/ic_menu_module"
             android:title="@string/menu_module" />
@@ -25,9 +29,6 @@
         <item
             android:id="@+id/nav_terminal"
             android:title="@string/menu_terminal" />
-        <item
-            android:id="@+id/nav_log"
-            android:title="@string/action_log" />
     </group>
     <group
         android:id="@+id/group3"

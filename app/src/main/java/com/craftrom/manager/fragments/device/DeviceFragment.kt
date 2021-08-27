@@ -15,9 +15,11 @@ import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.RSS.RssFeedFetcher
 import com.craftrom.manager.utils.RSS.RssItem
 import com.craftrom.manager.utils.dummy.DummyContent
+import com.craftrom.manager.utils.rom_checker.RomIdentifier.getRom
 import com.craftrom.manager.utils.root.RootUtils
 import com.craftrom.manager.utils.storage.isDiskEncrypted
 import java.net.URL
+
 
 class DeviceFragment : Fragment(){
     private lateinit var  oem_name: TextView
@@ -25,6 +27,7 @@ class DeviceFragment : Fragment(){
     private lateinit var magisk_status: TextView
     private lateinit var android_codename: TextView
     private lateinit var android_version: TextView
+    private lateinit var rom_version: TextView
 
     // TODO: Customize parameters
     private var columnCount = 1
@@ -38,15 +41,18 @@ class DeviceFragment : Fragment(){
 
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         val root = inflater.inflate(R.layout.fragment_device, container, false)
+
         oem_name = root.findViewById(R.id.oem_name)
         disk_status = root.findViewById(R.id.disk_status)
         android_codename = root.findViewById(R.id.android_codename)
         android_version = root.findViewById(R.id.android_version)
+        rom_version = root.findViewById(R.id.rom_version)
+
         listV = root.findViewById(R.id.listV)
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
@@ -58,6 +64,8 @@ class DeviceFragment : Fragment(){
     @Suppress("DEPRECATION")
     @SuppressLint("SetTextI18n")
     private fun InitUI() {
+        val rom = getRom()
+
         oem_name.text = Device.getVendor() + " " + Device.getModel()
         if (RootUtils.rootAccess()){
             if (isDiskEncrypted) {
@@ -74,6 +82,7 @@ class DeviceFragment : Fragment(){
 
         android_codename.text  = Device.getDeviceName()
         android_version.text = Device.getVersion()
+        rom_version.text = rom.name + " " + rom.versionName
 
     }
 
