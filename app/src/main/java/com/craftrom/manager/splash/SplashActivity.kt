@@ -1,26 +1,21 @@
 package com.craftrom.manager.splash
 
-import android.content.Context
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.bumptech.glide.Glide
 import com.craftrom.manager.BuildConfig
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
-import com.topjohnwu.superuser.internal.Utils.context
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.android.synthetic.main.fragment_kernel.*
 import java.util.*
 
 
 class SplashActivity : AppCompatActivity() {
-    val updateSharedPreferences = context?.getSharedPreferences("update", Context.MODE_PRIVATE)
-    private var coordLayout: CoordinatorLayout? = null
     private val splashDuration = 5 * 1000L
 
     private val alphaAnimation by lazy {
