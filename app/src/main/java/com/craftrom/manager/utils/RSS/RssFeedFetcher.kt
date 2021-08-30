@@ -1,7 +1,7 @@
 package com.craftrom.manager.utils.RSS
 
 import android.os.AsyncTask
-import com.craftrom.manager.fragments.device.DeviceFragment
+import com.craftrom.manager.fragments.news.NewsFragment
 import java.io.IOException
 import java.io.InputStream
 import java.lang.ref.WeakReference
@@ -9,7 +9,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 @Suppress("DEPRECATION")
-class RssFeedFetcher(val context: DeviceFragment) : AsyncTask<URL, Void, List<RssItem>>() {
+class RssFeedFetcher(val context: NewsFragment) : AsyncTask<URL, Void, List<RssItem>>() {
     private val reference = WeakReference(context)
     private var stream: InputStream? = null
     override fun doInBackground(vararg params: URL?): List<RssItem>? {

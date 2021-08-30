@@ -27,6 +27,8 @@
     <string name="setting_null">We have not yet figured out which settings to add.</string>
     <string name="test">TEST</string>
 
+    <string name="menu_news">News</string>
+
     <string name="menu_device">Device</string>
     <string name="welcome">The task always takes longer than expected to complete, even if you have considered Hofstader\'s Law.</string>
     <string name="menu_kernel" translatable="false">Chidori Kernel</string>
@@ -96,6 +98,11 @@
     <string name="disk_not_permission">Not permission</string>
     <string name="disk_encrypted">Encrypted</string>
     <string name="todo" translatable="false">TODO</string>
+
+    <string name="cts">CTS :</string>
+    <string name="basic_integrity">Basic Integrity :</string>
+    <string name="verify_safetynet_status">Verify SafetyNet Status</string>
+    <string name="verify">Verify</string>
 
     <string name="download" translatable="false">Download</string>
     <string name="module_version_author" translatable="false">%s by %s</string>

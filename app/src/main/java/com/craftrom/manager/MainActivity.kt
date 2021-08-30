@@ -2,6 +2,7 @@ package com.craftrom.manager
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -13,16 +14,19 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.craftrom.manager.activities.IntroActivity
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Device
 import com.google.android.material.navigation.NavigationView
 
 
 class MainActivity : AppCompatActivity() {
 
+    private val TAG = "CraftRom:MainActivity"
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var mPrefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "device = " + Device.getDeviceName())
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -40,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
+                R.id.nav_news,
                 R.id.nav_device,
                 R.id.nav_kernel,
                 R.id.nav_rom,

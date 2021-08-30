@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "516067548857-e6ublsvh826e1lf06893dtdte92asm70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.craftrom.manager",
+            "certificate_hash": "d0b0bc6f64bbcf9926ffa3d645198a0db459baa8"
+          }
+        },
+        {
+          "client_id": "516067548857-g9tghh5bt7kpsudbgeekl3ccqnnbur44.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.craftrom.manager",
+            "certificate_hash": "98aac89b5ebf3c30ca37c07aca1bae9ccc3ad08c"
+          }
+        },
+        {
           "client_id": "516067548857-8dvskgcrlbb8hd9ojhqaqvlbeaa1st5v.apps.googleusercontent.com",
           "client_type": 3
         }

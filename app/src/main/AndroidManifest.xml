@@ -39,8 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.into.IntoWelcomeActivity"/>
-        <activity android:name=".activities.into.IntoFinalActivity"/>
+        <activity android:name=".activities.IntroActivity"/>
         <activity android:name="MainActivity"/>
         <activity android:name=".activities.OSLActivity"/>
 

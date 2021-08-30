@@ -12,13 +12,13 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
-import com.craftrom.manager.fragments.device.DeviceFragment
+import com.craftrom.manager.fragments.news.NewsFragment
 import com.craftrom.manager.utils.RSS.RssItem
 import com.squareup.picasso.Picasso
 
 class RssItemRecyclerViewAdapter(
     private val mValues: List<RssItem>,
-    private val mListener: DeviceFragment.OnListFragmentInteractionListener?,
+    private val mListener: NewsFragment.OnListFragmentInteractionListener?,
     private val context: FragmentActivity?
 ) : RecyclerView.Adapter<RssItemRecyclerViewAdapter.ViewHolder>() {
 

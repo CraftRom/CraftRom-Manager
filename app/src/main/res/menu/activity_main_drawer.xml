@@ -7,6 +7,10 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_menu_device"
+            android:title="@string/menu_news" />
+        <item
             android:id="@+id/nav_device"
             android:icon="@drawable/ic_menu_device"
             android:title="@string/menu_device" />

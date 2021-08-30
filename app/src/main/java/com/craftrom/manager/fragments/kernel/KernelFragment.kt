@@ -1,8 +1,8 @@
 package com.craftrom.manager.fragments.kernel
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.text.Html
@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
@@ -23,7 +24,6 @@ import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.notification.NotificationUtils
 import com.craftrom.manager.utils.root.RootUtils
 import com.onesignal.OneSignal
-import com.topjohnwu.superuser.internal.Utils
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
 import io.github.inflationx.viewpump.ViewPump
@@ -44,7 +44,7 @@ class KernelFragment : Fragment() {
     lateinit var host: String
     lateinit var device: String
     lateinit var android: String
-    var sp = Utils.context.getSharedPreferences("com.craftrom.manager", Context.MODE_PRIVATE)
+    private lateinit var sp: SharedPreferences
 
 
     override fun onCreateView(
@@ -53,6 +53,7 @@ class KernelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_kernel, container, false)
+        sp = PreferenceManager.getDefaultSharedPreferences(context)
         kernel_name = root.findViewById(R.id.kernel_name)
         val checkUpdate: CardView = root.findViewById(R.id.kernel_version)
         val kernelVersion = readKernelVersion()
