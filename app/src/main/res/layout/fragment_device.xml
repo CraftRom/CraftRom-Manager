@@ -53,8 +53,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_generic"
             android:layout_marginEnd="@dimen/margin_generic"
-            android:clickable="true"
-            android:focusable="true"
             app:cardBackgroundColor="?android:attr/colorBackground"
             app:cardElevation="@dimen/no_card_elevation"
             app:cardPreventCornerOverlap="true"
@@ -292,6 +290,33 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/layout_safety_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fab_margin"
+                    android:layout_marginEnd="@dimen/fab_margin"
+                    android:orientation="horizontal"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/update_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verify"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorPermission"
+                        android:layout_marginBottom="6dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SmallSp" />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:id="@+id/safety_net_liner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -299,7 +324,7 @@
                     android:textAlignment="center"
                     android:weightSum="8"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@id/layout_safety_info">
 
                     <TextView
                         android:id="@+id/safety_net_status"
@@ -314,11 +339,34 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/safety_net_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/safety_net_liner">
+
+                    <TextView
+                        android:id="@+id/error_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:maxLines="4"
+                        android:text="@string/cts"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/cts_liner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="visible"
                     android:weightSum="2"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
@@ -354,6 +402,7 @@
                     android:id="@+id/basic_liner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="visible"
                     android:weightSum="2"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
@@ -387,35 +436,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/basic_liner">
-
-                    <Button
-                        android:id="@+id/verify_safety_net"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="visible"
-                        android:backgroundTint="@color/blue_500"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
-                        android:text="@string/verify"
-                        android:textAllCaps="false"
-                        android:onClick="onClickCheckIntegrityButton"/>
+                    app:layout_constraintTop_toBottomOf="@id/safety_net_liner">
 
                     <ProgressBar
                         android:id="@+id/progressBar"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:indeterminate="true"
-                        android:translationZ="1dp"
-                        android:indeterminateTint="@color/blue_500"
                         android:layout_marginStart="26dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginEnd="26dp"
                         android:layout_marginBottom="12dp"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        android:visibility="gone" />
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/blue_500"
+                        android:translationZ="1dp"
+                        android:visibility="gone"
+                        app:layout_constraintHorizontal_bias="0.5" />
                 </RelativeLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

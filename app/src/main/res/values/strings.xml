@@ -102,7 +102,7 @@
     <string name="cts">CTS :</string>
     <string name="basic_integrity">Basic Integrity :</string>
     <string name="verify_safetynet_status">Verify SafetyNet Status</string>
-    <string name="verify">Verify</string>
+    <string name="verify">Сlick to verify SafetyNet status</string>
 
     <string name="download" translatable="false">Download</string>
     <string name="module_version_author" translatable="false">%s by %s</string>

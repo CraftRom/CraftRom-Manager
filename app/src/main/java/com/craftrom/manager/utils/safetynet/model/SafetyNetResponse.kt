@@ -3,22 +3,18 @@ package com.craftrom.manager.utils.safetynet.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class BBSafetyNetApiModel {
+class SafetyNetResponse {
     @SerializedName("nonce")
     @Expose
     var nonce: String? = null
 
     @SerializedName("timestampMs")
     @Expose
-    var timestampMs: Long? = null
+    var timestampMs: Long = 0
 
     @SerializedName("apkPackageName")
     @Expose
     var apkPackageName: String? = null
-
-    @SerializedName("apkCertificateDigestSha256")
-    @Expose
-    var apkCertificateDigestSha256: List<String>? = null
 
     @SerializedName("apkDigestSha256")
     @Expose
@@ -26,9 +22,17 @@ class BBSafetyNetApiModel {
 
     @SerializedName("ctsProfileMatch")
     @Expose
-    var ctsProfileMatch: Boolean? = null
+    var isCtsProfileMatch = false
+
+    @SerializedName("apkCertificateDigestSha256")
+    @Expose
+    var apkCertificateDigestSha256: List<String>? = null
 
     @SerializedName("basicIntegrity")
     @Expose
-    var basicIntegrity: Boolean? = null
+    var isBasicIntegrity = false
+
+    @SerializedName("evaluationType")
+    @Expose
+    var evaluationType: String? = null
 }
