@@ -10,17 +10,18 @@ import com.craftrom.manager.BuildConfig
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Constants.Companion.SPLASH_TIME_OUT
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.android.synthetic.main.fragment_kernel.*
 import java.util.*
 
 
 class SplashActivity : AppCompatActivity() {
-    private val splashDuration = 5 * 1000L
+
 
     private val alphaAnimation by lazy {
         AlphaAnimation(0.0f, 1.0f).apply {
-            duration = splashDuration
+            duration = SPLASH_TIME_OUT
             fillAfter = true
         }
     }
@@ -36,7 +37,7 @@ class SplashActivity : AppCompatActivity() {
                 Animation.RELATIVE_TO_SELF,
                 0.5f
         ).apply {
-            duration = splashDuration
+            duration = SPLASH_TIME_OUT
             fillAfter = true
         }
     }
