@@ -367,7 +367,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="visible"
-                    android:weightSum="2"
+                    android:weightSum="8"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/safety_net_liner">
@@ -380,7 +380,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                     android:textSize="13sp"
                     android:textStyle="bold"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:maxLines="1"
                     android:text="@string/cts" />
 
@@ -391,7 +391,7 @@
                     android:layout_marginTop="4dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                     android:textSize="13sp"
-                    android:layout_weight="1"
+                    android:layout_weight="6"
                     android:maxLines="1"
                     android:text="nonce"/>
 
@@ -403,7 +403,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="visible"
-                    android:weightSum="2"
+                    android:weightSum="8"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cts_liner">
@@ -416,7 +416,7 @@
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:text="@string/basic_integrity"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:maxLines="1"/>
 
                 <TextView
@@ -426,7 +426,7 @@
                     android:layout_marginTop="4dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                     android:textSize="13sp"
-                    android:layout_weight="1"
+                    android:layout_weight="6"
                     android:maxLines="1"
                     android:text="nonce"/>
                 </LinearLayout>

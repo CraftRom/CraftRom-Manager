@@ -123,9 +123,20 @@ class DeviceFragment : Fragment(){
                     val cts_result = "$ctsProfileMatch"
                     val basic_result = "$basicIntegrity"
                     Log.d(TAG, "SafetyNet req success: \n" +
-                            "ctsProfileMatch : $ctsProfileMatch and \n" +
+                            "ctsProfileMatch : $ctsProfileMatch \n" +
                             "basicIntegrity : $basicIntegrity")
                     showLoading(false)
+                    if (ctsProfileMatch){
+                        cts.setTextColor(resources.getColor(R.color.colorTrue))
+                    } else {
+                        cts.setTextColor(resources.getColor(R.color.colorFalse))
+                    }
+                    if (basicIntegrity){
+                        basic_int.setTextColor(resources.getColor(R.color.colorTrue))
+                    } else {
+                        basic_int.setTextColor(resources.getColor(R.color.colorFalse))
+                    }
+
                     cts.text = cts_result
                     basic_int.text = basic_result
                 }
@@ -165,12 +176,10 @@ class DeviceFragment : Fragment(){
         if (show) {
             cts_liner.visibility = View.GONE
             basic_liner.visibility = View.GONE
-            safety_net_error.visibility = View.GONE
             progressBar.visibility = View.VISIBLE
         } else {
             cts_liner.visibility = View.VISIBLE
             basic_liner.visibility = View.VISIBLE
-            safety_net_error.visibility = View.VISIBLE
             progressBar.visibility = View.GONE
         }
     }
