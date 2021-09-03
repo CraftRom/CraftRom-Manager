@@ -12,20 +12,13 @@ import com.google.android.material.snackbar.Snackbar
 open class Constants {
 
     companion object {
-
+        const val TAG ="CraftRom"
         const val PREF_AUTO_UPDATES_CHECK_INTERVAL = "auto_updates_check_interval"
-        const val AUTO_UPDATES_CHECK_INTERVAL_NEVER = 0
         const val AUTO_UPDATES_CHECK_INTERVAL_DAILY = 1
         const val AUTO_UPDATES_CHECK_INTERVAL_WEEKLY = 2
         const val AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3
         const val PREF_SHOW_INTRO = "show_intro"
         const val API_KEY = "AIzaSyBzr6JbRJPsWaWuB6h2cAED7wTkXnpTWV8"
-
-        const val SAFETY_NET_API_REQUEST_UNSUCCESSFUL = 999
-        const val RESPONSE_ERROR_VALIDATING_SIGNATURE = 1000
-        const val RESPONSE_FAILED_SIGNATURE_VALIDATION = 1002
-        const val RESPONSE_FAILED_SIGNATURE_VALIDATION_NO_API_KEY = 1003
-        const val RESPONSE_VALIDATION_FAILED = 1001
 
         val NOTIFICATION_CHANNEL_BOOT = "notification_channel_boot"
 

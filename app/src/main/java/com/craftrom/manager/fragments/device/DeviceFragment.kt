@@ -10,10 +10,12 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants.Companion.API_KEY
+import com.craftrom.manager.utils.Constants.Companion.TAG
 import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.rom_checker.RomIdentifier.getRom
 import com.craftrom.manager.utils.root.RootUtils
@@ -23,8 +25,6 @@ import com.craftrom.manager.utils.storage.isDiskEncrypted
 
 
 class DeviceFragment : Fragment(){
-    private val TAG = "CraftRom:Device"
-
     private lateinit var  oem_name: TextView
     private lateinit var disk_status: TextView
     private lateinit var android_codename: TextView
@@ -110,7 +110,7 @@ class DeviceFragment : Fragment(){
     private fun runTest() {
         showError(false)
         showLoading(true)
-        Log.d(TAG, "SafetyNet start request")
+        Log.d(TAG, ":Device SafetyNet start request")
         safetyNetHelper?.startSafetyNetTest(
             requireContext(),
             object : SafetyNetWrapperCallback {
@@ -122,19 +122,19 @@ class DeviceFragment : Fragment(){
                 override fun success(ctsProfileMatch: Boolean, basicIntegrity: Boolean) {
                     val cts_result = "$ctsProfileMatch"
                     val basic_result = "$basicIntegrity"
-                    Log.d(TAG, "SafetyNet req success: \n" +
+                    Log.d(TAG, ":Device SafetyNet req success: \n" +
                             "ctsProfileMatch : $ctsProfileMatch \n" +
                             "basicIntegrity : $basicIntegrity")
                     showLoading(false)
                     if (ctsProfileMatch){
-                        cts.setTextColor(resources.getColor(R.color.colorTrue))
+                        cts.setTextColor(ContextCompat.getColor(context!!, R.color.colorTrue))
                     } else {
-                        cts.setTextColor(resources.getColor(R.color.colorFalse))
+                        cts.setTextColor(ContextCompat.getColor(context!!, R.color.colorFalse))
                     }
                     if (basicIntegrity){
-                        basic_int.setTextColor(resources.getColor(R.color.colorTrue))
+                        basic_int.setTextColor(ContextCompat.getColor(context!!, R.color.colorTrue))
                     } else {
-                        basic_int.setTextColor(resources.getColor(R.color.colorFalse))
+                        basic_int.setTextColor(ContextCompat.getColor(context!!, R.color.colorFalse))
                     }
 
                     cts.text = cts_result
