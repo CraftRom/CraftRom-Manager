@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.craftrom.manager.R
 import com.craftrom.manager.adapter.ModuleItemRecyclerViewAdapter
 import com.craftrom.manager.fragments.device.DeviceFragment
@@ -18,6 +19,7 @@ import java.net.URL
 class ModuleFragment : Fragment() {
 
     // TODO: Customize parameters
+    lateinit var swipeContainer: SwipeRefreshLayout
     private var columnCount = 1
     private var listener: ModuleFragment.OnListFragmentInteractionListener? = null
     private val RSS_FEED_LINK = "https://raw.githubusercontent.com/CraftRom/host_updater/android-10/modules.xml"
@@ -34,6 +36,25 @@ class ModuleFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_module, container, false)
+
+        // Lookup the swipe container view
+        swipeContainer = root.findViewById(R.id.swipeContainer)
+        swipeContainer.setOnRefreshListener {
+            // Your code to refresh the list here.
+            // Make sure you call swipeContainer.setRefreshing(false)
+            // once the network request has completed successfully.
+            val url = URL(RSS_FEED_LINK)
+            moduleItems.clear()
+            adapter!!.notifyDataSetChanged()
+            ModuleFeedFetcher(this).execute(url)
+            swipeContainer.isRefreshing = false
+        }
+
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(R.color.blue_500,
+            R.color.colorTrue,
+            R.color.colorPermission,
+            R.color.colorFalse)
         listV = root.findViewById(R.id.listV)
         arguments?.let {
             columnCount = it.getInt(DeviceFragment.ARG_COLUMN_COUNT)
@@ -43,7 +64,7 @@ class ModuleFragment : Fragment() {
     @Suppress("DEPRECATION")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        swipeContainer.isRefreshing = true
         adapter = ModuleItemRecyclerViewAdapter(moduleItems, listener, activity)
         listV?.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         listV?.adapter = adapter
@@ -60,6 +81,7 @@ class ModuleFragment : Fragment() {
             moduleItems.clear()
             moduleItems.addAll(rssItemsL)
             adapter?.notifyDataSetChanged()
+            swipeContainer.isRefreshing = false
         }
     }
 

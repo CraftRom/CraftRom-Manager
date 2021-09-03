@@ -63,6 +63,11 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listV"
                 android:layout_width="match_parent"
@@ -71,7 +76,7 @@
                 android:layout_marginRight="10dp"
                 app:layoutManager="LinearLayoutManager"
                 tools:listitem="@layout/item_news_layout" />
-
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
         </LinearLayout>
 
     </LinearLayout>

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.craftrom.manager.R
 import com.craftrom.manager.adapter.RomItemRecyclerViewAdapter
 import com.craftrom.manager.fragments.device.DeviceFragment
@@ -18,11 +19,12 @@ import java.net.URL
 class RomFragment : Fragment() {
 
     // TODO: Customize parameters
+    lateinit var swipeContainer: SwipeRefreshLayout
     private var columnCount = 1
     private var listener: OnListFragmentInteractionListener? = null
     private val RSS_FEED_LINK = "https://raw.githubusercontent.com/CraftRom/host_updater/android-10/rom.xml"
     var adapter: RomItemRecyclerViewAdapter? = null
-    var moduleItems = ArrayList<RomItem>()
+    var romItems = ArrayList<RomItem>()
     var listV: RecyclerView?= null
 
     var root: View? = null
@@ -34,6 +36,25 @@ class RomFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_rom, container, false)
+        // Lookup the swipe container view
+        swipeContainer = root.findViewById(R.id.swipeContainer)
+        swipeContainer.setOnRefreshListener {
+            // Your code to refresh the list here.
+            // Make sure you call swipeContainer.setRefreshing(false)
+            // once the network request has completed successfully.
+            val url = URL(RSS_FEED_LINK)
+            romItems.clear()
+            adapter!!.notifyDataSetChanged()
+            RomFeedFetcher(this).execute(url)
+            swipeContainer.isRefreshing = false
+        }
+
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(R.color.blue_500,
+            R.color.colorTrue,
+            R.color.colorPermission,
+            R.color.colorFalse)
+
         listV = root.findViewById(R.id.listV)
         arguments?.let {
             columnCount = it.getInt(DeviceFragment.ARG_COLUMN_COUNT)
@@ -43,8 +64,8 @@ class RomFragment : Fragment() {
     @Suppress("DEPRECATION")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        adapter = RomItemRecyclerViewAdapter(moduleItems, listener, activity)
+        swipeContainer.isRefreshing = true
+        adapter = RomItemRecyclerViewAdapter(romItems, listener, activity)
         listV?.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         listV?.adapter = adapter
         adapter!!.notifyDataSetChanged()
@@ -57,9 +78,10 @@ class RomFragment : Fragment() {
 
     fun updateRV(rssItemsL: List<RomItem>) {
         if (rssItemsL.isNotEmpty()) {
-            moduleItems.clear()
-            moduleItems.addAll(rssItemsL)
+            romItems.clear()
+            romItems.addAll(rssItemsL)
             adapter?.notifyDataSetChanged()
+            swipeContainer.isRefreshing = false
         }
     }
 
