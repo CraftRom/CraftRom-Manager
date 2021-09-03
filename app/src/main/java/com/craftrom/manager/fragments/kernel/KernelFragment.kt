@@ -23,7 +23,6 @@ import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.notification.NotificationUtils
 import com.craftrom.manager.utils.root.RootUtils
-import com.onesignal.OneSignal
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
 import io.github.inflationx.viewpump.ViewPump
@@ -96,13 +95,6 @@ class KernelFragment : Fragment() {
                 })
 
         }
-
-        //onesignal init
-        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
-        OneSignal.startInit(context)
-            .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
-            .init()
-        OneSignal.clearOneSignalNotifications()
 
         ViewPump.init(
             ViewPump.builder()

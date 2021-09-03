@@ -44,10 +44,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         archivesBaseName = "$applicationId-$versionName"
-        manifestPlaceholders = [
-                onesignal_app_id: 'f4cfde0e-f7ba-423b-a4d4-db7c218afc2e',
-                onesignal_google_project_number: 'REMOTE'
-        ]
+
     }
 
     buildTypes {
@@ -164,7 +161,6 @@ dependencies {
     implementation 'io.github.inflationx:viewpump:2.0.3'
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'com.onesignal:OneSignal:3.11.4'
     implementation 'com.airbnb.android:lottie:3.0.7'
     kapt 'androidx.room:room-compiler:2.3.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
