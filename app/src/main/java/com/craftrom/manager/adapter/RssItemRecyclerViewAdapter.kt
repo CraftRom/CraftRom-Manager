@@ -65,7 +65,7 @@ class RssItemRecyclerViewAdapter(
 
     override fun getItemCount(): Int = mValues.size
 
-    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
+    inner class ViewHolder(mView: View) : RecyclerView.ViewHolder(mView) {
         val titleTV: TextView? = mView.findViewById(R.id.txtTitle)
         val linkTV: TextView? = mView.findViewById(R.id.txtLink)
         val contentTV: TextView? = mView.findViewById(R.id.txtContent)

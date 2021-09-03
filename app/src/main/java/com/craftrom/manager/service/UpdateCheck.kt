@@ -51,7 +51,7 @@ abstract class UpdateCheck : BroadcastReceiver() {
 
 
 
-        val buildDate: Date  = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(kernelVersion.substring(kernelVersion.lastIndexOf("PREEMPT")).substring(12, 20)+ " ${Constants.CURRENT_YEAR}")
+        val buildDate: Date?  = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(kernelVersion.substring(kernelVersion.lastIndexOf("PREEMPT")).substring(12, 20)+ " ${Constants.CURRENT_YEAR}")
 
         AndroidNetworking
             .get(Constants.HOST_REFERENCE)
@@ -60,7 +60,7 @@ abstract class UpdateCheck : BroadcastReceiver() {
             .getAsString(object : StringRequestListener {
                 override fun onResponse(response: String) {
                     host = response
-                    checkForUpdates(buildDate)
+                    checkForUpdates(buildDate!!)
                 }
 
                 override fun onError(anError: ANError?) {
