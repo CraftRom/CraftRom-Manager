@@ -4,6 +4,8 @@
 
 package com.craftrom.manager.utils.RSS
 
+import android.util.Log
+import com.craftrom.manager.utils.Constants
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserException
 import org.xmlpull.v1.XmlPullParserFactory
@@ -56,9 +58,10 @@ class RssParser {
             }
 
         } catch (e: XmlPullParserException) {
-            e.printStackTrace()
+            Log.e(Constants.TAG, "RSS PARSER: " + e.printStackTrace())
+
         } catch (e: IOException) {
-            e.printStackTrace()
+            Log.e(Constants.TAG, "RSS: " + e.printStackTrace())
         }
         return rssItems
     }
