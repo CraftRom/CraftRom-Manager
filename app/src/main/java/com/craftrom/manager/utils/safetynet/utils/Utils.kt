@@ -3,18 +3,19 @@ package com.craftrom.manager.utils.safetynet.utils
 import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.content.pm.Signature
 import android.util.Base64
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.security.SecureRandom
 import java.util.*
 
-class Utils internal constructor() {
-    private val secureRandom: SecureRandom
 
-    init {
-        secureRandom = SecureRandom()
-    }
+
+
+
+class Utils internal constructor() {
+    private val secureRandom: SecureRandom = SecureRandom()
 
     fun generateOneTimeRequestNonce(): ByteArray {
         val nonce = ByteArray(32)
@@ -30,12 +31,12 @@ class Utils internal constructor() {
             // Get signatures from package manager
             val pm = context.packageManager
             val packageInfo: PackageInfo = try {
-                pm.getPackageInfo(packageName!!, PackageManager.GET_SIGNATURES)
+                pm.getPackageInfo(packageName!!, PackageManager.GET_SIGNING_CERTIFICATES)
             } catch (e: PackageManager.NameNotFoundException) {
                 e.printStackTrace()
                 return encodedSignatures
             }
-            val signatures = packageInfo.signatures
+            val signatures: Array<Signature> = packageInfo.signingInfo.apkContentsSigners
 
             // Calculate b64 encoded sha256 hash of signatures
             for (signature in signatures) {
@@ -50,5 +51,7 @@ class Utils internal constructor() {
             }
             return encodedSignatures
         }
+
     }
+
 }
