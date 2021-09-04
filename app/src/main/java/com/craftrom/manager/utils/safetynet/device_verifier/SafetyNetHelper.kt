@@ -50,7 +50,7 @@ class SafetyNetHelper(private val googleDeviceVerificationApiKey: String) :
     }
 
     override fun onSuccess(attestationResponse: SafetyNetApi.AttestationResponse) {
-        val jwsResult =
+        val jwsResult: String? =
             attestationResponse.jwsResult // Successfully communicated with SafetyNet API.
         /*
           @jwsResult : Forward this result to your server together with the nonce for verification.
@@ -73,14 +73,14 @@ class SafetyNetHelper(private val googleDeviceVerificationApiKey: String) :
                 if (!TextUtils.isEmpty(googleDeviceVerificationApiKey)) {
                     //if the api key is set, run the AndroidDeviceVerifier
                     val androidDeviceVerifier = AndroidDeviceVerifier(
-                        googleDeviceVerificationApiKey, jwsResult
+                        googleDeviceVerificationApiKey, jwsResult!!
                     )
                     androidDeviceVerifier.verify(object :
                         AndroidDeviceVerifier.AndroidDeviceVerifierCallback {
-                        override fun error(errorMsg: String?) {
+                        override fun error(s: String?) {
                             callback!!.error(
                                 ERROR_RESPONSE_ERROR_VALIDATING_SIGNATURE,
-                                "Response signature validation error: $errorMsg"
+                                "Response signature validation error: $s"
                             )
                         }
 
