@@ -17,7 +17,7 @@ import java.util.*
 
 
 class SplashActivity : AppCompatActivity() {
-    private lateinit var imageBackground: ImageView
+    private lateinit var imageLogo: ImageView
     private  lateinit var textViewVersion: TextView
     private  lateinit var textViewSlogan: TextView
 
@@ -30,10 +30,10 @@ class SplashActivity : AppCompatActivity() {
 
     private val scaleAnimation by lazy {
         ScaleAnimation(
+            0.65f,
             1f,
-            1.25f,
+            0.65f,
             1f,
-            1.25f,
             Animation.RELATIVE_TO_SELF,
             0.5f,
             Animation.RELATIVE_TO_SELF,
@@ -47,7 +47,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        imageBackground = findViewById(R.id.imageBackground)
+        imageLogo = findViewById(R.id.imageLogo)
         textViewVersion = findViewById(R.id.textViewVersion)
         textViewSlogan = findViewById(R.id.textViewSlogan)
         initView()
@@ -59,8 +59,8 @@ class SplashActivity : AppCompatActivity() {
         textViewVersion.text = resources.getString(R.string.app_name_version, appName, BuildConfig.VERSION_NAME)
 
         Glide.with(this)
-            .load(R.drawable.splash)
-            .into(imageBackground)
+            .load(R.drawable.ic_launcher_2)
+            .into(imageLogo)
 
         scaleAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
@@ -76,7 +76,7 @@ class SplashActivity : AppCompatActivity() {
             }
         })
 
-        imageBackground.startAnimation(scaleAnimation)
+        imageLogo.startAnimation(scaleAnimation)
         textViewSlogan.startAnimation(alphaAnimation)
     }
 

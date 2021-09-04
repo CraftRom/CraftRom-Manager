@@ -8,26 +8,17 @@
     android:gravity="center"
     tools:context=".splash.SplashActivity">
 
-
     <ImageView
-        android:id="@+id/imageBackground"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="center">
-
-    </ImageView>
-
-    <ImageView
-            android:id="@+id/imageLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2"
-            android:contentDescription="@string/todo" />
+        android:id="@+id/imageLogo"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_launcher_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <com.craftrom.manager.ui.view.TypefaceTextView
         android:id="@+id/textViewSlogan"
