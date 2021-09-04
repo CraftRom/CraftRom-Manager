@@ -2,12 +2,9 @@ buildscript {
     repositories {
         maven { url 'https://plugins.gradle.org/m2/'}
     }
-    dependencies {
-        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.10'
-    }
+
 }
 
-apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -39,7 +36,7 @@ android {
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 24
-        versionName "5.4"
+        versionName "5.5"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
