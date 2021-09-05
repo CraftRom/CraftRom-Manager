@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_device.xml" value="0.1417763157894737" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_kernel.xml" value="0.1417763157894737" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_module.xml" value="0.1417763157894737" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_news.xml" value="0.1417763157894737" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_intro.xml" value="0.1" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_main.xml" value="0.22404371584699453" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_osl.xml" value="0.10723684210526316" />
@@ -13,6 +17,7 @@
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_module.xml" value="0.12796052631578947" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_news.xml" value="0.10723684210526316" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_rom.xml" value="0.12796052631578947" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/menu/activity_main_drawer.xml" value="0.22" />
       </map>
     </option>
   </component>
