@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/CraftRom%20Manager-BETA-blue)](https://github.com/CraftRom/CraftRom-Manager/releases)
+[![](https://img.shields.io/badge/CraftRom%20Manager-releases-blue)](https://github.com/CraftRom/CraftRom-Manager/releases)
 ![](https://img.shields.io/github/contributors/craftrom/CraftRom-Manager)
 [![Crowdin](https://badges.crowdin.net/craft-rom-km/localized.svg)](https://crowdin.com/project/craft-rom-km)
 ![](https://img.shields.io/github/license/craftrom/CraftRom-Manager)
@@ -10,6 +10,8 @@ Welcome!  The application is distributed <strong>without ads</strong> and was cr
 * Chidori Kernel Update for Supported Devices
 * Updating OxyAdditionals for the current version of Android device
 * Craft Rom Site News
+* Safety NET checker 
+* Terminal
 
 ## Android Version Support
 
@@ -26,6 +28,10 @@ Welcome!  The application is distributed <strong>without ads</strong> and was cr
 #### John Wu
 
 * [libsu](https://github.com/topjohnwu/libsu)
+
+#### Scott Alexander-Bown
+
+* [SafetyNet attest() Helper](https://github.com/scottyab/safetynethelper)
 
 ## Translations
 Default string resources for CraftRom Kernel Manager are located here:
