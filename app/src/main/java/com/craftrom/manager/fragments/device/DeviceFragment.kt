@@ -1,6 +1,8 @@
 package com.craftrom.manager.fragments.device
 
+
 import android.annotation.SuppressLint
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,14 +16,15 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
-import com.craftrom.manager.utils.Constants.Companion.API_KEY
+import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.Constants.Companion.TAG
 import com.craftrom.manager.utils.Device
 import com.craftrom.manager.utils.rom_checker.RomIdentifier.getRom
 import com.craftrom.manager.utils.root.RootUtils
 import com.craftrom.manager.utils.safetynet.device_verifier.SafetyNetHelper
-import com.craftrom.manager.utils.safetynet.device_verifier.SafetyNetWrapperCallback
+import com.craftrom.manager.utils.safetynet.model.SafetyNetResponse
 import com.craftrom.manager.utils.storage.isDiskEncrypted
+import java.util.*
 
 
 class DeviceFragment : Fragment(){
@@ -30,10 +33,15 @@ class DeviceFragment : Fragment(){
     private lateinit var android_codename: TextView
     private lateinit var android_version: TextView
     private lateinit var rom_version: TextView
-    private lateinit var verify_safety_net: CardView
     private lateinit var cts: TextView
     private lateinit var basic_int: TextView
+    private lateinit var advice_text : TextView
     private lateinit var safety_error: TextView
+    private lateinit var error_note: TextView
+
+    private lateinit var verify_safety_net: CardView
+
+    private lateinit var advice_liner: LinearLayout
     private lateinit var cts_liner: LinearLayout
     private lateinit var basic_liner: LinearLayout
     private lateinit var safety_net_error: LinearLayout
@@ -65,16 +73,18 @@ class DeviceFragment : Fragment(){
         cts_liner = root.findViewById(R.id.cts_liner)
         basic_liner = root.findViewById(R.id.basic_liner)
         safety_error = root.findViewById(R.id.error_text)
+        error_note= root.findViewById((R.id.error_note))
         safety_net_error = root.findViewById(R.id.safety_net_error)
         basic_int = root.findViewById(R.id.basicIntegrity)
+        advice_text = root.findViewById(R.id.advice_text)
+        advice_liner = root.findViewById(R.id.advice_liner)
         progressBar = root.findViewById(R.id.progressBar)
         listV = root.findViewById(R.id.listV)
-        safetyNetHelper = SafetyNetHelper(API_KEY)
+        safetyNetHelper = SafetyNetHelper(Constants.API_KEY)
 
         verify_safety_net.setOnClickListener {
             runTest()
         }
-
 
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
@@ -108,59 +118,42 @@ class DeviceFragment : Fragment(){
     }
 
     private fun runTest() {
-        showError(false)
         showLoading(true)
-        Log.d(TAG, ":Device SafetyNet start request")
-        safetyNetHelper?.startSafetyNetTest(
-            requireContext(),
-            object : SafetyNetWrapperCallback {
-                override fun error(errorCode: Int, errorMessage: String?) {
-                    showLoading(false)
-                    handleError(errorCode, errorMessage!!)
-                }
+        Log.d(TAG, "SafetyNet start request")
+        safetyNetHelper!!.requestTest(context, object : SafetyNetHelper.SafetyNetWrapperCallback {
+            override fun error(errorCode: Int, errorMessage: String?) {
+                showLoading(false)
+                handleError(errorCode, errorMessage)
+            }
 
-                override fun success(ctsProfileMatch: Boolean, basicIntegrity: Boolean) {
-                    val cts_result = "$ctsProfileMatch"
-                    val basic_result = "$basicIntegrity"
-                    Log.d(TAG, ":Device SafetyNet req success: \n" +
-                            "ctsProfileMatch : $ctsProfileMatch \n" +
-                            "basicIntegrity : $basicIntegrity")
-                    showLoading(false)
-                    if (ctsProfileMatch){
-                        cts.setTextColor(ContextCompat.getColor(context!!, R.color.colorTrue))
-                    } else {
-                        cts.setTextColor(ContextCompat.getColor(context!!, R.color.colorFalse))
-                    }
-                    if (basicIntegrity){
-                        basic_int.setTextColor(ContextCompat.getColor(context!!, R.color.colorTrue))
-                    } else {
-                        basic_int.setTextColor(ContextCompat.getColor(context!!, R.color.colorFalse))
-                    }
-
-                    cts.text = cts_result
-                    basic_int.text = basic_result
-                }
-            })
+            override fun success(ctsProfileMatch: Boolean, basicIntegrity: Boolean) {
+                Log.d(TAG,
+                    "SafetyNet req success: ctsProfileMatch:$ctsProfileMatch and basicIntegrity, $basicIntegrity")
+                showLoading(false)
+                updateUIWithSuccessfulResult(safetyNetHelper!!.lastResponse)
+            }
+        })
     }
 
-    private fun handleError(errorCode: Int, errorMsg: String) {
-        Log.e(TAG, errorMsg)
+    @SuppressLint("SetTextI18n")
+    private fun handleError(errorCode: Int, errorMsg: String?) {
         showError(true)
+        Log.e(TAG, errorMsg!!)
         val b = StringBuilder()
         when (errorCode) {
-            SafetyNetHelper.ERROR_SAFETY_NET_API_REQUEST_UNSUCCESSFUL -> {
+            SafetyNetHelper.SAFETY_NET_API_REQUEST_UNSUCCESSFUL -> {
                 b.append("SafetyNet request failed\n")
                 b.append("(This could be a networking issue.)\n")
             }
-            SafetyNetHelper.ERROR_RESPONSE_ERROR_VALIDATING_SIGNATURE -> {
+            SafetyNetHelper.RESPONSE_ERROR_VALIDATING_SIGNATURE -> {
                 b.append("SafetyNet request: success\n")
                 b.append("Response signature validation: error\n")
             }
-            SafetyNetHelper.ERROR_RESPONSE_FAILED_SIGNATURE_VALIDATION -> {
+            SafetyNetHelper.RESPONSE_FAILED_SIGNATURE_VALIDATION -> {
                 b.append("SafetyNet request: success\n")
                 b.append("Response signature validation: fail\n")
             }
-            SafetyNetHelper.ERROR_RESPONSE_VALIDATION_FAILED -> {
+            SafetyNetHelper.RESPONSE_VALIDATION_FAILED -> {
                 b.append("SafetyNet request: success\n")
                 b.append("Response validation: fail\n")
             }
@@ -169,17 +162,45 @@ class DeviceFragment : Fragment(){
                 b.append("(This could be a networking issue.)\n")
             }
         }
-        safety_error.text = b.toString() + "\n" + errorMsg
+        safety_error.text = b.toString()
+        error_note.text = "Error Msg:\n$errorMsg"
     }
+
+    private fun updateUIWithSuccessfulResult(safetyNetResponse: SafetyNetResponse?) {
+        val advice =
+            if (safetyNetResponse!!.advice == null) "None availible" else safetyNetResponse.advice!!
+        advice_text.text = advice
+        cts.text = safetyNetResponse.isCtsProfileMatch.toString()
+        basic_int.text =safetyNetResponse.isBasicIntegrity.toString()
+        if (safetyNetResponse.isCtsProfileMatch ) {
+            cts.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorTrue))
+        } else {
+            cts.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorFalse))
+        }
+        if (safetyNetResponse.isBasicIntegrity ) {
+            basic_int.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorTrue))
+        } else {
+            basic_int.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorFalse))
+        }
+
+        val sim = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault())
+        val timeOfResponse = Date(safetyNetResponse.timestampMs)
+//        timestampTV.setText(sim.format(timeOfResponse))
+//        packageNameTV.setText(safetyNetResponse.apkPackageName)
+    }
+
 
     private fun showLoading(show: Boolean) {
         if (show) {
             cts_liner.visibility = View.GONE
             basic_liner.visibility = View.GONE
+            advice_liner.visibility = View.GONE
+            safety_net_error.visibility =View.GONE
             progressBar.visibility = View.VISIBLE
         } else {
             cts_liner.visibility = View.VISIBLE
             basic_liner.visibility = View.VISIBLE
+            advice_liner.visibility = View.VISIBLE
             progressBar.visibility = View.GONE
         }
     }
@@ -188,10 +209,12 @@ class DeviceFragment : Fragment(){
         if (show_error) {
             cts_liner.visibility = View.GONE
             basic_liner.visibility = View.GONE
+            advice_liner.visibility = View.GONE
             safety_net_error.visibility = View.VISIBLE
         } else {
             cts_liner.visibility = View.VISIBLE
             basic_liner.visibility = View.VISIBLE
+            advice_liner.visibility = View.VISIBLE
             safety_net_error.visibility = View.GONE
         }
     }
