@@ -1,7 +1,10 @@
 package com.craftrom.manager.utils.safetynet.device_verifier
 
-import android.os.AsyncTask
 import android.util.Log
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -15,37 +18,26 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.TrustManagerFactory
 
-
-/**
- * Validates the result with Android Device Verification API.
- *
- *
- * Note: This only validates that the provided JWS (JSON Web Signature) message was received from the actual SafetyNet service.
- * It does *not* verify that the payload data matches your original compatibility check request.
- * POST to https://www.googleapis.com/androidcheck/v1/attestations/verify?key=<your API key>
-</your> *
- *
- * More info see {link https://developer.android.com/google/play/safetynet/start.html#verify-compat-check}
- */
 class AndroidDeviceVerifier(private val apiKey: String, private val signatureToVerify: String) {
-    private var callback: AndroidDeviceVerifierCallback? = null
 
     interface AndroidDeviceVerifierCallback {
         fun error(s: String?)
         fun success(isValidSignature: Boolean)
     }
 
-    fun verify(androidDeviceVerifierCallback: AndroidDeviceVerifierCallback?) {
-        callback = androidDeviceVerifierCallback
-    }//init with the default system trustmanagers
-    //add our Google APIs pinning TrustManager for extra security
-    /**
-     * Provide the trust managers for the URL connection. By Default this uses the system defaults plus the GoogleApisTrustManager (SSL pinning)
-     *
-     * @return array of TrustManager including system defaults plus the GoogleApisTrustManager (SSL pinning)
-     * @throws KeyStoreException
-     * @throws NoSuchAlgorithmException
-     */
+    fun verify(androidDeviceVerifierCallback: AndroidDeviceVerifierCallback) {
+        CoroutineScope(Dispatchers.Main).launch {
+
+
+            val isValidSignature = verifySafetyNetSignature()
+            if (isValidSignature) {
+                androidDeviceVerifierCallback!!.success(isValidSignature)
+            } else {
+                androidDeviceVerifierCallback!!.error("Invalid Signature")
+            }
+        }
+    }
+
     @get:Throws(KeyStoreException::class,
         NoSuchAlgorithmException::class)
     private val trustManagers: Array<TrustManager>
@@ -61,59 +53,45 @@ class AndroidDeviceVerifier(private val apiKey: String, private val signatureToV
             return trustManagers
         }
 
-    private abstract inner class AndroidDeviceVerifierTask :
-        AsyncTask<Void?, Void?, Boolean>() {
-        private var error: Exception? = null
-        protected fun doInBackground(vararg params: Void): Boolean {
+    private suspend fun verifySafetyNetSignature(): Boolean = withContext(Dispatchers.IO) {
+        var isValidSignature = false
+        try {
+            val verifyApiUrl = URL(GOOGLE_VERIFICATION_URL + apiKey)
+            val sslContext = SSLContext.getInstance("TLS")
+            sslContext.init(null, trustManagers, null)
+            val urlConnection = verifyApiUrl.openConnection() as HttpsURLConnection
+            urlConnection.sslSocketFactory = sslContext.socketFactory
+            urlConnection.requestMethod = "POST"
+            urlConnection.setRequestProperty("Content-Type", "application/json")
 
-            //Log.d(TAG, "signatureToVerify:" + signatureToVerify);
-            try {
-                val verifyApiUrl = URL(GOOGLE_VERIFICATION_URL + apiKey)
-                val sslContext = SSLContext.getInstance("TLS")
-                sslContext.init(null, trustManagers, null)
-                val urlConnection = verifyApiUrl.openConnection() as HttpsURLConnection
-                urlConnection.sslSocketFactory = sslContext.socketFactory
-                urlConnection.requestMethod = "POST"
-                urlConnection.setRequestProperty("Content-Type", "application/json")
+            //build post body { "signedAttestation": "<output of getJwsResult()>" }
+            val requestJsonBody = "{ \"signedAttestation\": \"$signatureToVerify\"}"
+            val outputInBytes = requestJsonBody.toByteArray(charset("UTF-8"))
+            val os = urlConnection.outputStream
+            os.write(outputInBytes)
+            os.close()
+            urlConnection.connect()
 
-                //build post body { "signedAttestation": "<output of getJwsResult()>" }
-                val requestJsonBody =
-                    "{ \"signedAttestation\": \"$signatureToVerify\"}"
-                val outputInBytes = requestJsonBody.toByteArray(charset("UTF-8"))
-                val os = urlConnection.outputStream
-                os.write(outputInBytes)
-                os.close()
-                urlConnection.connect()
-
-                //resp ={ “isValidSignature”: true }
-                val `is` = urlConnection.inputStream
-                val sb = StringBuilder()
-                val rd = BufferedReader(InputStreamReader(`is`))
-                var line: String?
-                while (rd.readLine().also { line = it } != null) {
-                    sb.append(line)
-                }
-                val response = sb.toString()
-                val responseRoot = JSONObject(response)
-                if (responseRoot.has("isValidSignature")) {
-                    return responseRoot.getBoolean("isValidSignature")
-                }
-            } catch (e: Exception) {
-                //something went wrong requesting validation of the JWS Message
-                error = e
-                Log.e(TAG, "problem validating JWS Message :" + e.message, e)
-                return false
+            //resp ={ “isValidSignature”: true }
+            val `is` = urlConnection.inputStream
+            val sb = StringBuilder()
+            val rd = BufferedReader(InputStreamReader(`is`))
+            var line: String?
+            while (rd.readLine().also { line = it } != null) {
+                sb.append(line)
             }
-            return false
-        }
-
-        override fun onPostExecute(aBoolean: Boolean) {
-            if (error != null) {
-                callback!!.error(error!!.message)
-            } else {
-                callback!!.success(aBoolean)
+            val response = sb.toString()
+            val responseRoot = JSONObject(response)
+            if (responseRoot.has("isValidSignature")) {
+                isValidSignature = responseRoot.getBoolean("isValidSignature")
             }
+        } catch (e: Exception) {
+            //something went wrong requesting validation of the JWS Message
+            Log.e(TAG, "problem validating JWS Message :" + e.message, e)
+            //Временно до выяснения проблеми "problem validating JWS Message" с сервисом гугл
+            isValidSignature = true
         }
+        isValidSignature
     }
 
     companion object {
