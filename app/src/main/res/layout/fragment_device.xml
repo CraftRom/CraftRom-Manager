@@ -119,6 +119,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+
                         android:layout_weight="@dimen/size_max"
                         android:orientation="vertical">
 
@@ -270,20 +271,17 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/safety_net"
-            style="@style/WidgetFoundation.Card.Elevated"
+            style="@style/WidgetFoundation.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_generic"
-            android:layout_marginEnd="@dimen/margin_generic"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="?android:attr/colorBackground"
-            app:cardElevation="@dimen/no_card_elevation"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="16dp"
-            app:strokeColor="@color/colorStroke"
-            app:strokeWidth="@dimen/cardStrokeWidth">
+            android:backgroundTint="?attr/colorSurfaceVariant"
+            android:nextFocusRight="@id/module_download"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="@dimen/margin_generic"
+            android:layout_marginStart="@dimen/margin_generic"
+            android:layout_marginTop="5dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -293,8 +291,9 @@
                     android:id="@+id/layout_safety_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/fab_margin"
-                    android:layout_marginEnd="@dimen/fab_margin"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginTop="@dimen/l1"
+                    android:layout_marginEnd="@dimen/l1"
                     android:orientation="horizontal"
                     android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="parent"
@@ -330,7 +329,8 @@
                         android:id="@+id/safety_net_status"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="6dp"
+                        android:layout_marginStart="@dimen/l1"
+                        android:layout_marginEnd="@dimen/l1"
                         android:text="@string/verify_safetynet_status"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
@@ -344,6 +344,9 @@
                     android:id="@+id/safety_net_error"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginBottom="@dimen/l1"
+                    android:layout_marginEnd="@dimen/l1"
                     android:visibility="gone"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
@@ -364,6 +367,7 @@
                         android:id="@+id/error_note"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/l1"
                         android:layout_marginTop="4dp"
                         android:maxLines="4"
                         android:text="NOTE"
@@ -378,6 +382,8 @@
                     android:id="@+id/cts_liner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginEnd="@dimen/l1"
                     android:visibility="visible"
                     android:weightSum="8"
                     android:orientation="horizontal"
@@ -414,6 +420,8 @@
                     android:id="@+id/basic_liner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginEnd="@dimen/l1"
                     android:visibility="visible"
                     android:weightSum="8"
                     android:orientation="horizontal"
@@ -449,9 +457,12 @@
                     android:id="@+id/advice_liner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginBottom="@dimen/l1"
+                    android:orientation="horizontal"
                     android:visibility="visible"
                     android:weightSum="8"
-                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/basic_liner">
 
@@ -460,23 +471,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
+                        android:layout_weight="2"
+                        android:maxLines="1"
+                        android:text="@string/advice"
                         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                         android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:text="@string/advice"
-                        android:layout_weight="2"
-                        android:maxLines="1"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/advice_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                        android:textSize="13sp"
                         android:layout_weight="6"
                         android:maxLines="1"
-                        android:text="nonce"/>
+                        android:text="nonce"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                        android:textSize="13sp" />
 
                 </LinearLayout>
 

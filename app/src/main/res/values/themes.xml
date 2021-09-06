@@ -13,7 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="colorSurface">#F9F9F9</item>
-        <item name="colorSurfaceVariant">#E8E8E8</item>
+        <item name="colorSurfaceVariant">#F1F1F3</item>
         <item name="colorSurfaceSurfaceVariant">?colorSurface</item>
         <item name="colorOnBackground">?colorOnSurface</item>
         <item name="colorError">#CC0047</item>
