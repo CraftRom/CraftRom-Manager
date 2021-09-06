@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:516067548857:android:44a168f3660032ff088568",
+        "mobilesdk_app_id": "1:516067548857:android:f0c8e07a3bcdcad6088568",
         "android_client_info": {
           "package_name": "com.craftrom.manager"
         }
@@ -28,7 +28,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzr6JbRJPsWaWuB6h2cAED7wTkXnpTWV8"
+          "current_key": "AIzaSyAWOzshus6WkrAbbe9Q0XPWpPxV8t2mkyY"
         }
       ],
       "services": {
