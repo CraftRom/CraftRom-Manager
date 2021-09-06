@@ -18,7 +18,7 @@ open class Constants {
         const val AUTO_UPDATES_CHECK_INTERVAL_WEEKLY = 2
         const val AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3
         const val PREF_SHOW_INTRO = "show_intro"
-        const val API_KEY = "AIzaSyBzr6JbRJPsWaWuB6h2cAED7wTkXnpTWV8"
+        const val API_KEY = "AIzaSyAWOzshus6WkrAbbe9Q0XPWpPxV8t2mkyY"
 
         val NOTIFICATION_CHANNEL_BOOT = "notification_channel_boot"
 
