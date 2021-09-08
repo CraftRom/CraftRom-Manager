@@ -3,20 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/background_splash.xml" value="0.23680781758957656" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_device.xml" value="0.1417763157894737" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_kernel.xml" value="0.1417763157894737" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_module.xml" value="0.1417763157894737" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/drawable/ic_menu_news.xml" value="0.1417763157894737" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_intro.xml" value="0.1" />
-        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_main.xml" value="0.22404371584699453" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_intro_final.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_jitter.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_osl.xml" value="0.21" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_splash.xml" value="0.11247575953458307" />
-        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/app_bar_main.xml" value="0.12796052631578947" />
-        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_device.xml" value="0.22" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/activity_splash_countdown.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/app_bar_jitter.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/content_jitter.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_device.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_jitter.xml" value="0.1" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_kernel.xml" value="0.12796052631578947" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_module.xml" value="0.12796052631578947" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_news.xml" value="0.10723684210526316" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_rom.xml" value="0.12796052631578947" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_settings.xml" value="0.10723684210526316" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_terminal.xml" value="0.20423497267759563" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/item_module_layout.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/item_news_layout.xml" value="0.16" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/nav_header_main.xml" value="0.10723684210526316" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/menu/activity_main_drawer.xml" value="0.22" />
       </map>
     </option>
