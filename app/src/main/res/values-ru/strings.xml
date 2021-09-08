@@ -53,6 +53,13 @@
     <string name="msg_pleaseWait">Подождите…</string>
     <string name="msg_textHighlighted">Текст выделен желтым</string>
     <string name="msg_textNotFound">Ничего не найдено</string>
+    <!-- Jitter -->
+    <string name="jitter_name">Идентификация Jitter</string>
+    <string name="jitter_welcome">Jitter - это случайное поведение системы, которое предотвращает восприимчивую работу при запуске.</string>
+    <string name="totalish_mma">"Продолжительность CPU: %.3fмс"</string>
+    <string name="ui_frametime_mma">"Продолжительность UI: %.3fмс"</string>
+    <string name="rt_frametime_mma">"Продолжительность RT: %.3fмс"</string>
+    <string name="total_mma">"Общая продолжительность: %.3fмс"</string>
     <string name="menu_about">О программе</string>
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
     <string name="opn_src_txt">Лицензии открытого ПО</string>
@@ -60,7 +67,6 @@
     <string name="lang_head">Переводчики</string>
     <string name="view_but">Смотреть</string>
     <string name="open_link">Страница откроется в браузере по умолчанию вашего устройства!</string>
-    <string name="head_news">Новости CraftRom</string>
     <string name="head_codename">Кодовое имя</string>
     <string name="rom_head">Прошивка</string>
     <string name="root_status">Root-статус</string>
@@ -75,11 +81,9 @@
     <string name="disk_not_permission">Недостаточно прав</string>
     <string name="disk_encrypted">Зашифрованный</string>
     <!-- SafetyNET. -->
-    <string name="cts">CTS :</string>
-    <string name="basic_integrity">Basic Integrity :</string>
     <string name="verify_safetynet_status">Проверка состояния SafetyNet</string>
     <string name="verify">Нажмите для проверки статуса SafetyNet</string>
-    <string name="advice">Advice :</string>
+    <string name="advice">Совет :</string>
     <string name="new_update">Доступно обновление!</string>
     <string name="build_at">Дата сборки</string>
     <string name="download_update">Скачать обновление</string>

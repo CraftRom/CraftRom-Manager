@@ -16,23 +16,23 @@
     <string name="nav_header_desc">Koka e lundrimit</string>
     <!-- Settings -->
     <string name="action_settings">Konfigurimet</string>
-    <string name="welc_settings">Oddly enough, but these are all application settings.</string>
-    <string name="check_upd_start">Check for updates on App startup</string>
-    <string name="beta_sign">Check for beta releases</string>
-    <string name="upd_checking">Checking for updates…</string>
-    <string name="setting_null">We have not yet figured out which settings to add.</string>
-    <string name="test">TEST</string>
+    <string name="welc_settings">Çuditërisht, por këto janë të gjitha cilësimet e aplikacionit.</string>
+    <string name="check_upd_start">Kontrolloni për përditësime kur hapni aplikacionin</string>
+    <string name="beta_sign">Kontrolloni për lëshime beta</string>
+    <string name="upd_checking">Duke kontrolluar për përditësime…</string>
+    <string name="setting_null">Ne ende nuk kemi kuptuar se cilat cilësime të shtojmë.</string>
+    <string name="test">Test</string>
+    <string name="menu_news">News</string>
     <string name="menu_device">Pajisja</string>
     <string name="welcome">Detyra zgjat gjithnjë më shumë sesa pritej të kryhej, edhe nëse e keni marrë parasysh Ligjin e Hofstader.</string>
     <string name="welc_kernel">Kernel me optimizim të shkëlqyeshëm dhe ekuilibër të performancës në autonomi.</string>
     <string name="welc_module">Lista e moduleve të dobishëm për të gjitha rastet.</string>
+    <string name="menu_rom">ROM list</string>
+    <string name="welc_rom">List of community ROMs.</string>
     <!-- Into -->
-    <string name="next">Tjetër</string>
-    <string name="into_welcome">Mirë se vini në Craft Rom, keni nevojë për qasje rrënjë që të gjitha funksionet të funksionojnë si duhet!</string>
-    <string name="finish">Fundi</string>
-    <string name="final_expl">Të gjitha informacionet dhe skedarët - si në burim ashtu edhe në formën e përpiluar - janë dhënë mbi bazën siç është.  Asnjë garanci ose garanci nuk jepet ose nënkuptohet.  Përdoruesi merr përsipër të gjitha rreziqet e çdo dëmtimi që mund të ndodhë, duke përfshirë por pa u kufizuar në humbjen e të dhënave, dëmet në pajisje ose humbjen e fitimeve të biznesit.  Ju lutemi përdorni me përgjegjësinë tuaj.  Vini re se nëse nuk lejohet shprehimisht nga garancia që mbulon pajisjen tuaj, duhet të supozohet se çdo garanci që shoqëron pajisjen tuaj do të anulohet nëse prekni ose programin e sistemit ose pajisjen.</string>
-    <string name="final_pre_expl">Deklaratë</string>
-    <string name="into_open_source_project">Aplikacioni është një projekt me burim të hapur dhe shpërndahet falas dhe pa reklama.</string>
+    <string name="intro_title">Welcome to the Craft Rom!</string>
+    <string name="intro">All information and files — both in source and compiled form — are provided on an as is basis.</string>
+    <string name="legal_text">The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits.</string>
     <!-- Title of the Terminal activity. -->
     <string name="cancel">Anullo</string>
     <string name="dismiss">Hiqe</string>
@@ -53,6 +53,13 @@
     <string name="msg_pleaseWait">Ju lutem prisni…</string>
     <string name="msg_textHighlighted">Teksti i theksuar në të verdhë</string>
     <string name="msg_textNotFound">Nuk u gjet gjë</string>
+    <!-- Jitter -->
+    <string name="jitter_name">Identifying Jitter</string>
+    <string name="jitter_welcome">Jitter is the random system behavior that prevents perceptible work from running.</string>
+    <string name="totalish_mma">"CPU-total duration: %.3fms"</string>
+    <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
+    <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
+    <string name="total_mma">"Total duration: %.3fms"</string>
     <string name="menu_about">Rreth</string>
     <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
     <string name="opn_src_txt">Licencat me burim të hapur</string>
@@ -60,7 +67,6 @@
     <string name="lang_head">Përkthyesit</string>
     <string name="view_but">Shiko</string>
     <string name="open_link">Faqja do të hapet në Shfletuesin e parazgjedhur të pajisjes suaj!</string>
-    <string name="head_news">CraftRom News</string>
     <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>
     <string name="root_status">Statusi i Rrënjës</string>
@@ -70,10 +76,14 @@
     <string name="magisk_status">Statusi i Magisk</string>
     <string name="magisk_not_detected">Magisk nuk eshte prezent</string>
     <string name="magisk_detected">Diktuar</string>
-    <string name="disk_status">/data status</string>
+    <string name="disk_status">Statusi /data</string>
     <string name="disk_not_encrypted">Nuk është e koduar</string>
     <string name="disk_not_permission">S\'ka lejë</string>
     <string name="disk_encrypted">E kodifikuar</string>
+    <!-- SafetyNET. -->
+    <string name="verify_safetynet_status">Verify SafetyNet Status</string>
+    <string name="verify">Сlick to check SafetyNet status</string>
+    <string name="advice">Advice :</string>
     <string name="new_update">Një përditësim është në disponim!</string>
     <string name="build_at">Ndërtuar në</string>
     <string name="download_update">Shkarko përditësimin</string>
@@ -81,5 +91,5 @@
     <string name="update_info">Kliko këtu për të kontrolluar për përditësime</string>
     <string name="update_status">Versioni i fundit është instaluar!</string>
     <string name="device_not_support">Kjo pajisje nuk mbështetet!</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Po ngarkohet...</string>
 </resources>

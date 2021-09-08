@@ -22,17 +22,17 @@
     <string name="upd_checking">Checking for updates…</string>
     <string name="setting_null">We have not yet figured out which settings to add.</string>
     <string name="test">TEST</string>
+    <string name="menu_news">News</string>
     <string name="menu_device">Eszköz</string>
     <string name="welcome">A feladat végrehajtása a vártnál hosszabb ideig tart. akkor is ha figyelembe vette a Hofstader törvényt.</string>
     <string name="welc_kernel">A Kernel kiváló optimalizálással és a teljesítmény egyensúlyával az autonómiáig.</string>
     <string name="welc_module">Hasznos modulok listája mindenre.</string>
+    <string name="menu_rom">ROM list</string>
+    <string name="welc_rom">List of community ROMs.</string>
     <!-- Into -->
-    <string name="next">Következő</string>
-    <string name="into_welcome">Üdvözöl a Craft Rom, minden funkció használatához szükséged lesz root jogokra!</string>
-    <string name="finish">Befejezés</string>
-    <string name="final_expl">Minden információt és fájlokat - mind forrás-, mind pedig összeállított formában - a jelenlegi állapot alapján adunk meg. Nincsenek garanciák vagy garanciák. A felhasználó vállalja az esetleges károk kockázatát, ideértve, de nem kizárólag, az adatok elvesztését, a hardver károsodását vagy a üzleti profit elvesztését. Kérjük, saját felelősségére használja. Ne feledje, hogy hacsak az eszközére vonatkozó garancia kifejezetten nem engedélyezi, feltételezzük, hogy a készüléket kísérő minden garancia érvényét veszti, ha a rendszerszoftvert vagy a hardvert megváltoztatja.</string>
-    <string name="final_pre_expl">Felelősséget kizáró nyilatkozat</string>
-    <string name="into_open_source_project">Az alkalmazás nyílt forráskódú projekt, amelyet ingyenesen reklámok nélkül terjeszthet.</string>
+    <string name="intro_title">Welcome to the Craft Rom!</string>
+    <string name="intro">All information and files — both in source and compiled form — are provided on an as is basis.</string>
+    <string name="legal_text">The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits.</string>
     <!-- Title of the Terminal activity. -->
     <string name="cancel">Mégse</string>
     <string name="dismiss">Mégsem</string>
@@ -53,6 +53,13 @@
     <string name="msg_pleaseWait">Kérem várjon…</string>
     <string name="msg_textHighlighted">A szöveg sárgával kiemelve</string>
     <string name="msg_textNotFound">Nincs találat</string>
+    <!-- Jitter -->
+    <string name="jitter_name">Identifying Jitter</string>
+    <string name="jitter_welcome">Jitter is the random system behavior that prevents perceptible work from running.</string>
+    <string name="totalish_mma">"CPU-total duration: %.3fms"</string>
+    <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
+    <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
+    <string name="total_mma">"Total duration: %.3fms"</string>
     <string name="menu_about">Névjegy</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Nyílt forráskódú licencek</string>
@@ -60,7 +67,6 @@
     <string name="lang_head">Fordítók</string>
     <string name="view_but">Megtekintés</string>
     <string name="open_link">Az oldal az eszköz alapértelmezett böngészőjében nyílik meg!</string>
-    <string name="head_news">CraftRom hírek</string>
     <string name="head_codename">Kódnév</string>
     <string name="rom_head">ROM</string>
     <string name="root_status">Root állapot</string>
@@ -74,6 +80,10 @@
     <string name="disk_not_encrypted">Nem titkosított</string>
     <string name="disk_not_permission">Nincs engedély</string>
     <string name="disk_encrypted">Titkosított</string>
+    <!-- SafetyNET. -->
+    <string name="verify_safetynet_status">Verify SafetyNet Status</string>
+    <string name="verify">Сlick to check SafetyNet status</string>
+    <string name="advice">Advice :</string>
     <string name="new_update">Egy frissítés elérhető!</string>
     <string name="build_at">Build dátuma</string>
     <string name="download_update">Frissítés letöltése</string>

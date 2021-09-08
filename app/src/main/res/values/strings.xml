@@ -68,6 +68,17 @@
     <string name="msg_textHighlighted">Text highlighted in yellow</string>
     <string name="msg_textNotFound">Nothing found</string>
 
+    <!-- Jitter -->
+    <string name="jitter" translatable="false">Jitter</string>
+    <string name="jitter_name">Identifying Jitter</string>
+    <string name="jitter_welcome">Jitter is the random system behavior that prevents perceptible work from running.</string>
+    <string name="totalish_mma">"CPU-total duration: %.3fms"</string>
+    <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
+    <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
+    <string name="total_mma">"Total duration: %.3fms"</string>
+
+
+
     <string name="menu_about">About</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Open source licenses</string>
@@ -79,7 +90,6 @@
     <string name="publication_author_txt" translatable="false">Publication Author</string>
     <string name="view_but">View</string>
     <string name="open_link">The page will open in your device\'s default Browser!</string>
-    <string name="head_news">CraftRom News</string>
 
     <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>
@@ -99,10 +109,12 @@
     <string name="disk_encrypted">Encrypted</string>
     <string name="todo" translatable="false">TODO</string>
 
-    <string name="cts">CTS :</string>
-    <string name="basic_integrity">Basic Integrity :</string>
+    <!-- SafetyNET. -->
+    <string name="cts" translatable="false">CTS :</string>
+    <string name="basic_integrity" translatable="false">Basic Integrity :</string>
     <string name="verify_safetynet_status">Verify SafetyNet Status</string>
-    <string name="verify">Сlick to verify SafetyNet status</string>
+    <string name="verify">Сlick to check SafetyNet status</string>
+    <string name="advice">Advice :</string>
 
     <string name="download" translatable="false">Download</string>
     <string name="module_version_author" translatable="false">%s by %s</string>

@@ -22,17 +22,17 @@
     <string name="upd_checking">Checking for updates…</string>
     <string name="setting_null">We have not yet figured out which settings to add.</string>
     <string name="test">TEST</string>
+    <string name="menu_news">News</string>
     <string name="menu_device">Device</string>
     <string name="welcome">The task always takes longer than expected to complete, even if you have considered Hofstader\'s Law.</string>
     <string name="welc_kernel">Kernel with excellent optimization and balance of performance to autonomy.</string>
     <string name="welc_module">List of useful modules for all occasions.</string>
+    <string name="menu_rom">ROM list</string>
+    <string name="welc_rom">List of community ROMs.</string>
     <!-- Into -->
-    <string name="next">Next</string>
-    <string name="into_welcome">Welcome to Craft Rom, you need root access for all functions to work properly!</string>
-    <string name="finish">Finish</string>
-    <string name="final_expl">All information and files — both in source and compiled form — are provided on an as is basis. No guarantees or warranties are given or implied. The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits. Please use at your own risk. Note that unless explicitly allowed by the warranty covering your device, it should be assumed that any warranty accompanying your device will be voided if you tamper with either the system software or the hardware.</string>
-    <string name="final_pre_expl">DISCLAIMER</string>
-    <string name="into_open_source_project">The application is an open source project and is distributed free of charge and without ads.</string>
+    <string name="intro_title">Welcome to the Craft Rom!</string>
+    <string name="intro">All information and files — both in source and compiled form — are provided on an as is basis.</string>
+    <string name="legal_text">The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits.</string>
     <!-- Title of the Terminal activity. -->
     <string name="cancel">Cancel</string>
     <string name="dismiss">Dismiss</string>
@@ -53,6 +53,13 @@
     <string name="msg_pleaseWait">Please wait …</string>
     <string name="msg_textHighlighted">Text highlighted in yellow</string>
     <string name="msg_textNotFound">Nothing found</string>
+    <!-- Jitter -->
+    <string name="jitter_name">Identifying Jitter</string>
+    <string name="jitter_welcome">Jitter is the random system behavior that prevents perceptible work from running.</string>
+    <string name="totalish_mma">"CPU-total duration: %.3fms"</string>
+    <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
+    <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
+    <string name="total_mma">"Total duration: %.3fms"</string>
     <string name="menu_about">About</string>
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Open source licenses</string>
@@ -60,7 +67,6 @@
     <string name="lang_head">Translators</string>
     <string name="view_but">View</string>
     <string name="open_link">The page will open in your device\'s default Browser!</string>
-    <string name="head_news">CraftRom News</string>
     <string name="head_codename">Codename</string>
     <string name="rom_head">ROM</string>
     <string name="root_status">Root status</string>
@@ -74,6 +80,10 @@
     <string name="disk_not_encrypted">Not encrypted</string>
     <string name="disk_not_permission">Not permission</string>
     <string name="disk_encrypted">Encrypted</string>
+    <!-- SafetyNET. -->
+    <string name="verify_safetynet_status">Verify SafetyNet Status</string>
+    <string name="verify">Сlick to check SafetyNet status</string>
+    <string name="advice">Advice :</string>
     <string name="new_update">An update is available!</string>
     <string name="build_at">Build at</string>
     <string name="download_update">Download Update</string>

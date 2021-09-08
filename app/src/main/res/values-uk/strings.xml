@@ -22,17 +22,17 @@
     <string name="upd_checking">Пошук оновлення…</string>
     <string name="setting_null">Ми ще не вирішили, які саме налаштування додати.</string>
     <string name="test">ТЕСТ</string>
+    <string name="menu_news">Новини</string>
     <string name="menu_device">Пристрій</string>
     <string name="welcome">Вирішення завдання завжди займає більше часу, ніж очікувалося для завершення, навіть якщо ви врахували закон Гофстадера.</string>
     <string name="welc_kernel">Ядро з відмінною оптимізацією та балансом продуктивності до енергозбереження.</string>
     <string name="welc_module">Перелік корисних модулів для будь-якого випадку.</string>
+    <string name="menu_rom">Список прошивок</string>
+    <string name="welc_rom">Перелік прошивок спільноти.</string>
     <!-- Into -->
-    <string name="next">Далі</string>
-    <string name="into_welcome">Ласкаво просимо до ремесла Р, вам потрібен доступ до root-прав для роботи належним чином!</string>
-    <string name="finish">Готово</string>
-    <string name="final_expl">Вся інформація та файли - як у вихідному, так і в компільованому вигляді - надаються як є. Ніяких гарантій чи гарантій не дається і не передбачається. Користувач бере на себе всі ризики будь-якої шкоди, яка може статися, включаючи, але не обмежуючись втратою даних, пошкодженням обладнання та втратою прибутку від бізнесу. Будь ласка, використовуйте на свій страх і ризик. Зауважте, що якщо явно не дозволено гарантією, що охоплює ваш пристрій, слід вважати, що будь-яка гарантія, що супроводжує ваш пристрій, буде анульована, якщо ви втручаєтесь у системне програмне забезпечення чи обладнання.</string>
-    <string name="final_pre_expl">ВІДМОВА ВІД ВІДПОВІДАЛЬНОСТІ</string>
-    <string name="into_open_source_project">Додаток є проектом з відкритим вихідним кодом, який розповсюджується безкоштовно та без реклами.</string>
+    <string name="intro_title">Ласкаво просимо до Craft Rom!</string>
+    <string name="intro">Уся інформація та файли - як у початковій так і скомпільованій формі - надаються як є.</string>
+    <string name="legal_text">Користувач передбачає, що всі ризики будь-яких збитків, які можуть статися, включаючи, але не обмежуючи втрату даних, шкоди устаткуванню чи втрату прибутку бізнесу.</string>
     <!-- Title of the Terminal activity. -->
     <string name="cancel">Скасувати</string>
     <string name="dismiss">Закрити</string>
@@ -53,6 +53,13 @@
     <string name="msg_pleaseWait">Будь ласка, зачекайте…</string>
     <string name="msg_textHighlighted">Виділений текст жовтим</string>
     <string name="msg_textNotFound">Нічого не знайдено</string>
+    <!-- Jitter -->
+    <string name="jitter_name">Ідентифікація Jitter</string>
+    <string name="jitter_welcome">Jitter - це випадкова поведінка системи, яка не дає змогу працювати пристрою.</string>
+    <string name="totalish_mma">"Тривалість CPU: %.3fмс"</string>
+    <string name="ui_frametime_mma">"Тривалість UI: %.3fмс"</string>
+    <string name="rt_frametime_mma">"Тривалість RT: %.3fмс"</string>
+    <string name="total_mma">"Загальна тривалість: %.3fмс"</string>
     <string name="menu_about">Про додаток</string>
     <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
     <string name="opn_src_txt">Ліцензії Open Source</string>
@@ -60,7 +67,6 @@
     <string name="lang_head">Перекладачі</string>
     <string name="view_but">Переглянути</string>
     <string name="open_link">Сторінка відкриється у браузері вашого пристрою за замовчуванням!</string>
-    <string name="head_news">Новини CraftRom</string>
     <string name="head_codename">Кодова назва</string>
     <string name="rom_head">Прошивка</string>
     <string name="root_status">Root-статус</string>
@@ -74,6 +80,10 @@
     <string name="disk_not_encrypted">Не зашифровано</string>
     <string name="disk_not_permission">Недостатньо прав</string>
     <string name="disk_encrypted">Зашифровано</string>
+    <!-- SafetyNET. -->
+    <string name="verify_safetynet_status">Перевірка статусу SafetyNet</string>
+    <string name="verify">Натисни, щоб перевірити статус SafetyNet</string>
+    <string name="advice">Порада :</string>
     <string name="new_update">Доступно оновлення!</string>
     <string name="build_at">Дата збірки</string>
     <string name="download_update">Завантажити оновлення</string>
