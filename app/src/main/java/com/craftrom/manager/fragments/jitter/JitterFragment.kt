@@ -125,7 +125,7 @@ class JitterFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         val root = inflater.inflate(R.layout.fragment_jitter, container, false)
-        val content = requireActivity().findViewById<View>(android.R.id.content)
+        val content = root.findViewById<View>(R.id.content)
         content.background = AnimatedBackgroundDrawable()
         content.keepScreenOn = true
         jitterReport = root.findViewById(R.id.jitter_mma)
