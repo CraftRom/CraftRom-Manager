@@ -15,7 +15,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-project_id: 296617
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+project_id: 425668
+preserve_hierarchy: false
+
+commit_message: "Automatic translation import %original_file_name%"
+append_commit_message: false
 
 files:
   - source: app/src/main/res/values/strings.xml
