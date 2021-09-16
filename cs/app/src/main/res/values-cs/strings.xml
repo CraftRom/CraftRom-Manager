@@ -8,22 +8,22 @@
          {android}, {android_mini} - Android Version
          {date} - Date
    -->
-    <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
-    <string name="app_name_version">%s version: %s </string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_subtitle">Anything that can go wrong has already gone wrong.</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="text_logo">Ladění kódu je jako lov. Lov chyb.</string>
+    <string name="app_name_version">%s verze: %s </string>
+    <string name="navigation_drawer_open">Otevřít navigační panel</string>
+    <string name="navigation_drawer_close">Zavřít navigační panel</string>
+    <string name="nav_header_subtitle">Všechno, co se může pokazit, se již pokazilo.</string>
+    <string name="nav_header_desc">Navigační záhlaví</string>
     <!-- Settings -->
-    <string name="action_settings">Settings</string>
-    <string name="welc_settings">Oddly enough, but these are all application settings.</string>
-    <string name="check_upd_start">Check for updates on App startup</string>
-    <string name="beta_sign">Check for beta releases</string>
-    <string name="upd_checking">Checking for updates…</string>
-    <string name="setting_null">We have not yet figured out which settings to add.</string>
+    <string name="action_settings">Nastavení</string>
+    <string name="welc_settings">Je to divné, ale toto jsou všechna nastavení aplikací.</string>
+    <string name="check_upd_start">Kontrola aktualizací při spuštění aplikace</string>
+    <string name="beta_sign">Zkontrolovat beta verze</string>
+    <string name="upd_checking">Kontrola aktualizací…</string>
+    <string name="setting_null">Dosud jsme nezjistili, která nastavení přidat.</string>
     <string name="test">TEST</string>
-    <string name="menu_news">News</string>
-    <string name="menu_device">Device</string>
+    <string name="menu_news">Novinky</string>
+    <string name="menu_device">Zařízení</string>
     <string name="welcome">The task always takes longer than expected to complete, even if you have considered Hofstader\'s Law.</string>
     <string name="welc_kernel">Kernel with excellent optimization and balance of performance to autonomy.</string>
     <string name="welc_module">List of useful modules for all occasions.</string>
