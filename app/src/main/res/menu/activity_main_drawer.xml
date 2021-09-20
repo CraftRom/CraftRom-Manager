@@ -31,11 +31,17 @@
         android:id="@+id/group2"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/tools"
+            android:title="Tools">
+        <menu>
+        <item
             android:id="@+id/nav_terminal"
             android:title="@string/menu_terminal" />
         <item
             android:id="@+id/nav_jitter"
             android:title="@string/jitter" />
+        </menu>
+        </item>
     </group>
     <group
         android:id="@+id/group3"

@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.craftrom.manager.R
 import com.craftrom.manager.adapter.RssItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Constants.Companion.RSS_FEED_LINK
 import com.craftrom.manager.utils.RSS.RssFeedFetcher
 import com.craftrom.manager.utils.RSS.RssItem
 import com.craftrom.manager.utils.dummy.DummyContent
@@ -24,7 +25,7 @@ class NewsFragment : Fragment(){
     lateinit var swipeContainer: SwipeRefreshLayout
     private var columnCount = 1
     private var listener: OnListFragmentInteractionListener? = null
-    private val RSS_FEED_LINK = "https://www.craft-rom.ml/feed.xml"
+
     var adapter: RssItemRecyclerViewAdapter? = null
     var rssItems = ArrayList<RssItem>()
     var listV: RecyclerView ?= null

@@ -24,6 +24,7 @@ open class Constants {
 
         const val SPLASH_TIME_OUT: Long = 1000 * 2 // 2 sec
         const val HOST_REFERENCE = "https://raw.githubusercontent.com/CraftRom/KernelUpdates/android-10/host"
+        const val RSS_FEED_LINK = "https://www.craft-rom.ml/feed.xml"
         const val KERNEL_NAME = "Chidori"
         const val CURRENT_YEAR = "2021"
 
