@@ -21,7 +21,7 @@
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/content_jitter.xml" value="0.1" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_device.xml" value="0.1" />
-        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_jitter.xml" value="0.1" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_jitter.xml" value="0.18" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_kernel.xml" value="0.12796052631578947" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_module.xml" value="0.12796052631578947" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_news.xml" value="0.10723684210526316" />
@@ -30,7 +30,7 @@
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/fragment_terminal.xml" value="0.20423497267759563" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/item_module_layout.xml" value="0.1" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/item_news_layout.xml" value="0.16" />
-        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/nav_header_main.xml" value="0.10723684210526316" />
+        <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/layout/nav_header_main.xml" value="0.12" />
         <entry key="..\:/ProgramFiles/Android/AndroidStudioProjects/CraftRomManager/app/src/main/res/menu/activity_main_drawer.xml" value="0.22" />
       </map>
     </option>
