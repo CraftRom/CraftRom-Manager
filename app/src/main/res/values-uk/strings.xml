@@ -92,4 +92,5 @@
     <string name="update_status">Встановлена остання версія!</string>
     <string name="device_not_support">Цей пристрій не підтримується!</string>
     <string name="loading">Завантаження...</string>
+    <string name="menu_head_tools">Tools</string>
 </resources>
