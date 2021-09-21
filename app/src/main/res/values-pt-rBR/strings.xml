@@ -92,4 +92,5 @@
     <string name="update_status">A versão mais recente está instalada!</string>
     <string name="device_not_support">Seu dispositivo não é suportado!</string>
     <string name="loading">Carregando...</string>
+    <string name="menu_head_tools">Tools</string>
 </resources>
