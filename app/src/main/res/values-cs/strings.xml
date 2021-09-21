@@ -92,5 +92,5 @@
     <string name="update_status">Nainstalována aktuální verze!</string>
     <string name="device_not_support">Toto zařízení není podporováno!</string>
     <string name="loading">Načítání...</string>
-    <string name="menu_head_tools">Tools</string>
+    <string name="menu_head_tools">Nástroje</string>
 </resources>
