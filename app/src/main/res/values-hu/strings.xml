@@ -92,5 +92,5 @@
     <string name="update_status">A legfrissebb verzió van telepítve!</string>
     <string name="device_not_support">A készüléked nem támogatott!</string>
     <string name="loading">Loading...</string>
-    <string name="menu_head_tools">Tools</string>
+    <string name="menu_head_tools">Eszközök</string>
 </resources>
