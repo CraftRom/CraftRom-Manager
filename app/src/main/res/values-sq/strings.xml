@@ -92,5 +92,5 @@
     <string name="update_status">Versioni i fundit është instaluar!</string>
     <string name="device_not_support">Kjo pajisje nuk mbështetet!</string>
     <string name="loading">Po ngarkohet...</string>
-    <string name="menu_head_tools">Tools</string>
+    <string name="menu_head_tools">Mjete</string>
 </resources>
