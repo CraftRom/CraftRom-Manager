@@ -53,7 +53,7 @@ class NewsFragment : Fragment(){
             val url = URL(RSS_FEED_LINK)
             rssItems.clear()
             adapter!!.notifyDataSetChanged()
-            if(isNetworkAvailable(context) ==true){
+            if(isNetworkAvailable(context)){
                 RssFeedFetcher(this).execute(url)
                 Log.d(Constants.TAG, "NewsFragment: " + RssFeedFetcher(this).execute(url))
             }
@@ -86,7 +86,7 @@ class NewsFragment : Fragment(){
         listV?.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         listV?.adapter = adapter
         adapter!!.notifyDataSetChanged()
-        if(isNetworkAvailable(context) ==true){
+        if(isNetworkAvailable(context)){
             val url = URL(RSS_FEED_LINK)
             RssFeedFetcher(this).execute(url)
             Log.d(Constants.TAG, "NewsFragment: " + RssFeedFetcher(this).execute(url))
@@ -95,10 +95,8 @@ class NewsFragment : Fragment(){
             Toast.makeText(
                 context, R.string.network_unavailable,
                 Toast.LENGTH_SHORT).show()
+            swipeContainer.isRefreshing = false
         }
-
-
-
     }
 
     fun updateRV(rssItemsL: List<RssItem>) {

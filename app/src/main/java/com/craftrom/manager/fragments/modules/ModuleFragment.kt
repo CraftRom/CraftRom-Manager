@@ -1,9 +1,15 @@
 package com.craftrom.manager.fragments.modules
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.craftrom.manager.R
 import com.craftrom.manager.adapter.ModuleItemRecyclerViewAdapter
 import com.craftrom.manager.fragments.device.DeviceFragment
+import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.dummy.DummyContent
 import com.craftrom.manager.utils.module.ModuleFeedFetcher
 import com.craftrom.manager.utils.module.ModuleItem
@@ -46,7 +53,15 @@ class ModuleFragment : Fragment() {
             val url = URL(RSS_FEED_LINK)
             moduleItems.clear()
             adapter!!.notifyDataSetChanged()
-            ModuleFeedFetcher(this).execute(url)
+            if(isNetworkAvailable(context)){
+                ModuleFeedFetcher(this).execute(url)
+                Log.d(Constants.TAG, "NewsFragment: " + ModuleFeedFetcher(this).execute(url))
+            }
+            else{
+                Toast.makeText(
+                    context, R.string.network_unavailable,
+                    Toast.LENGTH_SHORT).show()
+            }
             swipeContainer.isRefreshing = false
         }
 
@@ -70,8 +85,17 @@ class ModuleFragment : Fragment() {
         listV?.adapter = adapter
         adapter!!.notifyDataSetChanged()
 
-        val url = URL(RSS_FEED_LINK)
-        ModuleFeedFetcher(this).execute(url)
+        if(isNetworkAvailable(context)){
+            val url = URL(Constants.RSS_FEED_LINK)
+            ModuleFeedFetcher(this).execute(url)
+            Log.d(Constants.TAG, "NewsFragment: " + ModuleFeedFetcher(this).execute(url))
+        }
+        else{
+            Toast.makeText(
+                context, R.string.network_unavailable,
+                Toast.LENGTH_SHORT).show()
+            swipeContainer.isRefreshing = false
+        }
 
 
     }
@@ -83,6 +107,33 @@ class ModuleFragment : Fragment() {
             adapter?.notifyDataSetChanged()
             swipeContainer.isRefreshing = false
         }
+    }
+
+    fun isNetworkAvailable(context: Context?): Boolean {
+        if (context == null) return false
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+            if (capabilities != null) {
+                when {
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+                        return true
+                    }
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
+                        return true
+                    }
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
+                        return true
+                    }
+                }
+            }
+        } else {
+            val activeNetworkInfo = connectivityManager.activeNetworkInfo
+            if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
+                return true
+            }
+        }
+        return false
     }
 
 

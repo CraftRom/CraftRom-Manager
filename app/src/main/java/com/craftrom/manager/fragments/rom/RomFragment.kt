@@ -1,9 +1,15 @@
 package com.craftrom.manager.fragments.rom
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.craftrom.manager.R
 import com.craftrom.manager.adapter.RomItemRecyclerViewAdapter
 import com.craftrom.manager.fragments.device.DeviceFragment
+import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.dummy.DummyContent
 import com.craftrom.manager.utils.rom.RomFeedFetcher
 import com.craftrom.manager.utils.rom.RomItem
@@ -45,7 +52,15 @@ class RomFragment : Fragment() {
             val url = URL(RSS_FEED_LINK)
             romItems.clear()
             adapter!!.notifyDataSetChanged()
-            RomFeedFetcher(this).execute(url)
+            if(isNetworkAvailable(context)){
+                RomFeedFetcher(this).execute(url)
+                Log.d(Constants.TAG, "NewsFragment: " + RomFeedFetcher(this).execute(url))
+            }
+            else{
+                Toast.makeText(
+                    context, R.string.network_unavailable,
+                    Toast.LENGTH_SHORT).show()
+            }
             swipeContainer.isRefreshing = false
         }
 
@@ -70,8 +85,17 @@ class RomFragment : Fragment() {
         listV?.adapter = adapter
         adapter!!.notifyDataSetChanged()
 
-        val url = URL(RSS_FEED_LINK)
-        RomFeedFetcher(this).execute(url)
+        if(isNetworkAvailable(context)){
+            val url = URL(Constants.RSS_FEED_LINK)
+            RomFeedFetcher(this).execute(url)
+            Log.d(Constants.TAG, "NewsFragment: " + RomFeedFetcher(this).execute(url))
+        }
+        else{
+            Toast.makeText(
+                context, R.string.network_unavailable,
+                Toast.LENGTH_SHORT).show()
+            swipeContainer.isRefreshing = false
+        }
 
 
     }
@@ -85,6 +109,32 @@ class RomFragment : Fragment() {
         }
     }
 
+    fun isNetworkAvailable(context: Context?): Boolean {
+        if (context == null) return false
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+            if (capabilities != null) {
+                when {
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+                        return true
+                    }
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
+                        return true
+                    }
+                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
+                        return true
+                    }
+                }
+            }
+        } else {
+            val activeNetworkInfo = connectivityManager.activeNetworkInfo
+            if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
+                return true
+            }
+        }
+        return false
+    }
 
     interface OnListFragmentInteractionListener {
         fun onListFragmentInteraction(item: DummyContent.DummyItem)
