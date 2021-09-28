@@ -1,17 +1,17 @@
 package com.craftrom.manager.adapter
 
 import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.craftrom.manager.R
+import com.craftrom.manager.activities.WebViewActivity
 import com.craftrom.manager.fragments.news.NewsFragment
 import com.craftrom.manager.utils.RSS.RssItem
 import com.squareup.picasso.Picasso
@@ -51,15 +51,12 @@ class RssItemRecyclerViewAdapter(
 //                context, "Вы нажали на кнопку",
 //                Toast.LENGTH_SHORT).show()
 //        }
-        holder.butLink?.setOnClickListener { _ ->
+        holder.butLink?.setOnClickListener {
+            val intent = Intent(context, WebViewActivity::class.java)
             val url = item.link
-            val i = Intent(Intent.ACTION_VIEW)
-            i.data = Uri.parse(url)
-            context?.startActivity(i)
-
-            Toast.makeText(
-                context, R.string.open_link,
-                Toast.LENGTH_SHORT).show()
+            intent.putExtra("link", url)
+            context?.startActivity(intent)
+            Animatoo.animateZoom(context)
         }
     }
 
