@@ -30,4 +30,11 @@
             </menu>
         </item>
     </group>
+    <group
+        android:id="@+id/group3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:title="@string/menu_about" />
+    </group>
 </menu>
