@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/module_card"
+    style="@style/WidgetFoundation.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginBottom="5dp"
+    android:layout_marginEnd="@dimen/margin_generic"
+    android:layout_marginStart="@dimen/margin_generic"
+    android:layout_marginTop="5dp"
+    tools:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:text="@string/title_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/l1"
+            android:layout_marginTop="@dimen/l1"
+            android:layout_marginEnd="@dimen/l1"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/eighteen_sp"
+            android:textAlignment="center"
+            android:textAppearance="@style/AppearanceFoundation.Body"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtAuthor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/l_75"
+            android:textStyle="italic"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
+            app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+            app:layout_constraintStart_toStartOf="@+id/txtTitle"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+            tools:text="v1 by melles1991" />
+
+        <ImageView
+            android:id="@+id/featuredImg"
+            android:layout_marginStart="@dimen/l1"
+            android:layout_marginEnd="@dimen/l1"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:minWidth="250dp"
+            android:minHeight="180dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
+            android:contentDescription="TODO" />
+
+          <TextView
+            android:id="@+id/txtContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/l1"
+            android:layout_marginTop="@dimen/l1"
+            android:layout_marginEnd="@dimen/l1"
+            android:text=""
+            android:textStyle="normal"
+            android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
+            app:layout_constraintTop_toBottomOf="@+id/featuredImg"
+            tools:lines="4"
+            tools:text="@tools:sample/lorem/random" />
+
+        <View
+            android:id="@+id/news_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/l1"
+            android:background="?colorSurfaceSurfaceVariant"
+            app:layout_constraintTop_toBottomOf="@+id/txtContent" />
+
+        <TextView
+            android:id="@+id/txtPubdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/l1"
+            android:text=""
+            android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_divider"
+            tools:ignore="SmallSp"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <Button
+            android:layout_gravity="end"
+            android:id="@+id/butLink"
+            android:text="@string/view_but"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="@dimen/l1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nextFocusLeft="@id/txtPubdate"
+            android:padding="@dimen/l_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_divider"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

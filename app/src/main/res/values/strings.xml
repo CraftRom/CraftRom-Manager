@@ -3,7 +3,7 @@
     <string name="app_name" translatable="false">Craft Rom - Manager</string>
 
     <!-- Drawer menu -->
-    <string name="menu_home">Home</string>
+    <string name="menu_news">News</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_head_tools">Tools</string>
@@ -18,6 +18,14 @@
     <string name="intro_title">Welcome to the Craft Rom!</string>
     <string name="intro">All information and files — both in source and compiled form — are provided on an as is basis.</string>
     <string name="legal_text">The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits.</string>
+
+    <!-- News -->
+    <string name="welcome">The task always takes longer than expected to complete, even if you have considered Hofstader\'s Law.</string>
+    <string name="title_txt" translatable="false">Title</string>
+    <string name="publication_date_txt" translatable="false">Publication Date</string>
+    <string name="publication_author_txt" translatable="false">Publication Author</string>
+    <string name="view_but">View</string>
+    <string name="network_unavailable">Failed to connect to the internet!</string>
 
     <!-- Jitter -->
     <string name="jitter" translatable="false">Jitter</string>
