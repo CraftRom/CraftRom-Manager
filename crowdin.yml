@@ -1,0 +1,116 @@
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+project_id: 425668
+preserve_hierarchy: false
+commit_message: '%language%: Automatic translation import %original_file_name%'
+append_commit_message: false
+files:
+  - source: /app/src/main/res/values/strings.xml
+    translation: /app/src/main/res/values-%android_code%/%original_file_name%
+    languages_mapping:
+      android_code:
+        af: af
+        sq: sq
+        am: am
+        ar: ar
+        hy-AM: hy
+        frp: frp
+        as: as
+        ast: ast-rES
+        az: az
+        eu: eu
+        be: be
+        bn: bn
+        bs: bs
+        br-FR: br-rFR
+        bg: bg
+        my: my
+        ca: ca
+        zh-CN: zh-rCN
+        zh-TW: zh-rTW
+        zh-HK: zh-rHK
+        hr: hr
+        cs: cs
+        da: da
+        nl: nl
+        en-AU: en-rAU
+        en-CA: en-rCA
+        en-IN: en-rIN
+        en-GB: en-rGB
+        eo: eo
+        et: et
+        fil: fil
+        fi: fi
+        fr: fr
+        fr-CA: fr-rCA
+        fy-NL: fy-rNL
+        gl: gl
+        ka: ka
+        de: de
+        el: el
+        gu-IN: gu
+        he: iw
+        hi: hi
+        hu: hu
+        is: is
+        id: in
+        ga-IE: ga-rIE
+        it: it
+        ja: ja
+        kab: kab-rDZ
+        kn: kn
+        csb: csb
+        kk: kk
+        km: km
+        ko: ko
+        ku: ku
+        ky: ky
+        lo: lo
+        lv: lv
+        lt: lt
+        lb: lb
+        mk: mk
+        ms: ms
+        ml-IN: ml
+        mr: mr
+        mn: mn
+        ne-NP: ne
+        nb: nb
+        oc: oc
+        or: or
+        fa: fa
+        en-PT: en-rPT
+        pl: pl
+        pt-PT: pt-rPT
+        pt-BR: pt-rBR
+        pa-IN: pa
+        ro: ro
+        rm-CH: rm
+        ru: ru
+        sc: sc-rIT
+        gd: gd
+        sr: sr
+        sr-CS: b+sr+Latn
+        si-LK: si
+        sk: sk
+        sl: sl
+        es-ES: es
+        es-CO: es-rCO
+        es-MX: es-rMX
+        es-US: es-rUS
+        su: su
+        sw: sw
+        sv-SE: sv
+        tl: tl
+        ta: ta
+        te: te
+        th: th
+        tr: tr
+        uk: uk
+        ur-PK: ur
+        ug: ug
+        uz: uz
+        vec: vec
+        vi: vi
+        cy: cy
+        zu: zu
