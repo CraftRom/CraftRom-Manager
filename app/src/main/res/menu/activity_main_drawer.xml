@@ -17,4 +17,17 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
     </group>
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/tools"
+            android:title="@string/menu_head_tools">
+            <menu>
+                <item
+                    android:id="@+id/nav_jitter"
+                    android:title="@string/jitter" />
+            </menu>
+        </item>
+    </group>
 </menu>

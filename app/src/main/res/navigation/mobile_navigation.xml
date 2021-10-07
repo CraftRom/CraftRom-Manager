@@ -22,4 +22,10 @@
         android:name="com.craftrom.manager.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_jitter"
+        android:name="com.craftrom.manager.fragments.jitter.JitterFragment"
+        android:label="@string/jitter"
+        tools:layout="@layout/fragment_jitter" />
 </navigation>
