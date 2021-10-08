@@ -2,17 +2,9 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/news_card"
     style="@style/WidgetFoundation.Card"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:layout_marginBottom="5dp"
-    android:layout_marginEnd="@dimen/margin_generic"
-    android:layout_marginStart="@dimen/margin_generic"
-    android:layout_marginTop="5dp"
-    tools:layout_gravity="center">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -34,25 +26,26 @@
 
         <TextView
             android:id="@+id/txtTitle"
-            android:text="@string/title_txt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/l1"
-            android:layout_marginTop="@dimen/l1"
-            android:layout_marginEnd="@dimen/l1"
-            android:layout_marginBottom="10dp"
-            android:textSize="@dimen/eighteen_sp"
+            android:layout_marginStart="@dimen/l_50"
+            android:layout_marginTop="@dimen/l_50"
+            android:layout_marginEnd="@dimen/l_50"
+            android:text="@string/title_txt"
             android:textAlignment="center"
             android:textAppearance="@style/AppearanceFoundation.Body"
+            android:textSize="@dimen/text_margin"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/featuredImg"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/featuredImg"
-            app:layout_constraintTop_toBottomOf="@+id/featuredImg"/>
+            app:layout_constraintTop_toBottomOf="@+id/featuredImg" />
+
         <View
             android:id="@+id/news_divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="@dimen/l1"
+            android:layout_marginTop="@dimen/l_50"
             android:background="?colorSurfaceSurfaceVariant"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
         <TextView
@@ -67,8 +60,6 @@
             android:textStyle="italic"
             android:textAlignment="viewStart"
             android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
-
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/news_divider"
             app:layout_constraintTop_toBottomOf="@+id/news_divider"
             tools:text="v1 by melles1991" />
@@ -84,15 +75,41 @@
             android:textStyle="italic"
             android:layout_marginTop="@dimen/l_50"
             android:layout_marginBottom="@dimen/l_50"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/news_divider"
             app:layout_constraintTop_toBottomOf="@+id/news_divider"
             tools:ignore="SmallSp"
             tools:text="@tools:sample/date/ddmmyy" />
 
+        <TextView
+            android:id="@+id/txtContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/l_50"
+            android:layout_marginTop="@dimen/l_50"
+            android:layout_marginEnd="@dimen/l_50"
+            android:text=""
+            android:textStyle="normal"
+            android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
+            app:layout_constraintTop_toBottomOf="@+id/txtPubdate"
+            tools:lines="4"
+            tools:text="@tools:sample/lorem/random" />
 
-
-
+        <Button
+            android:id="@+id/butLink"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/l_50"
+            android:layout_marginTop="@dimen/l_50"
+            android:layout_marginBottom="@dimen/l1"
+            android:layout_marginEnd="@dimen/l_50"
+            android:nextFocusLeft="@id/txtPubdate"
+            android:text="@string/view_but"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtContent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

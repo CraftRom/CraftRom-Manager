@@ -11,6 +11,14 @@
     <dimen name="headline_6">20sp</dimen>
     <dimen name="headline_7">25sp</dimen>
 
+
+    <dimen name="font_size_16">16sp</dimen>
+    <dimen name="font_size_24">24sp</dimen>
+    <dimen name="dimen_0">0dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_32">32dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+
     <dimen name="padding_normal">16dp</dimen>
     <dimen name="padding_fab">16dp</dimen>
     <dimen name="padding_text_icon">8dp</dimen>
