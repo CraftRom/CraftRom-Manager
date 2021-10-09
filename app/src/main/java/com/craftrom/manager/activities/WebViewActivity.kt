@@ -1,5 +1,6 @@
 package com.craftrom.manager.activities
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.MotionEvent
@@ -12,6 +13,7 @@ import com.craftrom.manager.R
 class WebViewActivity : AppCompatActivity() {
     lateinit var webView: WebView
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)

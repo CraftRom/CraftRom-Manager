@@ -7,7 +7,9 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="default_margin">10dp</dimen>
     <dimen name="overline">10sp</dimen>
+    <dimen name="text">14sp</dimen>
     <dimen name="headline_5">15sp</dimen>
+    <dimen name="headline_5.5">18sp</dimen>
     <dimen name="headline_6">20sp</dimen>
     <dimen name="headline_7">25sp</dimen>
 
@@ -47,4 +49,7 @@
     <dimen name="fourteen_sp">14sp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="internal_action_bar_size">8dp</dimen>
+
+    <dimen name="roundedBottomSheetCornerRadius">16dp</dimen>
+    <dimen name="roundedBottomSheetCornerRadiusTopPadding">8dp</dimen>
 </resources>
