@@ -4,8 +4,6 @@
 
     <!-- Drawer menu -->
     <string name="menu_news">News</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="menu_head_tools">Tools</string>
     <string name="menu_about">About</string>
 
