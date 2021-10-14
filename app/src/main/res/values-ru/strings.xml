@@ -24,8 +24,8 @@
     <string name="total_mma">"Общая продолжительность: %.3fмс"</string>
     <!-- SafetyNET. -->
     <string name="safety_name">SafetyNet Test</string>
-    <string name="safety_welcome">SafetyNet Test verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
-    <string name="tap">Tap to check SafetyNet status</string>
+    <string name="safety_welcome">SafetyNet Test проверяет устройство с помощью тестов на совместимость с SafetyNet. SafetyNet api является частью Google Play Services Framework. Некоторые приложения используют этот Api, чтобы проверить, было ли устройство рутировано или взломано.</string>
+    <string name="tap">Нажмите для проверки статуса SafetyNet</string>
     <!-- About -->
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
     <string name="opn_src_txt">Лицензии открытого ПО</string>
