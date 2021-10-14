@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Drawer menu -->
-    <string name="menu_news">News</string>
-    <string name="menu_head_tools">Tools</string>
-    <string name="menu_about">About</string>
+    <string name="menu_news">Të rejat</string>
+    <string name="menu_head_tools">Mjetet</string>
+    <string name="menu_about">Rreth</string>
     <!-- Splash -->
-    <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
-    <string name="app_name_version">%s version: %s </string>
+    <string name="text_logo">Kodi i korrigjimit të gabimeve është si gjuetia. Gjuetia e gabimeve.</string>
+    <string name="app_name_version">%s versioni: %s </string>
     <!-- Into -->
-    <string name="intro_title">Welcome to the Craft Rom!</string>
-    <string name="intro">All information and files — both in source and compiled form — are provided on an as is basis.</string>
-    <string name="legal_text">The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits.</string>
+    <string name="intro_title">Mirësevini në Craft Rom!</string>
+    <string name="intro">Të gjitha informacionet dhe skedarët - si në burim ashtu edhe në formë të përpiluar - ofrohen në bazën e duhur.</string>
+    <string name="legal_text">Përdoruesi merr përsipër të gjitha rreziqet e çdo dëmi që mund të ndodhë, duke përfshirë por pa u kufizuar në humbjen e të dhënave, dëmtimin e harduerit ose humbjen e fitimeve të biznesit.</string>
     <!-- News -->
-    <string name="welcome">The task always takes longer than expected to complete, even if you have considered Hofstader\'s Law.</string>
-    <string name="view_but">View</string>
-    <string name="network_unavailable">Failed to connect to the internet!</string>
+    <string name="welcome">Detyra gjithmonë merr më shumë sesa pritej për të përfunduar, edhe nëse keni marrë parasysh Ligjin e Hofstader.</string>
+    <string name="view_but">Shiko</string>
+    <string name="network_unavailable">Nuk ka qsaje në internet!</string>
     <!-- Jitter -->
-    <string name="jitter_name">Identifying Jitter</string>
-    <string name="jitter_welcome">Jitter is the random system behavior that prevents perceptible work from running.</string>
-    <string name="totalish_mma">"CPU-total duration: %.3fms"</string>
-    <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
-    <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
-    <string name="total_mma">"Total duration: %.3fms"</string>
+    <string name="jitter_name">Identifikimi i Jitter</string>
+    <string name="jitter_welcome">Jitter është sjellja e rastësishme e sistemit që parandalon funksionimin e punës së perceptueshme.</string>
+    <string name="totalish_mma">"Kohëzgjatja totale e CPU: %.3fms"</string>
+    <string name="ui_frametime_mma">"Kohëzgjatja UI: %.3fms"</string>
+    <string name="rt_frametime_mma">"Kohëzgjatja RT: %.3fms"</string>
+    <string name="total_mma">"Kohëzgjatja totale: %.3fms"</string>
     <!-- About -->
-    <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
-    <string name="opn_src_txt">Open source licenses</string>
-    <string name="opn_src_desc">Open source libraries and their license</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_subtitle">Anything that can go wrong has already gone wrong.</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
+    <string name="opn_src_txt">Licencat me burim të hapur</string>
+    <string name="opn_src_desc">Bibliotekat me burim të hapur dhe licenca e tyre</string>
+    <string name="navigation_drawer_open">Hap sirtarin e navigimit</string>
+    <string name="navigation_drawer_close">Mbyll sirtarin e navigimit</string>
+    <string name="nav_header_subtitle">Çdo gjë që mund të shkojë keq tashmë ka shkuar keq.</string>
+    <string name="nav_header_desc">Titulli i navigimit</string>
+    <string name="action_settings">Cilësimet</string>
 </resources>
