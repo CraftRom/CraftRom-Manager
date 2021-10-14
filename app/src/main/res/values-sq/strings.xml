@@ -22,6 +22,10 @@
     <string name="ui_frametime_mma">"Kohëzgjatja UI: %.3fms"</string>
     <string name="rt_frametime_mma">"Kohëzgjatja RT: %.3fms"</string>
     <string name="total_mma">"Kohëzgjatja totale: %.3fms"</string>
+    <!-- SafetyNET. -->
+    <string name="safety_name">SafetyNet Test</string>
+    <string name="safety_welcome">SafetyNet Test verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="tap">Tap to check SafetyNet status</string>
     <!-- About -->
     <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
     <string name="opn_src_txt">Licencat me burim të hapur</string>
