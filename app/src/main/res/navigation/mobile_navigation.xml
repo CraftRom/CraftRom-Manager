@@ -20,4 +20,9 @@
         android:name="com.craftrom.manager.fragments.about.AboutFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_safety"
+        android:name="com.craftrom.manager.fragments.safety.SafetyFragment"
+        android:label="@string/menu_safety"
+        tools:layout="@layout/fragment_safety" />
 </navigation>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "516067548857",
+    "project_id": "craftrom-manager",
+    "storage_bucket": "craftrom-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516067548857:android:f0c8e07a3bcdcad6088568",
+        "android_client_info": {
+          "package_name": "com.craftrom.manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516067548857-38kufc1aurj7d0scf2i826vbnoh72omd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.craftrom.manager",
+            "certificate_hash": "d0b0bc6f64bbcf9926ffa3d645198a0db459baa8"
+          }
+        },
+        {
+          "client_id": "516067548857-8dvskgcrlbb8hd9ojhqaqvlbeaa1st5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWOzshus6WkrAbbe9Q0XPWpPxV8t2mkyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516067548857-8dvskgcrlbb8hd9ojhqaqvlbeaa1st5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8755738219300967~5318050600"
+    }
+  ],
+  "configuration_version": "1"
+}

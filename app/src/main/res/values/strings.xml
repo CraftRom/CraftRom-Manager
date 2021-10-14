@@ -5,7 +5,9 @@
     <!-- Drawer menu -->
     <string name="menu_news">News</string>
     <string name="menu_head_tools">Tools</string>
+    <string name="menu_safety" translatable="false">SafetyNet</string>
     <string name="menu_about">About</string>
+
 
     <!-- Splash -->
     <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
@@ -33,6 +35,13 @@
     <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
     <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
     <string name="total_mma">"Total duration: %.3fms"</string>
+
+    <!-- SafetyNET. -->
+    <string name="safety_name">SafetyNet Test</string>
+    <string name="safety_welcome">SafetyNet Test verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="tap">Tap to check SafetyNet status</string>
+    <string name="cts" translatable="false">CTS :</string>
+    <string name="basic_integrity" translatable="false">Basic Integrity :</string>
 
     <!-- About -->
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>

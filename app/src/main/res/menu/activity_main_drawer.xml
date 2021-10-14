@@ -19,6 +19,9 @@
                 <item
                     android:id="@+id/nav_jitter"
                     android:title="@string/jitter" />
+                <item
+                    android:id="@+id/nav_safety"
+                    android:title="@string/menu_safety" />
             </menu>
         </item>
     </group>

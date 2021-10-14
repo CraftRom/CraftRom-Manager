@@ -78,20 +78,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/l1"
+            android:layout_marginTop="@dimen/l_50"
+            android:layout_marginBottom="@dimen/l_50"
             android:text=""
             android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
             android:textSize="11sp"
             android:textStyle="italic"
-            android:layout_marginTop="@dimen/l_50"
-            android:layout_marginBottom="@dimen/l_50"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/news_divider"
             app:layout_constraintTop_toBottomOf="@+id/news_divider"
             tools:ignore="SmallSp"
             tools:text="@tools:sample/date/ddmmyy" />
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
