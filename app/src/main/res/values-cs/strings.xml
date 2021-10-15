@@ -24,8 +24,8 @@
     <string name="total_mma">"Celková doba trvání: %.3fms"</string>
     <!-- SafetyNET. -->
     <string name="safety_name">SafetyNet Test</string>
-    <string name="safety_welcome">SafetyNet Test verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
-    <string name="tap">Tap to check SafetyNet status</string>
+    <string name="safety_welcome">Test SafetyNet ověřuje zařízení pomocí testů kompatibility SafetyNet. SafetyNet API je součástí rámce služeb Google Play. Některé aplikace používají toto rozhraní ke kontrole, zda bylo zařízení rootnuto nebo zda s ním bylo manipulováno.</string>
+    <string name="tap">Klepnutím zkontrolovat stav SafetyNet</string>
     <!-- About -->
     <string name="love"><![CDATA[</> s ❤️ melles1991]]></string>
     <string name="opn_src_txt">Licence open source</string>
