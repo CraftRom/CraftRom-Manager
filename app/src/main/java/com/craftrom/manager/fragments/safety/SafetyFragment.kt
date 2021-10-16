@@ -40,8 +40,6 @@ class SafetyFragment : Fragment(){
     private lateinit var advice: CardView
     private var safetyNetHelper: SafetyNetHelper? = null
 
-    var root: View? = null
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -123,12 +121,12 @@ class SafetyFragment : Fragment(){
                 if (safetyNetResponse!!.advice == "LOCK_BOOTLOADER")
                 {
                     advice.visibility = View.VISIBLE
-                    advice_text.text = "The user should lock their device's bootloader."
+                    advice_text.text = R.string.advice_bootloader.toString()
                 }
                 if (safetyNetResponse.advice == "RESTORE_TO_FACTORY_ROM")
                 {
                     advice.visibility = View.VISIBLE
-                    advice_text.text = "The user should restore their device to a clean factory ROM."
+                    advice_text.text = R.string.advice_factory_rom.toString()
                 }
 
         evaluationType.text =safetyNetResponse.evaluationType
@@ -158,10 +156,10 @@ class SafetyFragment : Fragment(){
    private fun showError(show_error: Boolean) {
         if (show_error) {
             safetyLogo.setImageResource(R.drawable.shield_error)
-            error_txt.text = "Failed"
+            error_txt.text = R.string.safety_failed.toString()
             error_txt.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorFalse))
         } else {
-            error_txt.text = "Passed"
+            error_txt.text = R.string.safety_passed.toString()
             error_txt.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorTrue))
         }
     }
