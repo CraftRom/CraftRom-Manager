@@ -1,7 +1,7 @@
 [![](https://img.shields.io/badge/CraftRom%20Manager-releases-blue)](https://www.craft-rom.ml/Craft-Rom-Manager/)
 ![](https://img.shields.io/github/contributors/craftrom/CraftRom-Manager)
 [![Crowdin](https://badges.crowdin.net/craft-rom-km/localized.svg)](https://crowdin.com/project/craft-rom-km)
-![](https://img.shields.io/sourceforge/dt/exodusos//Craft%20Rom%20-%20Manager?style=for-the-badge)
+![](https://img.shields.io/sourceforge/dt/exodusos/Craft%20Rom%20-%20Manager?style=for-the-badge)
 ![](https://img.shields.io/github/license/craftrom/CraftRom-Manager)
 
 # Introduction
