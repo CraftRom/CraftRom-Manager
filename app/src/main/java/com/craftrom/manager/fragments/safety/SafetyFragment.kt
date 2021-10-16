@@ -121,12 +121,12 @@ class SafetyFragment : Fragment(){
                 if (safetyNetResponse!!.advice == "LOCK_BOOTLOADER")
                 {
                     advice.visibility = View.VISIBLE
-                    advice_text.text = R.string.advice_bootloader.toString()
+                    advice_text.setText(R.string.advice_bootloader)
                 }
                 if (safetyNetResponse.advice == "RESTORE_TO_FACTORY_ROM")
                 {
                     advice.visibility = View.VISIBLE
-                    advice_text.text = R.string.advice_factory_rom.toString()
+                    advice_text.setText(R.string.advice_factory_rom)
                 }
 
         evaluationType.text =safetyNetResponse.evaluationType
@@ -147,8 +147,8 @@ class SafetyFragment : Fragment(){
 
         val sim = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault())
         val timeOfResponse = Date(safetyNetResponse.timestampMs)
-        date.setText(sim.format(timeOfResponse))
-        packageName.setText(safetyNetResponse.apkPackageName)
+        date.text = sim.format(timeOfResponse)
+        packageName.text = safetyNetResponse.apkPackageName
     }
 
 
@@ -156,10 +156,10 @@ class SafetyFragment : Fragment(){
    private fun showError(show_error: Boolean) {
         if (show_error) {
             safetyLogo.setImageResource(R.drawable.shield_error)
-            error_txt.text = R.string.safety_failed.toString()
+            error_txt.setText(R.string.safety_failed)
             error_txt.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorFalse))
         } else {
-            error_txt.text = R.string.safety_passed.toString()
+            error_txt.setText(R.string.safety_passed)
             error_txt.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorTrue))
         }
     }
