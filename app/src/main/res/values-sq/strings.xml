@@ -26,6 +26,11 @@
     <string name="safety_name">Testo SafetyNet</string>
     <string name="safety_welcome">Testi SafetyNet verifikon pajisjen me testet e pajtueshmërisë SafetyNet. SafetyNet api është pjesë e Kornizës së Shërbimeve të Google Play. Disa aplikacione përdorin këtë api për të kontrolluar nëse pajisja është rrënjosur ose manipuluar.</string>
     <string name="tap">Prekni për të kontrolluar statusin e SafetyNet</string>
+    <string name="safety_passed">Passed</string>
+    <string name="safety_failed">Failed</string>
+    <string name="advice_bootloader">The user should lock their device\'s bootloader.</string>
+    <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
+    <string name="btn_verify">Verify Phone</string>
     <!-- About -->
     <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
     <string name="opn_src_txt">Licencat me burim të hapur</string>

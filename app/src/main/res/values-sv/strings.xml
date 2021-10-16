@@ -26,6 +26,11 @@
     <string name="safety_name">SafetyNet Test</string>
     <string name="safety_welcome">SafetyNet Test verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
     <string name="tap">Tap to check SafetyNet status</string>
+    <string name="safety_passed">Passed</string>
+    <string name="safety_failed">Failed</string>
+    <string name="advice_bootloader">The user should lock their device\'s bootloader.</string>
+    <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
+    <string name="btn_verify">Verify Phone</string>
     <!-- About -->
     <string name="love"><![CDATA[</> with ❤️ by melles1991]]></string>
     <string name="opn_src_txt">Open source licenses</string>

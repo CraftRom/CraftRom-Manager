@@ -26,6 +26,11 @@
     <string name="safety_name">SafetyNet Test</string>
     <string name="safety_welcome">SafetyNet Test перевіряє пристрій за допомогою тестів сумісності SafetyNet. Api SafetyNet є частиною рамки сервісів Google Play. Деякі програми використовують цей Api, щоб перевірити, чи пристрій вкорінено або підроблено.</string>
     <string name="tap">Натисни, щоб перевірити статус SafetyNet</string>
+    <string name="safety_passed">Пройшов</string>
+    <string name="safety_failed">Помилка</string>
+    <string name="advice_bootloader">Користувач повинен блокувати завантажувач свого пристрою.</string>
+    <string name="advice_factory_rom">Користувач має відновити свій пристрій на чисту фабричну прошивку.</string>
+    <string name="btn_verify">Перевірити телефон</string>
     <!-- About -->
     <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
     <string name="opn_src_txt">Ліцензії Open Source</string>
