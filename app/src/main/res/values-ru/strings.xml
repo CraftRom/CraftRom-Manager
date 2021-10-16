@@ -26,11 +26,11 @@
     <string name="safety_name">SafetyNet Test</string>
     <string name="safety_welcome">SafetyNet Test проверяет устройство с помощью тестов на совместимость с SafetyNet. SafetyNet api является частью Google Play Services Framework. Некоторые приложения используют этот Api, чтобы проверить, было ли устройство рутировано или взломано.</string>
     <string name="tap">Нажмите для проверки статуса SafetyNet</string>
-    <string name="safety_passed">Passed</string>
-    <string name="safety_failed">Failed</string>
-    <string name="advice_bootloader">The user should lock their device\'s bootloader.</string>
-    <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
-    <string name="btn_verify">Verify Phone</string>
+    <string name="safety_passed">Пройден</string>
+    <string name="safety_failed">Ошибка</string>
+    <string name="advice_bootloader">Пользователь должен заблокировать загрузчик устройства.</string>
+    <string name="advice_factory_rom">Пользователь должен восстановить устройство на чистую фабричную прошивку.</string>
+    <string name="btn_verify">Проверка телефона</string>
     <!-- About -->
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
     <string name="opn_src_txt">Лицензии открытого ПО</string>
