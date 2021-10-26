@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Toast
 import com.craftrom.manager.R
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.transition.MaterialContainerTransform
 
 
 open class Constants {
@@ -40,6 +39,20 @@ open class Constants {
 
         fun showSnackMessage(view: View, msg : String){
             Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+        }
+
+        fun share (context: Context, title: String, url: String){
+            val share = Intent.createChooser(Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, url)
+                type = "text/plain"
+                // (Optional) Here we're setting the title of the content
+                putExtra(Intent.EXTRA_TITLE, title)
+
+                // (Optional) Here we're passing a content URI to an image to be displayed
+                flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+            }, null)
+            context.startActivity(share)
         }
     }
 }

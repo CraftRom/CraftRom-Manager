@@ -37,8 +37,6 @@ class NewsFragment : Fragment(){
     var rssItems = ArrayList<RssItem>()
     var listV: RecyclerView ?= null
 
-    var root: View? = null
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -114,7 +112,7 @@ class NewsFragment : Fragment(){
         }
     }
 
-    fun isNetworkAvailable(context: Context?): Boolean {
+    private fun isNetworkAvailable(context: Context?): Boolean {
         if (context == null) return false
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

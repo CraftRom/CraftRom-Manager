@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
-    // Apply the Crashlytics Gradle plugin
     id 'com.google.firebase.crashlytics'
 }
 
@@ -30,7 +29,7 @@ android {
         minSdk 29
         targetSdk 31
         versionCode 65
-        versionName "6.7.1"
+        versionName "6.8"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"

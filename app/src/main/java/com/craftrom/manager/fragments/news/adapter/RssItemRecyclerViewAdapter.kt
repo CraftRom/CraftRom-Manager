@@ -1,6 +1,7 @@
 package com.craftrom.manager.fragments.news.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +13,14 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.activities.WebViewActivity
+import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Constants.Companion.share
 import com.craftrom.manager.utils.rss.RssItem
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.squareup.picasso.Picasso
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class RssItemRecyclerViewAdapter(
     private val mValues: List<RssItem>,
@@ -30,11 +36,32 @@ class RssItemRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mValues[position]
+        val postDate = item.pubDate
+        val sim = SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z", Locale.getDefault())
+        val pDate: Date? = sim.parse(postDate)
+        val form = SimpleDateFormat("dd MM yyyy", Locale.getDefault())
+
+        val date = form.format(pDate)
+
         holder.titleTV?.text = item.title
-        holder.pubDateTV?.text = item.pubDate
-        holder.pubAuthorTV?.text = item.author
+        holder.pubDateTV?.text = item.author + " • " + date
+        holder.shareBut.setOnClickListener{
+            share(context!!, item.title, item.link)
+        }
 
-
+        try {
+            val cDate = Date().time.toString()
+            val tsp = pDate?.time
+            val old = (tsp?.minus (1000 * 60 * 60 * 24 * 30)).toString()
+            Log.i(Constants.TAG, "TIMESTAMP POST:\n Curent time: $cDate \n Post time: $tsp \n Diff: $old")
+            if (cDate < old) {
+                holder.new_icon.visibility = View.VISIBLE
+            } else {
+                holder.new_icon.visibility = View.GONE
+            }
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
 
         Picasso.get()
             .load(item.image)
@@ -58,15 +85,29 @@ class RssItemRecyclerViewAdapter(
             val btnClose = card.findViewById<Button>(R.id.butLink)
             val articleImage =card.findViewById<ImageView>(R.id.featuredImg)
             val titleTxt =card.findViewById<TextView>(R.id.txtTitle)
-            val authorNameTxt =card.findViewById<TextView>(R.id.txtAuthor)
             val descriptionTxt =card.findViewById<TextView>(R.id.txtContent)
             val dateTxt =card.findViewById<TextView>(R.id.txtPubdate)
+            val new_ic =card.findViewById<ImageView>(R.id.new_news)
+
+            try {
+                val cDate = Date().time.toString()
+                val tsp = pDate?.time
+                val old = (tsp?.minus (1000 * 60 * 60 * 24 * 30)).toString()
+                if (cDate < old) {
+                    new_ic.visibility = View.VISIBLE
+                } else {
+                    new_ic.visibility = View.GONE
+                }
+            } catch (e: ParseException) {
+                e.printStackTrace()
+            }
 
             titleTxt.text = item.title
             descriptionTxt.text  = item.description
-            dateTxt.text = item.pubDate
-            authorNameTxt.text = item.author
-
+            dateTxt.text = item.author + " • " + date
+            holder.shareBut.setOnClickListener{
+                share(context, item.title, item.link)
+            }
             Picasso.get()
                 .load(item.image)
                 .fit()
@@ -95,13 +136,16 @@ class RssItemRecyclerViewAdapter(
         }
     }
 
+
+
     override fun getItemCount(): Int = mValues.size
 
     inner class ViewHolder(mView: View) : RecyclerView.ViewHolder(mView) {
         val titleTV: TextView? = mView.findViewById(R.id.txtTitle)
         val pubDateTV: TextView? = mView.findViewById(R.id.txtPubdate)
-        val pubAuthorTV: TextView? = mView.findViewById(R.id.txtAuthor)
         val featuredImg: ImageView? = mView.findViewById(R.id.featuredImg)
-        val butLink: CardView= mView.findViewById(R.id.news_card)
+        val butLink: CardView = mView.findViewById(R.id.news_card)
+        val shareBut: ImageView = mView.findViewById(R.id.share_fab)
+        val new_icon: ImageView = mView.findViewById(R.id.new_news)
     }
 }

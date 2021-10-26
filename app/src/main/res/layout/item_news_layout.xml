@@ -22,15 +22,16 @@
             android:id="@+id/featuredImg"
             android:layout_width="match_parent"
             android:layout_height="160dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="TODO"
             android:minWidth="250dp"
             android:minHeight="180dp"
-            android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
 
-            android:contentDescription="TODO" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtTitle"
@@ -55,23 +56,6 @@
             android:layout_marginTop="@dimen/l1"
             android:background="?colorSurfaceSurfaceVariant"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
-        <TextView
-            android:id="@+id/txtAuthor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/l1"
-            android:text=""
-            android:layout_marginTop="@dimen/l_50"
-            android:layout_marginBottom="@dimen/l_50"
-            android:textSize="@dimen/l_75"
-            android:textStyle="italic"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/news_divider"
-            app:layout_constraintTop_toBottomOf="@+id/news_divider"
-            tools:text="v1 by melles1991" />
 
         <TextView
             android:id="@+id/txtPubdate"
@@ -82,13 +66,44 @@
             android:layout_marginBottom="@dimen/l_50"
             android:text=""
             android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
-            android:textSize="11sp"
+            android:textSize="10sp"
             android:textStyle="italic"
+            android:textColor="@color/shareColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/news_divider"
             app:layout_constraintTop_toBottomOf="@+id/news_divider"
             tools:ignore="SmallSp"
             tools:text="@tools:sample/date/ddmmyy" />
+
+        <ImageView
+            android:id="@+id/share_fab"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="@dimen/l_50"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/l_50"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_divider"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/new_news"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/l_50"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/l_50"
+            android:src="@drawable/ic_new"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/share_fab"
+            app:layout_constraintTop_toBottomOf="@+id/news_divider"
+            tools:ignore="SpeakableTextPresentCheck" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
