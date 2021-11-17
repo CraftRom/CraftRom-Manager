@@ -53,4 +53,7 @@
 
     <dimen name="roundedBottomSheetCornerRadius">16dp</dimen>
     <dimen name="roundedBottomSheetCornerRadiusTopPadding">8dp</dimen>
+
+    <dimen name="tab_indicator_height">2dp</dimen>
+    <dimen name="tab_indicator_width">40dp</dimen>
 </resources>
