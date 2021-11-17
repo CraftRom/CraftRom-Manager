@@ -18,7 +18,7 @@ import com.craftrom.manager.activities.OSLActivity
 class AboutFragment: Fragment(), View.OnClickListener {
 
 
-    private lateinit var osl: LinearLayout
+//    private lateinit var osl: LinearLayout
     private lateinit var imageView: ImageView
     private lateinit var ghimg: ImageView
     private lateinit var webimg: ImageView
@@ -30,8 +30,8 @@ class AboutFragment: Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_about, container, false)
-        osl = root.findViewById(R.id.ll_osl)
-        osl.setOnClickListener(this)
+//        osl = root.findViewById(R.id.ll_osl)
+//        osl.setOnClickListener(this)
         imageView = root.findViewById(R.id.tg_link)
         imageView.setOnClickListener(this)
         ghimg = root.findViewById(R.id.gh_link)
@@ -75,7 +75,7 @@ class AboutFragment: Fragment(), View.OnClickListener {
             R.id.tg_link -> openTG()
             R.id.gh_link -> openGH()
             R.id.web_link -> openWeb()
-            R.id.ll_osl ->  startActivity(Intent(context, OSLActivity::class.java))
+//            R.id.ll_osl ->  startActivity(Intent(context, OSLActivity::class.java))
         }
     }
 

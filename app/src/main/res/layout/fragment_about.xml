@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center">
 
     <LinearLayout
@@ -121,73 +122,89 @@
 
         </LinearLayout>
     </LinearLayout>
-
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="50dp" >
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/card_support">
 
             <LinearLayout
-                android:layout_marginTop="24dp"
-                android:scrollbars="vertical"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                    <LinearLayout
-                        android:id="@+id/ll_osl"
-                        android:padding="10dp"
-                        android:layout_marginTop="8dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:background="@drawable/ripple"
-                        android:weightSum="12"
+                <androidx.cardview.widget.CardView
+                    style="@style/WidgetFoundation.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="@dimen/margin_generic"
+                    android:layout_marginStart="@dimen/margin_generic"
+                    android:layout_marginTop="5dp"
+                    tools:layout_gravity="center">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/padding_normal">
+
+                        <TextView
+                            android:id="@+id/tv_about_us"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/about_as"
+                            android:textSize="@dimen/headline_5.5"
+                            android:textColor="@color/blue_500"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginVertical="@dimen/padding_normal"
+                            android:text="@string/about_as_desc"
+                            android:textSize="@dimen/text"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_about_us" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WidgetFoundation.Card"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="@dimen/margin_generic"
+                    android:layout_marginStart="@dimen/margin_generic"
+                    android:layout_marginTop="5dp"
+                    tools:layout_gravity="center">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:baselineAligned="false">
+                        android:padding="@dimen/padding_normal">
 
-                        <RelativeLayout
-                            android:layout_weight="10"
+                        <TextView
+                            android:id="@+id/tv_upcoming"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/features"
+                            android:textSize="@dimen/headline_5.5"
+                            android:textColor="@color/blue_500"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/padding_normal"
+                            android:text="@string/features_deck"
+                            android:textSize="@dimen/text"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_upcoming" />
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginTop="2dp"
-                                android:layout_marginStart="20dp"
-                                android:contentDescription="@string/todo"
-                                android:src="@drawable/ic_osl" />
-
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="4dp"
-                            android:layout_weight="2"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:textStyle="bold"
-                                android:textSize="16sp"
-                                android:text="@string/opn_src_txt"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="@string/opn_src_desc"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

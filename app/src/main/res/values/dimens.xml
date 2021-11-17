@@ -12,6 +12,7 @@
     <dimen name="headline_5.5">18sp</dimen>
     <dimen name="headline_6">20sp</dimen>
     <dimen name="headline_7">25sp</dimen>
+    <dimen name="secondary_padding">8dp</dimen>
 
 
     <dimen name="font_size_16">16sp</dimen>

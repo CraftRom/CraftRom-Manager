@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="@dimen/padding_normal"
+    tools:ignore="HardcodedText,UseCompoundDrawables,ContentDescription">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/WidgetFoundation.Card"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="@dimen/margin_generic"
+        android:layout_marginStart="@dimen/margin_generic"
+        android:layout_marginTop="5dp"
+        tools:layout_gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_normal">
+
+            <TextView
+                android:id="@+id/tv_fps_meter_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/fps_head"
+                android:textColor="@color/blue_500"
+
+                android:textSize="@dimen/headline_5.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_fps_meter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginVertical="@dimen/padding_normal"
+                android:text="Show on going FPS count in a overlay"
+                android:textSize="@dimen/text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fps_meter_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_battery_thermal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/WidgetFoundation.Card"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="@dimen/margin_generic"
+        android:layout_marginStart="@dimen/margin_generic"
+        android:layout_marginTop="5dp"
+        tools:layout_gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_normal">
+
+            <TextView
+                android:id="@+id/tv_battery_thermal_remover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Battery Thermal Remover"
+                android:textColor="@color/blue_500"
+                android:textSize="@dimen/headline_5.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_battery_thermal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/padding_normal"
+                android:text="Charge faster until the battery reach 45°C"
+                android:textSize="@dimen/text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_battery_thermal_remover" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

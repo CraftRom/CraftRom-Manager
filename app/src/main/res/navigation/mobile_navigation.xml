@@ -25,4 +25,9 @@
         android:name="com.craftrom.manager.fragments.safety.SafetyFragment"
         android:label="@string/menu_safety"
         tools:layout="@layout/fragment_safety" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.craftrom.manager.fragments.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

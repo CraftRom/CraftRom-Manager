@@ -16,7 +16,10 @@ open class Constants {
         const val PREF_SHOW_INTRO = "show_intro"
         const val API_KEY = "AIzaSyAWOzshus6WkrAbbe9Q0XPWpPxV8t2mkyY"
 
-        val NOTIFICATION_CHANNEL_BOOT = "notification_channel_boot"
+        // Battery
+        const val CHARGING_MAX_FILE = "/sys/class/power_supply/battery/constant_charge_current_max"
+        const val BATTERY_THERMAL_COOL_FILE = "/sys/class/power_supply/bms/temp_cool"
+        const val BATTERY_THERMAL_WARM_FILE = "/sys/class/power_supply/bms/temp_warm"
 
         const val SPLASH_TIME_OUT: Long = 1000 * 2 // 2 sec
         const val HOST_REFERENCE =
