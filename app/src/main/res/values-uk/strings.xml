@@ -31,10 +31,15 @@
     <string name="advice_bootloader">Користувач повинен блокувати завантажувач свого пристрою.</string>
     <string name="advice_factory_rom">Користувач має відновити свій пристрій на чисту фабричну прошивку.</string>
     <string name="btn_verify">Перевірити телефон</string>
+    <!-- Settings -->
+    <string name="menu_settings">Settings</string>
+    <string name="fps_head">FPS Meter</string>
     <!-- About -->
     <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
-    <string name="opn_src_txt">Ліцензії Open Source</string>
-    <string name="opn_src_desc">Бібліотеки з відкритим кодом та їх ліцензія</string>
+    <string name="about_as">About Us</string>
+    <string name="about_as_desc">Craft Rom is a community that maintains devices in various open source Android projects (MoKee OS, Lineage OS, crDroid, and others) and Chidori Kernel.\n\nOur main priority is stability (unfortunately, it is not always possible to achieve the full extent).</string>
+    <string name="features">App Features</string>
+    <string name="features_deck">• Craft Rom Site News\n• Safety NET checker</string>
     <string name="navigation_drawer_open">Відкрити панель навігації</string>
     <string name="navigation_drawer_close">Закрити панель навігації</string>
     <string name="nav_header_subtitle">Все, що може піти не так, вже пішло не так.</string>
