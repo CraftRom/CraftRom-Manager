@@ -31,10 +31,15 @@
     <string name="advice_bootloader">Uživatel by měl uzamknout bootloader svého zařízení.</string>
     <string name="advice_factory_rom">Uživatel by měl obnovit zařízení na původní ROM.</string>
     <string name="btn_verify">Ověřit telefon</string>
+    <!-- Settings -->
+    <string name="menu_settings">Settings</string>
+    <string name="fps_head">FPS Meter</string>
     <!-- About -->
     <string name="love"><![CDATA[</> s ❤️ melles1991]]></string>
-    <string name="opn_src_txt">Licence open source</string>
-    <string name="opn_src_desc">Open source knihovny a jejich licence</string>
+    <string name="about_as">About Us</string>
+    <string name="about_as_desc">Craft Rom is a community that maintains devices in various open source Android projects (MoKee OS, Lineage OS, crDroid, and others) and Chidori Kernel.\n\nOur main priority is stability (unfortunately, it is not always possible to achieve the full extent).</string>
+    <string name="features">App Features</string>
+    <string name="features_deck">• Craft Rom Site News\n• Safety NET checker</string>
     <string name="navigation_drawer_open">Otevřít navigační panel</string>
     <string name="navigation_drawer_close">Zavřít navigační panel</string>
     <string name="nav_header_subtitle">Všechno, co se může pokazit, se již pokazilo.</string>
