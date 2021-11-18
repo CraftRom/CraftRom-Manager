@@ -33,13 +33,15 @@
     <string name="btn_verify">Verify Phone</string>
     <!-- Settings -->
     <string name="menu_settings">Settings</string>
+    <string name="settings_welcome">Oddly enough, but these are all application settings.</string>
     <string name="fps_head">FPS Meter</string>
+    <string name="fps_desc">Show on going FPS count in a overlay</string>
     <!-- About -->
     <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
     <string name="about_as">About Us</string>
     <string name="about_as_desc">Craft Rom is a community that maintains devices in various open source Android projects (MoKee OS, Lineage OS, crDroid, and others) and Chidori Kernel.\n\nOur main priority is stability (unfortunately, it is not always possible to achieve the full extent).</string>
     <string name="features">App Features</string>
-    <string name="features_deck">• Craft Rom Site News\n• Safety NET checker</string>
+    <string name="features_deck">• Craft Rom Site News\n• Safety NET checker\n• FPS Meter overlay</string>
     <string name="navigation_drawer_open">Hap sirtarin e navigimit</string>
     <string name="navigation_drawer_close">Mbyll sirtarin e navigimit</string>
     <string name="nav_header_subtitle">Çdo gjë që mund të shkojë keq tashmë ka shkuar keq.</string>
