@@ -2,5 +2,8 @@
 <resources>
     <color name="textColor">#fafafa</color>
     <color name="iconColor">@color/white</color>
-    <color name="shareColor">#42000000</color>
+    <color name="shareColor">#DADADA</color>
+    <color name="CardSheet">#FF242528</color>
+    <color name="card_icon">#995F6368</color>
+    <color name="google_gray">#FF5F6368</color>
 </resources>

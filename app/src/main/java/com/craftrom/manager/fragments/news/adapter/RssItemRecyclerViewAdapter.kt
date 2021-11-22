@@ -1,6 +1,7 @@
 package com.craftrom.manager.fragments.news.adapter
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -77,7 +78,7 @@ class RssItemRecyclerViewAdapter(
 //        }
         holder.butLink.setOnClickListener {
 // on below line we are creating a new bottom sheet dialog.
-            val dialog = BottomSheetDialog(context!!)
+            val dialog = BottomSheetDialog(context!!, R.style.ThemeBottomSheet)
 
             // on below line we are inflating a layout file which we have created.
             val card = LayoutInflater.from(context).inflate(R.layout.bottom_sheet_dialog, null)
@@ -129,10 +130,11 @@ class RssItemRecyclerViewAdapter(
             // on below line we are setting
             // content view to our view.
             dialog.setContentView(card)
-
+            dialog.dismissWithAnimation = true
             // on below line we are calling
             // a show method to display a dialog.
             dialog.show()
+
         }
     }
 

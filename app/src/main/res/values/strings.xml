@@ -26,6 +26,9 @@
     <string name="publication_author_txt" translatable="false">Publication Author</string>
     <string name="view_but">View</string>
     <string name="network_unavailable">Failed to connect to the internet!</string>
+    <string name="err_no_internet">Looks like your device isn\'t connected to the internet.\nCheck Internet connection and try again</string>
+    <string name="err_card_no_internet">No internet connection</string>
+    <string name="err_card_try_again">Try Again</string>
 
     <!-- Jitter -->
     <string name="jitter" translatable="false">Jitter</string>

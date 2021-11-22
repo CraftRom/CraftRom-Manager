@@ -51,7 +51,52 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/errorInternet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="2dp">
 
+                <ImageView
+                    android:id="@+id/errorIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="8dp"
+                    android:src="@drawable/ic_round_public_off_24"
+                    app:tint="@color/google_gray" />
+
+                <TextView
+                    android:id="@+id/errorTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/err_card_no_internet"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/errorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/err_no_internet"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/btnRefresh"
+                    style="@style/ThemeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/err_card_try_again"
+                    app:icon="@drawable/ic_round_refresh_24" />
+
+            </LinearLayout>
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipeContainer"
                 android:layout_width="match_parent"

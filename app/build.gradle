@@ -29,7 +29,7 @@ android {
         minSdk 29
         targetSdk 31
         versionCode 65
-        versionName "7.0"
+        versionName "7.1.6"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"

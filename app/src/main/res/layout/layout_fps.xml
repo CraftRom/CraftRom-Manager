@@ -16,7 +16,7 @@
         android:paddingHorizontal="@dimen/padding_normal"
         android:paddingVertical="@dimen/padding_normal"
         android:text="FPS"
-        android:textColor="@color/colorPermission"
+        android:textColor="@color/white"
         android:textSize="@dimen/headline_7"
         android:textStyle="bold" />
 </FrameLayout>

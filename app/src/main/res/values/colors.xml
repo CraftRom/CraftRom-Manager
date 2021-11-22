@@ -14,8 +14,9 @@
     <color name="colorPermission">#FF9800</color>
 
     <color name="textColor">#212121</color>
-    <color name="shareColor">#89000000</color>
-
+    <color name="shareColor">#8F8F8F</color>
+    <color name="CardSheet">#FFFFFF</color>
+    <color name="card_icon">#335F6368</color>
 
     <color name="colorPrimaryDark">#e0e0e0</color>
     <color name="colorStroke">#DADCE0</color>
@@ -23,4 +24,5 @@
     <color name="colorHead">#757575</color>
     <color name="colorAboutIcon">#434343</color>
     <color name="black_overlay">#66000000</color>
+    <color name="google_gray">#FF5F6368</color>
 </resources>

@@ -82,28 +82,12 @@ class FPS : Service() {
 
     // Find The FPS File From /sys
     private fun findFpsFilePath() {
-        when {
-            SuFile.open("/sys/devices/virtual/graphics/fb0/measured_fps").exists() -> {
-                fpsFilePath = "/sys/devices/virtual/graphics/fb0/measured_fps"
-                Log.i(Constants.TAG, "FPS1 $fpsFilePath")
-            }
-            SuFile.open("/sys/devices/virtual/graphics/fb0/measured_fps").exists() -> {
-                fpsFilePath = "/sys/devices/virtual/graphics/fb0/measured_fps"
-                Log.i(Constants.TAG, "FPS2 $fpsFilePath")
-            }
-            else -> {
-                Thread {
-                    fpsFilePath = ShellUtils.fastCmd("find /sys -name measured_fps 2>/dev/null")
-                        .trim { it <= ' ' }.split("\n").minOrNull().toString()
-                    if (fpsFilePath == "") {
-                        fpsFilePath = ShellUtils.fastCmd("find /sys -name fps 2>/dev/null")
-                            .trim { it <= ' ' }.split("\n").minOrNull().toString()
-                    }
-                    Log.i(Constants.TAG, "FPS3 $fpsFilePath")
-                }.start()
-            }
-        }
-
+            fpsFilePath = ShellUtils.fastCmd("find /sys -name measured_fps 2>/dev/null")
+                .trim { it <= ' ' }.split("\n").minOrNull().toString()
+                if (fpsFilePath == "") {
+                fpsFilePath = ShellUtils.fastCmd("find /sys -name fps 2>/dev/null")
+                    .trim { it <= ' ' }.split("\n").minOrNull().toString() }
+            Log.e(Constants.TAG, "FPS1 $fpsFilePath")
     }
 
     override fun onDestroy() {

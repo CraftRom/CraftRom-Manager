@@ -1,11 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.CraftRomManager" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blue_500</item>
         <item name="colorPrimaryVariant">@color/blue_700</item>
-        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_500</item>
         <item name="colorSecondaryVariant">?attr/colorPrimary</item>
@@ -14,12 +12,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Navigation bar color. -->
         <item name="android:navigationBarColor" tools:targetApi="l">@android:color/transparent</item>
-        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">true</item>
         <!-- Customize your theme here. -->
         <item name="colorSurface">#F9F9F9</item>
         <item name="colorSurfaceVariant">#F1F1F3</item>
         <item name="colorSurfaceSurfaceVariant">?colorSurface</item>
-        <item name="colorOnBackground">?colorOnSurface</item>
         <item name="colorError">#CC0047</item>
         <item name="colorOnError">#F9F9F9</item>
         <item name="colorOnSurface">#444444</item>
@@ -60,28 +57,60 @@
 
     <style name="WidgetFoundation" parent="android:Widget" />
 
-    <style name="SelectableBackground">
-        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    <style name="ThemeSheetBase">
+        <item name="android:layout_gravity">bottom|center</item>
+        <item name="cardBackgroundColor">@color/CardSheet</item>
+        <item name="contentPadding">@dimen/l_50</item>
+        <item name="contentPaddingTop">8dp</item>
+        <item name="cardElevation">@dimen/l1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeTopRounded</item>
+        <item name="android:layout_margin">0dp</item>
     </style>
 
-    <style name="BottomSheetShapeAppearance" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="ThemeSheet" parent="ThemeSheetBase">
+        <item name="contentPaddingBottom">8dp</item>
+        <item name="contentPaddingTop">0dp</item>
+    </style>
+    <style name="ShapeTopRounded">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopLeft">16dp</item>
-        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeTopRight">24dp</item>
     </style>
 
-    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
-        <item name="shapeAppearance">@style/BottomSheetShapeAppearance</item>
-        <item name="behavior_peekHeight">140dp</item>
-        <item name="behavior_fitToContents">true</item>
-        <item name="behavior_halfExpandedRatio">0.5</item>
+    <style name="ThemeButtonBasic">
+        <item name="android:textColor">@color/CardSheet</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:singleLine">true</item>
+        <item name="iconTint">@color/CardSheet</item>
     </style>
 
-    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
-        <item name="android:windowIsFloating">false</item>
-        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    <style name="ThemeButton" parent="ThemeButtonBasic">
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">8dp</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingVertical">6dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="ThemeButtonDialog" parent="ThemeButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingVertical">10dp</item>
+    </style>
+
+
+    <style name="ThemeBottomSheet" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ThemeBottomSheetStyle</item>
+        <item name="android:navigationBarColor">@color/CardSheet</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
     </style>
 
-    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+    <style name="ThemeBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>

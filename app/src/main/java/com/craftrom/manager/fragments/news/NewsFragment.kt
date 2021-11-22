@@ -4,13 +4,17 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.widget.ActivityChooserView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +35,8 @@ class NewsFragment : Fragment(){
     // TODO: Customize parameters
     lateinit var swipeContainer: SwipeRefreshLayout
     lateinit var addMaterialContainer: ConstraintLayout
+    lateinit var netError: LinearLayout
+    lateinit var  btnRefresh: Button
     private var columnCount = 1
 
     var adapter: RssItemRecyclerViewAdapter? = null
@@ -44,6 +50,8 @@ class NewsFragment : Fragment(){
     ): View? {
         val root = inflater.inflate(R.layout.fragment_news, container, false)
         // Lookup the swipe container view
+        netError = root.findViewById(R.id.errorInternet)
+        btnRefresh = root.findViewById(R.id.btnRefresh)
         swipeContainer = root.findViewById(R.id.swipeContainer)
         addMaterialContainer = root.findViewById(R.id.addMaterialContainer)
         swipeContainer.setOnRefreshListener {
@@ -56,8 +64,12 @@ class NewsFragment : Fragment(){
             if(isNetworkAvailable(context)){
                 RssFeedFetcher(this).execute(url)
                 Log.d(Constants.TAG, "NewsFragment: " + RssFeedFetcher(this).execute(url))
+                swipeContainer.visibility = View.VISIBLE
+                netError.visibility = View.GONE
             }
             else{
+                swipeContainer.visibility = View.GONE
+                netError.visibility = View.VISIBLE
                 showSnackMessage(addMaterialContainer,
                     getString(R.string.network_unavailable)
                 )
@@ -71,6 +83,24 @@ class NewsFragment : Fragment(){
             R.color.colorPermission,
             R.color.colorFalse)
 
+        btnRefresh.setOnClickListener {
+            val url = URL(RSS_FEED_LINK)
+            rssItems.clear()
+            adapter!!.notifyDataSetChanged()
+            if(isNetworkAvailable(context)){
+                RssFeedFetcher(this).execute(url)
+                Log.d(Constants.TAG, "NewsFragment: " + RssFeedFetcher(this).execute(url))
+                swipeContainer.visibility = View.VISIBLE
+                netError.visibility = View.GONE
+            }
+            else{
+                swipeContainer.visibility = View.GONE
+                netError.visibility = View.VISIBLE
+                showSnackMessage(addMaterialContainer,
+                    getString(R.string.network_unavailable)
+                )
+            }
+        }
         listV = root.findViewById(R.id.listV)
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
@@ -87,11 +117,15 @@ class NewsFragment : Fragment(){
         listV?.adapter = adapter
         adapter!!.notifyDataSetChanged()
         if(isNetworkAvailable(context)){
+            swipeContainer.visibility = View.VISIBLE
+            netError.visibility = View.GONE
             val url = URL(RSS_FEED_LINK)
             RssFeedFetcher(this).execute(url)
             Log.d(Constants.TAG, "NewsFragment: " + RssFeedFetcher(this).execute(url))
         }
         else{
+            swipeContainer.visibility = View.GONE
+            netError.visibility = View.VISIBLE
             showSnackMessage(addMaterialContainer,
                 getString(R.string.network_unavailable)
             )
