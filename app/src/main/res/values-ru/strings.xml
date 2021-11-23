@@ -15,9 +15,9 @@
     <string name="welcome">Выполнение задачи всегда занимает больше времени, чем ожидалось, даже если вы учли закон Хофстадера.</string>
     <string name="view_but">Смотреть</string>
     <string name="network_unavailable">Не удалось подключиться к Интернету!</string>
-    <string name="err_no_internet">Looks like your device isn\'t connected to the internet.\nCheck Internet connection and try again</string>
-    <string name="err_card_no_internet">No internet connection</string>
-    <string name="err_card_try_again">Try Again</string>
+    <string name="err_no_internet">Похоже, ваше устройство не подключено к Интернету.\nПроверьте подключение к Интернету и повторите попытку</string>
+    <string name="err_card_no_internet">Нет подключения к интернету</string>
+    <string name="err_card_try_again">Попробовать ещё раз</string>
     <!-- Jitter -->
     <string name="jitter_name">Определение Jitter</string>
     <string name="jitter_welcome">Jitter - это случайное поведение системы, которое предотвращает восприимчивую работу при запуске.</string>
@@ -36,14 +36,14 @@
     <string name="btn_verify">Проверка телефона</string>
     <!-- Settings -->
     <string name="menu_settings">Настройки</string>
-    <string name="settings_welcome">Oddly enough, but these are all application settings.</string>
-    <string name="fps_head">FPS Meter</string>
-    <string name="fps_desc">Show on going FPS count in a overlay</string>
+    <string name="settings_welcome">Скорее всего это все настройки приложения.</string>
+    <string name="fps_head">Показатель FPS</string>
+    <string name="fps_desc">Показывать количество FPS в наслоении</string>
     <!-- About -->
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
-    <string name="about_as">About Us</string>
-    <string name="about_as_desc">Craft Rom is a community that maintains devices in various open source Android projects (MoKee OS, Lineage OS, crDroid, and others) and Chidori Kernel.\n\nOur main priority is stability (unfortunately, it is not always possible to achieve the full extent).</string>
-    <string name="features">App Features</string>
+    <string name="about_as">О нас</string>
+    <string name="about_as_desc">Craft Rom — это сообщество, которое поддерживает устройства в различных проектах с открытым исходным кодом (MoKee OS, Lineage OS, crDroid и других) и Chidori Kernel.\n\nНаш главный приоритет – стабильность (к сожалению, не всегда возможно достичь в полной мере).</string>
+    <string name="features">Возможности приложения</string>
     <string name="features_deck">• Craft Rom Site News\n• Safety NET checker\n• FPS Meter overlay</string>
     <string name="navigation_drawer_open">Открыть боковое меню</string>
     <string name="navigation_drawer_close">Закрыть боковое меню</string>
