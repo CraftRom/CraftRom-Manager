@@ -15,6 +15,9 @@
     <string name="welcome">Detyra gjithmonë merr më shumë sesa pritej për të përfunduar, edhe nëse keni marrë parasysh Ligjin e Hofstader.</string>
     <string name="view_but">Shiko</string>
     <string name="network_unavailable">Nuk ka qsaje në internet!</string>
+    <string name="err_no_internet">Looks like your device isn\'t connected to the internet.\nCheck Internet connection and try again</string>
+    <string name="err_card_no_internet">No internet connection</string>
+    <string name="err_card_try_again">Try Again</string>
     <!-- Jitter -->
     <string name="jitter_name">Identifikimi i Jitter</string>
     <string name="jitter_welcome">Jitter është sjellja e rastësishme e sistemit që parandalon funksionimin e punës së perceptueshme.</string>
@@ -32,7 +35,7 @@
     <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
     <string name="btn_verify">Verify Phone</string>
     <!-- Settings -->
-    <string name="menu_settings">Settings</string>
+    <string name="menu_settings">Cilësimet</string>
     <string name="settings_welcome">Oddly enough, but these are all application settings.</string>
     <string name="fps_head">FPS Meter</string>
     <string name="fps_desc">Show on going FPS count in a overlay</string>
