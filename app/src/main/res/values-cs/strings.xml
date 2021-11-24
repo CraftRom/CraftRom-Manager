@@ -15,9 +15,9 @@
     <string name="welcome">Dokončení úkolu vždy trvá déle, než se očekávalo. I když jste vzali v úvahu Hofstaderův zákon.</string>
     <string name="view_but">Zobrazit</string>
     <string name="network_unavailable">Nepodařilo se připojit k internetu!</string>
-    <string name="err_no_internet">Looks like your device isn\'t connected to the internet.\nCheck Internet connection and try again</string>
-    <string name="err_card_no_internet">No internet connection</string>
-    <string name="err_card_try_again">Try Again</string>
+    <string name="err_no_internet">Vypadá to, že vaše zařízení není připojeno k Internetu.\nZkontrolujte připojení k Internetu a zkuste to znovu</string>
+    <string name="err_card_no_internet">Bez připojení k Internetu</string>
+    <string name="err_card_try_again">Zkusit znovu</string>
     <!-- Jitter -->
     <string name="jitter_name">Identifying Jitter</string>
     <string name="jitter_welcome">Jitter je náhodné chování systému, které zabraňuje vnímatelnému chodu práce.</string>
