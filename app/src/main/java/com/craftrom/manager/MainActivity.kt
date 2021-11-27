@@ -4,7 +4,6 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.preference.PreferenceManager
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -47,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_news, R.id.nav_jitter, R.id.nav_about, R.id.nav_safety, R.id.nav_settings
+                R.id.nav_news, R.id.nav_jitter, R.id.nav_about, R.id.nav_safety, R.id.nav_others
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
