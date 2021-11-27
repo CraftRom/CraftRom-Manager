@@ -35,8 +35,8 @@
     <string name="advice_factory_rom">Uživatel by měl obnovit zařízení na původní ROM.</string>
     <string name="btn_verify">Ověřit telefon</string>
     <!-- Settings -->
-    <string name="menu_settings">Nastavení</string>
-    <string name="settings_welcome">Je to divné, ale toto jsou všechna nastavení aplikací.</string>
+    <string name="menu_others">Nastavení</string>
+    <string name="others_welcome">Je to divné, ale toto jsou všechna nastavení aplikací.</string>
     <string name="fps_head">Měřič FPS</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS v překrytí</string>
     <!-- About -->

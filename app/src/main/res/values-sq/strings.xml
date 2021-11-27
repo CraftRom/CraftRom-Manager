@@ -35,8 +35,8 @@
     <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
     <string name="btn_verify">Verify Phone</string>
     <!-- Settings -->
-    <string name="menu_settings">Cilësimet</string>
-    <string name="settings_welcome">Oddly enough, but these are all application settings.</string>
+    <string name="menu_others">Cilësimet</string>
+    <string name="others_welcome">Oddly enough, but these are all application settings.</string>
     <string name="fps_head">FPS Meter</string>
     <string name="fps_desc">Show on going FPS count in a overlay</string>
     <!-- About -->

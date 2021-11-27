@@ -35,8 +35,8 @@
     <string name="advice_factory_rom">Користувач має відновити свій пристрій на чисту фабричну прошивку.</string>
     <string name="btn_verify">Перевірити телефон</string>
     <!-- Settings -->
-    <string name="menu_settings">Налаштування</string>
-    <string name="settings_welcome">Доволі дивно, але це всі налаштування програми.</string>
+    <string name="menu_others">Налаштування</string>
+    <string name="others_welcome">Доволі дивно, але це всі налаштування програми.</string>
     <string name="fps_head">FPS метр</string>
     <string name="fps_desc">Показувати частоти FPS в оверлей</string>
     <!-- About -->

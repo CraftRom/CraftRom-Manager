@@ -69,9 +69,13 @@ class FPS : Service() {
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed(object : Runnable {
             override fun run() {
+                try {
                     fps = ShellUtils.fastCmd("cat $fpsFilePath")
-                    Log.i(Constants.TAG, "FPS $fps")
                     this@FPS.tvFps.text = fps.toDouble().roundToInt().toString()
+                } catch (ignored: Exception) {
+                    fps = ShellUtils.fastCmd("cat $fpsFilePath").split(" ").toTypedArray()[1]
+                    this@FPS.tvFps.text = fps.toDouble().roundToInt().toString()
+                }
                 handler.postDelayed(this, 1000)
             }
         }, 1000)

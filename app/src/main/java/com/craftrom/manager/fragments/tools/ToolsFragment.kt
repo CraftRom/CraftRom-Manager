@@ -1,4 +1,4 @@
-package com.craftrom.manager.fragments.settings
+package com.craftrom.manager.fragments.tools
 
 import android.app.ActivityManager
 import android.content.Context
@@ -6,11 +6,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import android.service.quicksettings.Tile
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import com.craftrom.manager.R
@@ -23,7 +21,7 @@ import com.topjohnwu.superuser.ShellUtils
 import com.topjohnwu.superuser.io.SuFile
 
 
-class SettingsFragment : Fragment() {
+class ToolsFragment : Fragment() {
     private lateinit var switchFpsMeter : SwitchCompat
     private lateinit var switchBatteryThermal : SwitchCompat
 
@@ -32,7 +30,7 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_settings, container, false)
+        val root = inflater.inflate(R.layout.fragment_tools, container, false)
         switchFpsMeter = root.findViewById(R.id.switch_fps_meter)
         switchBatteryThermal = root.findViewById(R.id.switch_battery_thermal)
         // FPS On/Off Switch

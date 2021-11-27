@@ -35,8 +35,8 @@
     <string name="advice_factory_rom">Пользователь должен восстановить устройство на чистую фабричную прошивку.</string>
     <string name="btn_verify">Проверка телефона</string>
     <!-- Settings -->
-    <string name="menu_settings">Настройки</string>
-    <string name="settings_welcome">Скорее всего это все настройки приложения.</string>
+    <string name="menu_others">Настройки</string>
+    <string name="others_welcome">Скорее всего это все настройки приложения.</string>
     <string name="fps_head">Показатель FPS</string>
     <string name="fps_desc">Показывать количество FPS в наслоении</string>
     <!-- About -->
