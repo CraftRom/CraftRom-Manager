@@ -34,9 +34,9 @@
     <string name="advice_bootloader">Пользователь должен заблокировать загрузчик устройства.</string>
     <string name="advice_factory_rom">Пользователь должен восстановить устройство на чистую фабричную прошивку.</string>
     <string name="btn_verify">Проверка телефона</string>
-    <!-- Settings -->
-    <string name="menu_others">Настройки</string>
-    <string name="others_welcome">Скорее всего это все настройки приложения.</string>
+    <!-- Tools -->
+    <string name="menu_others">Другое</string>
+    <string name="others_welcome">Я надеюсь, что это будет полезно).</string>
     <string name="fps_head">Показатель FPS</string>
     <string name="fps_desc">Показывать количество FPS в наслоении</string>
     <!-- About -->
@@ -44,7 +44,7 @@
     <string name="about_as">О нас</string>
     <string name="about_as_desc">Craft Rom — это сообщество, которое поддерживает устройства в различных проектах с открытым исходным кодом (MoKee OS, Lineage OS, crDroid и других) и Chidori Kernel.\n\nНаш главный приоритет – стабильность (к сожалению, не всегда возможно достичь в полной мере).</string>
     <string name="features">Возможности приложения</string>
-    <string name="features_deck">• Craft Rom Site News\n• Safety NET checker\n• FPS Meter overlay</string>
+    <string name="features_deck">• Craft Rom Site News\n• Jitter\n• Safety NET checker\n• FPS Meter overlay</string>
     <string name="navigation_drawer_open">Открыть боковое меню</string>
     <string name="navigation_drawer_close">Закрыть боковое меню</string>
     <string name="nav_header_subtitle">Все, что может пойти не так, уже пошло не так.</string>
