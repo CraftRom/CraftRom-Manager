@@ -17,6 +17,7 @@
     <color name="shareColor">#8F8F8F</color>
     <color name="CardSheet">#FFFFFF</color>
     <color name="card_icon">#335F6368</color>
+    <color name="overlay_fps">#76b900</color>
 
     <color name="colorPrimaryDark">#e0e0e0</color>
     <color name="colorStroke">#DADCE0</color>
