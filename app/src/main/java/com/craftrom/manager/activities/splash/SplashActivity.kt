@@ -1,5 +1,6 @@
 package com.craftrom.manager.activities.splash
 
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
@@ -16,6 +17,7 @@ import com.craftrom.manager.utils.Constants.Companion.SPLASH_TIME_OUT
 import java.util.*
 
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     private lateinit var imageLogo: ImageView
     private  lateinit var textViewVersion: TextView

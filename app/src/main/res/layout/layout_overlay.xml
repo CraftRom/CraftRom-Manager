@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fps_overlay"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -7,8 +9,8 @@
     android:focusable="false"
     android:focusableInTouchMode="false"
     android:background="@android:drawable/screen_background_dark_transparent"
-    android:paddingHorizontal="@dimen/padding_normal"
-    android:paddingVertical="@dimen/padding_normal"
+    android:paddingHorizontal="@dimen/secondary_padding"
+    android:paddingVertical="@dimen/l_25"
     android:orientation="vertical">
 
     <LinearLayout
@@ -62,5 +64,11 @@
                 android:textSize="@dimen/headline_5"
                 android:textStyle="bold" />
         </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cpuList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_cpu_freq" />
     </LinearLayout>
 </FrameLayout>

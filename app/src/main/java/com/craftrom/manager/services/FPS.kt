@@ -10,28 +10,41 @@ import android.content.res.Configuration
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.text.style.UpdateLayout
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
+import com.craftrom.manager.services.adapter.CpuItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Utils
 import com.topjohnwu.superuser.ShellUtils
+import com.topjohnwu.superuser.io.SuFile
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
+import androidx.recyclerview.widget.DividerItemDecoration
+import com.craftrom.manager.utils.Constants.Companion.UPDATE_TIME_OUT
 
 
 class FPS : Service() {
     private var fps = ""
     private var fpsFilePath: String = ""
     private var gpuFreq = ""
+    private var cpuFreq = ""
     private var gpuFreqFilePath: String = ""
     private lateinit var tvFps: TextView
     private lateinit var tvGpuFreq: TextView
     private lateinit var layoutView: View
     private lateinit var windowManager: WindowManager
+    var listCpu: RecyclerView?= null
+
+    private var mCPUFreqs: IntArray? = null
+
 
     override fun onBind(intent: Intent): IBinder? {
         return null
@@ -41,9 +54,13 @@ class FPS : Service() {
         // Attach View To Left Top Corner
         val inflater: LayoutInflater = LayoutInflater.from(this)
         layoutView = inflater.inflate(R.layout.layout_overlay, null)
-
         tvFps = layoutView.findViewById(R.id.tv_fps)
         tvGpuFreq = layoutView.findViewById(R.id.tv_gpu)
+
+        val recyclerView: RecyclerView = layoutView.findViewById(R.id.cpuList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = CpuItemRecyclerViewAdapter(this.generateData())
+
         findFpsFilePath()
         findGpuFilePath()
 
@@ -89,9 +106,9 @@ class FPS : Service() {
                 } catch (ignored:Exception){
                     this@FPS.tvGpuFreq.text = "error"
                 }
-                handler.postDelayed(this, 1000)
+                handler.postDelayed(this, UPDATE_TIME_OUT)
             }
-        }, 1000)
+        }, UPDATE_TIME_OUT)
 
         FPSTile.Service.isRunning = true
     }
@@ -124,6 +141,48 @@ class FPS : Service() {
         Log.e(Constants.TAG, "GPU file found $gpuFreqFilePath")
     }
 
+
+    companion object Count {
+
+        private val CPU_PRESENT = "/sys/devices/system/cpu/present"
+        private var mCpuCount = 0
+
+        fun  getCpuCount(): Int
+        {
+            if (mCpuCount == 0 && Utils.existFile(CPU_PRESENT)) {
+                try {
+                    val output = Utils.readFile(CPU_PRESENT)
+                    mCpuCount = output.split("-").toTypedArray()[1].toInt() + 1
+                    Log.e(Constants.TAG, "CPU count  = 0-$mCpuCount")
+                } catch (ignored: java.lang.Exception) {
+                }
+            }
+            if (mCpuCount == 0) {
+                mCpuCount = Runtime.getRuntime().availableProcessors()
+            }
+            return mCpuCount
+        }
+    }
+
+    private fun generateData(): List<String> {
+        mCPUFreqs = IntArray(getCpuCount())
+        val data: MutableList<String> = ArrayList()
+                try {
+                        mCPUFreqs = IntArray(getCpuCount())
+                        for (i in mCPUFreqs!!.indices) {
+                            cpuFreq =
+                                ShellUtils.fastCmd("cat /sys/devices/system/cpu/cpu$i/cpufreq/scaling_cur_freq")
+                            val cpu = cpuFreq.toInt()
+                            val curCpuFreq = (cpu / 1000.0).toInt()
+                            data.add(curCpuFreq.toString())
+
+                            Log.e(Constants.TAG, "CPU$i freq = $cpuFreq")
+            }
+                } catch (ignored:Exception){
+                }
+
+        return data
+    }
 
     override fun onDestroy() {
         super.onDestroy()
