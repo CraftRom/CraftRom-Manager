@@ -29,6 +29,10 @@ import kotlin.math.roundToInt
 import kotlin.math.sqrt
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.craftrom.manager.utils.Constants.Companion.UPDATE_TIME_OUT
+import android.os.Bundle
+
+
+
 
 
 class FPS : Service() {
@@ -41,7 +45,6 @@ class FPS : Service() {
     private lateinit var tvGpuFreq: TextView
     private lateinit var layoutView: View
     private lateinit var windowManager: WindowManager
-    var listCpu: RecyclerView?= null
 
     private var mCPUFreqs: IntArray? = null
 
@@ -50,7 +53,8 @@ class FPS : Service() {
         return null
     }
 
-    override fun onCreate() {
+    override fun onCreate (){
+        super.onCreate()
         // Attach View To Left Top Corner
         val inflater: LayoutInflater = LayoutInflater.from(this)
         layoutView = inflater.inflate(R.layout.layout_overlay, null)
@@ -58,8 +62,7 @@ class FPS : Service() {
         tvGpuFreq = layoutView.findViewById(R.id.tv_gpu)
 
         val recyclerView: RecyclerView = layoutView.findViewById(R.id.cpuList)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CpuItemRecyclerViewAdapter(this.generateData())
+
 
         findFpsFilePath()
         findGpuFilePath()
@@ -82,11 +85,11 @@ class FPS : Service() {
             notificationChannel
         )
         val notificationBuilder = Notification.Builder(this, "Craft_stats_notification_channel")
-        notificationBuilder.setContentTitle("Craft Rom FPS Meter")
-            .setContentText("Keep FPS meter running...").setSmallIcon(R.drawable.ic_new)
+        notificationBuilder.setContentTitle("Craft Rom " + getString(R.string.fps_head))
+            .setContentText(getString(R.string.fps_notif_desc)).setSmallIcon(R.drawable.ic_new)
         startForeground(69, notificationBuilder.build())
 
-        // Update FPS Counts
+        // Update Counts
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed(object : Runnable {
             @SuppressLint("SetTextI18n")
@@ -106,6 +109,8 @@ class FPS : Service() {
                 } catch (ignored:Exception){
                     this@FPS.tvGpuFreq.text = "error"
                 }
+                recyclerView.adapter = CpuItemRecyclerViewAdapter(generateData())
+                generateData()
                 handler.postDelayed(this, UPDATE_TIME_OUT)
             }
         }, UPDATE_TIME_OUT)
@@ -175,8 +180,6 @@ class FPS : Service() {
                             val cpu = cpuFreq.toInt()
                             val curCpuFreq = (cpu / 1000.0).toInt()
                             data.add(curCpuFreq.toString())
-
-                            Log.e(Constants.TAG, "CPU$i freq = $cpuFreq")
             }
                 } catch (ignored:Exception){
                 }
@@ -186,9 +189,9 @@ class FPS : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-
         // Stop Service
-        FPSTile.Service.isRunning = true
+        FPSTile.Service.isRunning = false
         windowManager.removeView(layoutView)
+        stopService(Intent(this, FPS::class.java))
     }
 }

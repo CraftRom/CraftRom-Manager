@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="CPU"
         android:textColor="@color/white"
-        android:textSize="@dimen/headline_5"
+        android:textSize="@dimen/headline_4"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/tv_cpu"
@@ -20,7 +20,7 @@
         android:layout_marginStart="@dimen/l_50"
         android:text="null"
         android:textColor="@color/overlay_fps"
-        android:textSize="@dimen/headline_5"
+        android:textSize="@dimen/headline_4"
         android:textStyle="bold" />
 
 </LinearLayout>

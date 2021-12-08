@@ -1,5 +1,6 @@
 package com.craftrom.manager.fragments.tools
 
+import android.app.Activity.RESULT_OK
 import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
@@ -9,7 +10,9 @@ import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.craftrom.manager.R
 import com.craftrom.manager.services.FPS
@@ -19,6 +22,14 @@ import com.craftrom.manager.utils.Constants.Companion.BATTERY_THERMAL_WARM_FILE
 import com.craftrom.manager.utils.Utils
 import com.topjohnwu.superuser.ShellUtils
 import com.topjohnwu.superuser.io.SuFile
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.ContextCompat.getSystemService
+
+
+
+
+
+
 
 
 class ToolsFragment : Fragment() {
@@ -31,27 +42,35 @@ class ToolsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val root = inflater.inflate(R.layout.fragment_tools, container, false)
+        val previewRequest =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                if (it.resultCode == RESULT_OK) {
+                    val list = it.data
+                    // do whatever with the data in the callback
+                }
+            }
         switchFpsMeter = root.findViewById(R.id.switch_fps_meter)
         switchBatteryThermal = root.findViewById(R.id.switch_battery_thermal)
         // FPS On/Off Switch
         switchFpsMeter.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                if (!Settings.canDrawOverlays(activity)) {
-                    val packageName = context?.packageName
-                    val intent = Intent(
-                        "android.settings.action.MANAGE_OVERLAY_PERMISSION",
-                        Uri.parse("package:$packageName")
-                    )
-                    startActivityForResult(intent, 1)
+            if (Utils.rootCheck(activity)) {
+                if (isChecked) {
+                    if (!Settings.canDrawOverlays(activity)) {
+                        val packageName = context?.packageName
+                        val intent = Intent(
+                            "android.settings.action.MANAGE_OVERLAY_PERMISSION",
+                            Uri.parse("package:$packageName")
+                        )
+                        previewRequest.launch(intent)
+                    } else {
+                        context?.startForegroundService(Intent(activity, FPS::class.java))
+                    }
                 } else {
-                    context?.startForegroundService(Intent(activity, FPS::class.java))
+                    context?.stopService(Intent(activity, FPS::class.java))
                 }
-            } else {
-                context?.stopService(Intent(activity, FPS::class.java))
             }
-
-            // Get FPS Running
-            getFPSMeter()
+                // Get FPS Running
+                getFPSMeter()
         }
 
         // Battery Thermal Switch Listener
@@ -80,7 +99,7 @@ class ToolsFragment : Fragment() {
 
     // Check FPS Service State
     private fun isFPSServiceAlive(): Boolean {
-        val manager = requireActivity().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager?
+        val manager = requireContext().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager?
         for (service in manager!!.getRunningServices(Int.MAX_VALUE)) {
             if (FPS::class.java.name == service.service.className) {
                 return true

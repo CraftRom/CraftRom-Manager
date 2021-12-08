@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:text="null"
                 android:textColor="@color/overlay_fps"
-                android:textSize="@dimen/headline_6"
+                android:textSize="@dimen/headline_5.5"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/head_fps"
@@ -37,7 +37,7 @@
                 android:layout_marginStart="@dimen/l_50"
                 android:text="FPS"
                 android:textColor="@color/white"
-                android:textSize="@dimen/headline_6"
+                android:textSize="@dimen/headline_5.5"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:text="GPU"
                 android:textColor="@color/white"
-                android:textSize="@dimen/headline_5"
+                android:textSize="@dimen/headline_4"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/tv_gpu"
@@ -61,7 +61,7 @@
                 android:layout_marginStart="@dimen/l_50"
                 android:text="null"
                 android:textColor="@color/overlay_fps"
-                android:textSize="@dimen/headline_5"
+                android:textSize="@dimen/headline_4"
                 android:textStyle="bold" />
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
