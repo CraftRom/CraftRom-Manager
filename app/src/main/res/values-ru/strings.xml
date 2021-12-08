@@ -37,8 +37,8 @@
     <!-- Tools -->
     <string name="menu_others">Другое</string>
     <string name="others_welcome">Я надеюсь, что это будет полезно).</string>
-    <string name="fps_head">Показатель FPS</string>
-    <string name="fps_desc">Показывать количество FPS в наслоении</string>
+    <string name="fps_desc">Show on going FPS/CPU/GPU count in a overlay</string>
+    <string name="fps_notif_desc">Keep monitoring service running...</string>
     <!-- About -->
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
     <string name="about_as">О нас</string>
