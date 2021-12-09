@@ -35,16 +35,16 @@
     <string name="advice_factory_rom">Uživatel by měl obnovit zařízení na původní ROM.</string>
     <string name="btn_verify">Ověřit telefon</string>
     <!-- Tools -->
-    <string name="menu_others">Others</string>
-    <string name="others_welcome">I hope this will be useful)).</string>
-    <string name="fps_head">Měřič FPS</string>
-    <string name="fps_desc">Zobrazení probíhajícího počtu FPS v překrytí</string>
+    <string name="menu_others">Ostatní</string>
+    <string name="others_welcome">Doufám, že to bude užitečné)).</string>
+    <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>
+    <string name="fps_notif_desc">Udržet monitorovací služby v chodu...</string>
     <!-- About -->
     <string name="love"><![CDATA[</> s ❤️ melles1991]]></string>
     <string name="about_as">O nás</string>
     <string name="about_as_desc">Craft Rom je komunita, která spravuje zařízení v různých open source projektech Android (MoKee OS, Lineage OS, crDroid a další) a Chidori Kernel.\n\nNaší hlavní prioritou je stabilita (bohužel ne vždy je možné jí dosáhnout v plném rozsahu).</string>
     <string name="features">Funkce aplikace</string>
-    <string name="features_deck">• Craft Rom Site News\n• Jitter\n• Safety NET checker\n• FPS Meter overlay</string>
+    <string name="features_deck">• Novinky na stránkách Craft Rom\n• Jitter\n• Kontrola Safety NET\n• Měřič FPS</string>
     <string name="navigation_drawer_open">Otevřít navigační panel</string>
     <string name="navigation_drawer_close">Zavřít navigační panel</string>
     <string name="nav_header_subtitle">Všechno, co se může pokazit, se již pokazilo.</string>

@@ -37,8 +37,8 @@
     <!-- Tools -->
     <string name="menu_others">Others</string>
     <string name="others_welcome">I hope this will be useful)).</string>
-    <string name="fps_head">FPS Meter</string>
-    <string name="fps_desc">Show on going FPS count in a overlay</string>
+    <string name="fps_desc">Show on going FPS/CPU/GPU count in a overlay</string>
+    <string name="fps_notif_desc">Keep monitoring service running...</string>
     <!-- About -->
     <string name="love"><![CDATA[</> Me ❤️ Nga melles1991]]></string>
     <string name="about_as">About Us</string>
