@@ -22,6 +22,7 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var imageLogo: ImageView
     private  lateinit var textViewVersion: TextView
     private  lateinit var textViewSlogan: TextView
+    private  lateinit var textCopirate: TextView
 
     private val alphaAnimation by lazy {
         AlphaAnimation(0.0f, 1.0f).apply {
@@ -52,13 +53,14 @@ class SplashActivity : AppCompatActivity() {
         imageLogo = findViewById(R.id.imageLogo)
         textViewVersion = findViewById(R.id.textViewVersion)
         textViewSlogan = findViewById(R.id.textViewSlogan)
+        textCopirate = findViewById(R.id.text)
         initView()
 
     }
 
     private fun initView() {
         val appName = resources.getString(R.string.app_name)
-
+        textCopirate.text = resources.getString(R.string.copyr)
         try {
             val packageInfo = packageManager.getPackageInfo(packageName, 0)
             textViewVersion.text = resources.getString(R.string.app_name_version, appName, packageInfo.versionName)
