@@ -37,7 +37,7 @@
     <!-- Tools -->
     <string name="menu_others">Інше</string>
     <string name="others_welcome">Сподіваюся, це буде корисно)).</string>
-    <string name="fps_desc">Show on going FPS/CPU/GPU count in a overlay</string>
+    <string name="fps_desc">Показувати значення FPS/CPU/GPU в оверлей</string>
     <string name="fps_notif_desc">Keep monitoring service running...</string>
     <!-- About -->
     <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
