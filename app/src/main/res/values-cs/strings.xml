@@ -37,18 +37,18 @@
     <!-- Tools -->
     <string name="menu_others">Ostatní</string>
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
+    <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>
-    <string name="fps_notif_desc">Udržet monitorovací služby v chodu…</string>
+    <string name="fps_notif_desc">Monitoring service started…</string>
     <string name="pref_pm">Chybějící oprávnění</string>
     <string name="pref_pm_desc">Aplikace CraftRom Manager potřebuje oprávnění ke stažení a instalaci aktualizací.\nKlepnutím sem udělíte oprávnění pro úložiště a Root.</string>
     <string name="err_no_pm_root">Neudělili jste oprávnění root.\nUdělte oprávnění root pomocí aplikace Magisk Manager</string>
-    <string name="help_android11_pm">Tap \"CraftRom Manager\", then tap \"Allow access to manage all files\"</string>
+    <string name="help_android11_pm">Klepněte na tlačítko \"CraftRom Manager\" a poté na \"Povolit přístup ke správě všech souborů\"</string>
     <!-- About -->
     <string name="love"><![CDATA[</> s ❤️ melles1991]]></string>
     <string name="about_as">O nás</string>
     <string name="about_as_desc">Craft Rom je komunita, která spravuje zařízení v různých open source projektech Android (MoKee OS, Lineage OS, crDroid a další) a Chidori Kernel.\n\nNaší hlavní prioritou je stabilita (bohužel ne vždy je možné jí dosáhnout v plném rozsahu).</string>
     <string name="features">Funkce aplikace</string>
-    <string name="features_deck">• Novinky na stránkách Craft Rom\n• Jitter\n• Kontrola Safety NET\n• Měřič FPS</string>
     <string name="navigation_drawer_open">Otevřít navigační panel</string>
     <string name="navigation_drawer_close">Zavřít navigační panel</string>
     <string name="nav_header_subtitle">Všechno, co se může pokazit, se již pokazilo.</string>
