@@ -1,12 +1,21 @@
 package com.craftrom.manager.utils
 
 import `in`.sunilpaulmathew.sCommon.Utils.sUtils
+import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Environment
+import android.provider.Settings
 import android.util.DisplayMetrics
 import android.webkit.MimeTypeMap
 import android.widget.Toast
-import androidx.annotation.Nullable
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
+import com.craftrom.manager.R
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ShellUtils
 import com.topjohnwu.superuser.io.SuFile
@@ -283,5 +292,63 @@ object Utils {
         val conf = res.configuration
         conf.locale = myLocale
         res.updateConfiguration(conf, dm)
+    }
+
+    fun hasStoragePM(activity: Context): Boolean {
+        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+                    activity.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+        } else {
+            activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED && activity.checkSelfPermission(
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ) == PackageManager.PERMISSION_GRANTED &&
+                    Environment.isExternalStorageManager()
+        }
+    }
+
+    fun requestPM(activity: Activity) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            ActivityCompat.requestPermissions(
+                activity,
+                arrayOf(
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ),
+                100
+            )
+        } else {
+            ActivityCompat.requestPermissions(
+                activity,
+                arrayOf(
+                    Manifest.permission.MANAGE_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ),
+                100
+            )
+            activity.startActivity(Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION))
+            Toast.makeText(activity, R.string.help_android11_pm, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    fun requestPM(fragment: Fragment) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            fragment.requestPermissions(
+                arrayOf(
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ), 100
+            )
+        } else {
+            fragment.requestPermissions(
+                arrayOf(
+                    Manifest.permission.MANAGE_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ), 100
+            )
+            fragment.startActivity(Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION))
+            Toast.makeText(fragment.activity, R.string.help_android11_pm, Toast.LENGTH_LONG).show()
+        }
     }
 }

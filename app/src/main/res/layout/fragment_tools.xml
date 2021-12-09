@@ -40,6 +40,66 @@
 
     </LinearLayout>
 
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/permission"
+            style="@style/WidgetFoundation.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:clickable="true"
+            android:layout_gravity="top"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="0dp"
+            app:contentPaddingLeft="4dp"
+            app:strokeColor="@color/card_icon"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4.0dip"
+                android:minHeight="64.0dip">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4.0dip"
+                    android:layout_marginEnd="32.0dip"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_round_warning_24"
+                    app:tint="@color/google_error" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:singleLine="true"
+                        android:text="@string/pref_pm"
+                        android:textColor="@color/iconColor"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:paddingEnd="24dp"
+                        android:text="@string/pref_pm_desc"
+                        android:textColor="@color/gray_light"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -85,7 +145,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_fps_meter_title" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_battery_thermal"
