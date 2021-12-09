@@ -38,10 +38,10 @@
     <string name="menu_others">Ostatní</string>
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>
-    <string name="fps_notif_desc">Keep monitoring service running…</string>
-    <string name="pref_pm">Missing permissions</string>
-    <string name="pref_pm_desc">CraftRom Manager App needs permissions to download and install updates.\nTap here to grant Storage and Root permissions.</string>
-    <string name="err_no_pm_root">You didn\'t granted root permission.\nGrant root permission using Magisk Manager</string>
+    <string name="fps_notif_desc">Udržet monitorovací služby v chodu…</string>
+    <string name="pref_pm">Chybějící oprávnění</string>
+    <string name="pref_pm_desc">Aplikace CraftRom Manager potřebuje oprávnění ke stažení a instalaci aktualizací.\nKlepnutím sem udělíte oprávnění pro úložiště a Root.</string>
+    <string name="err_no_pm_root">Neudělili jste oprávnění root.\nUdělte oprávnění root pomocí aplikace Magisk Manager</string>
     <string name="help_android11_pm">Tap \"CraftRom Manager\", then tap \"Allow access to manage all files\"</string>
     <!-- About -->
     <string name="love"><![CDATA[</> s ❤️ melles1991]]></string>
