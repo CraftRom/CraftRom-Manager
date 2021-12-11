@@ -11,7 +11,7 @@
 
     <!-- Splash -->
     <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
-    <string name="copyright" translatable="false">© 2020-2021 All Right Reserved.</string>
+    <string name="copyr" translatable="false">© 2020-2021 All Right Reserved.</string>
     <string name="app_name_version">%s version: %s </string>
 
     <!-- Into -->
@@ -54,9 +54,10 @@
     <!-- Tools -->
     <string name="menu_others">Others</string>
     <string name="others_welcome">I hope this will be useful)).</string>
-    <string name="fps_head" translatable="false">TestMonitor overlay</string>
+
+    <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Show on going FPS/CPU/GPU count in a overlay</string>
-    <string name="fps_notif_desc">Keep monitoring service running…</string>
+    <string name="fps_notif_desc">Monitoring service started…</string>
     <string name="pref_pm">Missing permissions</string>
     <string name="pref_pm_desc">CraftRom Manager App needs permissions to download and install updates.\nTap here to grant Storage and Root permissions.</string>
     <string name="err_no_pm_root">You didn\'t granted root permission.\nGrant root permission using Magisk Manager</string>
@@ -67,7 +68,7 @@
     <string name="about_as">About Us</string>
     <string name="about_as_desc">Craft Rom is a community that maintains devices in various open source Android projects (MoKee OS, Lineage OS, crDroid, and others) and Chidori Kernel.\n\nOur main priority is stability (unfortunately, it is not always possible to achieve the full extent).</string>
     <string name="features">App Features</string>
-    <string name="features_deck">• Craft Rom Site News\n• Jitter\n• Safety NET checker\n• FPS Meter overlay</string>
+    <string name="features_deck" translatable="false">• Craft Rom Site News\n• Jitter\n• Safety NET checker\n• Resource monitoring overlay</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
