@@ -37,14 +37,18 @@
     <!-- Tools -->
     <string name="menu_others">Інше</string>
     <string name="others_welcome">Сподіваюся, це буде корисно)).</string>
+    <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Показувати значення FPS/CPU/GPU в оверлей</string>
-    <string name="fps_notif_desc">Keep monitoring service running...</string>
+    <string name="fps_notif_desc">Monitoring service started…</string>
+    <string name="pref_pm">Missing permissions</string>
+    <string name="pref_pm_desc">CraftRom Manager App needs permissions to download and install updates.\nTap here to grant Storage and Root permissions.</string>
+    <string name="err_no_pm_root">You didn\'t granted root permission.\nGrant root permission using Magisk Manager</string>
+    <string name="help_android11_pm">Tap \"CraftRom Manager\", then tap \"Allow access to manage all files\"</string>
     <!-- About -->
     <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
     <string name="about_as">Про нас</string>
     <string name="about_as_desc">Створення рома - це спільнота, яка підтримує пристрої в різних проектах з відкритим вихідним кодом (MoKee OS, Lineage OS, crDroid та інші) та Chidori Kernel.\n\nНаш головний пріорітет - стабільність (на жаль, не завжди можливо досягти в поіній мірі).</string>
     <string name="features">Функції програми</string>
-    <string name="features_deck">• Craft Rom Site News\n• Jitter\n• Safety NET checker\n• FPS Meter overlay</string>
     <string name="navigation_drawer_open">Відкрити панель навігації</string>
     <string name="navigation_drawer_close">Закрити панель навігації</string>
     <string name="nav_header_subtitle">Все, що може піти не так, вже пішло не так.</string>

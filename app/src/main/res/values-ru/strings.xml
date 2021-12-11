@@ -37,14 +37,18 @@
     <!-- Tools -->
     <string name="menu_others">Другое</string>
     <string name="others_welcome">Я надеюсь, что это будет полезно).</string>
+    <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Показывать значения FPS/CPU/GPU в оверлеи</string>
-    <string name="fps_notif_desc">Keep monitoring service running...</string>
+    <string name="fps_notif_desc">Monitoring service started…</string>
+    <string name="pref_pm">Missing permissions</string>
+    <string name="pref_pm_desc">CraftRom Manager App needs permissions to download and install updates.\nTap here to grant Storage and Root permissions.</string>
+    <string name="err_no_pm_root">You didn\'t granted root permission.\nGrant root permission using Magisk Manager</string>
+    <string name="help_android11_pm">Tap \"CraftRom Manager\", then tap \"Allow access to manage all files\"</string>
     <!-- About -->
     <string name="love"><![CDATA[</> с ❤️ от melles1991]]></string>
     <string name="about_as">О нас</string>
     <string name="about_as_desc">Craft Rom — это сообщество, которое поддерживает устройства в различных проектах с открытым исходным кодом (MoKee OS, Lineage OS, crDroid и других) и Chidori Kernel.\n\nНаш главный приоритет – стабильность (к сожалению, не всегда возможно достичь в полной мере).</string>
     <string name="features">Возможности приложения</string>
-    <string name="features_deck">• Craft Rom Site News\n• Jitter\n• Safety NET checker\n• FPS Meter overlay</string>
     <string name="navigation_drawer_open">Открыть боковое меню</string>
     <string name="navigation_drawer_close">Закрыть боковое меню</string>
     <string name="nav_header_subtitle">Все, что может пойти не так, уже пошло не так.</string>
