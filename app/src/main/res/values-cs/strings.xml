@@ -37,9 +37,9 @@
     <!-- Tools -->
     <string name="menu_others">Ostatní</string>
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
-    <string name="fps_head">Resource monitoring overlay</string>
+    <string name="fps_head">Překrytí monitorování zdrojů</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>
-    <string name="fps_notif_desc">Monitoring service started…</string>
+    <string name="fps_notif_desc">Monitorovací služba byla spuštěna…</string>
     <string name="pref_pm">Chybějící oprávnění</string>
     <string name="pref_pm_desc">Aplikace CraftRom Manager potřebuje oprávnění ke stažení a instalaci aktualizací.\nKlepnutím sem udělíte oprávnění pro úložiště a Root.</string>
     <string name="err_no_pm_root">Neudělili jste oprávnění root.\nUdělte oprávnění root pomocí aplikace Magisk Manager</string>
