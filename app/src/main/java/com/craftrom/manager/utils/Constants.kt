@@ -21,11 +21,11 @@ open class Constants {
         const val BATTERY_THERMAL_COOL_FILE = "/sys/class/power_supply/bms/temp_cool"
         const val BATTERY_THERMAL_WARM_FILE = "/sys/class/power_supply/bms/temp_warm"
 
-        const val SPLASH_TIME_OUT: Long = 1000 * 2 // 2 sec
-        const val UPDATE_TIME_OUT: Long = 200 // 0.2 sec
+        const val SPLASH_TIME_OUT = 2000L // 2 sec
+        const val UPDATE_TIME_OUT =  200L // 0.2 sec
         const val HOST_REFERENCE =
             "https://raw.githubusercontent.com/CraftRom/KernelUpdates/android-10/host"
-        const val RSS_FEED_LINK = "https://www.craft-rom.ml/feed.xml"
+        const val RSS_FEED_LINK = "https://www.craft-rom.pp.ua/feed.xml"
         const val KERNEL_NAME = "Chidori"
         const val CURRENT_YEAR = "2021"
 

@@ -91,9 +91,12 @@ class SafetyNetHelper(private val googleDeviceVerificationApiKey: String) {
                     if (validateSafetyNetResponsePayload(response)) {
                         if (!TextUtils.isEmpty(googleDeviceVerificationApiKey)) {
                             //if the api key is set, run the AndroidDeviceVerifier
-                            val androidDeviceVerifier = AndroidDeviceVerifier(
-                                googleDeviceVerificationApiKey, jwsResult)
-                            androidDeviceVerifier.verify(object : AndroidDeviceVerifierCallback {
+                            val androidDeviceVerifier = jwsResult?.let {
+                                AndroidDeviceVerifier(
+                                    googleDeviceVerificationApiKey, it
+                                )
+                            }
+                            androidDeviceVerifier?.verify(object : AndroidDeviceVerifierCallback {
                                 override fun error(errorMsg: String?) {
                                     callback!!.error(RESPONSE_ERROR_VALIDATING_SIGNATURE,
                                         "Response signature validation error: $errorMsg")
