@@ -26,11 +26,11 @@
     <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
     <string name="total_mma">"Total duration: %.3fms"</string>
     <!-- SafetyNET. -->
-    <string name="safety_name">SafetyNet Test</string>
-    <string name="safety_welcome">SafetyNet Test verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
-    <string name="tap">Tap to check SafetyNet status</string>
-    <string name="safety_passed">Passed</string>
-    <string name="safety_failed">Failed</string>
+    <string name="safety_welcome">SafetyNet Attestation verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="device">Device</string>
+    <string name="model">Model</string>
+    <string name="android_version">Android version</string>
+    <string name="security_patch">Security patch level</string>
     <string name="advice_bootloader">The user should lock their device\'s bootloader.</string>
     <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
     <string name="btn_verify">Verify Phone</string>

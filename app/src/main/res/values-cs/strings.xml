@@ -26,11 +26,11 @@
     <string name="rt_frametime_mma">"Doba trvání RT: %.3fms"</string>
     <string name="total_mma">"Celková doba trvání: %.3fms"</string>
     <!-- SafetyNET. -->
-    <string name="safety_name">SafetyNet Test</string>
-    <string name="safety_welcome">Test SafetyNet ověřuje zařízení pomocí testů kompatibility SafetyNet. SafetyNet API je součástí rámce služeb Google Play. Některé aplikace používají toto rozhraní ke kontrole, zda bylo zařízení rootnuto nebo zda s ním bylo manipulováno.</string>
-    <string name="tap">Klepnutím zkontrolovat stav SafetyNet</string>
-    <string name="safety_passed">V pořádku</string>
-    <string name="safety_failed">Chyba</string>
+    <string name="safety_welcome">SafetyNet Attestation verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="device">Device</string>
+    <string name="model">Model</string>
+    <string name="android_version">Android version</string>
+    <string name="security_patch">Security patch level</string>
     <string name="advice_bootloader">Uživatel by měl uzamknout bootloader svého zařízení.</string>
     <string name="advice_factory_rom">Uživatel by měl obnovit zařízení na původní ROM.</string>
     <string name="btn_verify">Ověřit telefon</string>
