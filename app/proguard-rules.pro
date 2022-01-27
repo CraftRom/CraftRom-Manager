@@ -19,3 +19,16 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keepclassmembers class * {
+  @com.google.api.client.util.Key <fields>;
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-assumenosideeffects class kotlin.jvm.internal.Intrinsics {
+	public static void check*(...);
+	public static void throw*(...);
+}
+-repackageclasses
