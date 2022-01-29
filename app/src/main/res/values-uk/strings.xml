@@ -33,7 +33,8 @@
     <string name="security_patch">Security patch level</string>
     <string name="advice_bootloader">Користувач повинен блокувати завантажувач свого пристрою.</string>
     <string name="advice_factory_rom">Користувач має відновити свій пристрій на чисту фабричну прошивку.</string>
-    <string name="btn_verify">Перевірити телефон</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="btn_verify">Run SafetyNet Attestation</string>
     <!-- Tools -->
     <string name="menu_others">Інше</string>
     <string name="others_welcome">Сподіваюся, це буде корисно)).</string>
