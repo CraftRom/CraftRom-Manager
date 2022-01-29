@@ -25,6 +25,8 @@ import com.topjohnwu.superuser.io.SuFile
 import androidx.preference.Preference
 import com.google.android.material.card.MaterialCardView
 import com.topjohnwu.superuser.Shell
+import android.app.Activity
+import androidx.core.app.ServiceCompat.stopForeground
 
 
 class ToolsFragment : Fragment() {
@@ -61,16 +63,18 @@ class ToolsFragment : Fragment() {
                         )
                         previewRequest.launch(intent)
                     } else {
+                        FPSTile.Service.isRunning = true
                         context?.startForegroundService(Intent(activity, FPS::class.java))
                     }
                 } else {
-                    context?.stopService(Intent(activity, FPS::class.java))
+                    FPSTile.Service.isRunning = false
+                    val intent = Intent(activity, FPS::class.java)
+                    context?.stopService(intent)
                 }
             } else{
                 perm.visibility = View.VISIBLE
             }
-                // Get FPS Running
-                getFPSMeter()
+
         }
 
         // Battery Thermal Switch Listener
@@ -104,22 +108,7 @@ class ToolsFragment : Fragment() {
     }
 
 
-    // Get FPS Running
-    private fun getFPSMeter() {
-        switchFpsMeter.isChecked = isFPSServiceAlive()
-        FPSTile.Service.isRunning = isFPSServiceAlive()
-    }
 
-    // Check FPS Service State
-    private fun isFPSServiceAlive(): Boolean {
-        val manager = requireContext().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager?
-        for (service in manager!!.getRunningServices(Int.MAX_VALUE)) {
-            if (FPS::class.java.name == service.service.className) {
-                return true
-            }
-        }
-        return false
-    }
 
     // Battery Thermal Switch State
     private fun getBatteryThermal() {
@@ -139,7 +128,7 @@ class ToolsFragment : Fragment() {
     // Refresh Fragment
     override fun onStart() {
         super.onStart()
-        getFPSMeter()
+
         getBatteryThermal()
     }
 

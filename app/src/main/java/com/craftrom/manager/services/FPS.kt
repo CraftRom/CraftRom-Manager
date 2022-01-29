@@ -1,38 +1,27 @@
 package com.craftrom.manager.services
 
 import android.annotation.SuppressLint
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.Service
+import android.app.*
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import android.text.style.UpdateLayout
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.craftrom.manager.App
 import com.craftrom.manager.R
 import com.craftrom.manager.services.adapter.CpuItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Constants.Companion.TAG
+import com.craftrom.manager.utils.Constants.Companion.UPDATE_TIME_OUT
 import com.craftrom.manager.utils.Utils
 import com.topjohnwu.superuser.ShellUtils
-import com.topjohnwu.superuser.io.SuFile
 import kotlin.math.roundToInt
-import kotlin.math.sqrt
-import androidx.recyclerview.widget.DividerItemDecoration
-import com.craftrom.manager.utils.Constants.Companion.UPDATE_TIME_OUT
-import android.os.Bundle
-
-
-
 
 
 class FPS : Service() {
@@ -60,7 +49,7 @@ class FPS : Service() {
         layoutView = inflater.inflate(R.layout.layout_overlay, null)
         tvFps = layoutView.findViewById(R.id.tv_fps)
         tvGpuFreq = layoutView.findViewById(R.id.tv_gpu)
-
+        (this.application as App).setFPS(this)
         val recyclerView: RecyclerView = layoutView.findViewById(R.id.cpuList)
 
 
@@ -97,9 +86,13 @@ class FPS : Service() {
                 try {
                     fps = ShellUtils.fastCmd("cat $fpsFilePath")
                     this@FPS.tvFps.text = fps.toDouble().roundToInt().toString()
+                    Log.e(Constants.TAG, "\n" +
+                            "FPS : $fps")
                 } catch (ignored: Exception) {
                     fps = ShellUtils.fastCmd("cat $fpsFilePath").split(" ").toTypedArray()[1]
                     this@FPS.tvFps.text = fps.toDouble().roundToInt().toString()
+                    Log.e(Constants.TAG, "\n" +
+                            "FPS : $fps")
                 }
                 try {
                     gpuFreq = ShellUtils.fastCmd("cat $gpuFreqFilePath").toInt().toString()
@@ -188,10 +181,13 @@ class FPS : Service() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
+        Log.i(TAG, "FPS service onDestroyed");
         // Stop Service
-        FPSTile.Service.isRunning = false
+        FPSTile.Service.isRunning = true
         windowManager.removeView(layoutView)
-        stopService(Intent(this, FPS::class.java))
+
+        val intent = Intent(this, FPS::class.java)
+        stopService(intent)
+        super.onDestroy()
     }
 }

@@ -16,6 +16,7 @@
     <dimen name="secondary_padding">8dp</dimen>
 
 
+    <dimen name="font_size_12">12sp</dimen>
     <dimen name="font_size_16">16sp</dimen>
     <dimen name="font_size_24">24sp</dimen>
     <dimen name="dimen_0">0dp</dimen>

@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -32,8 +33,11 @@ class SafetyFragment : Fragment(){
     private lateinit var android_version: TextView
     private lateinit var security_patch: TextView
     private lateinit var error_txt: TextView
+    private lateinit var waitText: TextView
 
     private lateinit var btnCheck: Button
+
+    private lateinit var progressBar: ProgressBar
 
     private lateinit var verify_safety_net: CardView
     private lateinit var advice: CardView
@@ -51,6 +55,8 @@ class SafetyFragment : Fragment(){
         advice = root.findViewById(R.id.advice)
         error = root.findViewById(R.id.error)
 
+        waitText=root.findViewById(R.id.waitText)
+        progressBar=root.findViewById(R.id.progressBar)
         btnCheck = root.findViewById(R.id.btnCheck)
         cts = root.findViewById(R.id.safety_cts)
         basic_int = root.findViewById(R.id.safety_basic)
@@ -73,10 +79,11 @@ class SafetyFragment : Fragment(){
     }
 
     private fun runTest() {
+        showLoading(true)
         Log.d(Constants.TAG, "SafetyNet start request")
         safetyNetHelper!!.requestTest(context, object : SafetyNetHelper.SafetyNetWrapperCallback {
             override fun error(errorCode: Int, errorMessage: String?) {
-   //             showLoading(false)
+                showLoading(false)
                 verify_safety_net.visibility = View.GONE
                 handleError(errorCode, errorMessage)
             }
@@ -85,7 +92,7 @@ class SafetyFragment : Fragment(){
                 Log.d(
                     Constants.TAG,
                     "SafetyNet req success: ctsProfileMatch:$ctsProfileMatch and basicIntegrity, $basicIntegrity")
-  //              showLoading(false)
+                showLoading(false)
                 verify_safety_net.visibility = View.VISIBLE
                 showError(false)
                 updateUIWithSuccessfulResult(safetyNetHelper!!.lastResponse)
@@ -170,5 +177,12 @@ class SafetyFragment : Fragment(){
         } else {
             error.visibility = View.GONE
         }
+    }
+
+    private fun showLoading(show: Boolean) {
+        progressBar.setVisibility(if (show) View.VISIBLE else View.GONE)
+        waitText.setVisibility(if (show) View.VISIBLE else View.GONE)
+        btnCheck.setVisibility(if (show) View.GONE else View.VISIBLE)
+        verify_safety_net.setVisibility(if (show) View.GONE else View.VISIBLE)
     }
 }

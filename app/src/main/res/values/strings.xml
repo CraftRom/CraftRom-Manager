@@ -5,7 +5,7 @@
     <!-- Drawer menu -->
     <string name="menu_news">News</string>
     <string name="menu_head_tools">Tools</string>
-    <string name="menu_safety" translatable="false">SafetyNet</string>
+    <string name="menu_safety" translatable="false">SafetyNet Attestation</string>
     <string name="menu_about">About</string>
 
 
@@ -53,7 +53,8 @@
     <string name="security_patch">Security patch level</string>
     <string name="advice_bootloader">The user should lock their device\'s bootloader.</string>
     <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
-    <string name="btn_verify">Verify Phone</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="btn_verify">Run SafetyNet Attestation</string>
 
     <!-- Tools -->
     <string name="menu_others">Others</string>
