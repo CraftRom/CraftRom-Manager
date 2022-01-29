@@ -33,7 +33,8 @@
     <string name="security_patch">Úroveň opravy zabezpečení Android</string>
     <string name="advice_bootloader">Uživatel by měl uzamknout bootloader svého zařízení.</string>
     <string name="advice_factory_rom">Uživatel by měl obnovit zařízení na původní ROM.</string>
-    <string name="btn_verify">Ověřit telefon</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="btn_verify">Run SafetyNet Attestation</string>
     <!-- Tools -->
     <string name="menu_others">Ostatní</string>
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
