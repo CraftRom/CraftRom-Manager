@@ -34,7 +34,7 @@
     <string name="advice_bootloader">Uživatel by měl uzamknout bootloader svého zařízení.</string>
     <string name="advice_factory_rom">Uživatel by měl obnovit zařízení na původní ROM.</string>
     <string name="please_wait">Čekejte prosím…</string>
-    <string name="apk_name">Package name</string>
+    <string name="apk_name">Název balíčku</string>
     <string name="btn_verify">Spustit atestaci SafetyNet</string>
     <!-- Tools -->
     <string name="menu_others">Ostatní</string>
