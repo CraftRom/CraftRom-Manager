@@ -27,14 +27,15 @@
                     android:layout_height="4dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="16dp"
-                    android:src="@drawable/drag" />
+                    android:src="@drawable/drag"
+                    android:contentDescription="@string/todo" />
 
                 <ImageView
                     android:id="@+id/featuredImg"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:adjustViewBounds="true"
-                    android:contentDescription="TODO"
+                    android:contentDescription="@string/todo"
                     android:minWidth="250dp"
                     android:minHeight="180dp"
                     android:scaleType="centerCrop"
@@ -88,7 +89,8 @@
                     android:src="@drawable/ic_new"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="@+id/news_divider"
-                    app:layout_constraintTop_toBottomOf="@+id/news_divider" />
+                    app:layout_constraintTop_toBottomOf="@+id/news_divider"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:id="@+id/txtContent"
@@ -102,14 +104,18 @@
 
                 <Button
                     android:id="@+id/butLink"
-                    style="@style/ThemeButtonDialog"
+                    style="@style/WidgetFoundation.Button.Outlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/l_50"
-                    android:layout_marginTop="@dimen/l_50"
-                    android:layout_marginEnd="@dimen/l_50"
+                    android:layout_marginStart="@dimen/l3"
+                    android:layout_marginEnd="@dimen/l3"
+                    android:layout_marginBottom="@dimen/l_50"
+                    android:layout_gravity="center_horizontal"
                     android:nextFocusLeft="@id/txtPubdate"
                     android:text="@string/view_but"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    app:cornerRadius="@dimen/r1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

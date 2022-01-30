@@ -170,7 +170,7 @@ class SafetyFragment : Fragment(){
         val time = Instant.ofEpochMilli(safetyNetResponse.timestampMs).atZone(ZoneId.systemDefault())
         date.text = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(time)
         eva_type.text = safetyNetResponse.evaluationType
-        digest.text = safetyNetResponse.apkCertificateDigestSha256.toString()
+        digest.text = safetyNetResponse.apkDigestSha256
         safetyApk.text = safetyNetResponse.apkPackageName
     }
 
