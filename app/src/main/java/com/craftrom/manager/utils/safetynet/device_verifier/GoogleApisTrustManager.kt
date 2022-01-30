@@ -34,8 +34,7 @@ class GoogleApisTrustManager : X509TrustManager {
 
     @Throws(CertificateException::class)
     private fun validateCertificatePin(certificate: X509Certificate): Boolean {
-        var digest: MessageDigest? = null
-        digest = try {
+        val digest: MessageDigest? = try {
             MessageDigest.getInstance("SHA1")
         } catch (e: NoSuchAlgorithmException) {
             throw CertificateException(e)

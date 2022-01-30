@@ -411,6 +411,30 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/apk_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="4"
+                        android:maxLines="1"
+                        android:text="@string/apk_name"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/safety_apk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:maxLines="1"
+                        android:text="nonce"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                        android:textSize="14sp" />
+
+                    <TextView
                         android:id="@+id/digest_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -433,6 +457,8 @@
                         android:text="nonce"
                         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                         android:textSize="14sp" />
+
+
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

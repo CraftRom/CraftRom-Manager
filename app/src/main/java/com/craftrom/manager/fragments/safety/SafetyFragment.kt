@@ -1,7 +1,6 @@
 package com.craftrom.manager.fragments.safety
 
 import android.annotation.SuppressLint
-import android.icu.text.SimpleDateFormat
 import android.os.Build.DEVICE
 import android.os.Build.MODEL
 import android.os.Build.VERSION.*
@@ -18,9 +17,14 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Constants.Companion.TAG
+import com.craftrom.manager.utils.safetynet.Utils
 import com.craftrom.manager.utils.safetynet.device_verifier.SafetyNetHelper
 import com.craftrom.manager.utils.safetynet.model.SafetyNetResponse
-import java.util.*
+import java.time.Instant
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class SafetyFragment : Fragment(){
     private lateinit var cts: TextView
@@ -34,6 +38,7 @@ class SafetyFragment : Fragment(){
     private lateinit var security_patch: TextView
     private lateinit var error_txt: TextView
     private lateinit var waitText: TextView
+    private lateinit var safetyApk: TextView
 
     private lateinit var btnCheck: Button
 
@@ -54,7 +59,7 @@ class SafetyFragment : Fragment(){
         verify_safety_net = root.findViewById(R.id.safety_net)
         advice = root.findViewById(R.id.advice)
         error = root.findViewById(R.id.error)
-
+        safetyApk = root.findViewById(R.id.safety_apk)
         waitText=root.findViewById(R.id.waitText)
         progressBar=root.findViewById(R.id.progressBar)
         btnCheck = root.findViewById(R.id.btnCheck)
@@ -70,6 +75,7 @@ class SafetyFragment : Fragment(){
         error_txt = root.findViewById(R.id.txtError)
 
         safetyNetHelper = SafetyNetHelper(Constants.API_KEY)
+        Log.d(TAG, "AndroidAPIKEY: " + Utils.getSigningKeyFingerprint(context!!) + ";" + context!!.packageName);
         deviceInfo()
         btnCheck.setOnClickListener {
             runTest()
@@ -81,7 +87,7 @@ class SafetyFragment : Fragment(){
     private fun runTest() {
         showLoading(true)
         Log.d(Constants.TAG, "SafetyNet start request")
-        safetyNetHelper!!.requestTest(context, object : SafetyNetHelper.SafetyNetWrapperCallback {
+        safetyNetHelper!!.requestTest(context!!, object : SafetyNetHelper.SafetyNetWrapperCallback {
             override fun error(errorCode: Int, errorMessage: String?) {
                 showLoading(false)
                 verify_safety_net.visibility = View.GONE
@@ -139,19 +145,19 @@ class SafetyFragment : Fragment(){
     }
 
     private fun updateUIWithSuccessfulResult(safetyNetResponse: SafetyNetResponse?) {
-                if (safetyNetResponse!!.advice == "LOCK_BOOTLOADER")
+                if (safetyNetResponse?.advice == "LOCK_BOOTLOADER")
                 {
                     advice.visibility = View.VISIBLE
                     advice_text.setText(R.string.advice_bootloader)
                 }
-                if (safetyNetResponse.advice == "RESTORE_TO_FACTORY_ROM")
+                if (safetyNetResponse?.advice == "RESTORE_TO_FACTORY_ROM")
                 {
                     advice.visibility = View.VISIBLE
                     advice_text.setText(R.string.advice_factory_rom)
                 }
-        cts.text = safetyNetResponse.isCtsProfileMatch.toString()
-        basic_int.text =safetyNetResponse.isBasicIntegrity.toString()
-        if (safetyNetResponse.isCtsProfileMatch ) {
+        cts.text = safetyNetResponse?.isCtsProfileMatch.toString()
+        basic_int.text = safetyNetResponse?.isBasicIntegrity.toString()
+        if (safetyNetResponse!!.isCtsProfileMatch) {
             cts.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorTrue))
         } else {
             cts.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorFalse))
@@ -161,12 +167,11 @@ class SafetyFragment : Fragment(){
         } else {
             basic_int.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorFalse))
         }
-
-        val sim = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault())
-        val timeOfResponse = Date(safetyNetResponse.timestampMs)
-        date.text = sim.format(timeOfResponse)
+        val time = Instant.ofEpochMilli(safetyNetResponse.timestampMs).atZone(ZoneId.systemDefault())
+        date.text = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).format(time)
         eva_type.text = safetyNetResponse.evaluationType
-        digest.text = safetyNetResponse.apkDigestSha256
+        digest.text = safetyNetResponse.apkCertificateDigestSha256.toString()
+        safetyApk.text = safetyNetResponse.apkPackageName
     }
 
 
@@ -180,9 +185,9 @@ class SafetyFragment : Fragment(){
     }
 
     private fun showLoading(show: Boolean) {
-        progressBar.setVisibility(if (show) View.VISIBLE else View.GONE)
-        waitText.setVisibility(if (show) View.VISIBLE else View.GONE)
-        btnCheck.setVisibility(if (show) View.GONE else View.VISIBLE)
-        verify_safety_net.setVisibility(if (show) View.GONE else View.VISIBLE)
+        progressBar.visibility = if (show) View.VISIBLE else View.GONE
+        waitText.visibility = if (show) View.VISIBLE else View.GONE
+        btnCheck.visibility = if (show) View.GONE else View.VISIBLE
+        verify_safety_net.visibility = if (show) View.GONE else View.VISIBLE
     }
 }

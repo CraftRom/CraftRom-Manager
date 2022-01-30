@@ -23,8 +23,8 @@ import java.util.*
  *
  *
  */
-class SafetyNetHelper(private val googleDeviceVerificationApiKey: String) {
-    private val secureRandom: SecureRandom
+class SafetyNetHelper(private var googleDeviceVerificationApiKey: String) {
+    private var secureRandom: SecureRandom
 
     //used for local validation of API response payload
     private lateinit var requestNonce: ByteArray
@@ -41,10 +41,21 @@ class SafetyNetHelper(private val googleDeviceVerificationApiKey: String) {
     var lastResponse: SafetyNetResponse? = null
         private set
 
+    /**
+     * @param googleDeviceVerificationApiKey used to validate safety net response see https://developer.android.com/google/play/safetynet/start.html#verify-compat-check
+     */
+    fun SafetyNetHelper(googleDeviceVerificationApiKey: String?) {
+        this.googleDeviceVerificationApiKey = googleDeviceVerificationApiKey!!
+        assureApiKeysDefined()
+        secureRandom = SecureRandom()
+    }
+
     private fun assureApiKeysDefined() {
         if (TextUtils.isEmpty(googleDeviceVerificationApiKey)) {
-            Log.w(TAG,
-                "Google Device Verification Api Key not defined, cannot properly validate safety net response without it. See https://developer.android.com/google/play/safetynet/start.html#verify-compat-check")
+            Log.w(
+                TAG,
+                "Google Device Verification Api Key not defined, cannot properly validate safety net response without it. See https://developer.android.com/google/play/safetynet/start.html#verify-compat-check"
+            )
             throw IllegalArgumentException("safetyNetApiKey must be defined!")
         }
     }
@@ -97,9 +108,9 @@ class SafetyNetHelper(private val googleDeviceVerificationApiKey: String) {
                                 )
                             }
                             androidDeviceVerifier?.verify(object : AndroidDeviceVerifierCallback {
-                                override fun error(errorMsg: String?) {
+                                override fun error(s: String?) {
                                     callback!!.error(RESPONSE_ERROR_VALIDATING_SIGNATURE,
-                                        "Response signature validation error: $errorMsg")
+                                        "Response signature validation error: $s")
                                 }
 
                                 override fun success(isValidSignature: Boolean) {
@@ -160,17 +171,19 @@ class SafetyNetHelper(private val googleDeviceVerificationApiKey: String) {
         val durationOfReq = response.timestampMs - requestTimestamp
         if (durationOfReq > MAX_TIMESTAMP_DURATION) {
             Log.e(TAG,
-                "Duration calculated from the timestamp of response \"" + durationOfReq + " \" exceeds permitted duration of \"" + MAX_TIMESTAMP_DURATION + "\"")
+                "Duration calculated from the timestamp of response \"$durationOfReq \" exceeds permitted duration of \"$MAX_TIMESTAMP_DURATION\""
+            )
             return false
         }
-        if (!Arrays.equals(apkCertificateDigests!!.toTypedArray(),
-                response.apkCertificateDigestSha256)
+        if (!apkCertificateDigests!!.toTypedArray()
+                .contentEquals(response.apkCertificateDigestSha256)
         ) {
             Log.e(TAG,
                 "invalid apkCertificateDigest, local/expected = " + Arrays.asList(
                     apkCertificateDigests))
             Log.e(TAG,
-                "invalid apkCertificateDigest, response = " + Arrays.asList(*response.apkCertificateDigestSha256))
+                "invalid apkCertificateDigest, response = " + listOf(*response.apkCertificateDigestSha256)
+            )
             return false
         }
         return true

@@ -31,9 +31,9 @@ class AndroidDeviceVerifier(private val apiKey: String, private val signatureToV
 
             val isValidSignature = verifySafetyNetSignature()
             if (isValidSignature) {
-                androidDeviceVerifierCallback!!.success(isValidSignature)
+                androidDeviceVerifierCallback.success(isValidSignature)
             } else {
-                androidDeviceVerifierCallback!!.error("Invalid Signature")
+                androidDeviceVerifierCallback.error("Invalid Signature")
             }
         }
     }

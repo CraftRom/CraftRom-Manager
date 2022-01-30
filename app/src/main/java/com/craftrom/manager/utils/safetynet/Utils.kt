@@ -109,37 +109,10 @@ object Utils {
             val l = h.length
             if (l == 1) h = "0$h"
             if (l > 2) h = h.substring(l - 2, l)
-            str.append(h.toUpperCase(Locale.ROOT))
+            str.append(h.uppercase(Locale.ROOT))
             if (i < arr.size - 1) str.append(':')
         }
         return str.toString()
-    }
-
-    fun calcApkCertificateDigests(context: Context, packageName: String?): List<String> {
-        val encodedSignatures: MutableList<String> = ArrayList()
-
-        // Get signatures from package manager
-        val pm = context.packageManager
-        val packageInfo: PackageInfo = try {
-            pm.getPackageInfo(packageName!!, PackageManager.GET_SIGNING_CERTIFICATES)
-        } catch (e: PackageManager.NameNotFoundException) {
-            e.printStackTrace()
-            return encodedSignatures
-        }
-        val signatures: Array<Signature> = packageInfo.signingInfo.apkContentsSigners
-
-        // Calculate b64 encoded sha256 hash of signatures
-        for (signature in signatures) {
-            try {
-                val md = MessageDigest.getInstance(SHA_256)
-                md.update(signature.toByteArray())
-                val digest = md.digest()
-                encodedSignatures.add(Base64.encodeToString(digest, Base64.NO_WRAP))
-            } catch (e: NoSuchAlgorithmException) {
-                e.printStackTrace()
-            }
-        }
-        return encodedSignatures
     }
 
     fun calcApkDigest(context: Context): String {
@@ -189,5 +162,32 @@ object Utils {
             `in`.close()
         }
         return md.digest()
+    }
+
+    fun calcApkCertificateDigests(context: Context, packageName: String?): List<String>? {
+        val encodedSignatures: MutableList<String> = ArrayList()
+
+        // Get signatures from package manager
+        val pm = context.packageManager
+        val packageInfo: PackageInfo = try {
+            pm.getPackageInfo(packageName!!, PackageManager.GET_SIGNING_CERTIFICATES)
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+            return encodedSignatures
+        }
+        val signatures: Array<Signature> = packageInfo.signingInfo.apkContentsSigners
+
+        // Calculate b64 encoded sha256 hash of signatures
+        for (signature in signatures) {
+            try {
+                val md = MessageDigest.getInstance(SHA_256)
+                md.update(signature.toByteArray())
+                val digest = md.digest()
+                encodedSignatures.add(Base64.encodeToString(digest, Base64.NO_WRAP))
+            } catch (e: NoSuchAlgorithmException) {
+                e.printStackTrace()
+            }
+        }
+        return encodedSignatures
     }
 }

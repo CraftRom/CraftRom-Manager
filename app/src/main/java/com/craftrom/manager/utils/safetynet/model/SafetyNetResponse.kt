@@ -3,7 +3,6 @@ package com.craftrom.manager.utils.safetynet.model
 import android.util.Log
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.*
 
 
 /**
@@ -91,7 +90,7 @@ private constructor() {
                 "nonce='" + nonce + '\'' +
                 ", timestampMs=" + timestampMs +
                 ", apkPackageName='" + apkPackageName + '\'' +
-                ", apkCertificateDigestSha256=" + Arrays.toString(apkCertificateDigestSha256) +
+                ", apkCertificateDigestSha256=" + apkCertificateDigestSha256.contentToString() +
                 ", apkDigestSha256='" + apkDigestSha256 + '\'' +
                 ", ctsProfileMatch=" + isCtsProfileMatch +
                 ", basicIntegrity=" + isBasicIntegrity +
