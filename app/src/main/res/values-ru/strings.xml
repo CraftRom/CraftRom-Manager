@@ -34,6 +34,7 @@
     <string name="advice_bootloader">Пользователь должен заблокировать загрузчик устройства.</string>
     <string name="advice_factory_rom">Пользователь должен восстановить устройство на чистую фабричную прошивку.</string>
     <string name="please_wait">Please wait…</string>
+    <string name="apk_name">Package name</string>
     <string name="btn_verify">Run SafetyNet Attestation</string>
     <!-- Tools -->
     <string name="menu_others">Другое</string>
