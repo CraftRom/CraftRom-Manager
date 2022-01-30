@@ -34,6 +34,7 @@
     <string name="advice_bootloader">The user should lock their device\'s bootloader.</string>
     <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
     <string name="please_wait">Please wait…</string>
+    <string name="apk_name">Package name</string>
     <string name="btn_verify">Run SafetyNet Attestation</string>
     <!-- Tools -->
     <string name="menu_others">Others</string>
