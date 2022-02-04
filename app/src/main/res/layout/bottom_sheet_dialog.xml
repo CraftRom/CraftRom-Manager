@@ -26,9 +26,10 @@
                     android:id="@+id/dragIndicator"
                     android:layout_width="48dp"
                     android:layout_height="4dp"
-                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/default_margin"
+                    android:layout_marginBottom="@dimen/default_margin"
                     android:contentDescription="@string/todo"
+                    android:layout_gravity="center"
                     android:src="@drawable/drag" />
 
                 <ImageView
