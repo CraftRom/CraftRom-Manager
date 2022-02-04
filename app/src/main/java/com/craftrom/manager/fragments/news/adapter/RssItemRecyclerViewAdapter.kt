@@ -1,7 +1,6 @@
 package com.craftrom.manager.fragments.news.adapter
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -40,12 +39,12 @@ class RssItemRecyclerViewAdapter(
         val postDate = item.pubDate
         val sim = SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z", Locale.getDefault())
         val pDate: Date? = sim.parse(postDate)
-        val form = SimpleDateFormat("dd MM yyyy", Locale.getDefault())
+        val form = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
 
         val date = form.format(pDate)
 
         holder.titleTV?.text = item.title
-        holder.pubDateTV?.text = item.author + " • " + date
+        holder.pubDateTV?.text = "$date \u2022 ${item.author}"
         holder.shareBut.setOnClickListener{
             share(context!!, item.title, item.link)
         }
@@ -105,7 +104,7 @@ class RssItemRecyclerViewAdapter(
 
             titleTxt.text = item.title
             descriptionTxt.text  = item.description
-            dateTxt.text = item.author + " • " + date
+            dateTxt.text = "$date \u2022 ${item.author}"
             holder.shareBut.setOnClickListener{
                 share(context, item.title, item.link)
             }

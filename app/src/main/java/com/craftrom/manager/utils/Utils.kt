@@ -16,12 +16,12 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.craftrom.manager.R
+import com.craftrom.manager.utils.root.RootFile
+import com.craftrom.manager.utils.root.RootUtils
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ShellUtils
 import com.topjohnwu.superuser.io.SuFile
 import java.io.File
-import com.craftrom.manager.utils.root.RootFile
-import com.craftrom.manager.utils.root.RootUtils
 import java.io.FileOutputStream
 import java.math.BigDecimal
 import java.math.RoundingMode

@@ -8,4 +8,5 @@
     <color name="google_gray">#FF5F6368</color>
     <color name="gray_light">#ffBCBCBD</color>
     <color name="google_error">#ff5252</color>
+    <color name="backgroundVariant">#1d1d1d</color>
 </resources>

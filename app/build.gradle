@@ -33,7 +33,7 @@ android {
         minSdk 29
         targetSdk 31
         versionCode 65
-        versionName "7.5.1"
+        versionName "7.6.6"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
@@ -101,7 +101,7 @@ dependencies {
     // Swipe Refresh Layout
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
-    implementation('com.airbnb.android:lottie:4.2.1') {
+    implementation('com.airbnb.android:lottie:4.2.2') {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.android.support', module: 'support-compat'
         exclude group: 'com.android.support', module: 'support-core-ui'
@@ -114,7 +114,7 @@ dependencies {
     // Google GMS
     implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
-    implementation('com.google.http-client:google-http-client-android:1.40.0') {
+    implementation('com.google.http-client:google-http-client-android:1.41.2') {
         exclude group: 'org.apache.httpcomponents'
     }
 

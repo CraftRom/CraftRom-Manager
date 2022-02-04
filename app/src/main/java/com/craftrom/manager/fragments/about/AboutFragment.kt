@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.craftrom.manager.BuildConfig
 import com.craftrom.manager.R
-import com.craftrom.manager.activities.OSLActivity
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
 class AboutFragment: Fragment(), View.OnClickListener {
@@ -44,7 +44,34 @@ class AboutFragment: Fragment(), View.OnClickListener {
         val versionName = BuildConfig.VERSION_NAME
         versionApp.text = versionName
 
-            return root
+        root.findViewById<Button>(R.id.legal).setOnClickListener {
+            // on below line we are creating a new bottom sheet dialog.
+            val dialog = BottomSheetDialog(requireContext(), R.style.ThemeBottomSheet)
+
+            // on below line we are inflating a layout file which we have created.
+            val card = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_contributor, null)
+
+            val btnClose = card.findViewById<Button>(R.id.negativeButton)
+
+            // on below line we are adding on click listener
+            // for our dismissing the dialog button.
+            btnClose.setOnClickListener {
+                dialog.dismiss()
+            }
+            // below line is use to set cancelable to avoid
+            // closing of dialog box when clicking on the screen.
+            dialog.setCancelable(true)
+
+            // on below line we are setting
+            // content view to our view.
+            dialog.setContentView(card)
+            dialog.dismissWithAnimation = true
+            // on below line we are calling
+            // a show method to display a dialog.
+            dialog.show()
+
+        }
+        return root
     }
     private fun openTG() {
         val uri = Uri.parse("https://t.me/craft_rom")
@@ -60,11 +87,6 @@ class AboutFragment: Fragment(), View.OnClickListener {
     }
     private fun openWeb() {
         val uri = Uri.parse("https://www.craft-rom.ml/")
-        val intent = Intent(Intent.ACTION_VIEW, uri)
-        startActivity(intent)
-    }
-    private fun openTranslate() {
-        val uri = Uri.parse("https://crowdin.com/project/craft-rom-km")
         val intent = Intent(Intent.ACTION_VIEW, uri)
         startActivity(intent)
     }

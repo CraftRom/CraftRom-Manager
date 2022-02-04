@@ -158,13 +158,38 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/desc_about"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
                             android:layout_marginVertical="@dimen/padding_normal"
                             android:text="@string/about_as_desc"
                             android:textSize="@dimen/text"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_about_us" />
+                            app:layout_constraintTop_toBottomOf="@+id/tv_about_us"
+                            app:layout_constraintBottom_toTopOf="@id/flow"/>
+
+
+                        <androidx.constraintlayout.helper.widget.Flow
+                            android:id="@+id/flow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_quarter"
+                            app:constraint_referenced_ids="legal"
+                            app:flow_horizontalGap="@dimen/spacing_quarter"
+                            app:flow_verticalGap="@dimen/spacing_quarter"
+                            app:flow_wrapMode="chain"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/legal"
+                            style="@style/WidgetFoundation.Button.Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="false"
+                            android:textSize="11sp"
+                            android:layout_marginEnd="@dimen/padding_normal"
+                            android:text="@string/contribute_more_info"
+                            app:layout_constraintTop_toBottomOf="@+id/desc_about"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>

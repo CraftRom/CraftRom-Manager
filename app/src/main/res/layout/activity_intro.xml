@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.IntroActivity">
 
     <LinearLayout
@@ -58,20 +59,10 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:gravity="center"
+            app:constraint_referenced_ids="onboardingPage4MoreInfoButton,onboardingPage4StartAppButton"
             android:text="@string/legal_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <Button
-            android:id="@+id/ok"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/blue_500"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@android:string/ok"
-            android:textColor="@android:color/white" />
 
         <Space
             android:layout_width="match_parent"
@@ -79,18 +70,36 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/progress"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
         android:background="@android:color/transparent"
-        android:visibility="gone">
+        android:visibility="visible">
 
-        <ProgressBar
-            style="?android:attr/progressBarStyle"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/moreInfo"
+            style="@style/WidgetFoundation.Button.Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-    </FrameLayout>
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:layout_marginEnd="@dimen/padding_normal"
+            android:text="@string/contribute_more_info"
+            app:strokeColor="?colorPrimary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/startApp"
+            style="@style/WidgetFoundation.Button.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:layout_marginEnd="@dimen/padding_normal"
+            app:cornerRadius="@dimen/r1"
+            android:text="@string/onboarding_finished_button"
+            app:strokeColor="?colorPrimary" />
+
+    </LinearLayout>
 </FrameLayout>
