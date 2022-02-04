@@ -8,6 +8,10 @@
     <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
     <string name="app_name_version">%s version: %s </string>
     <!-- Into -->
+    <string name="contribute_title">INFORMATION THAT WE CAN SHARE</string>
+    <string name="onboarding_finished_button">Start app</string>
+    <string name="contribute_more_info">Privacy Policy</string>
+    <string name="contribute_explanation">Your privacy is important to Craft Rom. Our Privacy Policy explains how we collect, use, disclose, transfer, and store your information. Please take a moment to familiarize yourself with our privacy practices.\nCraft Rom provides an after-market operating system and applications for various mobile devices.\n\nINFORMATION WE HAVE\nWe do not collect any additional information about our visitors, other than that provided by Google Analytics.\n\nWEB\nWe may collect information regarding user activities on our website. This information is aggregated and used to help us provide more useful information to our users to understand which parts of our website, products, and services are of most interest, and for general system diagnostics. Aggregated data is considered non-personal information for the purposes of this Privacy Policy.\n\nINFORMATION THAT WE CAN SHARE\nWe do not share your information with companies, organizations or individuals outside of Craft Rom unless one of the following circumstances applies:\n\n• With your consent (Submission of bug reports to our bug tracking platform is considered consent.)\n• When legally required.</string>
     <string name="intro_title">Welcome to the Craft Rom!</string>
     <string name="intro">All information and files — both in source and compiled form — are provided on an as is basis.</string>
     <string name="legal_text">The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits.</string>
