@@ -1,7 +1,10 @@
 package com.craftrom.manager.services
 
 import android.annotation.SuppressLint
-import android.app.*
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.Service
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
@@ -13,7 +16,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.craftrom.manager.App
+import com.craftrom.manager.MainApplication.Companion.setFPS
 import com.craftrom.manager.R
 import com.craftrom.manager.services.adapter.CpuItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Constants
@@ -49,7 +52,7 @@ class FPS : Service() {
         layoutView = inflater.inflate(R.layout.layout_overlay, null)
         tvFps = layoutView.findViewById(R.id.tv_fps)
         tvGpuFreq = layoutView.findViewById(R.id.tv_gpu)
-        (this.application as App).setFPS(this)
+        setFPS(this)
         val recyclerView: RecyclerView = layoutView.findViewById(R.id.cpuList)
 
 

@@ -18,44 +18,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/featuredImg"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="TODO"
-            android:minWidth="250dp"
-            android:minHeight="180dp"
-            android:scaleType="centerCrop"
+        <RelativeLayout
+            android:id="@+id/newsImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="180sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/featuredImg"
+                android:layout_width="match_parent"
+                android:layout_height="180sp"
+                android:adjustViewBounds="true"
+                android:contentDescription="TODO"
+                android:scaleType="centerCrop"
+                app:layout_constraintHorizontal_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/NewsArticle.Title"
+                android:text="@string/title_txt"
+                android:layout_alignParentBottom="true"
+                android:textAppearance="@style/AppearanceFoundation.Body"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/txtTitle"
-            android:text="@string/title_txt"
-            android:layout_width="0dp"
+            android:id="@+id/txtDesc"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/NewsArticle.Desc"
             android:layout_marginStart="@dimen/l1"
             android:layout_marginTop="@dimen/l1"
             android:layout_marginEnd="@dimen/l1"
             android:layout_marginBottom="10dp"
-            android:textSize="@dimen/eighteen_sp"
+            android:text="@string/title_txt"
             android:textAlignment="center"
-            android:textAppearance="@style/AppearanceFoundation.Body"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/featuredImg"
-            app:layout_constraintStart_toStartOf="@+id/featuredImg"
-            app:layout_constraintTop_toBottomOf="@+id/featuredImg"/>
+            android:textAppearance="@style/AppearanceFoundation.Caption"
+            app:layout_constraintTop_toBottomOf="@+id/newsImageView" />
+
         <View
             android:id="@+id/news_divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="@dimen/l1"
             android:background="?colorSurfaceSurfaceVariant"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
 
         <TextView
             android:id="@+id/txtPubdate"

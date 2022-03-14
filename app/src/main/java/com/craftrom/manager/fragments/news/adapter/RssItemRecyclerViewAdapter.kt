@@ -44,6 +44,7 @@ class RssItemRecyclerViewAdapter(
         val date = form.format(pDate)
 
         holder.titleTV?.text = item.title
+        holder.descTV?.text = item.description
         holder.pubDateTV?.text = "$date \u2022 ${item.author}"
         holder.shareBut.setOnClickListener{
             share(context!!, item.title, item.link)
@@ -143,6 +144,7 @@ class RssItemRecyclerViewAdapter(
 
     inner class ViewHolder(mView: View) : RecyclerView.ViewHolder(mView) {
         val titleTV: TextView? = mView.findViewById(R.id.txtTitle)
+        val descTV: TextView? = mView.findViewById(R.id.txtDesc)
         val pubDateTV: TextView? = mView.findViewById(R.id.txtPubdate)
         val featuredImg: ImageView? = mView.findViewById(R.id.featuredImg)
         val butLink: CardView = mView.findViewById(R.id.news_card)

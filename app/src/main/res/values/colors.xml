@@ -30,4 +30,6 @@
     <color name="colorAboutIcon">#434343</color>
     <color name="black_overlay">#66000000</color>
     <color name="google_gray">#FF5F6368</color>
+
+    <color name="color_transparent">#BF434343</color>
 </resources>
