@@ -3,6 +3,8 @@
     <!-- Drawer menu -->
     <string name="menu_news">Новости</string>
     <string name="menu_head_tools">Инструменты</string>
+    <string name="menu_others">Другое</string>
+    <string name="menu_settings">Настройки</string>
     <string name="menu_about">О программе</string>
     <!-- Splash -->
     <string name="text_logo">Отладка кода похожа на охоту. Охоту на баги.</string>
@@ -40,8 +42,11 @@
     <string name="please_wait">Please wait…</string>
     <string name="apk_name">Package name</string>
     <string name="btn_verify">Run SafetyNet Attestation</string>
+    <!-- Settings -->
+    <string name="settings_news">RSS Feeds</string>
+    <string name="settings_news_label">Expiration date of read articles</string>
+    <string name="settings_news_message">Number of days after which read articles are removed from the reading list</string>
     <!-- Tools -->
-    <string name="menu_others">Другое</string>
     <string name="others_welcome">Я надеюсь, что это будет полезно).</string>
     <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Показывать значения FPS/CPU/GPU в оверлеи</string>
