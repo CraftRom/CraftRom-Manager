@@ -3,6 +3,8 @@
     <!-- Drawer menu -->
     <string name="menu_news">Novinky</string>
     <string name="menu_head_tools">Nástroje</string>
+    <string name="menu_others">Ostatní</string>
+    <string name="menu_settings">Nastavení</string>
     <string name="menu_about">Informace</string>
     <!-- Splash -->
     <string name="text_logo">Ladění kódu je jako lov. Lov chyb.</string>
@@ -40,8 +42,11 @@
     <string name="please_wait">Čekejte prosím…</string>
     <string name="apk_name">Název balíčku</string>
     <string name="btn_verify">Spustit atestaci SafetyNet</string>
+    <!-- Settings -->
+    <string name="settings_news">RSS Feeds</string>
+    <string name="settings_news_label">Expiration date of read articles</string>
+    <string name="settings_news_message">Number of days after which read articles are removed from the reading list</string>
     <!-- Tools -->
-    <string name="menu_others">Ostatní</string>
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
     <string name="fps_head">Překrytí monitorování zdrojů</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>
