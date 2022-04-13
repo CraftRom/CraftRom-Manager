@@ -3,6 +3,8 @@
     <!-- Drawer menu -->
     <string name="menu_news">Të rejat</string>
     <string name="menu_head_tools">Mjetet</string>
+    <string name="menu_others">Others</string>
+    <string name="menu_settings">Cilësimet</string>
     <string name="menu_about">Rreth</string>
     <!-- Splash -->
     <string name="text_logo">Kodi i korrigjimit të gabimeve është si gjuetia. Gjuetia e gabimeve.</string>
@@ -40,8 +42,11 @@
     <string name="please_wait">Please wait…</string>
     <string name="apk_name">Package name</string>
     <string name="btn_verify">Run SafetyNet Attestation</string>
+    <!-- Settings -->
+    <string name="settings_news">RSS Feeds</string>
+    <string name="settings_news_label">Expiration date of read articles</string>
+    <string name="settings_news_message">Number of days after which read articles are removed from the reading list</string>
     <!-- Tools -->
-    <string name="menu_others">Others</string>
     <string name="others_welcome">I hope this will be useful)).</string>
     <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Show on going FPS/CPU/GPU count in a overlay</string>
