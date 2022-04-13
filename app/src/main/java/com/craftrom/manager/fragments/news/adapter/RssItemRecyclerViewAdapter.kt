@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.activities.WebViewActivity
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Constants.Companion.STATE_CURRENT_LIST_LIMIT
 import com.craftrom.manager.utils.Constants.Companion.share
 import com.craftrom.manager.utils.rss.RssItem
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -21,6 +22,7 @@ import com.squareup.picasso.Picasso
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.min
 
 class RssItemRecyclerViewAdapter(
     private val mValues: List<RssItem>,
@@ -138,10 +140,9 @@ class RssItemRecyclerViewAdapter(
         }
     }
 
-
-
-    override fun getItemCount(): Int = mValues.size
-
+    override fun getItemCount(): Int {
+        return min(mValues.size, STATE_CURRENT_LIST_LIMIT.toInt())
+    }
     inner class ViewHolder(mView: View) : RecyclerView.ViewHolder(mView) {
         val titleTV: TextView? = mView.findViewById(R.id.txtTitle)
         val descTV: TextView? = mView.findViewById(R.id.txtDesc)

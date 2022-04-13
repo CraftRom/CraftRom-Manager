@@ -31,9 +31,9 @@ android {
     defaultConfig {
         applicationId "com.craftrom.manager"
         minSdk 29
-        targetSdk 31
-        versionCode 76
-        versionName "7.6.7"
+        targetSdk 32
+        versionCode 100
+        versionName "10.0"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
@@ -84,16 +84,16 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
     implementation 'androidx.compose.runtime:runtime-livedata:1.1.1'
 
     // Preference
     implementation "androidx.preference:preference-ktx:1.2.0"
 
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.1'
+    kapt 'com.github.bumptech.glide:compiler:4.13.1'
 
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
@@ -101,7 +101,7 @@ dependencies {
     // Swipe Refresh Layout
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
-    implementation('com.airbnb.android:lottie:4.2.2') {
+    implementation('com.airbnb.android:lottie:5.0.3') {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.android.support', module: 'support-compat'
         exclude group: 'com.android.support', module: 'support-core-ui'
@@ -114,7 +114,7 @@ dependencies {
     // Google GMS
     implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
-    implementation('com.google.http-client:google-http-client-android:1.41.2') {
+    implementation('com.google.http-client:google-http-client-android:1.41.5') {
         exclude group: 'org.apache.httpcomponents'
     }
 
@@ -124,7 +124,7 @@ dependencies {
     // Declare the dependencies for the Crashlytics and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.9'
-    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.2'
 
     //Root
     implementation 'com.github.topjohnwu.libsu:core:3.2.1'

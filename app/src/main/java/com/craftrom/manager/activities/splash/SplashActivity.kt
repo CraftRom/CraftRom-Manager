@@ -13,8 +13,8 @@ import com.bumptech.glide.Glide
 import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.Constants.Companion.CURRENT_YEAR
 import com.craftrom.manager.utils.Constants.Companion.SPLASH_TIME_OUT
-import java.util.*
 
 
 @SuppressLint("CustomSplashScreen")
@@ -60,7 +60,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun initView() {
         val appName = resources.getString(R.string.app_name)
-        textCopirate.text = resources.getString(R.string.copyr)
+        textCopirate.text = resources.getString(R.string.copyr, CURRENT_YEAR)
         try {
             val packageInfo = packageManager.getPackageInfo(packageName, 0)
             textViewVersion.text = resources.getString(R.string.app_name_version, appName, packageInfo.versionName)

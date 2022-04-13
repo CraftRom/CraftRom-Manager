@@ -16,18 +16,12 @@ open class Constants {
         const val PREF_SHOW_INTRO = "show_intro"
         const val API_KEY = "AIzaSyAWOzshus6WkrAbbe9Q0XPWpPxV8t2mkyY"
 
-        // Battery
-        const val CHARGING_MAX_FILE = "/sys/class/power_supply/battery/constant_charge_current_max"
-        const val BATTERY_THERMAL_COOL_FILE = "/sys/class/power_supply/bms/temp_cool"
-        const val BATTERY_THERMAL_WARM_FILE = "/sys/class/power_supply/bms/temp_warm"
-
         const val SPLASH_TIME_OUT = 2000L // 2 sec
         const val UPDATE_TIME_OUT =  200L // 0.2 sec
-        const val HOST_REFERENCE =
-            "https://raw.githubusercontent.com/CraftRom/KernelUpdates/android-10/host"
+
         const val RSS_FEED_LINK = "https://www.craft-rom.pp.ua/feed.xml"
-        const val KERNEL_NAME = "Chidori"
-        const val CURRENT_YEAR = "2021"
+        const val STATE_CURRENT_LIST_LIMIT = "5"
+        const val CURRENT_YEAR = "2022"
 
         inline fun <reified T : Activity> changeActivity(activity: Activity) {
             val intent = Intent(activity, T::class.java)

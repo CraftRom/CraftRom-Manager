@@ -37,8 +37,8 @@
 
     <!-- Splash activity theme. -->
     <style name="Theme.CraftRomManager.Splash" parent="Theme.CraftRomManager">
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="android:windowBackground">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">#0057b8</item>
+        <item name="android:windowBackground">#ffd700</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

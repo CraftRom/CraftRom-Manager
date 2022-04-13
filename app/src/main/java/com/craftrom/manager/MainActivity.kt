@@ -2,19 +2,19 @@ package com.craftrom.manager
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.preference.PreferenceManager
 import android.view.Menu
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import com.craftrom.manager.activities.IntroActivity
 import com.craftrom.manager.databinding.ActivityMainBinding
 import com.craftrom.manager.utils.Constants
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-
         if (!mPrefs.getBoolean(Constants.PREF_SHOW_INTRO, false)) {
             mPrefs.edit().putBoolean(Constants.PREF_SHOW_INTRO, true).apply()
             Constants.changeActivity<IntroActivity>(this)
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_news, R.id.nav_jitter, R.id.nav_about, R.id.nav_safety, R.id.nav_others
+                R.id.nav_news, R.id.nav_jitter, R.id.nav_about, R.id.nav_safety, R.id.nav_settings, R.id.nav_others
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
