@@ -7,7 +7,7 @@
     <string name="menu_settings">Nastavení</string>
     <string name="menu_about">Informace</string>
     <!-- Splash -->
-    <string name="text_logo">Ladění kódu je jako lov. Lov chyb.</string>
+    <!-- Debugging code is like hunting. Bug hunting. -->
     <string name="app_name_version">%s verze: %s </string>
     <!-- Into -->
     <string name="contribute_title">INFORMACE, KTERÉ MŮŽEME SDÍLET</string>
@@ -43,9 +43,17 @@
     <string name="apk_name">Název balíčku</string>
     <string name="btn_verify">Spustit atestaci SafetyNet</string>
     <!-- Settings -->
-    <string name="settings_news">RSS Feeds</string>
-    <string name="settings_news_label">Expiration date of read articles</string>
-    <string name="settings_news_message">Number of days after which read articles are removed from the reading list</string>
+    <string name="settings_general">General</string>
+    <string name="settings_update_options">Update Options</string>
+    <string name="settings_news_title">The number of news in the feed.</string>
+    <string name="settings_news_list_3">3 news</string>
+    <string name="settings_news_list_5">5 news</string>
+    <string name="settings_news_list_10">10 news</string>
+    <string name="settings_check_for_updates_title">Background check for updates</string>
+    <string name="settings_check_for_updates_daily">Daily</string>
+    <string name="settings_check_for_updates_weekly">Weekly</string>
+    <string name="settings_check_for_updates_month">Month</string>
+    <string name="settings_check_for_updates_never">Never</string>
     <!-- Tools -->
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
     <string name="fps_head">Překrytí monitorování zdrojů</string>
