@@ -3,11 +3,17 @@
     <!-- Drawer menu -->
     <string name="menu_news">News</string>
     <string name="menu_head_tools">Tools</string>
+    <string name="menu_others">Others</string>
+    <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
     <!-- Splash -->
-    <string name="text_logo">Debugging code is like hunting. Bug hunting.</string>
+    <!-- Debugging code is like hunting. Bug hunting. -->
     <string name="app_name_version">%s version: %s </string>
     <!-- Into -->
+    <string name="contribute_title">INFORMATION THAT WE CAN SHARE</string>
+    <string name="onboarding_finished_button">Start app</string>
+    <string name="contribute_more_info">Privacy Policy</string>
+    <string name="contribute_explanation">Your privacy is important to Craft Rom. Our Privacy Policy explains how we collect, use, disclose, transfer, and store your information. Please take a moment to familiarize yourself with our privacy practices.\nCraft Rom provides an after-market operating system and applications for various mobile devices.\n\nINFORMATION WE HAVE\nWe do not collect any additional information about our visitors, other than that provided by Google Analytics.\n\nWEB\nWe may collect information regarding user activities on our website. This information is aggregated and used to help us provide more useful information to our users to understand which parts of our website, products, and services are of most interest, and for general system diagnostics. Aggregated data is considered non-personal information for the purposes of this Privacy Policy.\n\nINFORMATION THAT WE CAN SHARE\nWe do not share your information with companies, organizations or individuals outside of Craft Rom unless one of the following circumstances applies:\n\n• With your consent (Submission of bug reports to our bug tracking platform is considered consent.)\n• When legally required.</string>
     <string name="intro_title">Welcome to the Craft Rom!</string>
     <string name="intro">All information and files — both in source and compiled form — are provided on an as is basis.</string>
     <string name="legal_text">The user assumes all risks of any damages that may occur, including but not limited to loss of data, damages to hardware, or loss of business profits.</string>
@@ -26,16 +32,29 @@
     <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
     <string name="total_mma">"Total duration: %.3fms"</string>
     <!-- SafetyNET. -->
-    <string name="safety_welcome">SafetyNet Attestation verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="safety_welcome">SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
     <string name="device">Device</string>
     <string name="model">Model</string>
     <string name="android_version">Android version</string>
     <string name="security_patch">Security patch level</string>
     <string name="advice_bootloader">The user should lock their device\'s bootloader.</string>
     <string name="advice_factory_rom">The user should restore their device to a clean factory ROM.</string>
-    <string name="btn_verify">Verify Phone</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="apk_name">Package name</string>
+    <string name="btn_verify">Run SafetyNet Attestation</string>
+    <!-- Settings -->
+    <string name="settings_general">General</string>
+    <string name="settings_update_options">Update Options</string>
+    <string name="settings_news_title">The number of news in the feed.</string>
+    <string name="settings_news_list_3">3 news</string>
+    <string name="settings_news_list_5">5 news</string>
+    <string name="settings_news_list_10">10 news</string>
+    <string name="settings_check_for_updates_title">Background check for updates</string>
+    <string name="settings_check_for_updates_daily">Daily</string>
+    <string name="settings_check_for_updates_weekly">Weekly</string>
+    <string name="settings_check_for_updates_month">Month</string>
+    <string name="settings_check_for_updates_never">Never</string>
     <!-- Tools -->
-    <string name="menu_others">Others</string>
     <string name="others_welcome">I hope this will be useful)).</string>
     <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Show on going FPS/CPU/GPU count in a overlay</string>

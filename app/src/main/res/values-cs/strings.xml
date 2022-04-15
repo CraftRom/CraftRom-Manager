@@ -3,11 +3,17 @@
     <!-- Drawer menu -->
     <string name="menu_news">Novinky</string>
     <string name="menu_head_tools">Nástroje</string>
+    <string name="menu_others">Ostatní</string>
+    <string name="menu_settings">Nastavení</string>
     <string name="menu_about">Informace</string>
     <!-- Splash -->
-    <string name="text_logo">Ladění kódu je jako lov. Lov chyb.</string>
+    <!-- Debugging code is like hunting. Bug hunting. -->
     <string name="app_name_version">%s verze: %s </string>
     <!-- Into -->
+    <string name="contribute_title">INFORMACE, KTERÉ MŮŽEME SDÍLET</string>
+    <string name="onboarding_finished_button">Spustit aplikaci</string>
+    <string name="contribute_more_info">Zásady ochrany osobních údajů</string>
+    <string name="contribute_explanation">Vaše soukromí je pro Craft Rom důležité. Naše zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme, zveřejňujeme, přenášíme a ukládáme vaše údaje. Věnujte prosím chvíli tomu, abyste se seznámili s našimi postupy ochrany osobních údajů.\nCraft Rom nabízí operační systém a aplikace pro různá mobilní zařízení.\n\nINFORMACE, KTERÉ MÁME\nNeshromažďujeme žádné další informace o našich návštěvnících kromě těch, které poskytuje služba Google Analytics.\n\nWEB\nMůžeme shromažďovat informace o aktivitách uživatelů na našich webových stránkách. Tyto informace jsou agregovány a používány k tomu, abychom našim uživatelům poskytovali užitečnější informace, abychom pochopili, o které části našich webových stránek, produktů a služeb je největší zájem a k obecné diagnostice systému. Souhrnné údaje jsou pro účely těchto zásad ochrany osobních údajů považovány za neosobní informace.\n\nINFORMACE, KTERÉ MŮŽEME SDÍLET\nVaše údaje nesdílíme se společnostmi, organizacemi nebo jednotlivci mimo Craft Rom, pokud nenastane jedna z následujících okolností:\n\n• S vaším souhlasem (za souhlas se považuje odeslání hlášení o chybách do naší platformy pro sledování chyb.)\n• Pokud je to vyžadováno zákonem.</string>
     <string name="intro_title">Vítejte v Craft Rom!</string>
     <string name="intro">Veškeré informace a soubory — ve zdrojové i zkompilované podobě — jsou poskytovány tak, jak jsou.</string>
     <string name="legal_text">Uživatel na sebe přebírá veškerá rizika případných škod, mimo jiné ztráty dat, poškození hardwaru nebo ztráty obchodních zisků.</string>
@@ -26,16 +32,29 @@
     <string name="rt_frametime_mma">"Doba trvání RT: %.3fms"</string>
     <string name="total_mma">"Celková doba trvání: %.3fms"</string>
     <!-- SafetyNET. -->
-    <string name="safety_welcome">SafetyNet Attestation verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
-    <string name="device">Device</string>
+    <string name="safety_welcome">SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="device">Zařízení</string>
     <string name="model">Model</string>
-    <string name="android_version">Android version</string>
-    <string name="security_patch">Security patch level</string>
+    <string name="android_version">Verze systému Android</string>
+    <string name="security_patch">Úroveň opravy zabezpečení Android</string>
     <string name="advice_bootloader">Uživatel by měl uzamknout bootloader svého zařízení.</string>
     <string name="advice_factory_rom">Uživatel by měl obnovit zařízení na původní ROM.</string>
-    <string name="btn_verify">Ověřit telefon</string>
+    <string name="please_wait">Čekejte prosím…</string>
+    <string name="apk_name">Název balíčku</string>
+    <string name="btn_verify">Spustit atestaci SafetyNet</string>
+    <!-- Settings -->
+    <string name="settings_general">General</string>
+    <string name="settings_update_options">Update Options</string>
+    <string name="settings_news_title">The number of news in the feed.</string>
+    <string name="settings_news_list_3">3 news</string>
+    <string name="settings_news_list_5">5 news</string>
+    <string name="settings_news_list_10">10 news</string>
+    <string name="settings_check_for_updates_title">Background check for updates</string>
+    <string name="settings_check_for_updates_daily">Daily</string>
+    <string name="settings_check_for_updates_weekly">Weekly</string>
+    <string name="settings_check_for_updates_month">Month</string>
+    <string name="settings_check_for_updates_never">Never</string>
     <!-- Tools -->
-    <string name="menu_others">Ostatní</string>
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
     <string name="fps_head">Překrytí monitorování zdrojů</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>

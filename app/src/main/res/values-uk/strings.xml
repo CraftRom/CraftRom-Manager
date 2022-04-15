@@ -3,11 +3,17 @@
     <!-- Drawer menu -->
     <string name="menu_news">Новини</string>
     <string name="menu_head_tools">Інструменти</string>
+    <string name="menu_others">Інше</string>
+    <string name="menu_settings">Налаштування</string>
     <string name="menu_about">Про додаток</string>
     <!-- Splash -->
-    <string name="text_logo">Код налагодження подібний полюванню. Полюванню на помилки.</string>
+    <!-- Debugging code is like hunting. Bug hunting. -->
     <string name="app_name_version">%s версія: %s </string>
     <!-- Into -->
+    <string name="contribute_title">INFORMATION THAT WE CAN SHARE</string>
+    <string name="onboarding_finished_button">Запуск програм</string>
+    <string name="contribute_more_info">Політика конфіденційності</string>
+    <string name="contribute_explanation">Your privacy is important to Craft Rom. Our Privacy Policy explains how we collect, use, disclose, transfer, and store your information. Please take a moment to familiarize yourself with our privacy practices.\nCraft Rom provides an after-market operating system and applications for various mobile devices.\n\nINFORMATION WE HAVE\nWe do not collect any additional information about our visitors, other than that provided by Google Analytics.\n\nWEB\nWe may collect information regarding user activities on our website. This information is aggregated and used to help us provide more useful information to our users to understand which parts of our website, products, and services are of most interest, and for general system diagnostics. Aggregated data is considered non-personal information for the purposes of this Privacy Policy.\n\nINFORMATION THAT WE CAN SHARE\nWe do not share your information with companies, organizations or individuals outside of Craft Rom unless one of the following circumstances applies:\n\n• With your consent (Submission of bug reports to our bug tracking platform is considered consent.)\n• When legally required.</string>
     <string name="intro_title">Ласкаво просимо до Craft Rom!</string>
     <string name="intro">Уся інформація та файли - як у початковій так і скомпільованій формі - надаються як є.</string>
     <string name="legal_text">Користувач передбачає, що всі ризики будь-яких збитків, які можуть статися, включаючи, але не обмежуючи втрату даних, шкоди устаткуванню чи втрату прибутку бізнесу.</string>
@@ -26,24 +32,37 @@
     <string name="rt_frametime_mma">"Тривалість RT: %.3fмс"</string>
     <string name="total_mma">"Загальна тривалість: %.3fмс"</string>
     <!-- SafetyNET. -->
-    <string name="safety_welcome">SafetyNet Attestation verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
-    <string name="device">Device</string>
-    <string name="model">Model</string>
-    <string name="android_version">Android version</string>
-    <string name="security_patch">Security patch level</string>
+    <string name="safety_welcome">SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="device">Пристрій</string>
+    <string name="model">Модель</string>
+    <string name="android_version">Версія Android</string>
+    <string name="security_patch">Патч безпеки</string>
     <string name="advice_bootloader">Користувач повинен блокувати завантажувач свого пристрою.</string>
     <string name="advice_factory_rom">Користувач має відновити свій пристрій на чисту фабричну прошивку.</string>
-    <string name="btn_verify">Перевірити телефон</string>
+    <string name="please_wait">Будь ласка, зачекайте…</string>
+    <string name="apk_name">Назва apk</string>
+    <string name="btn_verify">Виконати SafetyNet атестацію</string>
+    <!-- Settings -->
+    <string name="settings_general">Загальні</string>
+    <string name="settings_update_options">Параметри оновлення</string>
+    <string name="settings_news_title">Кількість новин в каналі.</string>
+    <string name="settings_news_list_3">3 новини</string>
+    <string name="settings_news_list_5">5 новин</string>
+    <string name="settings_news_list_10">10 новин</string>
+    <string name="settings_check_for_updates_title">Помилка перевірки оновлень</string>
+    <string name="settings_check_for_updates_daily">Щоденно</string>
+    <string name="settings_check_for_updates_weekly">Щотижня</string>
+    <string name="settings_check_for_updates_month">Month</string>
+    <string name="settings_check_for_updates_never">Ніколи</string>
     <!-- Tools -->
-    <string name="menu_others">Інше</string>
     <string name="others_welcome">Сподіваюся, це буде корисно)).</string>
-    <string name="fps_head">Resource monitoring overlay</string>
+    <string name="fps_head">Накладання моніторингу ресурсів</string>
     <string name="fps_desc">Показувати значення FPS/CPU/GPU в оверлей</string>
-    <string name="fps_notif_desc">Monitoring service started…</string>
-    <string name="pref_pm">Missing permissions</string>
-    <string name="pref_pm_desc">CraftRom Manager App needs permissions to download and install updates.\nTap here to grant Storage and Root permissions.</string>
-    <string name="err_no_pm_root">You didn\'t granted root permission.\nGrant root permission using Magisk Manager</string>
-    <string name="help_android11_pm">Tap \"CraftRom Manager\", then tap \"Allow access to manage all files\"</string>
+    <string name="fps_notif_desc">Моніторинг запущено…</string>
+    <string name="pref_pm">Немає дозволу</string>
+    <string name="pref_pm_desc">CraftRom Manager потребує дозволу для завантаження та встановлення оновлень.\nНатисніть тут, щоб надати права доступу до сховища.</string>
+    <string name="err_no_pm_root">Ви не надали права суперкористувача.\nНадати права суперкористувача за допомогою Magisk Manager</string>
+    <string name="help_android11_pm">Натисніть \"CraftRom Manager\", потім натисніть \"Дозволити доступ для керування усіма файлами\"</string>
     <!-- About -->
     <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
     <string name="about_as">Про нас</string>
