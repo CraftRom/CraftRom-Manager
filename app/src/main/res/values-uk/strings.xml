@@ -32,7 +32,7 @@
     <string name="rt_frametime_mma">"Тривалість RT: %.3fмс"</string>
     <string name="total_mma">"Загальна тривалість: %.3fмс"</string>
     <!-- SafetyNET. -->
-    <string name="safety_welcome">SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="safety_welcome">SafetyNet api є частиною служби Google Play Framework. Деякі програми використовують цей Api, щоб перевірити, чи пристрій має \"root\" чи підроблений.</string>
     <string name="device">Пристрій</string>
     <string name="model">Модель</string>
     <string name="android_version">Версія Android</string>
