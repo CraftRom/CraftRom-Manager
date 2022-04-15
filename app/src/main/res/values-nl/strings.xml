@@ -32,7 +32,7 @@
     <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
     <string name="total_mma">"Total duration: %.3fms"</string>
     <!-- SafetyNET. -->
-    <string name="safety_welcome">SafetyNet Attestation verifies the device with SafetyNet compatibility tests. SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="safety_welcome">SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
     <string name="device">Device</string>
     <string name="model">Model</string>
     <string name="android_version">Android version</string>
