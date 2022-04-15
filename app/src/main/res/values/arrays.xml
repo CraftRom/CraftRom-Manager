@@ -1,14 +1,29 @@
 <resources>
     <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>3 news</item>
-        <item>5 news</item>
-        <item>10 news</item>
+    <string-array name="news_list">
+        <item>@string/settings_news_list_3</item>
+        <item>@string/settings_news_list_5</item>
+        <item>@string/settings_news_list_10</item>
     </string-array>
 
-    <string-array name="list_values">
-        <item>3</item>
-        <item>5</item>
-        <item>10</item>
+    <string-array name="news_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
+
+    <string-array name="settings_check_for_updates_entries">
+        <item>@string/settings_check_for_updates_daily</item>
+        <item>@string/settings_check_for_updates_weekly</item>
+        <item>@string/settings_check_for_updates_month</item>
+        <item>@string/settings_check_for_updates_never</item>
+    </string-array>
+
+    <string-array name="update_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>

@@ -20,8 +20,10 @@ import com.craftrom.manager.fragments.news.adapter.RssItemRecyclerViewAdapter
 import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.Constants.Companion.RSS_FEED_LINK
 import com.craftrom.manager.utils.Constants.Companion.showSnackMessage
+import com.craftrom.manager.utils.app.NewsUtil
 import com.craftrom.manager.utils.rss.RssFeedFetcher
 import com.craftrom.manager.utils.rss.RssItem
+import org.koin.android.ext.android.inject
 import java.net.URL
 
 
@@ -37,6 +39,8 @@ class NewsFragment : Fragment(){
     var adapter: RssItemRecyclerViewAdapter? = null
     var rssItems = ArrayList<RssItem>()
     var listV: RecyclerView ?= null
+    private val newsUtil: NewsUtil by inject()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -100,6 +104,7 @@ class NewsFragment : Fragment(){
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
         }
+        newsUtil.setupListCount(requireContext())
         return root
     }
 
@@ -165,6 +170,7 @@ class NewsFragment : Fragment(){
 
         // TODO: Customize parameter argument names
         const val ARG_COLUMN_COUNT = "column-count"
+        var LIST_LIMIT: Int = 5
 
         // TODO: Customize parameter initialization
         @JvmStatic

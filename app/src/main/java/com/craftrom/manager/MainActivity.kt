@@ -16,12 +16,14 @@ import com.craftrom.manager.databinding.ActivityMainBinding
 import com.craftrom.manager.utils.Constants
 import com.google.android.material.navigation.NavigationView
 
+
 class MainActivity : AppCompatActivity() {
 
     private val TAG = "CraftRom:MainActivity"
     private lateinit var mPrefs: SharedPreferences
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

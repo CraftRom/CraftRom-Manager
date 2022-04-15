@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.activities.WebViewActivity
+import com.craftrom.manager.fragments.news.NewsFragment.Companion.LIST_LIMIT
 import com.craftrom.manager.utils.Constants
-import com.craftrom.manager.utils.Constants.Companion.STATE_CURRENT_LIST_LIMIT
 import com.craftrom.manager.utils.Constants.Companion.share
 import com.craftrom.manager.utils.rss.RssItem
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -141,7 +141,7 @@ class RssItemRecyclerViewAdapter(
     }
 
     override fun getItemCount(): Int {
-        return min(mValues.size, STATE_CURRENT_LIST_LIMIT.toInt())
+        return min(mValues.size, LIST_LIMIT)
     }
     inner class ViewHolder(mView: View) : RecyclerView.ViewHolder(mView) {
         val titleTV: TextView? = mView.findViewById(R.id.txtTitle)

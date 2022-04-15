@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="@string/settings_general" app:iconSpaceReserved="false">
+
+ <!--       <SeekBarPreference
+            app:key="@string/settings_news_key"
+            app:title="@string/settings_news_title"
+            app:showSeekBarValue="true"
+            app:seekBarIncrement="1"
+            app:defaultValue="5"
+            android:max="10"
+            app:min="3"
+            app:iconSpaceReserved="false"
+            />
+-->
+        <ListPreference
+            app:key="@string/settings_list_news_key"
+            app:title="@string/settings_news_title"
+            android:entries="@array/news_list"
+            app:entryValues="@array/news_values"
+            app:defaultValue="1"
+            app:summary="%s"
+            app:iconSpaceReserved="false"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/settings_update_options" app:iconSpaceReserved="false">
+
+        <ListPreference
+            app:key="@string/settings_check_for_updates_key"
+            app:title="@string/settings_check_for_updates_title"
+            android:entries="@array/settings_check_for_updates_entries"
+            app:entryValues="@array/update_values"
+            app:defaultValue="3"
+            app:summary="%s"
+            app:iconSpaceReserved="false"
+            />
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

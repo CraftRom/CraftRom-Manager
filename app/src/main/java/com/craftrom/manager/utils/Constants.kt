@@ -20,7 +20,7 @@ open class Constants {
         const val UPDATE_TIME_OUT =  200L // 0.2 sec
 
         const val RSS_FEED_LINK = "https://www.craft-rom.pp.ua/feed.xml"
-        const val STATE_CURRENT_LIST_LIMIT = "5"
+        var STATE_CURRENT_LIST_LIMIT = 5
         const val CURRENT_YEAR = "2022"
 
         inline fun <reified T : Activity> changeActivity(activity: Activity) {

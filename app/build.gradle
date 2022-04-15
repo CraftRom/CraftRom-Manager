@@ -90,6 +90,8 @@ dependencies {
 
     // Preference
     implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation 'com.github.rumboalla.KryptoPrefs:kryptoprefs:0.4.3'
+    implementation 'com.github.rumboalla.KryptoPrefs:kryptoprefs-gson:0.4.3'
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.13.1'
@@ -114,7 +116,7 @@ dependencies {
     // Google GMS
     implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
-    implementation('com.google.http-client:google-http-client-android:1.41.5') {
+    implementation('com.google.http-client:google-http-client-android:1.41.7') {
         exclude group: 'org.apache.httpcomponents'
     }
 
@@ -131,8 +133,8 @@ dependencies {
     implementation 'com.github.topjohnwu.libsu:io:3.2.1'
     implementation 'com.github.sunilpaulmathew:sCommon:101f0ee72b'
 
-    //Snow effect
-    implementation 'com.github.jetradarmobile:android-snowfall:1.2.1'
+    // Koin main features for Android
+    implementation "io.insert-koin:koin-android:3.1.6"
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }
