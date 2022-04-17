@@ -75,7 +75,10 @@ class SafetyFragment : Fragment(){
         error_txt = root.findViewById(R.id.txtError)
 
         safetyNetHelper = SafetyNetHelper(Constants.API_KEY)
-        Log.d(TAG, "AndroidAPIKEY: " + Utils.getSigningKeyFingerprint(context!!) + ";" + context!!.packageName);
+        val d = Log.d(
+            TAG,
+            "AndroidAPIKEY: " + Utils.getSigningKeyFingerprint(requireContext()) + ";" + requireContext().packageName
+        );
         deviceInfo()
         btnCheck.setOnClickListener {
             runTest()
@@ -87,7 +90,7 @@ class SafetyFragment : Fragment(){
     private fun runTest() {
         showLoading(true)
         Log.d(Constants.TAG, "SafetyNet start request")
-        safetyNetHelper!!.requestTest(context!!, object : SafetyNetHelper.SafetyNetWrapperCallback {
+        safetyNetHelper!!.requestTest(requireContext(), object : SafetyNetHelper.SafetyNetWrapperCallback {
             override fun error(errorCode: Int, errorMessage: String?) {
                 showLoading(false)
                 verify_safety_net.visibility = View.GONE

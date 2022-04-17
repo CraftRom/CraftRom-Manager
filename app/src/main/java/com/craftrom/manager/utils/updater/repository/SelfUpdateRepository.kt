@@ -20,6 +20,8 @@ import com.github.kittinunf.fuel.Fuel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.kryptoprefs.invoke
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import kotlin.coroutines.suspendCoroutine
@@ -38,7 +40,7 @@ class SelfUpdateRepository: KoinComponent {
             val o = Gson().fromJson(r, SelfUpdateResponse::class.java)
             prefs.selfUpdateCheck(System.currentTimeMillis())
             if (o.version > activity.packageManager.getPackageInfo(activity.packageName, 0).versionCode) {
-                        showDialog(activity, o)
+                withContext(Dispatchers.Main) { showDialog(activity, o) }
             }
     }
 
