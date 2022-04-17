@@ -89,11 +89,6 @@
     </plurals>
     <!-- Self Update -->
     <string name="selfupdate_found_title">Update found!</string>
-    <!--  Actions -->
-    <string name="action_ignore">IGNORE</string>
-    <string name="action_unignore">UNIGNORE</string>
-    <string name="action_install">INSTALL</string>
-    <string name="action_close">CLOSE</string>
     <!-- Update dialog -->
     <string name="inst_warn">A new version of the app has been found!</string>
     <string name="inst_install">Download and install</string>
