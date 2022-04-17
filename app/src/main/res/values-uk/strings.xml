@@ -21,7 +21,7 @@
     <string name="welcome">Вирішення завдання завжди займає більше часу, ніж очікувалося для завершення, навіть якщо ви врахували закон Гофстадера.</string>
     <string name="view_but">Переглянути</string>
     <string name="network_unavailable">Не вдалося підключитися до Інтернету!</string>
-    <string name="err_no_internet">Схоже, що ваш пристрій не підключено до Інтернету.\nПеревірте підключення до Інтернету і повторіть спробу</string>
+    <string name="err_no_internet">Схоже, що ваш пристрій не під\'єднано до Інтернету.\nПеревірте підключення до Інтернету і повторіть спробу</string>
     <string name="err_card_no_internet">Немає з’єднання з інтернетом</string>
     <string name="err_card_try_again">Спробувати ще раз</string>
     <!-- Jitter -->
@@ -49,11 +49,11 @@
     <string name="settings_news_list_3">3 новини</string>
     <string name="settings_news_list_5">5 новин</string>
     <string name="settings_news_list_10">10 новин</string>
-    <string name="settings_update_hour_title">Update Hour</string>
+    <string name="settings_update_hour_title">Час оновлення</string>
     <string name="settings_check_for_updates_title">Помилка перевірки оновлень</string>
     <string name="settings_check_for_updates_daily">Щоденно</string>
     <string name="settings_check_for_updates_weekly">Щотижня</string>
-    <string name="settings_check_for_updates_monthly">Monthly</string>
+    <string name="settings_check_for_updates_monthly">Щомісяця</string>
     <string name="settings_check_for_updates_never">Ніколи</string>
     <!-- Tools -->
     <string name="others_welcome">Сподіваюся, це буде корисно)).</string>
@@ -76,24 +76,19 @@
     <string name="action_settings">Налаштування</string>
     <!--  Prefs -->
     <!--  Notifications -->
-    <string name="notification_channel_name">Updates</string>
-    <string name="notification_channel_description">Channel for update notifications.</string>
-    <string name="notification_update_title">Updates</string>
+    <string name="notification_channel_name">Оновлення</string>
+    <string name="notification_channel_description">Канал для оновлення сповіщень.</string>
+    <string name="notification_update_title">Оновлення</string>
     <plurals name="notification_update_description">
-        <item quantity="one">Found %1$d update.</item>
-        <item quantity="few">Found %1$d updates.</item>
-        <item quantity="many">Found %1$d updates.</item>
-        <item quantity="other">Found %1$d updates.</item>
+        <item quantity="one">Знайдено %1$d оновлення.</item>
+        <item quantity="few">Знайдено %1$d оновлень.</item>
+        <item quantity="many">Знайдено %1$d оновлень.</item>
+        <item quantity="other">Знайдено %1$d оновлень.</item>
     </plurals>
     <!-- Self Update -->
-    <string name="selfupdate_found_title">Update found!</string>
-    <!--  Actions -->
-    <string name="action_ignore">IGNORE</string>
-    <string name="action_unignore">UNIGNORE</string>
-    <string name="action_install">INSTALL</string>
-    <string name="action_close">CLOSE</string>
+    <string name="selfupdate_found_title">Знайдено оновлення!</string>
     <!-- Update dialog -->
-    <string name="inst_warn">A new version of the app has been found!</string>
-    <string name="inst_install">Download and install</string>
-    <string name="inst_download">Only download</string>
+    <string name="inst_warn">Знайдено нову версію додатку!</string>
+    <string name="inst_install">Завантажити та встановити</string>
+    <string name="inst_download">Лише завантажити</string>
 </resources>
