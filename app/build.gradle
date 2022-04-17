@@ -48,6 +48,7 @@ android {
         release {
             signingConfig signingConfigs.sign
             minifyEnabled true
+            shrinkResources true
             proguardFiles  'proguard-rules.pro'
         }
     }
@@ -138,7 +139,6 @@ dependencies {
     implementation 'com.github.rumboalla.fuel:fuel:-SNAPSHOT'
     implementation 'com.github.rumboalla.fuel:fuel-gson:-SNAPSHOT'
     implementation 'com.google.code.gson:gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }

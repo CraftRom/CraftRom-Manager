@@ -67,18 +67,6 @@
         <service
             android:name=".services.FPS"
             android:configChanges="orientation" />
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.craftrom.manager.fileprovider"
-            android:grantUriPermissions="true"
-            android:exported="false"
-            >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-
     </application>
 
 </manifest>
