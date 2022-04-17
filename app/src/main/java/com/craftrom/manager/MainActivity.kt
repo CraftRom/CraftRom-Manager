@@ -1,9 +1,12 @@
 package com.craftrom.manager
 
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,16 +17,22 @@ import androidx.preference.PreferenceManager
 import com.craftrom.manager.activities.IntroActivity
 import com.craftrom.manager.databinding.ActivityMainBinding
 import com.craftrom.manager.utils.Constants
+import com.craftrom.manager.utils.app.AlarmUtil
+import com.craftrom.manager.utils.ioScope
+import com.craftrom.manager.utils.updater.repository.SelfUpdateRepository
 import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 
 class MainActivity : AppCompatActivity() {
 
     private val TAG = "CraftRom:MainActivity"
+    private val PERMISSION_REQUEST_CODE = 1234
     private lateinit var mPrefs: SharedPreferences
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-
+    private val alarmUtil: AlarmUtil by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +51,6 @@ class MainActivity : AppCompatActivity() {
             Constants.changeActivity<IntroActivity>(this)
         }
 
-
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -52,6 +60,22 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // Schedule alarm
+        alarmUtil.setupAlarm(applicationContext)
+
+        // Updates
+
+        if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            //Permission Granted
+            checkForSelfUpdate()
+        } else {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                PERMISSION_REQUEST_CODE
+            )
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -62,5 +86,10 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    private fun checkForSelfUpdate() = ioScope.launch {
+        SelfUpdateRepository().checkForUpdatesAsync(this@MainActivity).await()
+            .onFailure { Log.e(this@MainActivity.TAG, "Check for self update error.") }
     }
 }

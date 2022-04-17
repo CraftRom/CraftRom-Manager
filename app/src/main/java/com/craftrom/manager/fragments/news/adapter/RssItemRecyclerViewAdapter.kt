@@ -79,11 +79,11 @@ class RssItemRecyclerViewAdapter(
 //                Toast.LENGTH_SHORT).show()
 //        }
         holder.butLink.setOnClickListener {
-// on below line we are creating a new bottom sheet dialog.
+            // on below line we are creating a new bottom sheet dialog.
             val dialog = BottomSheetDialog(context!!, R.style.ThemeBottomSheet)
 
             // on below line we are inflating a layout file which we have created.
-            val card = LayoutInflater.from(context).inflate(R.layout.bottom_sheet_dialog, null)
+            val card = LayoutInflater.from(context).inflate(R.layout.dialog_news, null)
 
             val btnClose = card.findViewById<Button>(R.id.butLink)
             val articleImage =card.findViewById<ImageView>(R.id.featuredImg)

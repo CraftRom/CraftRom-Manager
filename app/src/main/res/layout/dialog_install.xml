@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/l1"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDialog"
+            style="@style/ThemeSheet"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/drag" />
+
+                <TextView
+                    android:id="@+id/installTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/inst_warn"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/euclid_flex"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/installInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="16sp"
+                    android:fontFamily="@font/euclid_flex"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/installText"
+                    android:lineSpacingMultiplier="1.1"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="16dp"
+                    android:text=" "
+                    android:textAlignment="center"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/btnInstall"
+                    style="@style/ThemeButtonDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/inst_install"
+                    app:icon="@drawable/ic_round_system_update_24" />
+
+                <Button
+                    android:id="@+id/btnDownload"
+                    style="@style/WidgetFoundation.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/inst_download"
+                    app:icon="@drawable/ic_round_save_alt_24" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.core.widget.NestedScrollView>

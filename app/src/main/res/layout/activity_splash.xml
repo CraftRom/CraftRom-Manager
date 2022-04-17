@@ -33,14 +33,14 @@
         android:text="@string/text_logo"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/headline_5"
+        android:textSize="@dimen/headline_5.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.402"
-        app:typeface="ReggaeOne-Regular.ttf" />
+        app:typeface="RubikWetPaint-Regular.ttf" />
 
     <TextView
         android:id="@+id/text"
@@ -56,7 +56,8 @@
         android:textSize="@dimen/overline"
         app:layout_constraintBottom_toTopOf="@id/textViewVersion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <com.craftrom.manager.ui.view.TypefaceTextView
         android:id="@+id/textViewVersion"

@@ -13,6 +13,8 @@ import org.koin.core.context.GlobalContext.startKoin
 
 class MainApplication : Application() {
     companion object {
+        var downloadId = 0L
+
         @SuppressLint("StaticFieldLeak")
         private var fps: FPS? = null
         private var bootSharedPreferences: SharedPreferences? = null
@@ -34,6 +36,8 @@ class MainApplication : Application() {
         fun getBootSharedPreferences(): SharedPreferences? {
             return bootSharedPreferences
         }
+
+
     }
 
     override fun onCreate() {
@@ -55,4 +59,6 @@ class MainApplication : Application() {
         androidContext(this@MainApplication)
         modules(mainModule)
     }
+
+
 }

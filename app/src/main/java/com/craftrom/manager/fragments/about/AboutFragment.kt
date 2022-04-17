@@ -49,7 +49,7 @@ class AboutFragment: Fragment(), View.OnClickListener {
             val dialog = BottomSheetDialog(requireContext(), R.style.ThemeBottomSheet)
 
             // on below line we are inflating a layout file which we have created.
-            val card = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_contributor, null)
+            val card = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_contributor, null)
 
             val btnClose = card.findViewById<Button>(R.id.negativeButton)
 

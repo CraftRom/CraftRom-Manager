@@ -32,8 +32,8 @@ android {
         applicationId "com.craftrom.manager"
         minSdk 29
         targetSdk 32
-        versionCode 100
-        versionName "10.0"
+        versionCode 101
+        versionName "10.1"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
@@ -47,8 +47,7 @@ android {
         }
         release {
             signingConfig signingConfigs.sign
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles  'proguard-rules.pro'
         }
     }
@@ -135,6 +134,11 @@ dependencies {
 
     // Koin main features for Android
     implementation "io.insert-koin:koin-android:3.1.6"
+
+    implementation 'com.github.rumboalla.fuel:fuel:-SNAPSHOT'
+    implementation 'com.github.rumboalla.fuel:fuel-gson:-SNAPSHOT'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }

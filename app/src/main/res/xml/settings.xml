@@ -41,6 +41,16 @@
             app:summary="%s"
             app:iconSpaceReserved="false"
             />
+        <SeekBarPreference
+            app:key="@string/settings_update_hour_key"
+            app:title="@string/settings_update_hour_title"
+            app:showSeekBarValue="true"
+            app:seekBarIncrement="1"
+            app:defaultValue="12"
+            android:max="23"
+            app:min="0"
+            app:iconSpaceReserved="false"
+            />
 
     </PreferenceCategory>
 

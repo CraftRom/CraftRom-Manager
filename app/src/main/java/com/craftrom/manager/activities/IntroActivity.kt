@@ -22,7 +22,7 @@ class IntroActivity : AppCompatActivity() {
             val dialog = BottomSheetDialog(this, R.style.ThemeBottomSheet)
 
             // on below line we are inflating a layout file which we have created.
-            val card = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_contributor, null)
+            val card = LayoutInflater.from(this).inflate(R.layout.dialog_contributor, null)
 
             val btnClose = card.findViewById<Button>(R.id.negativeButton)
 
