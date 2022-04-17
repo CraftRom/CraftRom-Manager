@@ -49,10 +49,11 @@
     <string name="settings_news_list_3">3 news</string>
     <string name="settings_news_list_5">5 news</string>
     <string name="settings_news_list_10">10 news</string>
+    <string name="settings_update_hour_title">Update Hour</string>
     <string name="settings_check_for_updates_title">Background check for updates</string>
     <string name="settings_check_for_updates_daily">Daily</string>
     <string name="settings_check_for_updates_weekly">Weekly</string>
-    <string name="settings_check_for_updates_month">Month</string>
+    <string name="settings_check_for_updates_monthly">Monthly</string>
     <string name="settings_check_for_updates_never">Never</string>
     <!-- Tools -->
     <string name="others_welcome">I hope this will be useful)).</string>
@@ -73,4 +74,19 @@
     <string name="nav_header_subtitle">Çdo gjë që mund të shkojë keq tashmë ka shkuar keq.</string>
     <string name="nav_header_desc">Titulli i navigimit</string>
     <string name="action_settings">Cilësimet</string>
+    <!--  Prefs -->
+    <!--  Notifications -->
+    <string name="notification_channel_name">Updates</string>
+    <string name="notification_channel_description">Channel for update notifications.</string>
+    <string name="notification_update_title">Updates</string>
+    <plurals name="notification_update_description">
+        <item quantity="one">Found %1$d update.</item>
+        <item quantity="other">Found %1$d updates.</item>
+    </plurals>
+    <!-- Self Update -->
+    <string name="selfupdate_found_title">Update found!</string>
+    <!-- Update dialog -->
+    <string name="inst_warn">A new version of the app has been found!</string>
+    <string name="inst_install">Download and install</string>
+    <string name="inst_download">Only download</string>
 </resources>

@@ -32,7 +32,7 @@
     <string name="rt_frametime_mma">"Doba trvání RT: %.3fms"</string>
     <string name="total_mma">"Celková doba trvání: %.3fms"</string>
     <!-- SafetyNET. -->
-    <string name="safety_welcome">SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
+    <string name="safety_welcome">SafetyNet API je součástí rámce služeb Google Play. Některé aplikace používají toto rozhraní ke kontrole, zda bylo zařízení rootnuto nebo zda s ním bylo manipulováno.</string>
     <string name="device">Zařízení</string>
     <string name="model">Model</string>
     <string name="android_version">Verze systému Android</string>
@@ -43,17 +43,18 @@
     <string name="apk_name">Název balíčku</string>
     <string name="btn_verify">Spustit atestaci SafetyNet</string>
     <!-- Settings -->
-    <string name="settings_general">General</string>
-    <string name="settings_update_options">Update Options</string>
-    <string name="settings_news_title">The number of news in the feed.</string>
-    <string name="settings_news_list_3">3 news</string>
-    <string name="settings_news_list_5">5 news</string>
-    <string name="settings_news_list_10">10 news</string>
-    <string name="settings_check_for_updates_title">Background check for updates</string>
-    <string name="settings_check_for_updates_daily">Daily</string>
-    <string name="settings_check_for_updates_weekly">Weekly</string>
-    <string name="settings_check_for_updates_month">Month</string>
-    <string name="settings_check_for_updates_never">Never</string>
+    <string name="settings_general">Obecné</string>
+    <string name="settings_update_options">Možnost aktualizace</string>
+    <string name="settings_news_title">Počet zpráv v kanálu.</string>
+    <string name="settings_news_list_3">3 zprávy</string>
+    <string name="settings_news_list_5">5 zpráv</string>
+    <string name="settings_news_list_10">10 zpráv</string>
+    <string name="settings_update_hour_title">Update Hour</string>
+    <string name="settings_check_for_updates_title">Kontrola aktualizací na pozadí</string>
+    <string name="settings_check_for_updates_daily">Denně</string>
+    <string name="settings_check_for_updates_weekly">Týdně</string>
+    <string name="settings_check_for_updates_monthly">Monthly</string>
+    <string name="settings_check_for_updates_never">Nikdy</string>
     <!-- Tools -->
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
     <string name="fps_head">Překrytí monitorování zdrojů</string>
@@ -73,4 +74,21 @@
     <string name="nav_header_subtitle">Všechno, co se může pokazit, se již pokazilo.</string>
     <string name="nav_header_desc">Navigační záhlaví</string>
     <string name="action_settings">Nastavení</string>
+    <!--  Prefs -->
+    <!--  Notifications -->
+    <string name="notification_channel_name">Updates</string>
+    <string name="notification_channel_description">Channel for update notifications.</string>
+    <string name="notification_update_title">Updates</string>
+    <plurals name="notification_update_description">
+        <item quantity="one">Found %1$d update.</item>
+        <item quantity="few">Found %1$d updates.</item>
+        <item quantity="many">Found %1$d updates.</item>
+        <item quantity="other">Found %1$d updates.</item>
+    </plurals>
+    <!-- Self Update -->
+    <string name="selfupdate_found_title">Update found!</string>
+    <!-- Update dialog -->
+    <string name="inst_warn">A new version of the app has been found!</string>
+    <string name="inst_install">Download and install</string>
+    <string name="inst_download">Only download</string>
 </resources>
