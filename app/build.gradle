@@ -32,8 +32,8 @@ android {
         applicationId "com.craftrom.manager"
         minSdk 29
         targetSdk 32
-        versionCode 101
-        versionName "10.1"
+        versionCode 102
+        versionName "10.2"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
@@ -47,7 +47,6 @@ android {
         }
         release {
             signingConfig signingConfigs.sign
-            minifyEnabled false
             proguardFiles  'proguard-rules.pro'
         }
     }
