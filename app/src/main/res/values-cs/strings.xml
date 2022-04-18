@@ -49,11 +49,11 @@
     <string name="settings_news_list_3">3 zprávy</string>
     <string name="settings_news_list_5">5 zpráv</string>
     <string name="settings_news_list_10">10 zpráv</string>
-    <string name="settings_update_hour_title">Update Hour</string>
+    <string name="settings_update_hour_title">Hodina aktualizace</string>
     <string name="settings_check_for_updates_title">Kontrola aktualizací na pozadí</string>
     <string name="settings_check_for_updates_daily">Denně</string>
     <string name="settings_check_for_updates_weekly">Týdně</string>
-    <string name="settings_check_for_updates_monthly">Monthly</string>
+    <string name="settings_check_for_updates_monthly">Měsíčně</string>
     <string name="settings_check_for_updates_never">Nikdy</string>
     <!-- Tools -->
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
@@ -76,19 +76,19 @@
     <string name="action_settings">Nastavení</string>
     <!--  Prefs -->
     <!--  Notifications -->
-    <string name="notification_channel_name">Updates</string>
-    <string name="notification_channel_description">Channel for update notifications.</string>
-    <string name="notification_update_title">Updates</string>
+    <string name="notification_channel_name">Aktualizace</string>
+    <string name="notification_channel_description">Kanál pro oznámení o aktualizacích.</string>
+    <string name="notification_update_title">Aktualizace</string>
     <plurals name="notification_update_description">
-        <item quantity="one">Found %1$d update.</item>
-        <item quantity="few">Found %1$d updates.</item>
-        <item quantity="many">Found %1$d updates.</item>
-        <item quantity="other">Found %1$d updates.</item>
+        <item quantity="one">Nalezena %1$d aktualizace.</item>
+        <item quantity="few">Nalezeny %1$d aktualizace.</item>
+        <item quantity="many">Nalezeno %1$d aktualizací.</item>
+        <item quantity="other">Nalezeno %1$d aktualizací.</item>
     </plurals>
     <!-- Self Update -->
-    <string name="selfupdate_found_title">Update found!</string>
+    <string name="selfupdate_found_title">Nalezena aktualizace!</string>
     <!-- Update dialog -->
-    <string name="inst_warn">A new version of the app has been found!</string>
-    <string name="inst_install">Download and install</string>
-    <string name="inst_download">Only download</string>
+    <string name="inst_warn">Byla nalezena nová verze aplikace!</string>
+    <string name="inst_install">Stáhnout a nainstalovat</string>
+    <string name="inst_download">Pouze stáhnout</string>
 </resources>
