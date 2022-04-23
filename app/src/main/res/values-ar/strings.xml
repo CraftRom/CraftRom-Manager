@@ -49,12 +49,14 @@
     <string name="settings_news_list_3">3 news</string>
     <string name="settings_news_list_5">5 news</string>
     <string name="settings_news_list_10">10 news</string>
+    <string name="settings_apkupdate_title">Check app update</string>
     <string name="settings_update_hour_title">Update Hour</string>
     <string name="settings_check_for_updates_title">Background check for updates</string>
     <string name="settings_check_for_updates_daily">Daily</string>
     <string name="settings_check_for_updates_weekly">Weekly</string>
     <string name="settings_check_for_updates_monthly">Monthly</string>
     <string name="settings_check_for_updates_never">Never</string>
+    <string name="settings_root_profile_title">ROOT mode</string>
     <!-- Tools -->
     <string name="others_welcome">I hope this will be useful)).</string>
     <string name="fps_head">Resource monitoring overlay</string>
@@ -79,14 +81,7 @@
     <string name="notification_channel_name">Updates</string>
     <string name="notification_channel_description">Channel for update notifications.</string>
     <string name="notification_update_title">Updates</string>
-    <plurals name="notification_update_description">
-        <item quantity="zero">Found %1$d updates.</item>
-        <item quantity="one">Found %1$d update.</item>
-        <item quantity="two">Found %1$d updates.</item>
-        <item quantity="few">Found %1$d updates.</item>
-        <item quantity="many">Found %1$d updates.</item>
-        <item quantity="other">Found %1$d updates.</item>
-    </plurals>
+    <string name="notification_update_description">Found new app version.</string>
     <!-- Self Update -->
     <string name="selfupdate_found_title">Update found!</string>
     <!-- Update dialog -->

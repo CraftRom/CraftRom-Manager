@@ -15,12 +15,12 @@
     <string name="contribute_more_info">Політика конфіденційності</string>
     <string name="contribute_explanation">Your privacy is important to Craft Rom. Our Privacy Policy explains how we collect, use, disclose, transfer, and store your information. Please take a moment to familiarize yourself with our privacy practices.\nCraft Rom provides an after-market operating system and applications for various mobile devices.\n\nINFORMATION WE HAVE\nWe do not collect any additional information about our visitors, other than that provided by Google Analytics.\n\nWEB\nWe may collect information regarding user activities on our website. This information is aggregated and used to help us provide more useful information to our users to understand which parts of our website, products, and services are of most interest, and for general system diagnostics. Aggregated data is considered non-personal information for the purposes of this Privacy Policy.\n\nINFORMATION THAT WE CAN SHARE\nWe do not share your information with companies, organizations or individuals outside of Craft Rom unless one of the following circumstances applies:\n\n• With your consent (Submission of bug reports to our bug tracking platform is considered consent.)\n• When legally required.</string>
     <string name="intro_title">Ласкаво просимо до Craft Rom!</string>
-    <string name="intro">Уся інформація та файли - як у початковій так і скомпільованій формі - надаються як є.</string>
+    <string name="intro">Уся інформація та файли - як у початковій, так і скомпільованій формі - надаються як є.</string>
     <string name="legal_text">Користувач передбачає, що всі ризики будь-яких збитків, які можуть статися, включаючи, але не обмежуючи втрату даних, шкоди устаткуванню чи втрату прибутку бізнесу.</string>
     <!-- News -->
     <string name="welcome">Вирішення завдання завжди займає більше часу, ніж очікувалося для завершення, навіть якщо ви врахували закон Гофстадера.</string>
     <string name="view_but">Переглянути</string>
-    <string name="network_unavailable">Не вдалося підключитися до Інтернету!</string>
+    <string name="network_unavailable">Не вдалося під\'єднатися до Інтернету!</string>
     <string name="err_no_internet">Схоже, що ваш пристрій не під\'єднано до Інтернету.\nПеревірте підключення до Інтернету і повторіть спробу</string>
     <string name="err_card_no_internet">Немає з’єднання з інтернетом</string>
     <string name="err_card_try_again">Спробувати ще раз</string>
@@ -49,12 +49,14 @@
     <string name="settings_news_list_3">3 новини</string>
     <string name="settings_news_list_5">5 новин</string>
     <string name="settings_news_list_10">10 новин</string>
+    <string name="settings_apkupdate_title">Перевірка наявності оновлень</string>
     <string name="settings_update_hour_title">Час оновлення</string>
-    <string name="settings_check_for_updates_title">Помилка перевірки оновлень</string>
+    <string name="settings_check_for_updates_title">Фонова перевірка оновлень</string>
     <string name="settings_check_for_updates_daily">Щоденно</string>
     <string name="settings_check_for_updates_weekly">Щотижня</string>
     <string name="settings_check_for_updates_monthly">Щомісяця</string>
     <string name="settings_check_for_updates_never">Ніколи</string>
+    <string name="settings_root_profile_title">Режим суперкористувача</string>
     <!-- Tools -->
     <string name="others_welcome">Сподіваюся, це буде корисно)).</string>
     <string name="fps_head">Накладання моніторингу ресурсів</string>
@@ -65,9 +67,9 @@
     <string name="err_no_pm_root">Ви не надали права суперкористувача.\nНадати права суперкористувача за допомогою Magisk Manager</string>
     <string name="help_android11_pm">Натисніть \"CraftRom Manager\", потім натисніть \"Дозволити доступ для керування усіма файлами\"</string>
     <!-- About -->
-    <string name="love"><![CDATA[</> з ❤️ вiд melles1991]]></string>
+    <string name="love"><![CDATA[</> з ❤️ від melles1991]]></string>
     <string name="about_as">Про нас</string>
-    <string name="about_as_desc">Створення рома - це спільнота, яка підтримує пристрої в різних проектах з відкритим вихідним кодом (MoKee OS, Lineage OS, crDroid та інші) та Chidori Kernel.\n\nНаш головний пріорітет - стабільність (на жаль, не завжди можливо досягти в поіній мірі).</string>
+    <string name="about_as_desc">Створення рома - це спільнота, яка підтримує пристрої в різних проєктах з відкритим вихідним кодом (MoKee OS, Lineage OS, crDroid та інші) та Chidori Kernel.\n\nНаш пріоритет - стабільність (на жаль, не завжди можливо досягти повною мірою).</string>
     <string name="features">Функції програми</string>
     <string name="navigation_drawer_open">Відкрити панель навігації</string>
     <string name="navigation_drawer_close">Закрити панель навігації</string>
@@ -80,6 +82,7 @@
     <string name="notification_channel_description">Канал для оновлення сповіщень.</string>
     <string name="notification_update_title">Оновлення</string>
     <string name="notification_update_description">Знайдено нову версію програми.</string>
+
     <!-- Self Update -->
     <string name="selfupdate_found_title">Знайдено оновлення!</string>
     <!-- Update dialog -->
