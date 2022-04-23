@@ -19,7 +19,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         setPreferencesFromResource(R.xml.settings, rootKey)
 
         findPreference<ListPreference>(getString(R.string.settings_list_news_key))?.setOnPreferenceChangeListener { _, _ ->
-            context?.let { newsUtil.setupListCount(it) }
+            context?.let { newsUtil.setupListCount() }
             true
         }
 

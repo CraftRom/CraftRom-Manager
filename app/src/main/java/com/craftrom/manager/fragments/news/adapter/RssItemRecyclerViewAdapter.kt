@@ -40,7 +40,7 @@ class RssItemRecyclerViewAdapter(
         val item = mValues[position]
         val postDate = item.pubDate
         val sim = SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z", Locale.getDefault())
-        val pDate: Date? = sim.parse(postDate)
+        val pDate: Date = sim.parse(postDate)
         val form = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
 
         val date = form.format(pDate)
@@ -54,8 +54,8 @@ class RssItemRecyclerViewAdapter(
 
         try {
             val cDate = Date().time.toString()
-            val tsp = pDate?.time
-            val old = (tsp?.minus (1000 * 60 * 60 * 24 * 30)).toString()
+            val tsp = pDate.time
+            val old = (tsp.minus (1000 * 60 * 60 * 24 * 30)).toString()
             Log.i(Constants.TAG, "TIMESTAMP POST:\n Curent time: $cDate \n Post time: $tsp \n Diff: $old")
             if (cDate < old) {
                 holder.new_icon.visibility = View.VISIBLE
@@ -94,8 +94,8 @@ class RssItemRecyclerViewAdapter(
 
             try {
                 val cDate = Date().time.toString()
-                val tsp = pDate?.time
-                val old = (tsp?.minus (1000 * 60 * 60 * 24 * 30)).toString()
+                val tsp = pDate.time
+                val old = (tsp.minus (1000 * 60 * 60 * 24 * 30)).toString()
                 if (cDate < old) {
                     new_ic.visibility = View.VISIBLE
                 } else {

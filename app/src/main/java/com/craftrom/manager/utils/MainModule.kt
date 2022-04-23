@@ -11,7 +11,7 @@ import org.koin.dsl.module
 val mainModule = module {
 
     single { AppPrefs(get(), KryptoBuilder.nocrypt(get(), "${androidContext().packageName}_preferences")) }
-    single { NewsUtil(get(), get()) }
+    single { NewsUtil(get()) }
     single { NotificationUtil(get()) }
     single { AlarmUtil(get(), get()) }
 }

@@ -9,7 +9,7 @@ import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.craftrom.manager.MainActivity
+import com.craftrom.manager.MainApplication
 import com.craftrom.manager.R
 
 class NotificationUtil(private val context: Context) {
@@ -22,8 +22,10 @@ class NotificationUtil(private val context: Context) {
     private val updateId = 28132
 
     fun showUpdateNotification() {
+
+
         // Intent for the notification click
-        val intent = Intent(context, MainActivity::class.java).apply {
+        val intent = Intent(context, MainApplication::class.java).apply {
             flags = FLAG_ACTIVITY_REORDER_TO_FRONT
             action = updateAction
         }
@@ -33,17 +35,18 @@ class NotificationUtil(private val context: Context) {
             .setWhen(System.currentTimeMillis())
             .setSmallIcon(R.drawable.ic_update)
             .setContentTitle(updateTitle)
-            .setContentText(context.resources.getQuantityString(R.plurals.notification_update_description, 1, 1))
-            .setContentIntent(PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT))
+            .setContentText(context.resources.getString(R.string.notification_update_description))
+            .setContentIntent(PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE))
 
         createNotificationChannel()
         NotificationManagerCompat.from(context).notify(updateId, builder.build())
     }
 
     private fun createNotificationChannel() {
-        val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT).apply {
+        val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH).apply {
             description = context.getString(R.string.notification_channel_description)
         }
+        channel.setSound(null, null)
         notificationManager.createNotificationChannel(channel)
     }
 }

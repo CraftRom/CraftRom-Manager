@@ -104,7 +104,7 @@ class NewsFragment : Fragment(){
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
         }
-        newsUtil.setupListCount(requireContext())
+        newsUtil.setupListCount()
         return root
     }
 

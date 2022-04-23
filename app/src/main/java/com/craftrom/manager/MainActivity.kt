@@ -16,8 +16,10 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.craftrom.manager.activities.IntroActivity
 import com.craftrom.manager.databinding.ActivityMainBinding
+import com.craftrom.manager.receiver.AlarmReceiver
 import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.app.AlarmUtil
+import com.craftrom.manager.utils.app.AppPrefs
 import com.craftrom.manager.utils.ioScope
 import com.craftrom.manager.utils.updater.repository.SelfUpdateRepository
 import com.google.android.material.navigation.NavigationView
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private val alarmUtil: AlarmUtil by inject()
+    private val prefs: AppPrefs by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,13 +65,14 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         // Schedule alarm
-        alarmUtil.setupAlarm(applicationContext)
+        alarmUtil.setupAlarm(this@MainActivity)
 
         // Updates
 
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             //Permission Granted
-            checkForSelfUpdate()
+            if (prefs.settings.apkUpdate) checkForSelfUpdate() else null
+
         } else {
             ActivityCompat.requestPermissions(
                 this,
@@ -92,4 +96,5 @@ class MainActivity : AppCompatActivity() {
         SelfUpdateRepository().checkForUpdatesAsync(this@MainActivity).await()
             .onFailure { Log.e(this@MainActivity.TAG, "Check for self update error.") }
     }
+
 }

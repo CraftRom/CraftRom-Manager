@@ -32,8 +32,8 @@ android {
         applicationId "com.craftrom.manager"
         minSdk 29
         targetSdk 32
-        versionCode 102
-        versionName "10.2"
+        versionCode 103
+        versionName "10.3"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
@@ -47,7 +47,6 @@ android {
         }
         release {
             signingConfig signingConfigs.sign
-            minifyEnabled true
             proguardFiles  'proguard-rules.pro'
         }
     }
@@ -138,7 +137,6 @@ dependencies {
     implementation 'com.github.rumboalla.fuel:fuel:-SNAPSHOT'
     implementation 'com.github.rumboalla.fuel:fuel-gson:-SNAPSHOT'
     implementation 'com.google.code.gson:gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }

@@ -23,7 +23,9 @@ class AlarmUtil(private val context: Context, private val prefs: AppPrefs): Koin
     private fun cancelAlarm() = pendingIntent?.let { alarmManager.cancel(it) }
 
     private fun enableAlarm(context: Context, interval: Long = getInterval()) {
-        pendingIntent = PendingIntent.getBroadcast(context, 0, Intent(context, AlarmReceiver::class.java), PendingIntent.FLAG_UPDATE_CURRENT)
+
+            pendingIntent = PendingIntent.getBroadcast(context, 0, Intent(context, AlarmReceiver::class.java), PendingIntent.FLAG_IMMUTABLE)
+
 
         val now = System.currentTimeMillis()
         val time = Calendar.getInstance().apply { timeInMillis = now }

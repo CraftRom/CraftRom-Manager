@@ -3,7 +3,6 @@ package com.craftrom.manager.utils.rss
 import android.os.AsyncTask
 import android.util.Log
 import com.craftrom.manager.fragments.news.NewsFragment
-import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.Constants.Companion.TAG
 import java.io.IOException
 import java.io.InputStream
@@ -15,10 +14,10 @@ class RssFeedFetcher(val context: NewsFragment) : AsyncTask<URL, Void, List<RssI
     private val reference = WeakReference(context)
     private var stream: InputStream? = null
     override fun doInBackground(vararg params: URL?): List<RssItem>? {
-        Log.d(TAG, "doInBackground Called With Parameter: ${params}")
+        Log.d(TAG, "doInBackground Called With Parameter: $params")
         val connect = params[0]?.openConnection() as HttpURLConnection
         val responseCode: Int = connect.responseCode
-        Log.d(TAG,"$TAG: Server Response Code = ${responseCode}")
+        Log.d(TAG,"$TAG: Server Response Code = $responseCode")
         var rssItems: List<RssItem>? = null
         if (responseCode == 200) {
             stream = connect.inputStream
@@ -30,7 +29,7 @@ class RssFeedFetcher(val context: NewsFragment) : AsyncTask<URL, Void, List<RssI
             }
         }else
         {
-            Log.e(Constants.TAG, "NewsFragment: ERRORS")
+            Log.e(TAG, "NewsFragment: ERRORS")
             return null
         }
         return rssItems
@@ -41,7 +40,7 @@ class RssFeedFetcher(val context: NewsFragment) : AsyncTask<URL, Void, List<RssI
             reference.get()?.updateRV(result)
         } else
         {
-            Log.e(Constants.TAG, "NewsFragment: ERRORS")
+            Log.e(TAG, "NewsFragment: ERRORS")
         }
     }
 

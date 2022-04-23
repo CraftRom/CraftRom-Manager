@@ -122,24 +122,24 @@ object Utils {
         }
     }
 
-    fun writeFile(path: String?, text: String?, append: Boolean, asRoot: Boolean) {
+    fun writeFile(path: String, text: String?, append: Boolean, asRoot: Boolean) {
         if (asRoot) {
-            RootFile.write(path!!, text!!, append)
+            RootFile.write(path, text!!, append)
             return
         }
         sUtils.create(text, File(path))
     }
 
     @JvmOverloads
-    fun readFile(file: String?, root: Boolean = true): String {
+    fun readFile(file: String, root: Boolean = true): String {
         return if (root) {
-            RootFile.read(file!!)
+            RootFile.read(file)
         } else sUtils.read(File(file))
     }
 
     @JvmOverloads
-    fun existFile(file: String?, root: Boolean = true): Boolean {
-        return if (!root) sUtils.exist(File(file)) else RootFile.exists(file!!)
+    fun existFile(file: String, root: Boolean = true): Boolean {
+        return if (!root) sUtils.exist(File(file)) else RootFile.exists(file)
     }
 
     fun create(text: String?, path: File?) {
@@ -159,9 +159,9 @@ object Utils {
     }
 
     @JvmOverloads
-    fun delete(file: String?, root: Boolean = true) {
+    fun delete(file: String, root: Boolean = true) {
         if (root) {
-            RootFile.delete(file!!)
+            RootFile.delete(file)
         } else {
             sUtils.delete(File(file))
         }

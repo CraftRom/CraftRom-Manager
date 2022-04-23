@@ -81,7 +81,8 @@
     <string name="notification_channel_name">Оновлення</string>
     <string name="notification_channel_description">Канал для оновлення сповіщень.</string>
     <string name="notification_update_title">Оновлення</string>
-    <string name="notification_update_description">Знайдено нову версію додатку.</string>
+    <string name="notification_update_description">Знайдено нову версію програми.</string>
+
     <!-- Self Update -->
     <string name="selfupdate_found_title">Знайдено оновлення!</string>
     <!-- Update dialog -->
