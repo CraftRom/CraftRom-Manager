@@ -56,7 +56,7 @@
     <string name="settings_check_for_updates_weekly">Týdně</string>
     <string name="settings_check_for_updates_monthly">Měsíčně</string>
     <string name="settings_check_for_updates_never">Nikdy</string>
-    <string name="settings_root_profile_title">ROOT mode</string>
+    <string name="settings_root_profile_title">Režim ROOT</string>
     <!-- Tools -->
     <string name="others_welcome">Doufám, že to bude užitečné)).</string>
     <string name="fps_head">Překrytí monitorování zdrojů</string>
