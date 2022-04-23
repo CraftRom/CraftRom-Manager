@@ -79,12 +79,7 @@
     <string name="notification_channel_name">Оновлення</string>
     <string name="notification_channel_description">Канал для оновлення сповіщень.</string>
     <string name="notification_update_title">Оновлення</string>
-    <plurals name="notification_update_description">
-        <item quantity="one">Знайдено %1$d оновлення.</item>
-        <item quantity="few">Знайдено %1$d оновлень.</item>
-        <item quantity="many">Знайдено %1$d оновлень.</item>
-        <item quantity="other">Знайдено %1$d оновлень.</item>
-    </plurals>
+    <string name="notification_update_description">Знайдено нову версію програми.</string>
     <!-- Self Update -->
     <string name="selfupdate_found_title">Знайдено оновлення!</string>
     <!-- Update dialog -->

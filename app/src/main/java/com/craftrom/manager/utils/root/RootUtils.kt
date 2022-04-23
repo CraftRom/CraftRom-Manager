@@ -19,7 +19,6 @@
  */
 package com.craftrom.manager.utils.root
 
-import com.craftrom.manager.utils.Utils.existFile
 import com.craftrom.manager.utils.Utils.removeSuffix
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ShellUtils

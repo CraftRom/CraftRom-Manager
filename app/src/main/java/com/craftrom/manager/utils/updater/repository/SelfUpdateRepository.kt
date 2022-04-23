@@ -1,6 +1,7 @@
 package com.craftrom.manager.utils.updater.repository
 
 import android.app.Activity
+import android.content.Context
 import android.content.IntentFilter
 import android.view.LayoutInflater
 import android.widget.Button
@@ -10,7 +11,7 @@ import com.craftrom.manager.BuildConfig
 import com.craftrom.manager.MainApplication
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.app.AppPrefs
-import com.craftrom.manager.utils.app.InstallUtil
+import com.craftrom.manager.utils.app.NotificationUtil
 import com.craftrom.manager.utils.catchingAsync
 import com.craftrom.manager.utils.downloader.DownloadManagerUtil
 import com.craftrom.manager.utils.downloader.DownloadReceiver
@@ -29,8 +30,8 @@ import kotlin.coroutines.suspendCoroutine
 
 class SelfUpdateRepository: KoinComponent {
 
-    private val installer: InstallUtil by inject()
     private val prefs: AppPrefs by inject()
+    private val notificationUtil: NotificationUtil by inject()
     private var downloadBroadcastReceiver: DownloadReceiver? = null
 
     private val url = "https://raw.githubusercontent.com/CraftRom/host_updater/android-10/apk.json"
@@ -39,7 +40,7 @@ class SelfUpdateRepository: KoinComponent {
             val r = Fuel.get(url).responseString().third.get()
             val o = Gson().fromJson(r, SelfUpdateResponse::class.java)
             prefs.selfUpdateCheck(System.currentTimeMillis())
-            if (o.version > activity.packageManager.getPackageInfo(activity.packageName, 0).versionCode) {
+            if (o.version > activity.packageManager.getPackageInfo(activity.packageName, 0).longVersionCode) {
                 withContext(Dispatchers.Main) { showDialog(activity, o) }
             }
     }
@@ -115,5 +116,13 @@ class SelfUpdateRepository: KoinComponent {
         }else{
             Toast.makeText(activity,"False download",Toast.LENGTH_SHORT).show()
         }
-        }
+    }
+    fun updateAsync(context: Context) = ioScope.catchingAsync {
+
+            val r = Fuel.get(url).responseString().third.get()
+            val o = Gson().fromJson(r, SelfUpdateResponse::class.java)
+            if (o.version > context.packageManager.getPackageInfo(context.packageName, 0).longVersionCode) {
+                withContext(Dispatchers.Main) { notificationUtil.showUpdateNotification() }
+            }
+    }
 }

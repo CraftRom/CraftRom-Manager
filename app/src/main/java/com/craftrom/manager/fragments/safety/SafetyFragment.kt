@@ -75,7 +75,7 @@ class SafetyFragment : Fragment(){
         error_txt = root.findViewById(R.id.txtError)
 
         safetyNetHelper = SafetyNetHelper(Constants.API_KEY)
-        val d = Log.d(
+        Log.d(
             TAG,
             "AndroidAPIKEY: " + Utils.getSigningKeyFingerprint(requireContext()) + ";" + requireContext().packageName
         );

@@ -67,12 +67,16 @@
     <!-- Settings -->
     <string name="settings_general">General</string>
     <string name="settings_update_options">Update Options</string>
+    <string translatable="false" name="settings_root_options_title">Root</string>
 
     <string name="settings_news_title">The number of news in the feed.</string>
     <string name="settings_news_list_3">3 news</string>
     <string name="settings_news_list_5">5 news</string>
     <string name="settings_news_list_10">10 news</string>
     <string translatable="false" name="settings_list_news_key">numbNews</string>
+
+    <string translatable="false" name="settings_apkupdate_key">APKUpdate</string>
+    <string name="settings_apkupdate_title">Check app update</string>
 
     <string translatable="false" name="settings_update_hour_key">updateHour</string>
     <string name="settings_update_hour_title">Update Hour</string>
@@ -83,6 +87,9 @@
     <string name="settings_check_for_updates_weekly">Weekly</string>
     <string name="settings_check_for_updates_monthly">Monthly</string>
     <string name="settings_check_for_updates_never">Never</string>
+
+    <string translatable="false" name="settings_root_profile_key">rootProfile</string>
+    <string name="settings_root_profile_title">ROOT mode</string>
 
     <!-- Tools -->
     <string name="others_welcome">I hope this will be useful)).</string>
@@ -119,11 +126,7 @@
     <string translatable="false" name="notification_channel_id">updateChannel</string>
     <string name="notification_update_title">Updates</string>
     <string translatable="false" name="notification_update_action">updates</string>
-    <plurals name="notification_update_description">
-        <item quantity="zero">No updates found.</item>
-        <item quantity="one">Found %1$d update.</item>
-        <item quantity="other">Found %1$d updates.</item>
-    </plurals>
+    <string name="notification_update_description">Found new app version.</string>
 
     <!-- Self Update -->
     <string name="selfupdate_found_title">Update found!</string>

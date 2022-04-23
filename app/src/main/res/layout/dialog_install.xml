@@ -28,8 +28,10 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="4dp"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:layout_marginBottom="@dimen/default_margin"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="16dp"
+                    android:contentDescription="@string/todo"
                     android:src="@drawable/drag" />
 
                 <TextView
@@ -38,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/inst_warn"
                     android:singleLine="true"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/euclid_flex"
                     android:textAlignment="center" />
                 <TextView
@@ -46,14 +48,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" "
-                    android:textSize="16sp"
+                    android:textColor="@color/colorPermission"
+                    android:textSize="14sp"
                     android:fontFamily="@font/euclid_flex"
                     android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/installText"
                     android:lineSpacingMultiplier="1.1"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"

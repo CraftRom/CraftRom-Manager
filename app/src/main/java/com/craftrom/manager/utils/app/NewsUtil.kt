@@ -1,14 +1,13 @@
 package com.craftrom.manager.utils.app
 
-import android.content.Context
 import com.craftrom.manager.fragments.news.NewsFragment
 import org.koin.core.component.KoinComponent
 
-class NewsUtil(private val context: Context, private val prefs: AppPrefs): KoinComponent {
+class NewsUtil(private val prefs: AppPrefs): KoinComponent {
 
-    fun setupListCount(context: Context) = listCount(context)
+    fun setupListCount() = listCount()
 
-    private fun listCount (context: Context, interval: Int = getInterval()) {
+    private fun listCount (interval: Int = getInterval()) {
 
         when(prefs.settings.listNews) {
             "0" -> {

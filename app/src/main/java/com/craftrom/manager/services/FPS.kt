@@ -77,7 +77,8 @@ class FPS : Service() {
             notificationChannel
         )
         val notificationBuilder = Notification.Builder(this, "Craft_stats_notification_channel")
-        notificationBuilder.setContentTitle("Craft Rom " + getString(R.string.fps_head))
+        notificationBuilder
+            .setContentTitle("Craft Rom " + getString(R.string.fps_head))
             .setContentText(getString(R.string.fps_notif_desc)).setSmallIcon(R.drawable.ic_new)
         startForeground(69, notificationBuilder.build())
 
