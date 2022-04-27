@@ -6,6 +6,7 @@
     <string name="menu_others">Інше</string>
     <string name="menu_settings">Налаштування</string>
     <string name="menu_about">Про додаток</string>
+    <!-- Common -->
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
     <string name="app_name_version">%s версія: %s </string>
@@ -24,6 +25,10 @@
     <string name="err_no_internet">Схоже, що ваш пристрій не під\'єднано до Інтернету.\nПеревірте підключення до Інтернету і повторіть спробу</string>
     <string name="err_card_no_internet">Немає з’єднання з інтернетом</string>
     <string name="err_card_try_again">Спробувати ще раз</string>
+    <!-- Kernel -->
+    <string name="kernel_welcome">Balanced kernel for everyday.</string>
+    <string name="kernel_version">Kernel version</string>
+    <string name="board_version">Board</string>
     <!-- Jitter -->
     <string name="jitter_name">Визначення Jitter</string>
     <string name="jitter_welcome">Jitter - це випадкова поведінка системи, яка не дає змогу працювати пристрою.</string>
@@ -81,8 +86,7 @@
     <string name="notification_channel_name">Оновлення</string>
     <string name="notification_channel_description">Канал для оновлення сповіщень.</string>
     <string name="notification_update_title">Оновлення</string>
-    <string name="notification_update_description">Знайдено нову версію програми.</string>
-
+    <string name="notification_update_description">Знайдено нову версію додатку.</string>
     <!-- Self Update -->
     <string name="selfupdate_found_title">Знайдено оновлення!</string>
     <!-- Update dialog -->
