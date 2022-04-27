@@ -6,6 +6,7 @@
     <string name="menu_others">Ostatní</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_about">Informace</string>
+    <!-- Common -->
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
     <string name="app_name_version">%s verze: %s </string>
@@ -24,6 +25,10 @@
     <string name="err_no_internet">Vypadá to, že vaše zařízení není připojeno k Internetu.\nZkontrolujte připojení k Internetu a zkuste to znovu</string>
     <string name="err_card_no_internet">Bez připojení k Internetu</string>
     <string name="err_card_try_again">Zkusit znovu</string>
+    <!-- Kernel -->
+    <string name="kernel_welcome">Balanced kernel for everyday.</string>
+    <string name="kernel_version">Kernel version</string>
+    <string name="board_version">Board</string>
     <!-- Jitter -->
     <string name="jitter_name">Identifying Jitter</string>
     <string name="jitter_welcome">Jitter je náhodné chování systému, které zabraňuje vnímatelnému chodu práce.</string>
