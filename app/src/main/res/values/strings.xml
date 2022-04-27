@@ -4,12 +4,15 @@
 
     <!-- Drawer menu -->
     <string name="menu_news">News</string>
+    <string name="menu_kernel" translatable="false">Chidori Kernel</string>
     <string name="menu_head_tools">Tools</string>
     <string name="menu_safety" translatable="false">SafetyNet Attestation</string>
     <string name="menu_others">Others</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
 
+    <!-- Common -->
+    <string name="common_empty_result" translatable="false">-</string>
 
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
@@ -36,6 +39,12 @@
     <string name="err_no_internet">Looks like your device isn\'t connected to the internet.\nCheck Internet connection and try again</string>
     <string name="err_card_no_internet">No internet connection</string>
     <string name="err_card_try_again">Try Again</string>
+
+    <!-- Kernel -->
+    <string name="kernel_name" translatable="false">@string/menu_kernel</string>
+    <string name="kernel_welcome">Balanced kernel for everyday.</string>
+    <string name="kernel_version">Kernel version</string>
+    <string name="board_version">Board</string>
 
     <!-- Jitter -->
     <string name="jitter" translatable="false">Jitter</string>

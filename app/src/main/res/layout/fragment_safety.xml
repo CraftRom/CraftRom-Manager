@@ -115,7 +115,9 @@
                                 android:layout_gravity="center"
                                 android:text="nonce"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                                android:textSize="15sp" />
+                                android:autoSizeTextType="uniform"
+                                android:autoSizePresetSizes="@array/autosize_text_sizes"
+                                />
 
 
                         </LinearLayout>

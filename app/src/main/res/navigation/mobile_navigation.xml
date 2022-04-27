@@ -11,6 +11,11 @@
         android:label="@string/menu_news"
         tools:layout="@layout/fragment_news" />
     <fragment
+        android:id="@+id/nav_kernel"
+        android:name="com.craftrom.manager.fragments.kernel.KernelFragment"
+        android:label="@string/menu_kernel"
+        tools:layout="@layout/fragment_kernel" />
+    <fragment
         android:id="@+id/nav_jitter"
         android:name="com.craftrom.manager.fragments.jitter.JitterFragment"
         android:label="@string/jitter"
