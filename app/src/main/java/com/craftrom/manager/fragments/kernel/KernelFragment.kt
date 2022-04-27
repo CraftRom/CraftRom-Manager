@@ -42,7 +42,7 @@ class KernelFragment : Fragment(){
     @SuppressLint("SetTextI18n")
     private fun deviceInfo() {
         val imageUrl = "https://raw.githubusercontent.com/CraftRom/craftrom.github.io/main/images/devices/small/${DeviceSystemInfo.product()}.png"
-        val imageNull = R.drawable.ic_launcher
+        val imageNull = R.drawable.placeholder
             Picasso.get()
                 .load(imageUrl)
                 .error(imageNull)
