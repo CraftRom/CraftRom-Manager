@@ -26,8 +26,8 @@
     <string name="err_card_no_internet">Bez připojení k Internetu</string>
     <string name="err_card_try_again">Zkusit znovu</string>
     <!-- Kernel -->
-    <string name="kernel_welcome">Balanced kernel for everyday.</string>
-    <string name="kernel_version">Kernel version</string>
+    <string name="kernel_welcome">Vyvážené jádro pro každý den.</string>
+    <string name="kernel_version">Verze jádra</string>
     <string name="board_version">Board</string>
     <!-- Jitter -->
     <string name="jitter_name">Identifying Jitter</string>
@@ -54,7 +54,7 @@
     <string name="settings_news_list_3">3 zprávy</string>
     <string name="settings_news_list_5">5 zpráv</string>
     <string name="settings_news_list_10">10 zpráv</string>
-    <string name="settings_apkupdate_title">Check app update</string>
+    <string name="settings_apkupdate_title">Zkontrolovat aktualizaci aplikace</string>
     <string name="settings_update_hour_title">Hodina aktualizace</string>
     <string name="settings_check_for_updates_title">Kontrola aktualizací na pozadí</string>
     <string name="settings_check_for_updates_daily">Denně</string>
@@ -86,7 +86,7 @@
     <string name="notification_channel_name">Aktualizace</string>
     <string name="notification_channel_description">Kanál pro oznámení o aktualizacích.</string>
     <string name="notification_update_title">Aktualizace</string>
-    <string name="notification_update_description">Found new app version.</string>
+    <string name="notification_update_description">Nalezena nová verze aplikace.</string>
     <!-- Self Update -->
     <string name="selfupdate_found_title">Nalezena aktualizace!</string>
     <!-- Update dialog -->
