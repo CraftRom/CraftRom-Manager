@@ -44,7 +44,10 @@
     <string name="kernel_name" translatable="false">@string/menu_kernel</string>
     <string name="kernel_welcome">Balanced kernel for everyday.</string>
     <string name="kernel_version">Kernel version</string>
+    <string name="device_group">Device group</string>
     <string name="board_version">Board</string>
+    <string name="snack_kernel_name_error">This kernel is not supported!</string>
+    <string name="snack_kernel_name">This kernel is %s! Version kernel is %s!</string>
 
     <!-- Jitter -->
     <string name="jitter" translatable="false">Jitter</string>

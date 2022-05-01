@@ -63,6 +63,33 @@ open class DeviceSystemInfo{
         return fields[Build.VERSION.SDK_INT].name
     }
 
+        fun deviceCode(): String {
+            val device = product()
+            var code = "device"
+            val juice = mutableListOf("citrus", "lime", "lemon", "pomelo")
+            val onclite = mutableListOf("onc", "onclite")
+            val surya = mutableListOf("karna", "surya")
+            if (isEliminated(device, juice)) {
+                code = "juice"
+            } else {
+                if (isEliminated(device, onclite)) {
+                    code = "onclite"
+                } else {
+                    if (isEliminated(device, surya)) {
+                        code = "surya"
+                    } else {
+                        code = device
+                    }
+                }
+            }
+
+            return code
+        }
+
+
+    private fun isEliminated(name: String, device: MutableList<String>): Boolean {
+            return name in device
+        }
     private fun errorResult() = context.getString(R.string.common_empty_result)
 
 }

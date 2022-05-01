@@ -116,6 +116,12 @@
         <item name="iconTint">?colorError</item>
     </style>
 
+    <style name="WidgetFoundation.Button.Outlined.Small" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textStyle">bold</item>
+        <item name="strokeColor">?colorPrimary</item>
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:minHeight">26dp</item>
+    </style>
 
     <style name="WidgetFoundation.Image">
         <item name="android:layout_width">32dp</item>
