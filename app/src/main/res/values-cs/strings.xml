@@ -28,7 +28,10 @@
     <!-- Kernel -->
     <string name="kernel_welcome">Vyvážené jádro pro každý den.</string>
     <string name="kernel_version">Verze jádra</string>
+    <string name="device_group">Device group</string>
     <string name="board_version">Board</string>
+    <string name="snack_kernel_name_error">This kernel is not supported!</string>
+    <string name="snack_kernel_name">This kernel is %s! Version kernel is %s!</string>
     <!-- Jitter -->
     <string name="jitter_name">Identifying Jitter</string>
     <string name="jitter_welcome">Jitter je náhodné chování systému, které zabraňuje vnímatelnému chodu práce.</string>
