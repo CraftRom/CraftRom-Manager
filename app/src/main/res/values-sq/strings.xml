@@ -6,6 +6,7 @@
     <string name="menu_others">Others</string>
     <string name="menu_settings">Cilësimet</string>
     <string name="menu_about">Rreth</string>
+    <!-- Common -->
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
     <string name="app_name_version">%s versioni: %s </string>
@@ -24,6 +25,13 @@
     <string name="err_no_internet">Looks like your device isn\'t connected to the internet.\nCheck Internet connection and try again</string>
     <string name="err_card_no_internet">No internet connection</string>
     <string name="err_card_try_again">Try Again</string>
+    <!-- Kernel -->
+    <string name="kernel_welcome">Balanced kernel for everyday.</string>
+    <string name="kernel_version">Kernel version</string>
+    <string name="device_group">Device group</string>
+    <string name="board_version">Board</string>
+    <string name="snack_kernel_name_error">This kernel is not supported!</string>
+    <string name="snack_kernel_name">This kernel is %s! Version kernel is %s!</string>
     <!-- Jitter -->
     <string name="jitter_name">Identifikimi i Jitter</string>
     <string name="jitter_welcome">Jitter është sjellja e rastësishme e sistemit që parandalon funksionimin e punës së perceptueshme.</string>
