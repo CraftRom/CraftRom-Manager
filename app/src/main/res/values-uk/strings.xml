@@ -28,10 +28,16 @@
     <!-- Kernel -->
     <string name="kernel_welcome">Balanced kernel for everyday.</string>
     <string name="kernel_version">Kernel version</string>
+    <string name="chidori_version">Chidori version</string>
     <string name="device_group">Device group</string>
+    <string name="type_group">Update channel</string>
     <string name="board_version">Board</string>
+    <string name="commit">Comment</string>
+    <string name="changelog">Changelog</string>
     <string name="snack_kernel_name_error">This kernel is not supported!</string>
     <string name="snack_kernel_name">This kernel is %s! Version kernel is %s!</string>
+    <string name="info_type_nightly">Compiled using the latest code base, includes latest enhancements but may also include undiscovered bugs.</string>
+    <string name="info_type_release">When we that the current codebase is stable, a stable version will be published</string>
     <!-- Jitter -->
     <string name="jitter_name">Визначення Jitter</string>
     <string name="jitter_welcome">Jitter - це випадкова поведінка системи, яка не дає змогу працювати пристрою.</string>
@@ -53,10 +59,14 @@
     <!-- Settings -->
     <string name="settings_general">Загальні</string>
     <string name="settings_update_options">Параметри оновлення</string>
-    <string name="settings_news_title">Кількість новин в каналі.</string>
+    <string name="settings_news_title">The number of news in the feed</string>
     <string name="settings_news_list_3">3 новини</string>
     <string name="settings_news_list_5">5 новин</string>
     <string name="settings_news_list_10">10 новин</string>
+    <string name="settings_type_title">Update channel</string>
+    <string name="settings_type_nightly">Nightly</string>
+    <string name="settings_type_stable">Release</string>
+    <string name="settings_kernelupdate_title">Check kernel update</string>
     <string name="settings_apkupdate_title">Перевірка наявності оновлень</string>
     <string name="settings_update_hour_title">Час оновлення</string>
     <string name="settings_check_for_updates_title">Фонова перевірка оновлень</string>
@@ -68,7 +78,7 @@
     <!-- Tools -->
     <string name="others_welcome">Сподіваюся, це буде корисно)).</string>
     <string name="fps_head">Накладання моніторингу ресурсів</string>
-    <string name="fps_desc">Показувати значення FPS/CPU/GPU в оверлей</string>
+    <string name="fps_desc">Показувати частоти FPS в оверлей</string>
     <string name="fps_notif_desc">Моніторинг запущено…</string>
     <string name="pref_pm">Немає дозволу</string>
     <string name="pref_pm_desc">CraftRom Manager потребує дозволу для завантаження та встановлення оновлень.\nНатисніть тут, щоб надати права доступу до сховища.</string>
@@ -77,7 +87,7 @@
     <!-- About -->
     <string name="love"><![CDATA[</> з ❤️ від melles1991]]></string>
     <string name="about_as">Про нас</string>
-    <string name="about_as_desc">CraftRom - це спільнота, яка підтримує пристрої в різних проєктах з відкритим вихідним кодом (MoKee OS, Lineage OS, crDroid та інші) та Chidori Kernel.\n\nНаш пріоритет - стабільність (на жаль, не завжди можливо досягти повною мірою).</string>
+    <string name="about_as_desc">Створення рома - це спільнота, яка підтримує пристрої в різних проєктах з відкритим вихідним кодом (MoKee OS, Lineage OS, crDroid та інші) та Chidori Kernel.\n\nНаш пріоритет - стабільність (на жаль, не завжди можливо досягти повною мірою).</string>
     <string name="features">Функції програми</string>
     <string name="navigation_drawer_open">Відкрити панель навігації</string>
     <string name="navigation_drawer_close">Закрити панель навігації</string>
