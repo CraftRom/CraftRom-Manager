@@ -44,16 +44,10 @@
     <string name="kernel_name" translatable="false">@string/menu_kernel</string>
     <string name="kernel_welcome">Balanced kernel for everyday.</string>
     <string name="kernel_version">Kernel version</string>
-    <string name="chidori_version">Chidori version</string>
     <string name="device_group">Device group</string>
-    <string name="type_group">Update channel</string>
     <string name="board_version">Board</string>
-    <string name="commit">Comment</string>
-    <string name="changelog">Changelog</string>
     <string name="snack_kernel_name_error">This kernel is not supported!</string>
     <string name="snack_kernel_name">This kernel is %s! Version kernel is %s!</string>
-    <string name="info_type_nightly">Compiled using the latest code base, includes latest enhancements but may also include undiscovered bugs.</string>
-    <string name="info_type_release">When we that the current codebase is stable, a stable version will be published</string>
 
     <!-- Jitter -->
     <string name="jitter" translatable="false">Jitter</string>
@@ -87,19 +81,11 @@
     <string name="settings_update_options">Update Options</string>
     <string translatable="false" name="settings_root_options_title">Root</string>
 
-    <string name="settings_news_title">The number of news in the feed</string>
+    <string name="settings_news_title">The number of news in the feed.</string>
     <string name="settings_news_list_3">3 news</string>
     <string name="settings_news_list_5">5 news</string>
     <string name="settings_news_list_10">10 news</string>
     <string translatable="false" name="settings_list_news_key">numbNews</string>
-
-    <string name="settings_type_title">Update channel</string>
-    <string name="settings_type_nightly">Nightly</string>
-    <string name="settings_type_stable">Release</string>
-    <string translatable="false" name="settings_type_key">typeUpdate</string>
-
-    <string translatable="false" name="settings_kernelupdate_key">ChidoriUpdate</string>
-    <string name="settings_kernelupdate_title">Check kernel update</string>
 
     <string translatable="false" name="settings_apkupdate_key">APKUpdate</string>
     <string name="settings_apkupdate_title">Check app update</string>
