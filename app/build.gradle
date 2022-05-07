@@ -32,8 +32,8 @@ android {
         applicationId "com.craftrom.manager"
         minSdk 29
         targetSdk 32
-        versionCode 104
-        versionName "10.4"
+        versionCode 105
+        versionName "10.5"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
@@ -123,7 +123,7 @@ dependencies {
     // Add the dependency for the Firebase SDK for Google Analytics
     // Declare the dependencies for the Crashlytics and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.9'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.10'
     implementation 'com.google.firebase:firebase-analytics-ktx:20.1.2'
 
     //Root
@@ -137,6 +137,9 @@ dependencies {
     implementation 'com.github.rumboalla.fuel:fuel:-SNAPSHOT'
     implementation 'com.github.rumboalla.fuel:fuel-gson:-SNAPSHOT'
     implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.2.0")
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }
