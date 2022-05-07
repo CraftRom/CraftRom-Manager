@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             //Permission Granted
-            if (prefs.settings.apkUpdate) checkForSelfUpdate() else null
+            if (prefs.settings.apkUpdate) checkForSelfUpdate()
 
         } else {
             ActivityCompat.requestPermissions(

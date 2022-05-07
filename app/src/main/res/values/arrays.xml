@@ -27,6 +27,16 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="settings_type_list_entries">
+        <item>@string/settings_type_nightly</item>
+        <item>@string/settings_type_stable</item>
+    </string-array>
+
+    <string-array name="type_values">
+        <item>nightly</item>
+        <item>release</item>
+    </string-array>
+
     <string-array name="settings_check_for_updates_entries">
         <item>@string/settings_check_for_updates_daily</item>
         <item>@string/settings_check_for_updates_weekly</item>

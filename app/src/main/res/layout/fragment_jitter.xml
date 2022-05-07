@@ -13,15 +13,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorPrimaryVariant"
             android:orientation="vertical"
             android:padding="10dp">
 
             <TextView
+                style="@style/ThemeTitleHideable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="?android:attr/colorPrimary"
+                android:background="?attr/colorPrimaryVariant"
                 android:text="@string/jitter_name"
                 android:textAlignment="center"
                 android:textColor="?attr/colorOnPrimary"
@@ -29,11 +30,12 @@
                 android:textStyle="bold" />
 
             <TextView
+                style="@style/ThemeText"
                 android:id="@+id/br"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:background="?android:attr/colorPrimary"
+                android:background="?attr/colorPrimaryVariant"
                 android:text="@string/jitter_welcome"
                 android:textAlignment="center"
                 android:textColor="?attr/colorOnPrimary"

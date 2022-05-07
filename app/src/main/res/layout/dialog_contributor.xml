@@ -30,6 +30,7 @@
 		android:id="@+id/contributeTitle"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+				style="@style/ThemeTitleHideable"
 		android:padding="@dimen/default_margin"
 		android:text="@string/contribute_title"
 		android:textColor="?colorPrimary"
@@ -50,6 +51,7 @@
 		<TextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			style="@style/ThemeText"
 			android:paddingHorizontal="@dimen/default_margin"
 			android:text="@string/contribute_explanation"
 			android:textIsSelectable="true" />

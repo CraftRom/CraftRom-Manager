@@ -31,6 +31,8 @@ class NotificationUtil(private val context: Context) {
         }
 
         val builder = NotificationCompat.Builder(context, channelId)
+            .setOngoing(true)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
             .setDefaults(Notification.DEFAULT_ALL)
             .setWhen(System.currentTimeMillis())
             .setSmallIcon(R.drawable.ic_update)

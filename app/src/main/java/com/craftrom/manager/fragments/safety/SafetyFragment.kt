@@ -110,7 +110,7 @@ class SafetyFragment : Fragment(){
 
     @SuppressLint("SetTextI18n")
     private fun deviceInfo() {
-        model.text = "${DeviceSystemInfo.brand()} ${DeviceSystemInfo.model()} (${DeviceSystemInfo.product()})"
+        model.text = "${DeviceSystemInfo.brand()} ${DeviceSystemInfo.model()} (${DeviceSystemInfo.device()})"
         android_version.text = "${DeviceSystemInfo.releaseVersion()} (API ${DeviceSystemInfo.apiLevel()})"
         security_patch.text = SECURITY_PATCH
     }

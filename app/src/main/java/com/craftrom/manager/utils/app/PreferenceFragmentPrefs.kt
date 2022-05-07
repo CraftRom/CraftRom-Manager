@@ -15,6 +15,12 @@ class PreferenceFragmentPrefs(private val context: Context, private val prefs: S
     var checkForUpdates
         get() = prefs.getString(context.getString(R.string.settings_check_for_updates_key), "0")
         set(value) = prefs.edit().putString(context.getString(R.string.settings_check_for_updates_key), value).apply()
+    var kernelUpdate
+        get() = prefs.getBoolean(context.getString(R.string.settings_kernelupdate_key), true)
+        set(value) = prefs.edit().putBoolean(context.getString(R.string.settings_kernelupdate_key), value).apply()
+    var typeUpdate
+        get() = prefs.getString(context.getString(R.string.settings_type_key), "stable")
+        set(value) = prefs.edit().putString(context.getString(R.string.settings_type_key), value).apply()
 
     var updateHour
         get() = prefs.getInt(context.getString(R.string.settings_update_hour_key), 12)

@@ -46,6 +46,7 @@
 
 
     <style name="WidgetFoundation.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:textStyle">bold</item>
         <item name="iconGravity">textStart</item>
         <item name="iconPadding">@dimen/l_50</item>
@@ -59,6 +60,7 @@
     </style>
 
     <style name="WidgetFoundation.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:textStyle">bold</item>
         <item name="iconGravity">textStart</item>
         <item name="iconPadding">@dimen/l_50</item>
@@ -67,6 +69,7 @@
     </style>
 
     <style name="WidgetFoundation.Button.Outlined.OnPrimary">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="strokeColor">?colorOnPrimary</item>
         <item name="rippleColor">?colorOnPrimary</item>
         <item name="android:textColor">?colorOnPrimary</item>
@@ -74,6 +77,7 @@
     </style>
 
     <style name="WidgetFoundation.Button.Outlined.Error">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="strokeColor">@color/color_error_transient</item>
         <item name="rippleColor">@color/color_error_transient</item>
         <item name="android:textColor">@color/color_error_transient</item>
@@ -81,12 +85,14 @@
     </style>
 
     <style name="WidgetFoundation.Button.Flat" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:textStyle">bold</item>
         <item name="iconGravity">textStart</item>
         <item name="iconPadding">@dimen/l_50</item>
     </style>
 
     <style name="WidgetFoundation.Button.Flat.OnPrimary">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="backgroundTint">?colorOnPrimary</item>
         <item name="rippleColor">?colorPrimary</item>
         <item name="android:textColor">?colorPrimary</item>
@@ -94,29 +100,34 @@
     </style>
 
     <style name="WidgetFoundation.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:textStyle">bold</item>
         <item name="iconGravity">textStart</item>
         <item name="iconPadding">@dimen/l_50</item>
     </style>
 
     <style name="WidgetFoundation.Button.Text.Secondary">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:textColor">?colorSecondary</item>
         <item name="iconTint">?colorSecondary</item>
     </style>
 
     <style name="WidgetFoundation.Button.Text.OnPrimary">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="rippleColor">?colorOnPrimary</item>
         <item name="android:textColor">?colorOnPrimary</item>
         <item name="iconTint">?colorOnPrimary</item>
     </style>
 
     <style name="WidgetFoundation.Button.Error" parent="WidgetFoundation.Button.Text">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="rippleColor">?colorError</item>
         <item name="android:textColor">?colorError</item>
         <item name="iconTint">?colorError</item>
     </style>
 
     <style name="WidgetFoundation.Button.Outlined.Small" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
         <item name="android:textStyle">bold</item>
         <item name="strokeColor">?colorPrimary</item>
         <item name="android:textColor">?colorPrimary</item>

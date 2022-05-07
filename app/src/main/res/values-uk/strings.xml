@@ -69,7 +69,7 @@
     <!-- About -->
     <string name="love"><![CDATA[</> з ❤️ від melles1991]]></string>
     <string name="about_as">Про нас</string>
-    <string name="about_as_desc">Створення рома - це спільнота, яка підтримує пристрої в різних проєктах з відкритим вихідним кодом (MoKee OS, Lineage OS, crDroid та інші) та Chidori Kernel.\n\nНаш пріоритет - стабільність (на жаль, не завжди можливо досягти повною мірою).</string>
+    <string name="about_as_desc">CraftRom - це спільнота, яка підтримує пристрої в різних проєктах з відкритим вихідним кодом (MoKee OS, Lineage OS, crDroid та інші) та Chidori Kernel.\n\nНаш пріоритет - стабільність (на жаль, не завжди можливо досягти повною мірою).</string>
     <string name="features">Функції програми</string>
     <string name="navigation_drawer_open">Відкрити панель навігації</string>
     <string name="navigation_drawer_close">Закрити панель навігації</string>

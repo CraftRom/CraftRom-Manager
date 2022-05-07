@@ -21,6 +21,8 @@ open class DeviceSystemInfo{
 
     fun brand(): String = Build.BRAND
 
+    fun device():String = Build.DEVICE
+
     fun type(): String = Build.TYPE
 
     fun manufacturer(): String = Build.MANUFACTURER
@@ -50,6 +52,11 @@ open class DeviceSystemInfo{
         val kernelVersion = System.getProperty("os.version")
         return if (!kernelVersion.isNullOrEmpty()) kernelVersion else errorResult()
     }
+    fun chidoriVersion(): String = kernelVersion().substring(
+            kernelVersion().lastIndexOf(".")).substring(1, 4)
+
+   fun chidoriName(): String = kernelVersion().substring(
+            kernelVersion().indexOf("-")).substring(1, 8)
 
     @SuppressLint("SimpleDateFormat")
     fun date(): String {
@@ -64,8 +71,8 @@ open class DeviceSystemInfo{
     }
 
         fun deviceCode(): String {
-            val device = product()
-            var code = "device"
+            val device = device()
+            val code: String
             val juice = mutableListOf("citrus", "lime", "lemon", "pomelo")
             val onclite = mutableListOf("onc", "onclite")
             val surya = mutableListOf("karna", "surya")
@@ -87,10 +94,12 @@ open class DeviceSystemInfo{
         }
 
 
+
     private fun isEliminated(name: String, device: MutableList<String>): Boolean {
             return name in device
         }
-    private fun errorResult() = context.getString(R.string.common_empty_result)
+
+        fun errorResult() = context.getString(R.string.common_empty_result)
 
 }
 }

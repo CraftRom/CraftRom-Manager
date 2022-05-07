@@ -10,12 +10,11 @@
         <item name="android:layout_marginBottom">@dimen/card_elevation</item>
     </style>
 
-    <style name="NewsArticle.Desc">
+    <style name="NewsArticle.Desc" parent="ThemeText">
         <item name="android:maxLines">3</item>
-        <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="NewsArticle.Title">
+    <style name="NewsArticle.Title" parent="ThemeTitleHideable">
         <item name="android:background">@color/color_transparent</item>
         <item name="android:maxLines">1</item>
         <item name="android:padding">@dimen/normal_padding</item>

@@ -7,6 +7,7 @@ import androidx.preference.SeekBarPreference
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.app.AlarmUtil
 import com.craftrom.manager.utils.app.NewsUtil
+import com.craftrom.manager.utils.app.TypeUtil
 import org.koin.android.ext.android.inject
 
 
@@ -14,12 +15,18 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     private val newsUtil: NewsUtil by inject()
     private val alarmUtil: AlarmUtil by inject()
+    private val typeUtil: TypeUtil by inject()
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
 
         findPreference<ListPreference>(getString(R.string.settings_list_news_key))?.setOnPreferenceChangeListener { _, _ ->
             context?.let { newsUtil.setupListCount() }
+            true
+        }
+
+        findPreference<ListPreference>(getString(R.string.settings_type_key))?.setOnPreferenceChangeListener { _, _ ->
+            context?.let { typeUtil.setupListCount() }
             true
         }
 
