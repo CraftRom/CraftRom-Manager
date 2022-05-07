@@ -16,7 +16,7 @@ import com.craftrom.manager.utils.catchingAsync
 import com.craftrom.manager.utils.downloader.DownloadManagerUtil
 import com.craftrom.manager.utils.downloader.DownloadReceiver
 import com.craftrom.manager.utils.ioScope
-import com.craftrom.manager.utils.updater.selfupdate.SelfUpdateResponse
+import com.craftrom.manager.utils.updater.response.SelfUpdateResponse
 import com.github.kittinunf.fuel.Fuel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson

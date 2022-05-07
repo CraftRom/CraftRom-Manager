@@ -35,48 +35,30 @@
                     android:src="@drawable/drag" />
 
                 <TextView
-                    android:id="@+id/installTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/typeTitle"
                     style="@style/ThemeTitleHideable"
-                    android:text="@string/inst_warn"
-                    android:textAlignment="center" />
-                <TextView
-
-                    android:id="@+id/installInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/todo"
-                    android:textColor="@color/colorPermission"
-                    android:textSize="14sp"
-                    style="@style/ThemeText"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/installText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/ThemeTextGray"
-                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="@string/todo" />
+                    android:text="@string/todo"
+                    android:textAlignment="center" />
 
-                <Button
-                    android:id="@+id/btnInstall"
-                    style="@style/WidgetFoundation.Button"
+                <ImageView
+                    android:id="@+id/messageIcon"
+                    style="@style/ThemeTabs"
+                    android:src="@drawable/ic_outline_nightly"
+                    android:layout_gravity="center"
+                    android:animateLayoutChanges="true"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/todo" />
+
+                <TextView
+                    android:id="@+id/typeInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/inst_install"
-                    app:icon="@drawable/ic_round_system_update_24" />
-
-                <Button
-                    android:id="@+id/btnDownload"
-                    style="@style/WidgetFoundation.Button.Outlined"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/inst_download"
-                    app:icon="@drawable/ic_round_save_alt_24" />
-
+                    android:layout_marginBottom="16dp"
+                    style="@style/ThemeTextGray"
+                    android:text="@string/todo"/>
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>

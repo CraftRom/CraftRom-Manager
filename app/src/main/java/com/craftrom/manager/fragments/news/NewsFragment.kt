@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,7 +31,7 @@ class NewsFragment : Fragment(){
 
     // TODO: Customize parameters
     lateinit var swipeContainer: SwipeRefreshLayout
-    lateinit var addMaterialContainer: ConstraintLayout
+    lateinit var addMaterialContainer: CoordinatorLayout
     lateinit var netError: LinearLayout
     lateinit var  btnRefresh: Button
     private var columnCount = 1

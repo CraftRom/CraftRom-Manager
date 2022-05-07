@@ -1,9 +1,7 @@
 package com.craftrom.manager.fragments.safety
 
 import android.annotation.SuppressLint
-import android.os.Build.DEVICE
-import android.os.Build.MODEL
-import android.os.Build.VERSION.*
+import android.os.Build.VERSION.SECURITY_PATCH
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,6 +16,7 @@ import androidx.fragment.app.Fragment
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.Constants
 import com.craftrom.manager.utils.Constants.Companion.TAG
+import com.craftrom.manager.utils.DeviceSystemInfo
 import com.craftrom.manager.utils.safetynet.Utils
 import com.craftrom.manager.utils.safetynet.device_verifier.SafetyNetHelper
 import com.craftrom.manager.utils.safetynet.model.SafetyNetResponse
@@ -89,7 +88,7 @@ class SafetyFragment : Fragment(){
 
     private fun runTest() {
         showLoading(true)
-        Log.d(Constants.TAG, "SafetyNet start request")
+        Log.d(TAG, "SafetyNet start request")
         safetyNetHelper!!.requestTest(requireContext(), object : SafetyNetHelper.SafetyNetWrapperCallback {
             override fun error(errorCode: Int, errorMessage: String?) {
                 showLoading(false)
@@ -99,7 +98,7 @@ class SafetyFragment : Fragment(){
 
             override fun success(ctsProfileMatch: Boolean, basicIntegrity: Boolean) {
                 Log.d(
-                    Constants.TAG,
+                    TAG,
                     "SafetyNet req success: ctsProfileMatch:$ctsProfileMatch and basicIntegrity, $basicIntegrity")
                 showLoading(false)
                 verify_safety_net.visibility = View.VISIBLE
@@ -111,15 +110,15 @@ class SafetyFragment : Fragment(){
 
     @SuppressLint("SetTextI18n")
     private fun deviceInfo() {
-        model.text = "$MODEL ($DEVICE)"
-        android_version.text = "$RELEASE (API $SDK_INT)"
+        model.text = "${DeviceSystemInfo.brand()} ${DeviceSystemInfo.model()} (${DeviceSystemInfo.device()})"
+        android_version.text = "${DeviceSystemInfo.releaseVersion()} (API ${DeviceSystemInfo.apiLevel()})"
         security_patch.text = SECURITY_PATCH
     }
 
     @SuppressLint("SetTextI18n")
     private fun handleError(errorCode: Int, errorMsg: String?) {
     showError(true)
-        Log.e(Constants.TAG, errorMsg!!)
+        Log.e(TAG, errorMsg!!)
         val b = StringBuilder()
         when (errorCode) {
             SafetyNetHelper.SAFETY_NET_API_REQUEST_UNSUCCESSFUL -> {

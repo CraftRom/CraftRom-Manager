@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_news, R.id.nav_jitter, R.id.nav_about, R.id.nav_safety, R.id.nav_settings, R.id.nav_others
+                R.id.nav_news, R.id.nav_kernel, R.id.nav_jitter, R.id.nav_about, R.id.nav_safety, R.id.nav_settings, R.id.nav_others
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             //Permission Granted
-            if (prefs.settings.apkUpdate) checkForSelfUpdate() else null
+            if (prefs.settings.apkUpdate) checkForSelfUpdate()
 
         } else {
             ActivityCompat.requestPermissions(

@@ -1,4 +1,19 @@
 <resources>
+
+    <array name="autosize_text_sizes">
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>13sp</item>
+        <item>14sp</item>
+        <item>15sp</item>
+    </array>
+    <array name="autosize_title_sizes">
+        <item>13sp</item>
+        <item>14sp</item>
+        <item>15sp</item>
+        <item>16sp</item>
+    </array>
+
     <!-- Reply Preference -->
     <string-array name="news_list">
         <item>@string/settings_news_list_3</item>
@@ -10,6 +25,16 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+    </string-array>
+
+    <string-array name="settings_type_list_entries">
+        <item>@string/settings_type_nightly</item>
+        <item>@string/settings_type_stable</item>
+    </string-array>
+
+    <string-array name="type_values">
+        <item>nightly</item>
+        <item>release</item>
     </string-array>
 
     <string-array name="settings_check_for_updates_entries">

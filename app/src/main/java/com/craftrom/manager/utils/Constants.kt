@@ -21,6 +21,7 @@ open class Constants {
 
         const val RSS_FEED_LINK = "https://www.craft-rom.pp.ua/feed.xml"
         var STATE_CURRENT_LIST_LIMIT = 5
+        const val KERNEL_NAME = "Chidori"
         const val CURRENT_YEAR = "2022"
 
         inline fun <reified T : Activity> changeActivity(activity: Activity) {

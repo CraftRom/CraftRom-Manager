@@ -1,4 +1,4 @@
-package com.craftrom.manager.utils.updater.selfupdate
+package com.craftrom.manager.utils.updater.response
 
 data class SelfUpdateResponse(
     val version: Int = 0,

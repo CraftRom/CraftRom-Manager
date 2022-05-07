@@ -4,9 +4,39 @@
   file location: src/main/res/values
 -->
 <resources>
-<style
-    name="dialog_animation_fade" >
-    <item name="android:windowEnterAnimation">@anim/slide_in_btt</item>
-    <item name="android:windowExitAnimation">@anim/slide_out_btt</item>
-</style>
+    <style name="dialog_animation_fade" >
+        <item name="android:windowEnterAnimation">@anim/slide_in_btt</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_btt</item>
+    </style>
+    <style name="ThemeTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">@font/ubuntu_medium</item>
+    </style>
+    <style name="ThemeTitleHideable" parent="ThemeTitle"/>
+
+    <style name="ThemeText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
+    </style>
+
+    <style name="ThemeTextGray" parent="ThemeText">
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:fontFamily">@font/ubuntu_lightitalic</item>
+    </style>
+
+    <style name="ThemeTabsHl">
+        <item name="colorControlHighlight">@android:color/transparent</item>
+        <item name="colorControlActivated">@android:color/transparent</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+    </style>
+
+    <style name="ThemeTabs">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:theme">@style/ThemeTabsHl</item>
+    </style>
 </resources>

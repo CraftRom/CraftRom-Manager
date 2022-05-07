@@ -3,11 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_news"
             android:icon="@drawable/ic_menu_news"
             android:title="@string/menu_news" />
+        <item
+            android:id="@+id/nav_kernel"
+            android:icon="@drawable/ic_menu_kernel"
+            android:title="@string/menu_kernel" />
     </group>
     <group
         android:id="@+id/group2"

@@ -37,11 +37,11 @@
 
             <TextView
                 android:id="@+id/txtTitle"
+                style="@style/NewsArticle.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/NewsArticle.Title"
-                android:text="@string/title_txt"
                 android:layout_alignParentBottom="true"
+                android:text="@string/title_txt"
                 android:textAppearance="@style/AppearanceFoundation.Body"
                 android:textStyle="bold" />
         </RelativeLayout>

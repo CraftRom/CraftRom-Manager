@@ -14,7 +14,7 @@
     <color name="colorTrue">#4CAF50</color>
     <color name="colorPermission">#FF9800</color>
 
-    <color name="textColor">#212121</color>
+    <color name="textColor">#333333</color>
     <color name="shareColor">#8F8F8F</color>
     <color name="CardSheet">#FFFFFF</color>
     <color name="card_icon">#335F6368</color>
