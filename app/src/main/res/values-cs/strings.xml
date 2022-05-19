@@ -28,16 +28,16 @@
     <!-- Kernel -->
     <string name="kernel_welcome">Vyvážené jádro pro každý den.</string>
     <string name="kernel_version">Verze jádra</string>
-    <string name="chidori_version">Chidori version</string>
+    <string name="chidori_version">Verze Chidori</string>
     <string name="device_group">Skupina zařízení</string>
-    <string name="type_group">Update channel</string>
+    <string name="type_group">Kanál pro aktualizace</string>
     <string name="board_version">Board</string>
-    <string name="commit">Comment</string>
-    <string name="changelog">Changelog</string>
+    <string name="commit">Komentář</string>
+    <string name="changelog">Seznam změn</string>
     <string name="snack_kernel_name_error">Toto jádro není podporováno!</string>
     <string name="snack_kernel_name">Toto jádro je %s! Verze jádra je %s!</string>
-    <string name="info_type_nightly">Compiled using the latest code base, includes latest enhancements but may also include undiscovered bugs.</string>
-    <string name="info_type_release">When we that the current codebase is stable, a stable version will be published</string>
+    <string name="info_type_nightly">Zkompilováno s použitím nejnovějšího kódu základu, obsahuje nejnovější vylepšení, ale může obsahovat i neobjevené chyby.</string>
+    <string name="info_type_release">Až zjistíme, že současná kódová základna je stabilní, bude zveřejněna stabilní verze</string>
     <!-- Jitter -->
     <string name="jitter_name">Identifying Jitter</string>
     <string name="jitter_welcome">Jitter je náhodné chování systému, které zabraňuje vnímatelnému chodu práce.</string>
@@ -59,14 +59,14 @@
     <!-- Settings -->
     <string name="settings_general">Obecné</string>
     <string name="settings_update_options">Možnost aktualizace</string>
-    <string name="settings_news_title">The number of news in the feed</string>
+    <string name="settings_news_title">Počet zpráv v kanálu</string>
     <string name="settings_news_list_3">3 zprávy</string>
     <string name="settings_news_list_5">5 zpráv</string>
     <string name="settings_news_list_10">10 zpráv</string>
-    <string name="settings_type_title">Update channel</string>
+    <string name="settings_type_title">Kanál pro aktualizace</string>
     <string name="settings_type_nightly">Nightly</string>
-    <string name="settings_type_stable">Release</string>
-    <string name="settings_kernelupdate_title">Check kernel update</string>
+    <string name="settings_type_stable">Hlavní</string>
+    <string name="settings_kernelupdate_title">Zkontrolovat aktualizace jádra</string>
     <string name="settings_apkupdate_title">Zkontrolovat aktualizaci aplikace</string>
     <string name="settings_update_hour_title">Hodina aktualizace</string>
     <string name="settings_check_for_updates_title">Kontrola aktualizací na pozadí</string>
@@ -105,5 +105,5 @@
     <!-- Update dialog -->
     <string name="inst_warn">Byla nalezena nová verze aplikace!</string>
     <string name="inst_install">Stáhnout a nainstalovat</string>
-    <string name="inst_download">Pouze stáhnout</string>
+    <string name="inst_download">Download</string>
 </resources>
