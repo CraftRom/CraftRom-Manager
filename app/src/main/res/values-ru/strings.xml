@@ -26,18 +26,18 @@
     <string name="err_card_no_internet">Нет подключения к интернету</string>
     <string name="err_card_try_again">Попробовать ещё раз</string>
     <!-- Kernel -->
-    <string name="kernel_welcome">Balanced kernel for everyday.</string>
-    <string name="kernel_version">Kernel version</string>
-    <string name="chidori_version">Chidori version</string>
-    <string name="device_group">Device group</string>
-    <string name="type_group">Update channel</string>
+    <string name="kernel_welcome">Сбалансированное ядро на каждый день.</string>
+    <string name="kernel_version">Версия ядра</string>
+    <string name="chidori_version">Версия Chidori</string>
+    <string name="device_group">Группа устройств</string>
+    <string name="type_group">Канал обновлений</string>
     <string name="board_version">Board</string>
-    <string name="commit">Comment</string>
-    <string name="changelog">Changelog</string>
-    <string name="snack_kernel_name_error">This kernel is not supported!</string>
-    <string name="snack_kernel_name">This kernel is %s! Version kernel is %s!</string>
-    <string name="info_type_nightly">Compiled using the latest code base, includes latest enhancements but may also include undiscovered bugs.</string>
-    <string name="info_type_release">When we that the current codebase is stable, a stable version will be published</string>
+    <string name="commit">Комментарий</string>
+    <string name="changelog">Список изменений</string>
+    <string name="snack_kernel_name_error">Это устройство не поддерживается!</string>
+    <string name="snack_kernel_name">Ядро %s! Версия ядра %s!</string>
+    <string name="info_type_nightly">Скомпилированный с использованием последней базы кода, включает в себя последние усовершенствования, но может также включать необнаруженные ошибки.</string>
+    <string name="info_type_release">Когда мы установим, что текущий код стабильен, будет опубликована стабильная версия</string>
     <!-- Jitter -->
     <string name="jitter_name">Определение Jitter</string>
     <string name="jitter_welcome">Jitter - это случайное поведение системы, которое предотвращает восприимчивую работу при запуске.</string>
@@ -46,41 +46,41 @@
     <string name="rt_frametime_mma">"Продолжительность RT: %.3fмс"</string>
     <string name="total_mma">"Общая продолжительность: %.3fмс"</string>
     <!-- SafetyNET. -->
-    <string name="safety_welcome">SafetyNet api is a part of Google Play Services Framework. Some apps use this api to check whether the device has been rooted or tampered.</string>
-    <string name="device">Device</string>
-    <string name="model">Model</string>
-    <string name="android_version">Android version</string>
-    <string name="security_patch">Security patch level</string>
+    <string name="safety_welcome">SafetyNet является частью фреймворка служб Google Play. Некоторые приложения используют api, чтобы проверить, было ли устройство рутировано или подделано.</string>
+    <string name="device">Устройство</string>
+    <string name="model">Модель</string>
+    <string name="android_version">Версия Android</string>
+    <string name="security_patch">Патч безопасности</string>
     <string name="advice_bootloader">Пользователь должен заблокировать загрузчик устройства.</string>
     <string name="advice_factory_rom">Пользователь должен восстановить устройство на чистую фабричную прошивку.</string>
-    <string name="please_wait">Please wait…</string>
-    <string name="apk_name">Package name</string>
-    <string name="btn_verify">Run SafetyNet Attestation</string>
+    <string name="please_wait">Пожалуйста, подождите…</string>
+    <string name="apk_name">Имя пакета</string>
+    <string name="btn_verify">Запустите SafetyNet Attestation</string>
     <!-- Settings -->
-    <string name="settings_general">General</string>
-    <string name="settings_update_options">Update Options</string>
-    <string name="settings_news_title">The number of news in the feed</string>
-    <string name="settings_news_list_3">3 news</string>
-    <string name="settings_news_list_5">5 news</string>
-    <string name="settings_news_list_10">10 news</string>
-    <string name="settings_type_title">Update channel</string>
+    <string name="settings_general">Общее</string>
+    <string name="settings_update_options">Параметры обновления</string>
+    <string name="settings_news_title">Количество новостей в ленте</string>
+    <string name="settings_news_list_3">3 новости</string>
+    <string name="settings_news_list_5">5 новостей</string>
+    <string name="settings_news_list_10">10 новостей</string>
+    <string name="settings_type_title">Канал обновлений</string>
     <string name="settings_type_nightly">Nightly</string>
     <string name="settings_type_stable">Release</string>
-    <string name="settings_kernelupdate_title">Check kernel update</string>
-    <string name="settings_apkupdate_title">Check app update</string>
+    <string name="settings_kernelupdate_title">Проверка обновлений</string>
+    <string name="settings_apkupdate_title">Проверить обновления приложения</string>
     <string name="settings_update_hour_title">Update Hour</string>
-    <string name="settings_check_for_updates_title">Background check for updates</string>
-    <string name="settings_check_for_updates_daily">Daily</string>
-    <string name="settings_check_for_updates_weekly">Weekly</string>
-    <string name="settings_check_for_updates_monthly">Monthly</string>
-    <string name="settings_check_for_updates_never">Never</string>
-    <string name="settings_root_profile_title">ROOT mode</string>
+    <string name="settings_check_for_updates_title">Фоновая проверка обновлений</string>
+    <string name="settings_check_for_updates_daily">Ежедневно</string>
+    <string name="settings_check_for_updates_weekly">Еженедельно</string>
+    <string name="settings_check_for_updates_monthly">Ежемесячно</string>
+    <string name="settings_check_for_updates_never">Никогда</string>
+    <string name="settings_root_profile_title">Режим ROOT</string>
     <!-- Tools -->
     <string name="others_welcome">Я надеюсь, что это будет полезно).</string>
-    <string name="fps_head">Resource monitoring overlay</string>
+    <string name="fps_head">Наслоение мониторинга ресурсов</string>
     <string name="fps_desc">Показывать значения FPS/CPU/GPU в оверлеи</string>
-    <string name="fps_notif_desc">Monitoring service started…</string>
-    <string name="pref_pm">Missing permissions</string>
+    <string name="fps_notif_desc">Служба мониторинга запущена…</string>
+    <string name="pref_pm">Отсутствует разрешение</string>
     <string name="pref_pm_desc">CraftRom Manager App needs permissions to download and install updates.\nTap here to grant Storage and Root permissions.</string>
     <string name="err_no_pm_root">You didn\'t granted root permission.\nGrant root permission using Magisk Manager</string>
     <string name="help_android11_pm">Tap \"CraftRom Manager\", then tap \"Allow access to manage all files\"</string>
@@ -96,14 +96,14 @@
     <string name="action_settings">Настройки</string>
     <!--  Prefs -->
     <!--  Notifications -->
-    <string name="notification_channel_name">Updates</string>
-    <string name="notification_channel_description">Channel for update notifications.</string>
-    <string name="notification_update_title">Updates</string>
-    <string name="notification_update_description">Found new app version.</string>
+    <string name="notification_channel_name">Обновления</string>
+    <string name="notification_channel_description">Канал для уведомлений об обновлениях.</string>
+    <string name="notification_update_title">Обновления</string>
+    <string name="notification_update_description">Найдена новая версия приложения.</string>
     <!-- Self Update -->
-    <string name="selfupdate_found_title">Update found!</string>
+    <string name="selfupdate_found_title">Найдено обновление!</string>
     <!-- Update dialog -->
-    <string name="inst_warn">A new version of the app has been found!</string>
-    <string name="inst_install">Download and install</string>
-    <string name="inst_download">Download</string>
+    <string name="inst_warn">Найдена новая версия приложения!</string>
+    <string name="inst_install">Скачать и установить</string>
+    <string name="inst_download">Скачать</string>
 </resources>
