@@ -105,5 +105,5 @@
     <!-- Update dialog -->
     <string name="inst_warn">Знайдено нову версію додатку!</string>
     <string name="inst_install">Завантажити та встановити</string>
-    <string name="inst_download">Лише завантажити</string>
+    <string name="inst_download">Download</string>
 </resources>
