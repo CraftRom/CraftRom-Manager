@@ -105,5 +105,5 @@
     <!-- Update dialog -->
     <string name="inst_warn">A new version of the app has been found!</string>
     <string name="inst_install">Download and install</string>
-    <string name="inst_download">Only download</string>
+    <string name="inst_download">Download</string>
 </resources>
