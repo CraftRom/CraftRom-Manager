@@ -16,7 +16,7 @@
 
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
-    <string name="text_logo" translatable="false">Русский военный корабль, иди нахуй!</string>
+    <string name="text_logo" translatable="false">Русский военный корабель… ВСЕ!</string>
     <string name="copyr" translatable="false">© 2020-%s All Right Reserved.</string>
     <string name="app_name_version">%s version: %s </string>
 
