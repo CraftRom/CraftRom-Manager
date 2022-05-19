@@ -46,7 +46,7 @@ class DownloadManagerUtil(private val mContext: Context) {
         return true
     }
 
-    fun download(url: String, title: String, version: String, desc: String): Long {
+    fun download(url: String, title: String, fileName: String, desc: String, downloadApp: Boolean): Long {
         val uri = Uri.parse(url)
         val req = DownloadManager.Request(uri)
         req.setTitle(title)
@@ -56,8 +56,19 @@ class DownloadManagerUtil(private val mContext: Context) {
         req.setAllowedOverRoaming(true)
         req.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
         req.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE or DownloadManager.Request.NETWORK_WIFI)
-        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "$title-$version.apk")
-        req.setMimeType("application/vnd.android.package-archive")
+        if (downloadApp) {
+            req.setDestinationInExternalPublicDir(
+                Environment.DIRECTORY_DOWNLOADS,
+                fileName
+            )
+            req.setMimeType("application/vnd.android.package-archive")
+        } else {
+            req.setDestinationInExternalPublicDir(
+                Environment.DIRECTORY_DOWNLOADS,
+                fileName
+            )
+            req.setMimeType("application/zip")
+        }
         req.setNotificationVisibility(1)
 
         val dm = mContext.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager

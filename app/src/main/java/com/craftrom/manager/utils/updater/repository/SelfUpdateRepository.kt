@@ -73,12 +73,12 @@ class SelfUpdateRepository: KoinComponent {
         activity.registerReceiver(downloadBroadcastReceiver, intentFilter)
 
         btnInstall.setOnClickListener{
-            downloadInstall(activity, response.apk, title, response.apkversion.toString(), desc)
+            downloadInstall(activity, response.apk, title, response.fileName, desc)
             dialog.dismiss()
         }
 
         btnDownload.setOnClickListener{
-            downloadOnly(activity, response.apk, title, response.apkversion.toString(), desc)
+            downloadOnly(activity, response.apk, title, response.fileName, desc)
             dialog.dismiss()
         }
         // below line is use to set cancelable to avoid
@@ -94,25 +94,25 @@ class SelfUpdateRepository: KoinComponent {
         dialog.show()
     }
 
-    private fun downloadOnly(activity: Activity, url: String, title: String, version: String, desc: String){
+    private fun downloadOnly(activity: Activity, url: String, title: String, fileName: String, desc: String){
         activity.unregisterReceiver(downloadBroadcastReceiver)
         val dm = DownloadManagerUtil(activity)
         if (dm.checkDownloadManagerEnable()) {
             if (MainApplication.downloadId != 0L) {
                 dm.clearCurrentTask(MainApplication.downloadId) // 先清空之前的下载
             }
-            MainApplication.downloadId = dm.download(url, title, version,desc)
+            MainApplication.downloadId = dm.download(url, title, fileName, desc, true)
         }else{
             Toast.makeText(activity,"False download",Toast.LENGTH_SHORT).show()
         }
     }
-    private fun downloadInstall(activity: Activity, url: String, title: String, version: String, desc: String){
+    private fun downloadInstall(activity: Activity, url: String, title: String, fileName: String, desc: String){
         val dm = DownloadManagerUtil(activity)
         if (dm.checkDownloadManagerEnable()) {
             if (MainApplication.downloadId != 0L) {
                 dm.clearCurrentTask(MainApplication.downloadId) // 先清空之前的下载
             }
-            MainApplication.downloadId = dm.download(url, title, version, desc)
+            MainApplication.downloadId = dm.download(url, title, fileName, desc, true)
         }else{
             Toast.makeText(activity,"False download",Toast.LENGTH_SHORT).show()
         }
