@@ -32,8 +32,8 @@ android {
         applicationId "com.craftrom.manager"
         minSdk 29
         targetSdk 32
-        versionCode 104
-        versionName "10.4"
+        versionCode 106
+        versionName "10.6"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
@@ -92,8 +92,8 @@ dependencies {
     implementation 'com.github.rumboalla.KryptoPrefs:kryptoprefs-gson:0.4.3'
 
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.13.1'
-    kapt 'com.github.bumptech.glide:compiler:4.13.1'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
@@ -114,7 +114,7 @@ dependencies {
     // Google GMS
     implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
-    implementation('com.google.http-client:google-http-client-android:1.41.7') {
+    implementation('com.google.http-client:google-http-client-android:1.41.8') {
         exclude group: 'org.apache.httpcomponents'
     }
 
@@ -132,14 +132,14 @@ dependencies {
     implementation 'com.github.sunilpaulmathew:sCommon:101f0ee72b'
 
     // Koin main features for Android
-    implementation "io.insert-koin:koin-android:3.1.6"
+    implementation 'io.insert-koin:koin-android:3.2.0'
 
     implementation 'com.github.rumboalla.fuel:fuel:-SNAPSHOT'
     implementation 'com.github.rumboalla.fuel:fuel-gson:-SNAPSHOT'
     implementation 'com.google.code.gson:gson:2.9.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
-    implementation("com.squareup.okhttp3:logging-interceptor:4.2.0")
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation('com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7')
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }
