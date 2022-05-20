@@ -17,7 +17,7 @@ class RetrofitClient {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com/CraftRom/host_updater/android-10/kernel/")
+            .baseUrl("https://raw.githubusercontent.com/CraftRom/host_updater/chidori-kernel/")
             .client(getInterceptor())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

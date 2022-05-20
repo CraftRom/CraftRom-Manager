@@ -68,7 +68,7 @@ class KernelFragment : Fragment(){
         deviceInfo()
         typeDialog()
         if (prefs.settings.kernelUpdate){        RetrofitClient().getService()
-            .kernel(DeviceSystemInfo.deviceCode())
+            .kernel(DeviceSystemInfo.deviceCode(), prefs.settings.typeUpdate)
             .enqueue(object : Callback<List<KernelUpdateResponse>> {
                 override fun onFailure(call: Call<List<KernelUpdateResponse>>, t: Throwable) {
                     Toast.makeText(context, t.localizedMessage, Toast.LENGTH_SHORT).show()

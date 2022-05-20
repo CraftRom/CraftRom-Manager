@@ -12,6 +12,7 @@ import com.craftrom.manager.utils.DeviceSystemInfo
 import com.craftrom.manager.utils.downloader.DownloadManagerUtil
 import com.craftrom.manager.utils.updater.response.KernelUpdateResponse
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlin.math.min
 
 class KernelAdapter (
     private val context: FragmentActivity?,
@@ -21,7 +22,9 @@ class KernelAdapter (
         return MyHolder(v)
     }
 
-    override fun getItemCount(): Int = data?.size ?: 0
+    override fun getItemCount(): Int {
+        return min(data!!.size, 5)
+    }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         holder.bind(data?.get(position))
