@@ -23,5 +23,5 @@ class RetrofitClient {
             .build()
     }
 
-    fun getService() = getRetrofit().create(RetrofitClientInterface::class.java)
+    fun getService(): RetrofitClientInterface = getRetrofit().create(RetrofitClientInterface::class.java)
 }

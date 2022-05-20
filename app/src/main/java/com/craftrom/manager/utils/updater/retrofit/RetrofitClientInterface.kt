@@ -13,5 +13,5 @@ interface RetrofitClientInterface {
     )
 
     @GET("{device}/{type}.json")
-    fun kernel(@Path("device") device: String,@Path("type") type: String?): Call<List<KernelUpdateResponse>>
+    fun kernel(@Path("device") device: String,@Path("type") type: String): Call<List<KernelUpdateResponse>>
 }

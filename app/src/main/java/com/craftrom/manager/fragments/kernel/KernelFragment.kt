@@ -64,11 +64,12 @@ class KernelFragment : Fragment(){
         image = root.findViewById(R.id.prevImage)
         addMaterialContainer = root.findViewById(R.id.addMaterialContainerKernel)
         listV = root.findViewById(R.id.listV)
+        val type =  prefs.settings.typeUpdate
 
         deviceInfo()
         typeDialog()
         if (prefs.settings.kernelUpdate){        RetrofitClient().getService()
-            .kernel(DeviceSystemInfo.deviceCode(), prefs.settings.typeUpdate)
+            .kernel(DeviceSystemInfo.deviceCode(), type.toString())
             .enqueue(object : Callback<List<KernelUpdateResponse>> {
                 override fun onFailure(call: Call<List<KernelUpdateResponse>>, t: Throwable) {
                     Toast.makeText(context, t.localizedMessage, Toast.LENGTH_SHORT).show()
@@ -82,7 +83,6 @@ class KernelFragment : Fragment(){
                 }
 
             })}
-
         return root
     }
 

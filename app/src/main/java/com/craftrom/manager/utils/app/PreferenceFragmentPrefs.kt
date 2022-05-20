@@ -19,7 +19,7 @@ class PreferenceFragmentPrefs(private val context: Context, private val prefs: S
         get() = prefs.getBoolean(context.getString(R.string.settings_kernelupdate_key), true)
         set(value) = prefs.edit().putBoolean(context.getString(R.string.settings_kernelupdate_key), value).apply()
     var typeUpdate
-        get() = prefs.getString(context.getString(R.string.settings_type_key), "stable")
+        get() = prefs.getString(context.getString(R.string.settings_type_key), "release")
         set(value) = prefs.edit().putString(context.getString(R.string.settings_type_key), value).apply()
 
     var updateHour

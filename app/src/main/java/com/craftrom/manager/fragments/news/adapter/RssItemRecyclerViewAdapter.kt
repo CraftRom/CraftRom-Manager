@@ -25,7 +25,7 @@ import java.util.*
 import kotlin.math.min
 
 class RssItemRecyclerViewAdapter(
-    private val mValues: List<RssItem>,
+    private val mValues: List<RssItem>?,
     private val context: FragmentActivity?
 ) : RecyclerView.Adapter<RssItemRecyclerViewAdapter.ViewHolder>() {
 
@@ -37,19 +37,19 @@ class RssItemRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = mValues[position]
-        val postDate = item.pubDate
+        val item = mValues?.get(position)
+        val postDate = item?.pubDate
         val sim = SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z", Locale.getDefault())
         val pDate: Date = sim.parse(postDate)
         val form = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
 
         val date = form.format(pDate)
 
-        holder.titleTV?.text = item.title
-        holder.descTV?.text = item.description
-        holder.pubDateTV?.text = "$date \u2022 ${item.author}"
+        holder.titleTV?.text = item?.title
+        holder.descTV?.text = item?.description
+        holder.pubDateTV?.text = "$date \u2022 ${item?.author}"
         holder.shareBut.setOnClickListener{
-            share(context!!, item.title, item.link)
+            share(context!!, item?.title.toString(), item?.link.toString())
         }
 
         try {
@@ -67,7 +67,7 @@ class RssItemRecyclerViewAdapter(
         }
 
         Picasso.get()
-            .load(item.image)
+            .load(item?.image)
             .fit()
             .centerCrop()
             .into(holder.featuredImg)
@@ -105,14 +105,14 @@ class RssItemRecyclerViewAdapter(
                 e.printStackTrace()
             }
 
-            titleTxt.text = item.title
-            descriptionTxt.text  = item.description
-            dateTxt.text = "$date \u2022 ${item.author}"
+            titleTxt.text = item?.title
+            descriptionTxt.text  = item?.description
+            dateTxt.text = "$date \u2022 ${item?.author}"
             holder.shareBut.setOnClickListener{
-                share(context, item.title, item.link)
+                share(context, item?.title.toString(), item?.link.toString())
             }
             Picasso.get()
-                .load(item.image)
+                .load(item?.image)
                 .fit()
                 .centerCrop()
                 .into(articleImage)
@@ -120,7 +120,7 @@ class RssItemRecyclerViewAdapter(
             // for our dismissing the dialog button.
             btnClose.setOnClickListener {
                     val intent = Intent(context, WebViewActivity::class.java)
-                    val url = item.link
+                    val url = item?.link
                     intent.putExtra("link", url)
                 context.startActivity(intent)
                 dialog.dismiss()
@@ -140,9 +140,8 @@ class RssItemRecyclerViewAdapter(
         }
     }
 
-    override fun getItemCount(): Int {
-        return min(mValues.size, LIST_LIMIT)
-    }
+    override fun getItemCount(): Int = mValues?.size?.let { min(it, LIST_LIMIT) } ?: 0
+
     inner class ViewHolder(mView: View) : RecyclerView.ViewHolder(mView) {
         val titleTV: TextView? = mView.findViewById(R.id.txtTitle)
         val descTV: TextView? = mView.findViewById(R.id.txtDesc)

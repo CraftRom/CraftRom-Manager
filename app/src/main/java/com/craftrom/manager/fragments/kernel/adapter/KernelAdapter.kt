@@ -22,9 +22,7 @@ class KernelAdapter (
         return MyHolder(v)
     }
 
-    override fun getItemCount(): Int {
-        return min(data!!.size, 5)
-    }
+    override fun getItemCount(): Int = data?.size?.let { min(it, 5) } ?: 0
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         holder.bind(data?.get(position))
@@ -32,14 +30,14 @@ class KernelAdapter (
         val currentVersion = DeviceSystemInfo.chidoriVersion()
         val newVersion = item?.chidori.toString()
         val title = context?.getString(R.string.app_name)
+        val commit = item?.commit ?: DeviceSystemInfo.errorResult()
         val desc = "$currentVersion -> $newVersion"
 
-        if (item?.commit == null){
+        if ( commit == DeviceSystemInfo.errorResult()){
             holder.comitLine.visibility = View.GONE
-            holder.commit.text = DeviceSystemInfo.errorResult()
         } else {
             holder.comitLine.visibility = View.VISIBLE
-            holder.commit.text = item.commit
+            holder.commit.text = commit
         }
 
 
