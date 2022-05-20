@@ -105,5 +105,5 @@
     <!-- Update dialog -->
     <string name="inst_warn">Byla nalezena nová verze aplikace!</string>
     <string name="inst_install">Stáhnout a nainstalovat</string>
-    <string name="inst_download">Download</string>
+    <string name="inst_download">Stáhnout</string>
 </resources>
