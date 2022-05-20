@@ -28,10 +28,10 @@
                     android:id="@+id/dragIndicator"
                     android:layout_width="48dp"
                     android:layout_height="4dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/default_margin"
                     android:layout_marginBottom="@dimen/default_margin"
                     android:contentDescription="@string/todo"
-                    android:layout_gravity="center"
                     android:src="@drawable/drag" />
 
                 <ImageView
@@ -49,9 +49,9 @@
 
                 <TextView
                     android:id="@+id/txtTitle"
+                    style="@style/ThemeTitleHideable"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    style="@style/ThemeTitleHideable"
                     android:layout_marginTop="@dimen/l_50"
                     android:text="@string/title_txt"
                     android:textAlignment="center"
@@ -73,6 +73,7 @@
 
                 <TextView
                     android:id="@+id/txtPubdate"
+                    style="@style/ThemeTextGray"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/l_50"
@@ -80,7 +81,6 @@
                     android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
                     android:textColor="@color/shareColor"
                     android:textSize="11sp"
-                    style="@style/ThemeTextGray"
                     app:layout_constraintStart_toStartOf="@+id/news_divider"
                     app:layout_constraintTop_toBottomOf="@+id/news_divider" />
 
@@ -91,18 +91,19 @@
                     android:layout_marginStart="@dimen/l_50"
                     android:layout_marginTop="@dimen/l_50"
                     android:layout_marginEnd="@dimen/l_50"
+                    android:contentDescription="@string/todo"
                     android:src="@drawable/ic_new"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="@+id/news_divider"
-                    app:layout_constraintTop_toBottomOf="@+id/news_divider"
-                    android:contentDescription="@string/todo" />
+                    app:layout_constraintTop_toBottomOf="@+id/news_divider" />
 
                 <TextView
                     android:id="@+id/txtContent"
+                    style="@style/ThemeText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/l_50"
-                    style="@style/ThemeText"
+                    android:layout_marginBottom="@dimen/l1"
                     android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
                     android:textSize="@dimen/text"
                     android:textStyle="normal"
@@ -113,18 +114,14 @@
                     style="@style/WidgetFoundation.Button.Outlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginStart="@dimen/l3"
                     android:layout_marginEnd="@dimen/l3"
-                    android:layout_marginBottom="@dimen/l_50"
-                    android:layout_gravity="center_horizontal"
                     android:nextFocusLeft="@id/txtPubdate"
                     android:text="@string/view_but"
                     android:textAllCaps="false"
                     android:textSize="12sp"
                     app:cornerRadius="@dimen/r1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtContent" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

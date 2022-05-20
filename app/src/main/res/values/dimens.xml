@@ -17,7 +17,9 @@
 
     <dimen name="card_elevation">6sp</dimen>
     <dimen name="card_margin">8sp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
     <dimen name="normal_padding">10sp</dimen>
+
 
 
     <dimen name="font_size_12">12sp</dimen>
