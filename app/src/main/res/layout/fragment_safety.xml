@@ -220,7 +220,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/safety_net"
             style="@style/WidgetFoundation.Card"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_generic"
