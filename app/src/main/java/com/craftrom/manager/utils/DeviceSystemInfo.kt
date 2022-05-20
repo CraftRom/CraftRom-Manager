@@ -74,18 +74,23 @@ open class DeviceSystemInfo{
             val device = device()
             val code: String
             val juice = mutableListOf("citrus", "lime", "lemon", "pomelo")
+            val olives = mutableListOf("olive", "olivewood", "olivelite")
             val onclite = mutableListOf("onc", "onclite")
             val surya = mutableListOf("karna", "surya")
-            if (isEliminated(device, juice)) {
-                code = "juice"
+            code = if (isEliminated(device, juice)) {
+                "juice"
             } else {
                 if (isEliminated(device, onclite)) {
-                    code = "onclite"
+                    "onclite"
                 } else {
                     if (isEliminated(device, surya)) {
-                        code = "surya"
+                        "surya"
                     } else {
-                        code = device
+                        if (isEliminated(device, olives)) {
+                            "olives"
+                        } else {
+                            device
+                        }
                     }
                 }
             }
