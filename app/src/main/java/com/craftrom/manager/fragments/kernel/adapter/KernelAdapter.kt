@@ -30,14 +30,14 @@ class KernelAdapter (
         val currentVersion = DeviceSystemInfo.chidoriVersion()
         val newVersion = item?.chidori.toString()
         val title = context?.getString(R.string.app_name)
-        val commit = item?.commit ?: DeviceSystemInfo.errorResult()
+        val commit = item?.commit
         val desc = "$currentVersion -> $newVersion"
 
-        if ( commit == DeviceSystemInfo.errorResult()){
+        if ( commit == null){
             holder.comitLine.visibility = View.GONE
         } else {
             holder.comitLine.visibility = View.VISIBLE
-            holder.commit.text = commit
+            holder.commit.text = item.commit
         }
 
 

@@ -6,6 +6,6 @@ data class KernelUpdateResponse(
     val kernel: String = "",
     val date: String = "",
     val changelog: String = "",
-    val commit: String = "",
+    val commit: String ? = null,
     val downloadLink: String = ""
     )
