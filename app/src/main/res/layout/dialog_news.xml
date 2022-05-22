@@ -120,7 +120,8 @@
                     android:nextFocusLeft="@id/txtPubdate"
                     android:text="@string/view_but"
                     android:textAllCaps="false"
-                    android:textSize="12sp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_botton_sizes"
                     app:cornerRadius="@dimen/r1"
                     app:layout_constraintTop_toBottomOf="@+id/txtContent" />
             </LinearLayout>

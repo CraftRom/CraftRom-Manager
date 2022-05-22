@@ -13,6 +13,11 @@
         <item>15sp</item>
         <item>16sp</item>
     </array>
+    <array name="autosize_botton_sizes">
+        <item>10sp</item>
+        <item>11sp</item>
+        <item>12sp</item>
+    </array>
 
     <!-- Reply Preference -->
     <string-array name="news_list">

@@ -32,8 +32,8 @@ android {
         applicationId "com.craftrom.manager"
         minSdk 29
         targetSdk 32
-        versionCode 108
-        versionName "10.8"
+        versionCode 110
+        versionName "11.0"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"

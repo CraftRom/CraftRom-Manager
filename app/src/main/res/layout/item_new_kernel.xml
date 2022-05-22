@@ -190,7 +190,8 @@
                     android:layout_weight="1"
                     android:text="@string/changelog"
                     android:textAllCaps="true"
-                    android:textSize="12sp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_botton_sizes"
                     app:cornerRadius="@dimen/r1" />
 
                 <Button
@@ -204,7 +205,8 @@
                     android:layout_weight="1"
                     android:text="@string/inst_download"
                     android:textAllCaps="true"
-                    android:textSize="12sp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_botton_sizes"
                     app:cornerRadius="@dimen/r1" />
 
             </LinearLayout>
