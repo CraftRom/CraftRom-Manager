@@ -15,60 +15,67 @@ open class DeviceSystemInfo{
                 TODO()
             }
 
-    fun model(): String = Build.MODEL
+        fun model(): String = Build.MODEL
 
-    fun product(): String = Build.PRODUCT
+        fun product(): String = Build.PRODUCT
 
-    fun brand(): String = Build.BRAND
+        fun display(): String = Build.DISPLAY
 
-    fun device():String = Build.DEVICE
+        fun id(): String = Build.ID
 
-    fun type(): String = Build.TYPE
+        fun tags(): String = Build.TAGS
 
-    fun manufacturer(): String = Build.MANUFACTURER
+        fun brand(): String = Build.BRAND
 
-    fun board(): String = Build.BOARD
+        fun device():String = Build.DEVICE
 
-    fun hardware(): String = Build.HARDWARE
+        fun type(): String = Build.TYPE
 
-    fun releaseVersion(): String = Build.VERSION.RELEASE
+        fun manufacturer(): String = Build.MANUFACTURER
 
-    fun apiLevel(): Int = Build.VERSION.SDK_INT
+        fun board(): String = Build.BOARD
 
-    fun user(): String = Build.USER
+        fun hardware(): String = Build.HARDWARE
 
-    fun host(): String = Build.HOST
+        fun releaseVersion(): String = Build.VERSION.RELEASE
 
-    fun fingerprint(): String = Build.FINGERPRINT
+        fun apiLevel(): Int = Build.VERSION.SDK_INT
 
-    fun bootloader(): String = Build.BOOTLOADER
+        fun user(): String = Build.USER
 
-    fun arch(): String {
-        val arch = System.getProperty("os.arch")
-        return if (!arch.isNullOrEmpty()) arch else errorResult()
-    }
+        fun host(): String = Build.HOST
 
-    fun kernelVersion(): String {
-        val kernelVersion = System.getProperty("os.version")
-        return if (!kernelVersion.isNullOrEmpty()) kernelVersion else errorResult()
-    }
-    fun chidoriVersion(): String = kernelVersion().substring(
+        fun fingerprint(): String = Build.FINGERPRINT
+
+        fun bootloader(): String = Build.BOOTLOADER
+
+        fun arch(): String {
+            val arch = System.getProperty("os.arch")
+            return if (!arch.isNullOrEmpty()) arch else errorResult()
+        }
+
+        fun kernelVersion(): String {
+            val kernelVersion = System.getProperty("os.version")
+            return if (!kernelVersion.isNullOrEmpty()) kernelVersion else errorResult()
+        }
+
+        fun chidoriVersion(): String = kernelVersion().substring(
             kernelVersion().lastIndexOf(".")).substring(1, 4)
 
-   fun chidoriName(): String = kernelVersion().substring(
+        fun chidoriName(): String = kernelVersion().substring(
             kernelVersion().indexOf("-")).substring(1, 8)
 
-    @SuppressLint("SimpleDateFormat")
-    fun date(): String {
-        val date = Date(Build.TIME)
-        val dateFormat = SimpleDateFormat("dd/MM/yy")
-        return dateFormat.format(date)
-    }
+        @SuppressLint("SimpleDateFormat")
+        fun date(): String {
+            val date = Date(Build.TIME)
+            val dateFormat = SimpleDateFormat("dd/MM/yy")
+            return dateFormat.format(date)
+        }
 
-    fun codeName(): String {
-        val fields = Build.VERSION_CODES::class.java.fields
-        return fields[Build.VERSION.SDK_INT].name
-    }
+        fun codeName(): String {
+            val fields = Build.VERSION_CODES::class.java.fields
+            return fields[Build.VERSION.SDK_INT].name
+        }
 
         fun deviceCode(): String {
             val device = device()
