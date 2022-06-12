@@ -59,6 +59,11 @@ open class DeviceSystemInfo{
             return if (!kernelVersion.isNullOrEmpty()) kernelVersion else errorResult()
         }
 
+        fun osName(): String {
+            val kernelVersion = System.getProperty("os.name")
+            return if (!kernelVersion.isNullOrEmpty()) kernelVersion else errorResult()
+        }
+
         fun chidoriVersion(): String = kernelVersion().substring(
             kernelVersion().lastIndexOf(".")).substring(1, 4)
 
@@ -112,6 +117,5 @@ open class DeviceSystemInfo{
         }
 
         fun errorResult() = context.getString(R.string.common_empty_result)
-
-}
+    }
 }
