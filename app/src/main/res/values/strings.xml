@@ -7,7 +7,7 @@
     <string name="menu_kernel" translatable="false">Chidori Kernel</string>
     <string name="menu_head_tools">Tools</string>
     <string name="menu_safety" translatable="false">SafetyNet Attestation</string>
-    <string name="menu_others">Others</string>
+    <string name="menu_laboratory">Laboratory</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
 
@@ -16,7 +16,11 @@
 
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
-    <string name="text_logo" translatable="false">Русский военный корабель… ВСЕ!</string>
+    <string name="text_slogan_0">RUSSIAN WARSHIP, GO F*CK YOURSELF!</string>
+    <string name="text_slogan_1">RUSSIAN WARSHIP … DONE!</string>
+    <string name="text_slogan_2">GLORY TO UKRAINE! GLORY TO THE HEROES!</string>
+    <string name="text_slogan_3">VOVA, BEAT\'EM F*CKING BRAINS OUT!</string>
+
     <string name="copyr" translatable="false">© 2020-%s All Right Reserved.</string>
     <string name="app_name_version">%s version: %s </string>
 
@@ -118,8 +122,8 @@
     <string translatable="false" name="settings_root_profile_key">rootProfile</string>
     <string name="settings_root_profile_title">ROOT mode</string>
 
-    <!-- Tools -->
-    <string name="others_welcome">I hope this will be useful)).</string>
+    <!-- Laboratory -->
+    <string name="laboratory_welcome">Debug and experimental functions.</string>
 
     <string name="fps_head">Resource monitoring overlay</string>
     <string name="fps_desc">Show on going FPS/CPU/GPU count in a overlay</string>
