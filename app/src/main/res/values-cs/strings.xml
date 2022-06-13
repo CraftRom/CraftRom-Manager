@@ -27,6 +27,7 @@
     <string name="err_card_try_again">Zkusit znovu</string>
     <!-- Kernel -->
     <string name="kernel_welcome">Vyvážené jádro pro každý den.</string>
+    <string name="rom_type">Rom type</string>
     <string name="kernel_version">Verze jádra</string>
     <string name="chidori_version">Verze Chidori</string>
     <string name="device_group">Skupina zařízení</string>
