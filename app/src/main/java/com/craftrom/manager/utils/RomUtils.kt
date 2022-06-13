@@ -177,7 +177,7 @@ object RomUtils {
     }
 
     fun isSamsungRom(): Boolean {
-        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_SAMSUNG))
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_SAMSUNG)) || return Build.MANUFACTURER.contains("SAMSUNG") || Build.MANUFACTURER.contains("samsung")
     }
 
     fun isLetvRom(): Boolean {
