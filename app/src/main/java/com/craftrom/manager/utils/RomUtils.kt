@@ -16,6 +16,7 @@ object RomUtils {
     const val ROM_VIVO = "FUNTOUCH OS"
     const val ROM_OPPO = "COLOR OS"
     const val ROM_ONEPLUS = "OXYGEN"
+    const val ROM_REALME = "REALMEUI    "
     const val ROM_FLYME = "FLYME"
     const val ROM_SMARTISAN = "SMARTISAN"
     const val ROM_QIKU = "QIKU"
@@ -34,9 +35,11 @@ object RomUtils {
     private const val SYSTEM_VERSION_SMARTISAN = "ro.smartisan.version"
     private const val SYSTEM_VERSION_LETV = "ro.letv.eui"
     private const val SYSTEM_VERSION_LENOVO = "ro.lenovo.lvp.version"
+    private const val SYSTEM_VERSION_REALME = "ro.build.version.realmeui"
     private const val SYSTEM_VERSION_ROG = "ro.build.fota.version"
     private const val SYSTEM_VERSION_SAMSUNG = "ro.channel.officehubrow"
     private const val SYSTEM_VERSION_ONEPLUS = "ro.build.ota.versionname"
+    private const val SYSTEM_VERSION_OPPO = "ro.build.version.opporom"
 
     private val TAG = "RomUtils"
 
@@ -79,6 +82,9 @@ object RomUtils {
         }
         if (isRogRom()) {
             return ROM_ROG
+        }
+        if (isRealmeRom()) {
+            return ROM_REALME
         }
         if (isZTERom()) {
             return ROM_ZTE
@@ -160,12 +166,17 @@ object RomUtils {
 
     fun is360Rom(): Boolean {
         //fix issue https://github.com/zhaozepeng/FloatWindowPermission/issues/9
-        return Build.MANUFACTURER.contains(ROM_QIKU) || Build.MANUFACTURER.contains("360") || Build.MANUFACTURER.contains("QiKU")
+        return isRightRom("360", "QiKU", "quiku")
     }
 
     fun isOppoRom(): Boolean {
-        //https://github.com/zhaozepeng/FloatWindowPermission/pull/26
-        return Build.MANUFACTURER.contains("OPPO") || Build.MANUFACTURER.contains("oppo")
+                //https://github.com/zhaozepeng/FloatWindowPermission/pull/26
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_OPPO)) && isRightRom("OPPO", "oppo")
+    }
+
+    fun isRealmeRom(): Boolean {
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_REALME)) &&
+                isRightRom("REALME", "realme")
     }
 
     fun isVivoRom(): Boolean {
@@ -177,7 +188,8 @@ object RomUtils {
     }
 
     fun isSamsungRom(): Boolean {
-        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_SAMSUNG)) || return Build.MANUFACTURER.contains("SAMSUNG") || Build.MANUFACTURER.contains("samsung")
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_SAMSUNG)) &&
+                isRightRom("SAMSUNG", "samsung")
     }
 
     fun isLetvRom(): Boolean {
@@ -217,4 +229,12 @@ object RomUtils {
                 || fingerPrint.lowercase(Locale.getDefault()).contains(ROM_ZTE)))
     }
 
+    private fun isRightRom(vararg names: String): Boolean {
+        for (name in names) {
+            if (Build.MANUFACTURER.contains(name) || Build.BRAND.contains(name)) {
+                return true
+            }
+        }
+        return false
+    }
 }
