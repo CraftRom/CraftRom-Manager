@@ -10,29 +10,40 @@ import java.util.*
 
 object RomUtils {
 
+    const val ROM_BLACKSHARK = "JOYUI"
     const val ROM_MIUI = "MIUI"
     const val ROM_EMUI = "EMUI"
-    const val ROM_VIVO = "VIVO"
-    const val ROM_OPPO = "OPPO"
+    const val ROM_VIVO = "FUNTOUCH OS"
+    const val ROM_OPPO = "COLOR OS"
+    const val ROM_ONEPLUS = "OXYGEN"
     const val ROM_FLYME = "FLYME"
     const val ROM_SMARTISAN = "SMARTISAN"
     const val ROM_QIKU = "QIKU"
     const val ROM_LETV = "LETV"
     const val ROM_LENOVO = "LENOVO"
-    const val ROM_NUBIA = "NUBIA"
+    const val ROM_NUBIA = "NUBIAUI"
     const val ROM_ZTE = "ZTE"
     const val ROM_COOLPAD = "COOLPAD"
+    const val ROM_ROG = "REPLIBLIC"
+    const val ROM_SAMSUNG = "ONEUI"
     const val ROM_UNKNOWN = "AOSP"
 
+    private const val SYSTEM_VERSION_BLACKSHARK = "ro.blackshark.rom"
     private const val SYSTEM_VERSION_VIVO = "ro.vivo.os.version"
     private const val SYSTEM_VERSION_FLYME = "ro.build.display.id"
     private const val SYSTEM_VERSION_SMARTISAN = "ro.smartisan.version"
     private const val SYSTEM_VERSION_LETV = "ro.letv.eui"
     private const val SYSTEM_VERSION_LENOVO = "ro.lenovo.lvp.version"
+    private const val SYSTEM_VERSION_ROG = "ro.build.fota.version"
+    private const val SYSTEM_VERSION_SAMSUNG = "ro.channel.officehubrow"
+    private const val SYSTEM_VERSION_ONEPLUS = "ro.build.ota.versionname"
 
     private val TAG = "RomUtils"
 
     fun getRomName(): String {
+        if (isBlacksharkRom()) {
+            return ROM_BLACKSHARK
+        }
         if (isMiuiRom()) {
             return ROM_MIUI
         }
@@ -51,6 +62,9 @@ object RomUtils {
         if (isSmartisanRom()) {
             return ROM_SMARTISAN
         }
+        if (isSamsungRom()) {
+            return ROM_SAMSUNG
+        }
         if (is360Rom()) {
             return ROM_QIKU
         }
@@ -60,6 +74,13 @@ object RomUtils {
         if (isLenovoRom()) {
             return ROM_LENOVO
         }
+        if (isOnePlusRom()) {
+            return ROM_ONEPLUS
+        }
+        if (isRogRom()) {
+            return ROM_ROG
+        }
+
         if (isZTERom()) {
             return ROM_ZTE
         }
@@ -123,6 +144,9 @@ object RomUtils {
         return Build.MANUFACTURER.contains("HUAWEI")
     }
 
+    fun isBlacksharkRom(): Boolean {
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_BLACKSHARK))
+    }
 
     fun isMiuiRom(): Boolean {
         return !TextUtils.isEmpty(getSystemProperty("ro.miui.ui.version.name"))
@@ -147,8 +171,13 @@ object RomUtils {
     fun isVivoRom(): Boolean {
         return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_VIVO))
     }
+
     fun isSmartisanRom(): Boolean {
         return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_SMARTISAN))
+    }
+
+    fun isSamsungRom(): Boolean {
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_SAMSUNG))
     }
 
     fun isLetvRom(): Boolean {
@@ -157,6 +186,15 @@ object RomUtils {
 
     fun isLenovoRom(): Boolean {
         return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_LENOVO))
+    }
+
+    fun isOnePlusRom(): Boolean {
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_ONEPLUS)) && (getSystemProperty(SYSTEM_VERSION_ROG)!!.lowercase().contains("Hydrogen")
+                || getSystemProperty(SYSTEM_VERSION_ROG)!!.lowercase().contains("Oxygen"))
+    }
+
+    fun isRogRom(): Boolean {
+        return !TextUtils.isEmpty(getSystemProperty(SYSTEM_VERSION_ROG)) && getSystemProperty(SYSTEM_VERSION_ROG)!!.lowercase().contains("CN_Phone")
     }
 
     fun isCoolPadRom(): Boolean {
