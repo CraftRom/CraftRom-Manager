@@ -22,7 +22,7 @@ object RomUtils {
     const val ROM_NUBIA = "NUBIA"
     const val ROM_ZTE = "ZTE"
     const val ROM_COOLPAD = "COOLPAD"
-    const val ROM_UNKNOWN = "UNKNOWN"
+    const val ROM_UNKNOWN = "AOSP"
 
     private const val SYSTEM_VERSION_VIVO = "ro.vivo.os.version"
     private const val SYSTEM_VERSION_FLYME = "ro.build.display.id"
