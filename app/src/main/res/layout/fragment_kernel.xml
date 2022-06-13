@@ -225,7 +225,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/android_liner"
+                            android:id="@+id/rom_liner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -234,6 +234,46 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/model_liner">
+
+                            <TextView
+                                android:id="@+id/rom_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/ThemeTitleHideable"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="4"
+                                android:maxLines="1"
+                                android:text="@string/rom_type"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                style="@style/ThemeText"
+                                android:id="@+id/rom_android"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="1"
+                                android:maxLines="1"
+                                android:text="nonce"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                                android:autoSizeTextType="uniform"
+                                android:autoSizePresetSizes="@array/autosize_text_sizes"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/android_liner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            android:weightSum="2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rom_liner">
 
                             <TextView
                                 android:id="@+id/android_text"

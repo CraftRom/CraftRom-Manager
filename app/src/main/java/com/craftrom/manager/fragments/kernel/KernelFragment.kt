@@ -22,6 +22,7 @@ import com.craftrom.manager.fragments.kernel.adapter.KernelAdapter
 import com.craftrom.manager.utils.Constants.Companion.KERNEL_NAME
 import com.craftrom.manager.utils.Constants.Companion.showSnackMessage
 import com.craftrom.manager.utils.DeviceSystemInfo
+import com.craftrom.manager.utils.RomUtils
 import com.craftrom.manager.utils.app.AppPrefs
 import com.craftrom.manager.utils.updater.response.KernelUpdateResponse
 import com.craftrom.manager.utils.updater.retrofit.RetrofitClient
@@ -36,6 +37,7 @@ class KernelFragment : Fragment(){
     private lateinit var model: TextView
     private lateinit var android_version: TextView
     private lateinit var security_patch: TextView
+    private lateinit var rom_type: TextView
     private lateinit var kernel_version: TextView
     private lateinit var chidori_version: TextView
     private lateinit var board: TextView
@@ -56,6 +58,7 @@ class KernelFragment : Fragment(){
         model = root.findViewById((R.id.kernel_model))
         android_version = root.findViewById((R.id.kernel_android))
         security_patch = root.findViewById(R.id.kernel_security_patch)
+        rom_type = root.findViewById(R.id.rom_android)
         kernel_version = root.findViewById(R.id.kernel_version)
         chidori_version = root.findViewById(R.id.chidori_version)
         typeButton = root.findViewById(R.id.btnType)
@@ -68,7 +71,8 @@ class KernelFragment : Fragment(){
 
         deviceInfo()
         typeDialog()
-        if (prefs.settings.kernelUpdate){        RetrofitClient().getService()
+        if (prefs.settings.kernelUpdate and !RomUtils.isMiuiRom()){
+            RetrofitClient().getService()
             .kernel(DeviceSystemInfo.deviceCode(), type.toString())
             .enqueue(object : Callback<List<KernelUpdateResponse>> {
                 override fun onFailure(call: Call<List<KernelUpdateResponse>>, t: Throwable) {
@@ -100,6 +104,7 @@ class KernelFragment : Fragment(){
         model.text = "${DeviceSystemInfo.brand()} ${DeviceSystemInfo.model()} (${DeviceSystemInfo.device()})"
         android_version.text = "${DeviceSystemInfo.releaseVersion()} (API ${DeviceSystemInfo.apiLevel()})"
         board.text =" ${DeviceSystemInfo.board()} (${DeviceSystemInfo.hardware()}-${DeviceSystemInfo.arch()})"
+        rom_type.text = RomUtils.getRomName()
         kernel_version.text = DeviceSystemInfo.kernelVersion()
         security_patch.text = Build.VERSION.SECURITY_PATCH
         deviceButton.text = DeviceSystemInfo.deviceCode()
@@ -109,9 +114,9 @@ class KernelFragment : Fragment(){
         }
 
         if (prefs.settings.typeUpdate == "nightly"){
-            typeButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorFalse))
+            typeButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPermission))
         } else {
-            typeButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorTrue))
+            typeButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.overlay_fps))
         }
 
         if (DeviceSystemInfo.chidoriName() != KERNEL_NAME)
