@@ -20,7 +20,7 @@ import com.google.android.material.card.MaterialCardView
 import com.topjohnwu.superuser.Shell
 
 
-class ToolsFragment : Fragment() {
+class LaboratoryFragment : Fragment() {
     private lateinit var switchFpsMeter : SwitchCompat
     private lateinit var switchBatteryThermal : SwitchCompat
     private lateinit var perm: MaterialCardView
@@ -30,7 +30,7 @@ class ToolsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_tools, container, false)
+        val root = inflater.inflate(R.layout.fragment_laboratory, container, false)
         val previewRequest =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 if (it.resultCode == RESULT_OK) {

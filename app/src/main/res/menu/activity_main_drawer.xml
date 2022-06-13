@@ -30,7 +30,7 @@
                     android:title="@string/menu_safety" />
                 <item
                     android:id="@+id/nav_others"
-                    android:title="@string/menu_others" />
+                    android:title="@string/menu_laboratory" />
             </menu>
         </item>
     </group>

@@ -31,7 +31,7 @@
             android:paddingTop="@dimen/nav_header_vertical_spacing"
             android:text="@string/nav_header_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             style="@style/ThemeText"
             android:textStyle="italic"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:text="@string/nav_header_subtitle" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

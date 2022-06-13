@@ -32,9 +32,9 @@
         tools:layout="@layout/fragment_safety" />
     <fragment
         android:id="@+id/nav_others"
-        android:name="com.craftrom.manager.fragments.tools.ToolsFragment"
-        android:label="@string/menu_others"
-        tools:layout="@layout/fragment_tools" />
+        android:name="com.craftrom.manager.fragments.tools.LaboratoryFragment"
+        android:label="@string/menu_laboratory"
+        tools:layout="@layout/fragment_laboratory" />
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.craftrom.manager.fragments.settings.SettingsFragment"
