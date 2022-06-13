@@ -80,13 +80,13 @@ object RomUtils {
         if (isRogRom()) {
             return ROM_ROG
         }
-
         if (isZTERom()) {
             return ROM_ZTE
         }
-        return if (isCoolPadRom()) {
-            ROM_COOLPAD
-        } else ROM_UNKNOWN
+        if (isCoolPadRom()) {
+            return  ROM_COOLPAD
+        }
+        return ROM_UNKNOWN
     }
 
     val emuiVersion: Double
