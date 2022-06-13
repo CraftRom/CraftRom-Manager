@@ -27,6 +27,7 @@
     <string name="err_card_try_again">Спробувати ще раз</string>
     <!-- Kernel -->
     <string name="kernel_welcome">Збалансоване ядро для буденності.</string>
+    <string name="rom_type">Rom type</string>
     <string name="kernel_version">Версія ядра</string>
     <string name="chidori_version">Версія Chidori</string>
     <string name="device_group">Сімейство</string>
