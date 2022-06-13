@@ -30,7 +30,7 @@
         android:ellipsize="end"
         android:maxEms="20"
         android:maxLines="3"
-        android:text="@string/text_logo"
+        android:text="@string/todo"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/headline_5.5"

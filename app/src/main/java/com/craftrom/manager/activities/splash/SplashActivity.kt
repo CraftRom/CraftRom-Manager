@@ -54,6 +54,7 @@ class SplashActivity : AppCompatActivity() {
         textViewVersion = findViewById(R.id.textViewVersion)
         textViewSlogan = findViewById(R.id.textViewSlogan)
         textCopirate = findViewById(R.id.text)
+        getRandomText(textViewSlogan)
         initView()
 
     }
@@ -90,6 +91,16 @@ class SplashActivity : AppCompatActivity() {
         textViewSlogan.startAnimation(alphaAnimation)
     }
 
+    fun getRandomText(textView: TextView){
+        val listText = listOf(
+            getString(R.string.text_slogan_0),
+            getString(R.string.text_slogan_1),
+            getString(R.string.text_slogan_2),
+            getString(R.string.text_slogan_3),
+        )
+        val rand = (0..3).random()
+        textView.text = listText[rand]
+    }
 
 }
 

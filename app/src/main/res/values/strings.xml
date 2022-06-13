@@ -16,7 +16,11 @@
 
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
-    <string name="text_logo" translatable="false">Русский военный корабель… ВСЕ!</string>
+    <string name="text_slogan_0">RUSSIAN WARSHIP, GO F*CK YOURSELF!</string>
+    <string name="text_slogan_1">RUSSIAN WARSHIP … DONE!</string>
+    <string name="text_slogan_2">GLORY TO UKRAINE! GLORY TO THE HEROES!</string>
+    <string name="text_slogan_3">VOVA, BEAT\'EM F*CKING BRAINS OUT!</string>
+
     <string name="copyr" translatable="false">© 2020-%s All Right Reserved.</string>
     <string name="app_name_version">%s version: %s </string>
 
