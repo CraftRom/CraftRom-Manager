@@ -3,12 +3,16 @@ package com.craftrom.manager.utils
 import android.os.Build
 import android.text.TextUtils
 import android.util.Log
+import androidx.annotation.StringDef
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.util.*
 
+
 object RomUtils {
+
+    private val TAG = "RomUtils"
 
     const val ROM_BLACKSHARK = "JOYUI"
     const val ROM_MIUI = "MIUI"
@@ -16,7 +20,7 @@ object RomUtils {
     const val ROM_VIVO = "FUNTOUCH OS"
     const val ROM_OPPO = "COLOR OS"
     const val ROM_ONEPLUS = "OXYGEN"
-    const val ROM_REALME = "REALMEUI    "
+    const val ROM_REALME = "REALME UI    "
     const val ROM_FLYME = "FLYME"
     const val ROM_SMARTISAN = "SMARTISAN"
     const val ROM_QIKU = "QIKU"
@@ -41,8 +45,7 @@ object RomUtils {
     private const val SYSTEM_VERSION_ONEPLUS = "ro.build.ota.versionname"
     private const val SYSTEM_VERSION_OPPO = "ro.build.version.opporom"
 
-    private val TAG = "RomUtils"
-
+    @RomName
     fun getRomName(): String {
         if (isBlacksharkRom()) {
             return ROM_BLACKSHARK
@@ -95,32 +98,6 @@ object RomUtils {
         return ROM_UNKNOWN
     }
 
-    val emuiVersion: Double
-        get() {
-            try {
-                val emuiVersion = getSystemProperty("ro.build.version.emui")
-                val version = emuiVersion!!.substring(emuiVersion.indexOf("_") + 1)
-                return java.lang.Double.parseDouble(version)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-            return 4.0
-        }
-
-
-    val miuiVersion: Int
-        get() {
-            val version = getSystemProperty("ro.miui.ui.version.name")
-            if (version != null) {
-                try {
-                    return Integer.parseInt(version.substring(1))
-                } catch (e: Exception) {
-                    Log.e(TAG, "get miui version code error, version : $version")
-                }
-
-            }
-            return -1
-        }
 
     fun getSystemProperty(propName: String): String? {
         val line: String
@@ -237,4 +214,9 @@ object RomUtils {
         }
         return false
     }
+
+    @StringDef(ROM_BLACKSHARK, ROM_MIUI, ROM_EMUI, ROM_VIVO, ROM_OPPO, ROM_ONEPLUS, ROM_REALME, ROM_FLYME, ROM_SMARTISAN, ROM_QIKU, ROM_LETV, ROM_LENOVO, ROM_NUBIA, ROM_ZTE, ROM_COOLPAD, ROM_ROG, ROM_SAMSUNG, ROM_UNKNOWN)
+    @Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
+    @Retention(AnnotationRetention.SOURCE)
+    annotation class RomName
 }

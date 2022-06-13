@@ -71,7 +71,7 @@ class KernelFragment : Fragment(){
 
         deviceInfo()
         typeDialog()
-        if (prefs.settings.kernelUpdate && RomUtils.getRomName() == "AOSP"){
+        if (prefs.settings.kernelUpdate && RomUtils.getRomName() == RomUtils.ROM_UNKNOWN){
             RetrofitClient().getService()
             .kernel(DeviceSystemInfo.deviceCode(), type.toString())
             .enqueue(object : Callback<List<KernelUpdateResponse>> {
