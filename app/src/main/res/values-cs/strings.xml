@@ -3,12 +3,16 @@
     <!-- Drawer menu -->
     <string name="menu_news">Novinky</string>
     <string name="menu_head_tools">Nástroje</string>
-    <string name="menu_others">Ostatní</string>
+    <string name="menu_laboratory">Laboratory</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_about">Informace</string>
     <!-- Common -->
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
+    <string name="text_slogan_0">RUSSIAN WARSHIP, GO F*CK YOURSELF!</string>
+    <string name="text_slogan_1">RUSSIAN WARSHIP … DONE!</string>
+    <string name="text_slogan_2">GLORY TO UKRAINE! GLORY TO THE HEROES!</string>
+    <string name="text_slogan_3">VOVA, BEAT\'EM F*CKING BRAINS OUT!</string>
     <string name="app_name_version">%s verze: %s </string>
     <!-- Into -->
     <string name="contribute_title">INFORMACE, KTERÉ MŮŽEME SDÍLET</string>
@@ -76,8 +80,8 @@
     <string name="settings_check_for_updates_monthly">Měsíčně</string>
     <string name="settings_check_for_updates_never">Nikdy</string>
     <string name="settings_root_profile_title">Režim ROOT</string>
-    <!-- Tools -->
-    <string name="others_welcome">Doufám, že to bude užitečné)).</string>
+    <!-- Laboratory -->
+    <string name="laboratory_welcome">Debug and experimental functions.</string>
     <string name="fps_head">Překrytí monitorování zdrojů</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>
     <string name="fps_notif_desc">Monitorovací služba byla spuštěna…</string>
