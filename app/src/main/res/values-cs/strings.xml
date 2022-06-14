@@ -3,16 +3,16 @@
     <!-- Drawer menu -->
     <string name="menu_news">Novinky</string>
     <string name="menu_head_tools">Nástroje</string>
-    <string name="menu_laboratory">Laboratory</string>
+    <string name="menu_laboratory">Laboratoř</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_about">Informace</string>
     <!-- Common -->
     <!-- Splash -->
     <!-- Debugging code is like hunting. Bug hunting. -->
-    <string name="text_slogan_0">RUSSIAN WARSHIP, GO F*CK YOURSELF!</string>
-    <string name="text_slogan_1">RUSSIAN WARSHIP … DONE!</string>
-    <string name="text_slogan_2">GLORY TO UKRAINE! GLORY TO THE HEROES!</string>
-    <string name="text_slogan_3">VOVA, BEAT\'EM F*CKING BRAINS OUT!</string>
+    <string name="text_slogan_0">RUSKÁ VÁLEČNÁ LODI, JDI DO PRDELE!</string>
+    <string name="text_slogan_1">RUSKÁ VÁLEČNÁ LODI … HOTOVO!</string>
+    <string name="text_slogan_2">SLÁVA UKRAJINĚ! SLÁVA HRDINŮM!</string>
+    <string name="text_slogan_3">VOVO, VYMLAŤ JIM MOZEK Z HLAVY!</string>
     <string name="app_name_version">%s verze: %s </string>
     <!-- Into -->
     <string name="contribute_title">INFORMACE, KTERÉ MŮŽEME SDÍLET</string>
@@ -31,7 +31,7 @@
     <string name="err_card_try_again">Zkusit znovu</string>
     <!-- Kernel -->
     <string name="kernel_welcome">Vyvážené jádro pro každý den.</string>
-    <string name="rom_type">Rom type</string>
+    <string name="rom_type">Typ ROM</string>
     <string name="kernel_version">Verze jádra</string>
     <string name="chidori_version">Verze Chidori</string>
     <string name="device_group">Skupina zařízení</string>
@@ -81,7 +81,7 @@
     <string name="settings_check_for_updates_never">Nikdy</string>
     <string name="settings_root_profile_title">Režim ROOT</string>
     <!-- Laboratory -->
-    <string name="laboratory_welcome">Debug and experimental functions.</string>
+    <string name="laboratory_welcome">Ladicí a experimentální funkce.</string>
     <string name="fps_head">Překrytí monitorování zdrojů</string>
     <string name="fps_desc">Zobrazení probíhajícího počtu FPS/CPU/GPU v překrytí</string>
     <string name="fps_notif_desc">Monitorovací služba byla spuštěna…</string>
