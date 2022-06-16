@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.craftrom.manager">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,9 +18,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:extractNativeLibs="true"
+        android:multiArch="true"
         android:supportsRtl="true"
         android:grantUriPermissions="true"
-        android:theme="@style/Theme.CraftRomManager">
+        tools:ignore="UnusedAttribute,GoogleAppIndexingWarning">
         <activity
             android:name=".activities.splash.SplashActivity"
             android:exported="true"
@@ -33,20 +36,24 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.IntroActivity"
+            android:exported="false"
             android:theme="@style/Theme.CraftRomManager.NoActionBar"
             android:screenOrientation="portrait"/>
         <activity android:name="MainActivity"
+            android:exported="false"
             android:theme="@style/Theme.CraftRomManager"
             android:screenOrientation="portrait"/>
         <activity android:name=".activities.OSLActivity"
+            android:exported="false"
             android:theme="@style/Theme.CraftRomManager.NoActionBar"
             android:screenOrientation="portrait"/>
         <activity android:name=".activities.WebViewActivity"
+            android:exported="false"
             android:theme="@style/Theme.CraftRomManager.NoActionBar"
             android:screenOrientation="portrait"/>
 
 
-        <receiver android:name=".receiver.AlarmReceiver" android:enabled="true"/>
+        <receiver android:name=".receiver.AlarmReceiver" android:exported="false" android:enabled="true" />
 
         <receiver android:name=".receiver.BootReceiver" android:exported="true" android:enabled="true">
             <intent-filter>
@@ -66,6 +73,7 @@
         </service>
         <service
             android:name=".services.FPS"
+            android:exported="false"
             android:configChanges="orientation" />
     </application>
 
