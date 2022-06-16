@@ -53,8 +53,8 @@
     <string name="device_group">Device group</string>
     <string name="type_group">Update channel</string>
     <string name="board_version">Board</string>
-    <string name="commit">Comment</string>
     <string name="changelog">Changelog</string>
+    <string name="kernel_version_author" translatable="false">%1$s • v%2$s, Linux %3$s</string>
     <string name="snack_kernel_name_error">This kernel is not supported!</string>
     <string name="snack_kernel_name">This kernel is %s! Version kernel is %s!</string>
     <string name="info_type_nightly">Compiled using the latest code base, includes latest enhancements but may also include undiscovered bugs.</string>

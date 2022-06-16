@@ -1,215 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center_vertical">
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/news_card"
-        style="@style/WidgetFoundation.Card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_generic"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="@dimen/margin_generic"
-        android:layout_marginBottom="5dp"
-        tools:layout_gravity="center">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
+            style="@style/WidgetFoundation.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/l1"
-            android:layout_marginBottom="@dimen/l1"
-            android:layout_marginStart="@dimen/l1"
-            android:layout_marginEnd="@dimen/l1">
+            app:cardBackgroundColor="@color/color_card_background_color_selector"
+            tools:layout_gravity="center"
+            tools:layout_margin="@dimen/l1">
 
-            <LinearLayout
-                android:id="@+id/line0"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:baselineAligned="false"
-                android:weightSum="2"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/block1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:baselineAligned="false"
-                    android:layout_weight="1"
-                    android:weightSum="10"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/basic_liner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        android:weightSum="2"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <TextView
-                            style="@style/ThemeTitleHideable"
-                            android:id="@+id/basic_int_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="4dp"
-                            android:layout_weight="4"
-                            android:maxLines="1"
-                            android:text="@string/chidori_version"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="12sp" />
-
-                        <TextView
-                            style="@style/ThemeText"
-                            android:id="@+id/chidori_version"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:maxLines="1"
-                            android:text="nonce"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="15sp" />
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/block2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:baselineAligned="false"
-                    android:layout_weight="1"
-                    android:weightSum="10"
-                    android:orientation="vertical">
-
-
-
-                    <LinearLayout
-                        android:id="@+id/time"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="visible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/cts_liner">
-
-                        <TextView
-                            android:id="@+id/time_text"
-                            style="@style/ThemeTitleHideable"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="4dp"
-                            android:layout_weight="4"
-                            android:maxLines="1"
-                            android:text="@string/time"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="12sp" />
-
-                        <TextView
-                            style="@style/ThemeText"
-                            android:id="@+id/date"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:maxLines="1"
-                            android:text="nonce"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                            android:textSize="15sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line1"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical"
-
-                app:layout_constraintTop_toBottomOf="@id/line0">
+                android:animateLayoutChanges="true">
 
                 <TextView
-                    android:id="@+id/digest_text"
-                    style="@style/ThemeTitleHideable"
-                    android:layout_width="match_parent"
+                    android:id="@+id/kernel_title"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:layout_weight="4"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginTop="@dimen/l1"
+                    android:layout_marginEnd="@dimen/l_50"
+                    android:duplicateParentState="true"
+                    android:textAppearance="@style/AppearanceFoundation.Body"
+                    android:textColor="?android:textColorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@tools:sample/lorem" />
+
+                <TextView
+                    android:id="@+id/kernel_version_author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:maxLines="1"
-                    android:text="@string/commit"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-                    android:textSize="12sp" />
+                    android:text="@string/kernel_version_author"
+                    android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
+                    android:textColor="?android:textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/kernel_title"
+                    app:layout_constraintTop_toBottomOf="@+id/kernel_title"
+                    tools:text="@tools:sample/lorem" />
 
                 <TextView
-                    android:id="@+id/commit"
-                    style="@style/ThemeText"
+                    android:id="@+id/kernel_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:layout_weight="1"
-                    android:autoSizePresetSizes="@array/autosize_text_sizes"
-                    android:autoSizeTextType="uniform"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginTop="@dimen/l1"
+                    android:layout_marginEnd="@dimen/l1"
+                    android:duplicateParentState="true"
                     android:maxLines="5"
-                    android:text="nonce"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+                    android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
+                    android:textColor="?android:textColorSecondary"
+                    app:layout_constraintTop_toBottomOf="@+id/kernel_version_author"
+                    tools:lines="4"
+                    tools:text="@tools:sample/lorem/random" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/l_50"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/line1">
+                <View
+                    android:id="@+id/kernel_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/l1"
+                    android:background="@color/blue_300"
+                    app:layout_constraintTop_toBottomOf="@+id/kernel_description" />
 
                 <Button
-                    android:id="@+id/btnChangelog"
-                    style="@style/WidgetFoundation.Button.Outlined.Small"
-                    android:layout_width="91dp"
+                    android:id="@+id/kernel_changelog"
+                    style="@style/WidgetFoundation.Button.Text"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/l1"
-                    android:layout_marginEnd="@dimen/l1"
-                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:text="@string/changelog"
-                    android:textAllCaps="true"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/autosize_botton_sizes"
-                    app:cornerRadius="@dimen/r1" />
+                    android:textAllCaps="false"
+                    app:iconGravity="textEnd"
+                    app:layout_constraintBottom_toBottomOf="@+id/kernel_download"
+                    app:layout_constraintEnd_toStartOf="@+id/kernel_download"
+                    app:layout_constraintTop_toTopOf="@+id/kernel_download" />
 
                 <Button
-                    android:id="@+id/btnDownload"
-                    style="@style/WidgetFoundation.Button.Outlined.Small"
-                    android:layout_width="91dp"
+                    android:id="@+id/kernel_download"
+                    style="@style/WidgetFoundation.Button.Text"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/l1"
-                    android:layout_marginEnd="@dimen/l1"
-                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:text="@string/inst_download"
-                    android:textAllCaps="true"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizePresetSizes="@array/autosize_botton_sizes"
-                    app:cornerRadius="@dimen/r1" />
+                    android:textAllCaps="false"
+                    android:theme="@style/ThemeOverlay.Button.Text.Secondary"
+                    app:icon="@drawable/ic_download"
+                    app:iconGravity="textEnd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kernel_divider"
+                    tools:text="Download" />
 
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-</LinearLayout>
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/bottom_bar_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="start"
+                    tools:constraint_referenced_ids="kernel_changelog,kernel_download" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

@@ -3,11 +3,15 @@ package com.craftrom.manager.fragments.kernel.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.MainApplication
 import com.craftrom.manager.R
+import com.craftrom.manager.utils.Constants.Companion.KERNEL_NAME
 import com.craftrom.manager.utils.DeviceSystemInfo
 import com.craftrom.manager.utils.downloader.DownloadManagerUtil
 import com.craftrom.manager.utils.updater.response.KernelUpdateResponse
@@ -30,15 +34,10 @@ class KernelAdapter (
         val currentVersion = DeviceSystemInfo.chidoriVersion()
         val newVersion = item?.chidori.toString()
         val title = context?.getString(R.string.app_name)
-        val commit = item?.commit
         val desc = "$currentVersion -> $newVersion"
-
-        if ( commit == null){
-            holder.comitLine.visibility = View.GONE
-        } else {
-            holder.comitLine.visibility = View.VISIBLE
-            holder.commit.text = item.commit
-        }
+        val kernel_title = context?.getString(R.string.kernel_version_author,
+            item?.date, item?.chidori, item?.kernel)
+            holder.version_author.text = kernel_title
 
 
         holder.changelogBTN.setOnClickListener {
@@ -75,15 +74,14 @@ class KernelAdapter (
     }
 
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val comitLine: LinearLayout = itemView.findViewById(R.id.line1)
-        val chidoriVersion: TextView = itemView.findViewById(R.id.chidori_version)
-        val buildDate: TextView = itemView.findViewById(R.id.date)
-        val commit: TextView = itemView.findViewById(R.id.commit)
-        val changelogBTN: Button = itemView.findViewById(R.id.btnChangelog)
-        val downloadBTN: Button = itemView.findViewById(R.id.btnDownload)
+        val kernel_title: TextView = itemView.findViewById(R.id.kernel_title)
+        val description: TextView = itemView.findViewById(R.id.kernel_description)
+        val version_author: TextView = itemView.findViewById(R.id.kernel_version_author)
+        val changelogBTN: Button = itemView.findViewById(R.id.kernel_changelog)
+        val downloadBTN: Button = itemView.findViewById(R.id.kernel_download)
         fun bind(get: KernelUpdateResponse?) {
-            chidoriVersion.text = "${get?.chidori.toString()} (${get?.kernel})"
-            buildDate.text = get?.date
+            kernel_title.text = "$KERNEL_NAME Kernel"
+            description.text = get?.commit
 
         }
 
