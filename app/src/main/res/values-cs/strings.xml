@@ -37,7 +37,6 @@
     <string name="device_group">Skupina zařízení</string>
     <string name="type_group">Kanál pro aktualizace</string>
     <string name="board_version">Board</string>
-    <string name="commit">Komentář</string>
     <string name="changelog">Seznam změn</string>
     <string name="snack_kernel_name_error">Toto jádro není podporováno!</string>
     <string name="snack_kernel_name">Toto jádro je %s! Verze jádra je %s!</string>
