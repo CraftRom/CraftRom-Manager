@@ -29,7 +29,7 @@
                     android:id="@+id/nav_safety"
                     android:title="@string/menu_safety" />
                 <item
-                    android:id="@+id/nav_others"
+                    android:id="@+id/nav_laboratory"
                     android:title="@string/menu_laboratory" />
             </menu>
         </item>

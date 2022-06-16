@@ -28,7 +28,7 @@ open class Constants {
             val intent = Intent(activity, T::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             activity.startActivity(intent)
-            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            activity.overridePendingTransition(R.anim.fragment_enter, R.anim.fragment_exit)
             activity.finish()
         }
 

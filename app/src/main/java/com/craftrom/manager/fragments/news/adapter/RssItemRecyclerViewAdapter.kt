@@ -122,7 +122,9 @@ class RssItemRecyclerViewAdapter(
                     val intent = Intent(context, WebViewActivity::class.java)
                     val url = item?.link
                     intent.putExtra("link", url)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
+                context.overridePendingTransition(R.anim.fragment_enter, R.anim.fragment_exit)
                 dialog.dismiss()
             }
             // below line is use to set cancelable to avoid

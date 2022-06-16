@@ -31,7 +31,7 @@
         android:label="@string/menu_safety"
         tools:layout="@layout/fragment_safety" />
     <fragment
-        android:id="@+id/nav_others"
+        android:id="@+id/nav_laboratory"
         android:name="com.craftrom.manager.fragments.tools.LaboratoryFragment"
         android:label="@string/menu_laboratory"
         tools:layout="@layout/fragment_laboratory" />
@@ -40,4 +40,80 @@
         android:name="com.craftrom.manager.fragments.settings.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
+
+
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.craftrom.manager.activities.splash.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
+    <activity
+        android:id="@+id/webViewActivity"
+        android:name="com.craftrom.manager.activities.WebViewActivity"
+        android:label="activity_web_view"
+        tools:layout="@layout/activity_web_view" />
+
+    <action
+        android:id="@+id/action_webViewActivity"
+        app:destination="@id/webViewActivity"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop" />
+    <action
+        android:id="@+id/action_jitterFragment"
+        app:destination="@id/nav_jitter"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop"
+        app:popUpTo="@id/nav_news" />
+    <action
+        android:id="@+id/action_kernelFragment"
+        app:destination="@id/nav_kernel"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop"
+        app:popUpTo="@id/nav_news" />
+    <action
+        android:id="@+id/action_safetyFragment"
+        app:destination="@id/nav_safety"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop"
+        app:popUpTo="@id/nav_news" />
+    <action
+        android:id="@+id/action_settingsFragment"
+        app:destination="@id/nav_settings"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop"
+        app:popUpTo="@id/nav_news" />
+    <action
+        android:id="@+id/action_aboutFragment"
+        app:destination="@id/nav_about"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop"
+        app:popUpTo="@id/nav_news" />
+    <action
+        android:id="@+id/action_laboratoryFragment"
+        app:destination="@id/nav_laboratory"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop"
+        app:popUpTo="@id/nav_news" />
+    <action
+        android:id="@+id/action_homeFragment"
+        app:destination="@id/nav_news"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop" />
+
 </navigation>
