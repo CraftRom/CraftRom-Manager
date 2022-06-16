@@ -127,7 +127,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:21.0.0'
 
     //Root
-    implementation 'com.github.topjohnwu.libsu:core:3.2.1'
+    implementation 'com.github.topjohnwu.libsu:core:5.0.2'
     implementation 'com.github.topjohnwu.libsu:io:3.2.1'
     implementation 'com.github.sunilpaulmathew:sCommon:101f0ee72b'
 
