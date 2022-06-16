@@ -37,7 +37,6 @@
     <string name="device_group">Группа устройств</string>
     <string name="type_group">Канал обновлений</string>
     <string name="board_version">Board</string>
-    <string name="commit">Комментарий</string>
     <string name="changelog">Список изменений</string>
     <string name="snack_kernel_name_error">Это устройство не поддерживается!</string>
     <string name="snack_kernel_name">Ядро %s! Версия ядра %s!</string>
