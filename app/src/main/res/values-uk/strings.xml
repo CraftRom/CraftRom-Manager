@@ -37,7 +37,6 @@
     <string name="device_group">Сімейство</string>
     <string name="type_group">Канал оновлень</string>
     <string name="board_version">Board</string>
-    <string name="commit">Коментар</string>
     <string name="changelog">Список змін</string>
     <string name="snack_kernel_name_error">Це ядро не підтримується!</string>
     <string name="snack_kernel_name">Це ядро %s! Ядро версії %s!</string>
