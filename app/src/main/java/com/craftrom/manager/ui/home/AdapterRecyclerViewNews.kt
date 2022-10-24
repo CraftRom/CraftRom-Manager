@@ -10,12 +10,14 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
 import com.craftrom.manager.core.ServiceContext.context
 import com.craftrom.manager.ui.home.HomeFragment.Companion.LIST_LIMIT
 import com.craftrom.manager.ui.view.ItemWebViewActivity
 import com.craftrom.manager.utils.Const.TAG
+import com.craftrom.manager.utils.Const.getShare
 import com.squareup.picasso.Picasso
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -72,12 +74,20 @@ class AdapterRecyclerViewNews internal constructor(private val arrayListRssConte
         holder.tvFeedPublishDate.text = "$date \u2022 $authorPub"
         holder.tvFeedDescription.text = description?:""
 
+        holder.shareBut.setOnClickListener{
+            val desc = description?:""
+
+            val body = "${title?:""}\n\n$desc\nby $authorPub\n\n${link?:""}"
+            getShare(context,  body)
+        }
+
         holder.butLink.setOnClickListener {
             val intent = Intent(context, ItemWebViewActivity::class.java)
             intent.putExtra("feedItemUrl", link?:"")
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
+
     }
 
     override fun getItemCount(): Int = min(arrayListRssContent.size, LIST_LIMIT)

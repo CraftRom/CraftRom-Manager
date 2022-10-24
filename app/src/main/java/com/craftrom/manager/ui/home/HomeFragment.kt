@@ -1,22 +1,19 @@
 package com.craftrom.manager.ui.home
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.craftrom.manager.R
 import com.craftrom.manager.databinding.FragmentHomeBinding
 import com.craftrom.manager.events.RebootEvent
-import com.craftrom.manager.ui.view.ItemWebViewActivity
 import com.craftrom.manager.utils.Const.KERNEL_NAME
 import com.craftrom.manager.utils.Const.RSS_FEED_LINK
 import com.craftrom.manager.utils.Const.TAG
@@ -31,7 +28,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class HomeFragment : Fragment(){
+open class HomeFragment : Fragment(){
     companion object {
         var LIST_LIMIT: Int = 5
     }
@@ -131,7 +128,6 @@ class HomeFragment : Fragment(){
 
 //                        headerPage.text = "(${arrayListContent.size})"
                         binding.pageRecyclerview.visibility = View.VISIBLE
-                        binding.progressBarLoadingFeeds.visibility = View.GONE
                         binding.emptyHelp.visibility = View.GONE
                     }
                 }
@@ -171,8 +167,8 @@ class HomeFragment : Fragment(){
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        arrayListContent.clear()
-        adapterRecyclerViewRssContent.notifyDataSetChanged()
-        _binding?.progressBarLoadingFeeds?.visibility = View.VISIBLE
+        if (arrayListContent.size != 0){
+            arrayListContent.clear()
+        }
     }
 }
