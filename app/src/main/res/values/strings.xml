@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Craft Rom</string>
+    <string name="nav_header_title" translatable="false">@string/app_name</string>
+    <string name="nav_header_subtitle">If you want people to think you\'re crazy, \ntell the truth.</string>
+    <string name="menu_head_tools">Tools</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_jitter" translatable="false">@string/jitter</string>
+    <string name="title_logs">Logs</string>
+    <string name="title_about">About</string>
+
+    <!-- Common -->
+    <string name="common_empty_result" translatable="false">-</string>
+
+    <!-- Splash -->
+    <!-- Debugging code is like hunting. Bug hunting. -->
+    <string name="text_slogan_0">RUSSIAN WARSHIP, GO F*CK YOURSELF!</string>
+    <string name="text_slogan_1">RUSSIAN WARSHIP … DONE!</string>
+    <string name="text_slogan_2">GLORY TO UKRAINE! GLORY TO THE HEROES!</string>
+    <string name="text_slogan_3">VOVA, BEAT\'EM F*CKING BRAINS OUT!</string>
+
+    <string name="copyr" translatable="false">© 2020-%s All Right Reserved.</string>
+    <string name="app_name_version">%s version: %s </string>
+
+    <!-- Device -->
+    <string name="home_codename_title">Device</string>
+    <string name="home_platform_title">Board</string>
+    <string name="home_android_title">Android</string>
+    <string name="home_security_title">Security patch</string>
+    <string name="home_kernel_title">Kernel</string>
+    <string name="home_chidori_title" translatable="false">Chidori</string>
+
+    <!-- News -->
+    <string name="news">News</string>
+    <string name="title_txt" translatable="false">Title</string>
+    <string name="publication_date_txt" translatable="false">Publication Date</string>
+    <string name="publication_author_txt" translatable="false">Publication Author</string>
+    <string name="view_but">View</string>
+    <string name="news_empty">No news found</string>
+
+    <!-- Logs -->
+    <string name="log_data_none">You\'re log-free, try using your root apps more</string>
+    <string name="log_data_magisk_none">Magisk logs are empty, that\'s weird</string>
+    <string name="menuSaveLog">Save log</string>
+    <string name="menuClearLog">Clear log now</string>
+    <string name="logs_cleared">Log successfully cleared</string>
+    <string name="pid">PID: %1$d</string>
+    <string name="target_uid">Target UID: %1$d</string>
+
+    <!-- Jitter -->
+    <string name="jitter" translatable="false">Jitter</string>
+    <string name="jitter_name">Identifying Jitter</string>
+    <string name="jitter_welcome">Jitter is the random system behavior that prevents perceptible work from running.</string>
+    <string name="totalish_mma">"CPU-total duration: %.3fms"</string>
+    <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
+    <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
+    <string name="total_mma">"Total duration: %.3fms"</string>
+
+    <!-- About -->
+    <string name="love"><![CDATA[</> with ❤️ by MrShterben]]></string>
+    <string name="about_as">About Us</string>
+    <string name="about_as_desc">CraftRom is a community developing the Chidori Kernel for more devices.\n\nStability is our top priority.</string>
+    <string name="features">App Features</string>
+    <string name="features_deck" translatable="false">• Craft Rom news\n• Jitter</string>
+
+    <!-- Settings -->
+    <string name="settings_ui">Interface</string>
+    <string name="settings_general">General</string>
+
+    <string name="settings_news_title">The number of news in the feed</string>
+    <string name="settings_news_list_3">3 news</string>
+    <string name="settings_news_list_5">5 news</string>
+    <string name="settings_news_list_10">10 news</string>
+    <string name="settings_news_list_15">15 news</string>
+    <string translatable="false" name="settings_list_news_key">numbNews</string>
+
+        <string name="settings_themes_title">Themes</string>
+    <string name="settings_themes_default">Default</string>
+    <string name="settings_themes_amoled">Amoled</string>
+    <string name="settings_themes_aubergine">Aubergine</string>
+    <string name="settings_themes_green">Green</string>
+    <string name="settings_themes_red">Red</string>
+    <string translatable="false" name="settings_list_themes_key">numbThemes</string>
+
+    <string translatable="false" name="settings_web_font_size_key">fontSize</string>
+    <string name="settings_web_font_size_title">Web font size</string>
+
+    <string name="reboot">Reboot</string>
+    <string name="reboot_userspace">Soft reboot</string>
+    <string name="reboot_recovery">Reboot to Recovery</string>
+    <string name="reboot_bootloader">Reboot to Bootloader</string>
+    <string name="reboot_download">Reboot to Download</string>
+    <string name="reboot_edl">Reboot to EDL</string>
+
+    <string name="settings">Settings</string>
+
+    <!--Toasts, Dialogs-->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="todo" translatable="false">TODO</string>
+</resources>

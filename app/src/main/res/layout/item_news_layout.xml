@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/news_card"
+    style="@style/WidgetFoundation.Card"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/color_card_background_color_selector"
+    tools:layout_gravity="center"
+    tools:layout_margin="@dimen/l_50">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true">
+
+                <RelativeLayout
+                    android:id="@+id/newsImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="180sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/featuredImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="180sp"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="TODO"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintHorizontal_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/txtTitle"
+                            style="@style/NewsArticle.Title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:text="@string/title_txt"
+                            android:textAppearance="@style/AppearanceFoundation.Body"
+                            android:textStyle="bold"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/NewsArticle.Desc"
+                    android:layout_marginStart="@dimen/l1"
+                    android:layout_marginTop="@dimen/l1"
+                    android:layout_marginEnd="@dimen/l1"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/title_txt"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/AppearanceFoundation.Caption"
+                    app:layout_constraintTop_toBottomOf="@+id/newsImageView" />
+
+                <View
+                    android:id="@+id/news_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/l1"
+                    android:background="?colorPrimaryVariant"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
+
+                        <TextView
+                            android:id="@+id/txtPubdate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/l1"
+                            android:layout_marginTop="@dimen/l_50"
+                            android:layout_marginBottom="@dimen/l_50"
+                            android:text=""
+                            android:textAppearance="@style/AppearanceFoundation.Caption.Variant"
+                            android:textColor="?colorOnSurfaceVariant"
+                            android:textSize="11sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/news_divider"
+                            app:layout_constraintTop_toBottomOf="@+id/news_divider"
+                            tools:ignore="SmallSp"
+                            tools:text="@tools:sample/date/ddmmyy" />
+
+                <ImageView
+                    android:id="@+id/share_fab"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="@dimen/l_50"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/l_50"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/share"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/news_divider"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    app:tint="?colorPrimaryVariant"/>
+
+                <ImageView
+                    android:id="@+id/new_news"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:visibility="visible"
+                    android:layout_marginTop="@dimen/l_50"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/l_50"
+                    android:src="@drawable/ic_new"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/share_fab"
+                    app:layout_constraintTop_toBottomOf="@+id/news_divider"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    app:tint="@color/colorTrue" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

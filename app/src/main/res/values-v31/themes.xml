@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- For API 31+, we cannot rely on the platform SplashScreen -->
+    <!-- Force using SplashScreen.Common that was used for older APIs -->
+    <style name="Theme.Splash" parent="Theme.SplashScreen.Common">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">
+            @drawable/ic_splashscreen_logo_animated
+        </item>
+        <item name="android:windowSplashScreenAnimationDuration">2147483647</item>
+    </style>
+</resources>

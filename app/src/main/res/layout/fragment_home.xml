@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    app:fitsSystemWindowsInsets="top|bottom"
+    tools:context=".ui.home.HomeFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/l1">
+
+            <include
+                android:id="@+id/home_device_wrapper"
+                layout="@layout/include_device_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/l1"
+                android:layout_marginEnd="@dimen/l1"
+                android:paddingBottom="@dimen/l1"
+                app:layout_constraintTop_toBottomOf="@+id/home_device_wrapper" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/l_50"
+                android:layout_marginStart="@dimen/l1"
+                android:layout_marginEnd="@dimen/l1"
+                android:maxLines="1"
+                android:gravity="center"
+                android:text="@string/news"
+                android:textAppearance="@style/AppearanceFoundation.Title"
+                android:textColor="?colorPrimary"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/page_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/l1"
+                android:layout_marginEnd="@dimen/l1"
+                android:paddingTop="@dimen/l_50"
+                app:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_news_layout" />
+
+            <TextView
+                android:id="@+id/emptyHelp"
+                android:layout_gravity="center"
+                style="@style/AppearanceFoundation.Title"
+                android:singleLine="false"
+                android:layout_marginTop="56dp"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:text="@string/news_empty"
+                android:textColor="?colorDisabledVariant"
+                android:textSize="16sp"
+                android:drawablePadding="12dp"
+                android:textAlignment="center"
+                app:drawableTopCompat="@drawable/art_empty" />
+
+
+            <ProgressBar
+                android:id="@+id/progress_bar_loading_feeds"
+                style="@android:style/Widget.ProgressBar.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progress="25"
+                android:layout_marginTop="20sp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
