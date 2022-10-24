@@ -64,19 +64,5 @@
                 android:drawablePadding="12dp"
                 android:textAlignment="center"
                 app:drawableTopCompat="@drawable/art_empty" />
-
-
-            <ProgressBar
-                android:id="@+id/progress_bar_loading_feeds"
-                style="@android:style/Widget.ProgressBar.Large"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:progress="25"
-                android:layout_marginTop="20sp"
-                android:visibility="gone"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
         </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
