@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.craftrom.manager.utils.app.AppPrefs
+import com.craftrom.manager.utils.theme.ThemeType
+import com.craftrom.manager.utils.theme.applyTheme
 import com.topjohnwu.superuser.Shell
 import org.koin.android.ext.android.inject
 
@@ -15,14 +17,11 @@ abstract class SplashActivity : AppCompatActivity() {
         private var skipSplash = false
     }
 
-    override fun onStart() {
-        super.onStart()
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setTheme()
+        setDark()
+        super.onCreate(savedInstanceState)
+
         installSplashScreen().apply {
             setKeepOnScreenCondition{
                 !skipSplash
@@ -53,6 +52,13 @@ abstract class SplashActivity : AppCompatActivity() {
         }
     }
 
+    private fun setDark(){
+        when (prefs.settings.darkTheme){
+            "0" -> applyTheme(ThemeType.DEFAULT_MODE)
+            "1" -> applyTheme(ThemeType.LIGHT_MODE)
+            else -> applyTheme(ThemeType.DARK_MODE)
+        }
+    }
     private fun preLoad(savedState: Bundle?) {
         runOnUiThread {
             skipSplash = true

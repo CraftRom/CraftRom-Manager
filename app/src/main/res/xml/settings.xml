@@ -11,7 +11,16 @@
             app:title="@string/settings_themes_title"
             android:entries="@array/theme_list"
             app:entryValues="@array/themes_values"
-            app:defaultValue="default"
+            app:defaultValue="0"
+            app:summary="%s"
+            app:iconSpaceReserved="false"
+            />
+        <ListPreference
+            app:key="@string/settings_dark_theme_key"
+            app:title="@string/settings_dark_theme_title"
+            android:entries="@array/dark_list"
+            app:entryValues="@array/dark_values"
+            app:defaultValue="0"
             app:summary="%s"
             app:iconSpaceReserved="false"
             />
@@ -25,7 +34,6 @@
             app:min="11"
             app:iconSpaceReserved="false"
             />
-
 
     </PreferenceCategory>
 

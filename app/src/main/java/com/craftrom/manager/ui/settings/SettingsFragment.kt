@@ -38,6 +38,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
             activity?.recreate()
             true
         }
+        findPreference<ListPreference>(getString(R.string.settings_dark_theme_key))?.setOnPreferenceChangeListener { _, _ ->
+            activity?.recreate()
+            true
+        }
 
         findPreference<ListPreference>(getString(R.string.settings_list_news_key))?.setOnPreferenceChangeListener { _, _ ->
             context?.let { newsUtil.setupListCount() }

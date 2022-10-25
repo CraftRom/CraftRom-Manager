@@ -15,4 +15,7 @@ class PreferenceFragmentPrefs(private val context: Context, private val prefs: S
     var fontSize
         get() = prefs.getInt(context.getString(R.string.settings_web_font_size_key), 14)
         set(value) = prefs.edit().putInt(context.getString(R.string.settings_web_font_size_key), value).apply()
+    var darkTheme
+        get() = prefs.getString(context.getString(R.string.settings_dark_theme_key), "0")
+        set(value) = prefs.edit().putString(context.getString(R.string.settings_dark_theme_key), value).apply()
 }

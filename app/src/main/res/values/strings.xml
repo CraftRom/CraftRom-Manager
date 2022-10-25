@@ -74,7 +74,7 @@
     <string name="settings_news_list_15">15 news</string>
     <string translatable="false" name="settings_list_news_key">numbNews</string>
 
-        <string name="settings_themes_title">Themes</string>
+    <string name="settings_themes_title">Themes</string>
     <string name="settings_themes_default">Default</string>
     <string name="settings_themes_amoled">Amoled</string>
     <string name="settings_themes_aubergine">Aubergine</string>
@@ -82,8 +82,16 @@
     <string name="settings_themes_red">Red</string>
     <string translatable="false" name="settings_list_themes_key">numbThemes</string>
 
+    <string translatable="false" name="settings_dark_theme_key">darkTheme</string>
+    <string name="settings_dark_theme_title">Dark theme mode</string>
+    <string name="settings_dark_default">Follow the system</string>
+    <string name="settings_dark_alwayslight">Always light</string>
+    <string name="settings_dark_alwaysdark">Always dark</string>
+
+
     <string translatable="false" name="settings_web_font_size_key">fontSize</string>
     <string name="settings_web_font_size_title">Web font size</string>
+
 
     <string name="reboot">Reboot</string>
     <string name="reboot_userspace">Soft reboot</string>

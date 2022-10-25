@@ -28,6 +28,18 @@
         <item>@string/settings_themes_red</item>
     </string-array>
 
+    <string-array name="dark_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="dark_list">
+        <item>@string/settings_dark_default</item>
+        <item>@string/settings_dark_alwayslight</item>
+        <item>@string/settings_dark_alwaysdark</item>
+    </string-array>
+
     <!-- Reply Preference -->
     <string-array name="news_list">
         <item>@string/settings_news_list_3</item>

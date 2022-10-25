@@ -3,7 +3,7 @@
       android:height="24dp"
       android:viewportWidth="24"
       android:viewportHeight="24"
-      android:tint="?colorSurface">
+      android:tint="@color/colorToolbar">
     <path
         android:fillColor="?colorSurface"
         android:pathData="M16,22 L6,12 16,2 17.775,3.775 9.55,12 17.775,20.225Z"/>

@@ -127,8 +127,8 @@ open class HomeFragment : Fragment(){
                         adapterRecyclerViewRssContent.notifyDataSetChanged()
 
 //                        headerPage.text = "(${arrayListContent.size})"
-                        binding.pageRecyclerview.visibility = View.VISIBLE
-                        binding.emptyHelp.visibility = View.GONE
+
+
                     }
                 }
             }

@@ -3,14 +3,14 @@
 
     <!-- Add android:colorControlNormal -->
     <style name="Base.ThemeOverlay.AppCompat.ActionBar" tools:override="true">
-        <item name="android:colorControlNormal">?colorSurface</item>
-        <item name="colorControlNormal">?colorSurface</item>
+        <item name="android:colorControlNormal">@color/colorToolbar</item>
+        <item name="colorControlNormal">@color/colorToolbar</item>
         <item name="searchViewStyle">@style/Widget.AppCompat.SearchView.ActionBar</item>
     </style>
 
     <style name="Base.ThemeOverlay.AppCompat.Dark.ActionBar" tools:override="true">
-        <item name="android:colorControlNormal">?colorSurface</item>
-        <item name="colorControlNormal">?colorSurface</item>
+        <item name="android:colorControlNormal">@color/colorToolbar</item>
+        <item name="colorControlNormal">@color/colorToolbar</item>
         <item name="searchViewStyle">@style/Widget.AppCompat.SearchView.ActionBar</item>
     </style>
 

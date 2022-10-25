@@ -27,4 +27,10 @@
         <item name="colorOnBackground">#000</item>
         <item name="colorOnError">#FFF</item>
     </style>
+    <style name="ThemeFoundationColor.Aubergine" parent="ThemeFoundationColor.Default">
+        <item name="colorPrimary">#f000a4</item>
+        <item name="colorPrimaryVariant">#80F000A4</item>
+        <item name="colorSecondary">#b14a97</item>
+        <item name="colorSecondaryVariant">#80B14A97</item>
+    </style>
     </resources>

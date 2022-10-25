@@ -9,12 +9,17 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.craftrom.manager.databinding.ActivityMainBinding
+import com.craftrom.manager.utils.app.AppPrefs
+import com.craftrom.manager.utils.theme.ThemeType
+import com.craftrom.manager.utils.theme.applyTheme
 import com.google.android.material.navigation.NavigationView
+import org.koin.android.ext.android.inject
 
 class MainActivity : SplashActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private val prefs: AppPrefs by inject()
 
     override fun showMainUI(savedInstanceState: Bundle?) {
 
@@ -36,6 +41,7 @@ class MainActivity : SplashActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
