@@ -22,7 +22,7 @@ class App : Application() {
         ServiceContext.context = base
 
         // Pre-heat the shell ASAP
-        Shell.getShell(null) {}
+        // Shell.getShell(null) {}
     }
     init {
         check(iNSTANCE == null) { "Duplicate application instance!" }

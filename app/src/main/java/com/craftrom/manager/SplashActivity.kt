@@ -31,12 +31,13 @@ abstract class SplashActivity : AppCompatActivity() {
         if (skipSplash) {
             showMainUI(savedInstanceState)
         } else {
-            Shell.getShell(Shell.EXECUTOR) {
+//            Shell.getShell(Shell.EXECUTOR) {
 //                if (!it.isRoot) {
 //                    return@getShell
 //                }
-                preLoad(savedInstanceState)
-            }
+//                preLoad(savedInstanceState)
+//            }
+            preLoad(savedInstanceState)
         }
     }
 
