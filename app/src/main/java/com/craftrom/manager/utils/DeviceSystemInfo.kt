@@ -1,19 +1,18 @@
 package com.craftrom.manager.utils
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Build
 import com.craftrom.manager.R
+import com.craftrom.manager.core.ServiceContext.context
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.*
 
-open class DeviceSystemInfo{
+open class DeviceSystemInfo {
 
     companion object {
-        private val context: Context
-            get() {
-                TODO()
-            }
 
         fun model(): String = Build.MODEL
 
@@ -62,6 +61,16 @@ open class DeviceSystemInfo{
         fun osName(): String {
             val kernelVersion = System.getProperty("os.name")
             return if (!kernelVersion.isNullOrEmpty()) kernelVersion else errorResult()
+        }
+
+        fun exodusVersion(): String {
+            val exodusVersion = getSystemProperty("ro.exodus.version")
+            return if (!exodusVersion.isNullOrEmpty()) exodusVersion else errorResult()
+        }
+
+        fun exodusMaintainer(): String {
+            val exodusMaintainer = getSystemProperty("ro.exodus.maintainer")
+            return if (!exodusMaintainer.isNullOrEmpty()) exodusMaintainer else errorResult()
         }
 
         fun chidoriVersion(): String = kernelVersion().substring(
@@ -116,6 +125,28 @@ open class DeviceSystemInfo{
             return name in device
         }
 
-        fun errorResult() = context.getString(R.string.common_empty_result)
+    private fun getSystemProperty(propName: String): String? {
+            var line = ""
+            var input: BufferedReader? = null
+            try {
+                val p = Runtime.getRuntime().exec("getprop $propName")
+                input = BufferedReader(InputStreamReader(p.inputStream), 1024)
+                line = input.readLine()
+                input.close()
+            } catch (ex: IOException) {
+                return null
+            } finally {
+                if (input != null) {
+                    try {
+                        input.close()
+                    } catch (e: IOException) {
+                    }
+                }
+            }
+            return line
+    }
+
+    private fun errorResult() = context.getString(R.string.common_empty_result)
+
     }
 }

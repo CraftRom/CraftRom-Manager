@@ -3,8 +3,10 @@ package com.craftrom.manager.ui.home
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
+import android.text.Layout
 import android.util.Log
 import android.view.*
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -58,17 +60,26 @@ open class HomeFragment : Fragment(){
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        val exodusosLayout:LinearLayout = binding.homeDeviceWrapper.homeExodusos
         val device: TextView = binding.homeDeviceWrapper.homeDeviceTitle
         val android_version:TextView = binding.homeDeviceWrapper.homeAndroidInfo
-        val codename = binding.homeDeviceWrapper.homeDeviceCodenameInfo
-        val platform = binding.homeDeviceWrapper.homeDevicePlatformInfo
-        val kernel = binding.homeDeviceWrapper.homeDeviceKernelInfo
-        val chidori = binding.homeDeviceWrapper.homeDeviceChidoriInfo
+        val exodusos:TextView = binding.homeDeviceWrapper.homeExodusosInfo
+        val codename:TextView = binding.homeDeviceWrapper.homeDeviceCodenameInfo
+        val platform:TextView = binding.homeDeviceWrapper.homeDevicePlatformInfo
+        val kernel:TextView = binding.homeDeviceWrapper.homeDeviceKernelInfo
+        val chidori:TextView = binding.homeDeviceWrapper.homeDeviceChidoriInfo
         val security_patch: TextView = binding.homeDeviceWrapper.homeSecurityInfo
 
 
         device.text = "${DeviceSystemInfo.brand()} ${DeviceSystemInfo.model()}"
         android_version.text = "${DeviceSystemInfo.releaseVersion()} (API ${DeviceSystemInfo.apiLevel()})"
+        if (DeviceSystemInfo.exodusVersion().isNotEmpty())
+        {
+            exodusosLayout.visibility= View.VISIBLE
+            exodusos.text = "${DeviceSystemInfo.exodusVersion()} (${DeviceSystemInfo.exodusMaintainer()})"
+        } else {
+            exodusosLayout.visibility= View.INVISIBLE
+        }
         security_patch.text = Build.VERSION.SECURITY_PATCH
         codename.text = DeviceSystemInfo.device()
         platform.text = "${DeviceSystemInfo.board()} (${DeviceSystemInfo.hardware()}-${DeviceSystemInfo.arch()})"

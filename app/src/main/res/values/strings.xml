@@ -26,6 +26,7 @@
     <string name="home_codename_title">Device</string>
     <string name="home_platform_title">Board</string>
     <string name="home_android_title">Android</string>
+    <string name="home_exodusos_title">ExodusOS</string>
     <string name="home_security_title">Security patch</string>
     <string name="home_kernel_title">Kernel</string>
     <string name="home_chidori_title" translatable="false">Chidori</string>
