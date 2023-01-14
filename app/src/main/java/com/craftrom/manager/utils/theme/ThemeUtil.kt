@@ -14,7 +14,7 @@ fun applyTheme(theme: ThemeType) {
             setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
         ThemeType.DEFAULT_MODE -> {
-            setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY)
+            setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
     }
 }
