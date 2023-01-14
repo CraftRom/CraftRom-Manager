@@ -24,17 +24,6 @@
             app:summary="%s"
             app:iconSpaceReserved="false"
             />
-        <SeekBarPreference
-            app:key="@string/settings_web_font_size_key"
-            app:title="@string/settings_web_font_size_title"
-            app:showSeekBarValue="true"
-            app:seekBarIncrement="1"
-            app:defaultValue="14"
-            android:max="18"
-            app:min="11"
-            app:iconSpaceReserved="false"
-            />
-
     </PreferenceCategory>
 
     <PreferenceCategory
