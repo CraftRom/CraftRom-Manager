@@ -15,7 +15,7 @@ import kotlin.math.min
 
 class DCenterAdapter (
     private val context: FragmentActivity?,
-    val data: List<ContentUpdateResponse>?) : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
+    private val data: List<ContentUpdateResponse>?) : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_content_dcenter, parent, false)
         return MyHolder(v)

@@ -24,5 +24,19 @@
                 app:layoutManager="LinearLayoutManager"
                 tools:listitem="@layout/item_content_dcenter" />
 
+            <TextView
+                android:id="@+id/emptyHelp"
+                android:layout_gravity="center"
+                style="@style/AppearanceFoundation.Title"
+                android:singleLine="false"
+                android:layout_marginTop="56dp"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:text="@string/file_empty"
+                android:textColor="?colorDisabledVariant"
+                android:textSize="16sp"
+                android:drawablePadding="12dp"
+                android:textAlignment="center"
+                app:drawableTopCompat="@drawable/art_empty" />
         </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

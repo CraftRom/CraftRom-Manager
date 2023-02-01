@@ -44,6 +44,7 @@
     <string name="dcenter_date_title">Build date</string>
     <string name="dcenter_version_title">Version</string>
     <string name="dcenter_type_title">Type</string>
+    <string name="file_empty">No file\'s found</string>
 
     <!-- Logs -->
     <string name="log_data_none">You\'re log-free, try using your root apps more</string>

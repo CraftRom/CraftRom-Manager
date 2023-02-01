@@ -40,12 +40,16 @@ class DCenterFragment : Fragment() {
                 .enqueue(object : Callback<List<ContentUpdateResponse>> {
                     override fun onFailure(call: Call<List<ContentUpdateResponse>>, t: Throwable) {
                         Toast.makeText(context, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                        binding.listV.visibility =View.GONE
+                        binding.emptyHelp.visibility = View.VISIBLE
                     }
 
                     override fun onResponse(
                         call: Call<List<ContentUpdateResponse>>,
                         response: Response<List<ContentUpdateResponse>>
                     ) {
+                        binding.emptyHelp.visibility = View.GONE
+                        binding.listV.visibility =View.VISIBLE
                         listV.adapter = DCenterAdapter(context as FragmentActivity?, response.body())
                     }
 
