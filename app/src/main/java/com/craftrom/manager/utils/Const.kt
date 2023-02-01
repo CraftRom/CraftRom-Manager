@@ -10,6 +10,8 @@ object Const {
     const val KERNEL_NAME = "Chidori"
     const val CURRENT_YEAR = "2022"
     const val RSS_FEED_LINK = "https://www.craft-rom.pp.ua/"
+    const val DC_CONTENT_URL = "https://raw.githubusercontent.com/CraftRom/host_content/live/"
+    const val EXODUSOS_FILE_URL = "https://sourceforge.net/projects/exodusos/files/ExodusOS/"
 
     fun getShare(context: Context, body: String?) {
         val intentShare = Intent(Intent.ACTION_SEND)

@@ -24,6 +24,12 @@
         android:name="com.craftrom.manager.ui.jitter.JitterFragment"
         android:label="@string/title_jitter"
         tools:layout="@layout/fragment_jitter" />
+
+    <fragment
+        android:id="@+id/nav_dcenter"
+        android:name="com.craftrom.manager.ui.dcenter.DCenterFragment"
+        android:label="@string/title_dcenter"
+        tools:layout="@layout/fragment_dcenter" />
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.craftrom.manager.ui.settings.SettingsFragment"
@@ -52,6 +58,16 @@
         app:popEnterAnim="@anim/fragment_enter_pop"
         app:popExitAnim="@anim/fragment_exit_pop"
         app:popUpTo="@id/nav_home" />
+
+    <action
+        android:id="@+id/action_dcenterFragment"
+        app:destination="@id/nav_dcenter"
+        app:enterAnim="@anim/fragment_enter"
+        app:exitAnim="@anim/fragment_exit"
+        app:popEnterAnim="@anim/fragment_enter_pop"
+        app:popExitAnim="@anim/fragment_exit_pop"
+        app:popUpTo="@id/nav_home" />
+
     <action
         android:id="@+id/action_aboutFragment"
         app:destination="@id/nav_about"

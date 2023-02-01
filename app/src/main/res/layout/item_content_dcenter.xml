@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/news_card"
+    style="@style/WidgetFoundation.Card"
+    android:layout_marginStart="@dimen/l1"
+    android:layout_marginEnd="@dimen/l1"
+    android:layout_marginBottom="@dimen/l_50"
+    android:layout_marginTop="@dimen/l_50"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/color_card_background_color_selector"
+    tools:layout_gravity="center"
+    tools:layout_margin="@dimen/l1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/l1"
+            android:paddingTop="@dimen/l_50"
+            android:paddingEnd="@dimen/l1"
+            android:paddingBottom="@dimen/l_50"
+            tools:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/dcenter_icon"
+                style="@style/WidgetFoundation.Icon.Primary"
+                android:padding="@dimen/l_25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_system_android" />
+
+            <TextView
+                android:id="@+id/dcenter_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/l1"
+                android:textAppearance="@style/AppearanceFoundation.Title"
+                android:textColor="?colorPrimary"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintBottom_toBottomOf="@+id/dcenter_icon"
+                app:layout_constraintStart_toEndOf="@+id/dcenter_icon"
+                app:layout_constraintTop_toTopOf="@+id/dcenter_icon" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/dcenter_device_title_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                tools:constraint_referenced_ids="dcenter_icon,dcenter_title" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadingEdgeLength="@dimen/l1"
+                android:requiresFadingEdge="horizontal"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@+id/dcenter_icon">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/dcenter_device_codename"
+                            style="@style/W.Home.Item.Top"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                style="@style/W.Home.ItemContent"
+                                android:text="@string/home_codename_title" />
+
+                            <TextView
+                                android:id="@+id/dcenter_device_codename_info"
+                                style="@style/W.Home.ItemContent.Right"
+                                tools:text="onclite" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/dcenter_type"
+                            style="@style/W.Home.Item"
+                            app:layout_constraintStart_toStartOf="@+id/dcenter_device_codename"
+                            app:layout_constraintTop_toBottomOf="@+id/dcenter_device_codename">
+
+                            <TextView
+                                style="@style/W.Home.ItemContent"
+                                android:text="@string/dcenter_type_title" />
+
+                            <TextView
+                                android:id="@+id/dcenter_type_info"
+                                style="@style/W.Home.ItemContent.Right"
+                                tools:text="onclite" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/dcenter_version"
+                            style="@style/W.Home.Item"
+                            app:layout_constraintStart_toStartOf="@+id/dcenter_type"
+                            app:layout_constraintTop_toBottomOf="@+id/dcenter_type">
+
+                            <TextView
+                                style="@style/W.Home.ItemContent"
+                                android:text="@string/dcenter_version_title" />
+
+                            <TextView
+                                android:id="@+id/dcenter_version_info"
+                                style="@style/W.Home.ItemContent.Right"
+                                tools:text="onclite" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/dcenter_date"
+                            style="@style/W.Home.Item.Bottom"
+                            app:layout_constraintStart_toStartOf="@+id/dcenter_type"
+                            app:layout_constraintTop_toBottomOf="@+id/dcenter_version">
+
+                            <TextView
+                                style="@style/W.Home.ItemContent"
+                                android:text="@string/dcenter_date_title" />
+
+                            <TextView
+                                android:id="@+id/dcenter_date_info"
+                                style="@style/W.Home.ItemContent.Right"
+                                tools:text="onclite" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -65,7 +65,7 @@ open class DeviceSystemInfo {
 
         fun exodusVersion(): String {
             val exodusVersion = getSystemProperty("ro.exodus.version")
-            return if (!exodusVersion.isNullOrEmpty()) exodusVersion else errorResult()
+            return exodusVersion.toString()
         }
 
         fun exodusMaintainer(): String {
@@ -97,6 +97,7 @@ open class DeviceSystemInfo {
             val chime = mutableListOf("citrus", "lime", "lemon", "pomelo")
             val olives = mutableListOf("olive", "olivewood", "olivelite")
             val onclite = mutableListOf("onc", "onclite")
+            val spes = mutableListOf("spes", "spesn")
             val surya = mutableListOf("karna", "surya")
             code = if (isEliminated(device, chime)) {
                 "chime"
@@ -105,12 +106,16 @@ open class DeviceSystemInfo {
                     "onclite"
                 } else {
                     if (isEliminated(device, surya)) {
-                        "surya"
+                            "surya"
                     } else {
                         if (isEliminated(device, olives)) {
                             "olives"
                         } else {
-                            device
+                            if (isEliminated(device, spes)) {
+                                "spes"
+                            } else {
+                                device
+                            }
                         }
                     }
                 }

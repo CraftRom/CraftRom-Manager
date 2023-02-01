@@ -5,6 +5,7 @@
     <string name="menu_head_tools">Tools</string>
 
     <string name="title_home">Home</string>
+    <string name="title_dcenter">Download Center</string>
     <string name="title_jitter" translatable="false">@string/jitter</string>
     <string name="title_logs">Logs</string>
     <string name="title_about">About</string>
@@ -38,6 +39,11 @@
     <string name="publication_author_txt" translatable="false">Publication Author</string>
     <string name="view_but">View</string>
     <string name="news_empty">No news found</string>
+
+    <!-- DCenter -->
+    <string name="dcenter_date_title">Build date</string>
+    <string name="dcenter_version_title">Version</string>
+    <string name="dcenter_type_title">Type</string>
 
     <!-- Logs -->
     <string name="log_data_none">You\'re log-free, try using your root apps more</string>

@@ -7,13 +7,15 @@
     android:layout_height="wrap_content"
     android:id="@+id/news_card"
     style="@style/WidgetFoundation.Card"
+    android:layout_marginStart="@dimen/l1"
+    android:layout_marginEnd="@dimen/l1"
     android:layout_marginBottom="5dp"
     android:layout_marginTop="5dp"
     android:clickable="true"
     android:focusable="true"
     app:cardBackgroundColor="@color/color_card_background_color_selector"
     tools:layout_gravity="center"
-    tools:layout_margin="@dimen/l_50">
+    tools:layout_margin="@dimen/l1">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

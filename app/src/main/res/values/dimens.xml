@@ -8,6 +8,8 @@
     <dimen name="margin_generic">16dp</dimen>
     <dimen name="overlain">10sp</dimen>
 
+    <dimen name="elevation">6dp</dimen>
+
     <dimen name="l_125">2dp</dimen>
     <dimen name="l_25">4dp</dimen>
     <dimen name="l_50">8dp</dimen>

@@ -3,13 +3,11 @@ package com.craftrom.manager.ui.home
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import android.text.Layout
 import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
