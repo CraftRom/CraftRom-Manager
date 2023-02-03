@@ -8,6 +8,7 @@ object Const {
 
     const val TAG = "CraftRom"
     const val KERNEL_NAME = "Chidori"
+    const val KALI_NAME = "Tsukuyoumi"
     const val CURRENT_YEAR = "2022"
     const val RSS_FEED_LINK = "https://www.craft-rom.pp.ua/"
     const val DC_CONTENT_URL = "https://raw.githubusercontent.com/CraftRom/host_content/live/"

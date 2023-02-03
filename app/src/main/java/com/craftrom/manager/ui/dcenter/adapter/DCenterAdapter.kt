@@ -6,19 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
+import com.craftrom.manager.utils.Const
 import com.craftrom.manager.utils.DeviceSystemInfo
 import com.craftrom.manager.utils.response.ContentUpdateResponse
 import kotlin.math.min
 
 class DCenterAdapter (
-    private val context: FragmentActivity?,
     private val data: List<ContentUpdateResponse>?) : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
+    private lateinit var type: String
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_content_dcenter, parent, false)
-        return MyHolder(v)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val viewInflated = layoutInflater.inflate(R.layout.item_content_dcenter, parent, false)
+        return MyHolder(viewInflated)
     }
 
     override fun getItemCount(): Int = data?.size?.let { min(it, 5) } ?: 0
@@ -26,7 +28,8 @@ class DCenterAdapter (
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         val item = data?.get(position)
-        val currentVersion = DeviceSystemInfo.chidoriVersion()
+        val types = item?.type
+
 
         when (val version = item?.version) {
             "raccoon" -> holder.content_version.text = "$version (Android 11)"
@@ -37,21 +40,42 @@ class DCenterAdapter (
             }
         }
 
-        when (val type = item?.type) {
+        type = when (types) {
             "kernel" -> {
+                if (DeviceSystemInfo.chidoriName() == Const.KERNEL_NAME)
+                {
+                    holder.content_statusIcon.visibility =View.VISIBLE
+                    holder.content_statusIcon.setImageResource(R.drawable.ic_check_decagram)
+                } else {
+                    holder.content_statusIcon.visibility =View.GONE
+                }
                 holder.content_icon.setImageResource(R.drawable.ic_linux_kernel)
-                holder.content_type.text = type
+                types
             }
             "kali" -> {
+                if (DeviceSystemInfo.tsukuyoumiName() == Const.KALI_NAME)
+                {
+                    holder.content_statusIcon.visibility =View.VISIBLE
+                    holder.content_statusIcon.setImageResource(R.drawable.ic_check_decagram)
+                } else {
+                    holder.content_statusIcon.visibility =View.GONE
+                }
                 holder.content_icon.setImageResource(R.drawable.ic_kali_kernel)
-                holder.content_type.text = "kernel"
+                "kernel"
             }
             else -> {
+                if (DeviceSystemInfo.exodusVersion().isNotEmpty())
+                {
+                    holder.content_statusIcon.visibility =View.VISIBLE
+                    holder.content_statusIcon.setImageResource(R.drawable.ic_check_decagram)
+                } else {
+                    holder.content_statusIcon.visibility =View.GONE
+                }
                 holder.content_icon.setImageResource(R.drawable.ic_system_android)
-                holder.content_type.text = type
+                types.toString()
             }
         }
-
+        holder.content_type.text = type
         holder.content_name.text = item?.name
         holder.content_device.text = DeviceSystemInfo.deviceCode() + "(" + DeviceSystemInfo.device() + ")"
         holder.content_date.text = item?.dateTime
@@ -59,6 +83,7 @@ class DCenterAdapter (
 
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val content_icon: ImageView = itemView.findViewById(R.id.dcenter_icon)
+        val content_statusIcon: ImageView = itemView.findViewById(R.id.dcenter_status_icon)
         val content_name: TextView = itemView.findViewById(R.id.dcenter_title)
         val content_type: TextView = itemView.findViewById(R.id.dcenter_type_info)
         val content_device: TextView = itemView.findViewById(R.id.dcenter_device_codename_info)

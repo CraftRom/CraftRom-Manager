@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/news_card"
+    android:id="@+id/dc_content_card"
     style="@style/WidgetFoundation.Card"
     android:layout_marginStart="@dimen/l1"
     android:layout_marginEnd="@dimen/l1"
-    android:layout_marginBottom="@dimen/l_50"
-    android:layout_marginTop="@dimen/l_50"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
     android:clickable="true"
     android:focusable="true"
     app:cardBackgroundColor="@color/color_card_background_color_selector"
@@ -39,20 +39,39 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/l1"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textAppearance="@style/AppearanceFoundation.Title"
                 android:textColor="?colorPrimary"
-                android:maxLines="1"
-                android:ellipsize="end"
                 app:layout_constraintBottom_toBottomOf="@+id/dcenter_icon"
                 app:layout_constraintStart_toEndOf="@+id/dcenter_icon"
                 app:layout_constraintTop_toTopOf="@+id/dcenter_icon" />
 
+            <FrameLayout
+                android:id="@+id/dcenter_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/dcenter_title"
+                app:layout_constraintTop_toTopOf="@+id/dcenter_title">
+
+                <ImageView
+                    android:id="@+id/dcenter_status_icon"
+                    style="@style/WidgetFoundation.StatusIcon.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/ic_system_android"
+                    app:tint="@color/colorTrue" />
+
+            </FrameLayout>
             <androidx.constraintlayout.widget.Barrier
                 android:id="@+id/dcenter_device_title_barrier"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:barrierDirection="bottom"
-                tools:constraint_referenced_ids="dcenter_icon,dcenter_title" />
+                tools:constraint_referenced_ids="dcenter_icon,dcenter_title,dcenter_status" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -146,5 +165,4 @@
             </HorizontalScrollView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 </com.google.android.material.card.MaterialCardView>

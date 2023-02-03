@@ -27,7 +27,6 @@ import kotlin.math.min
 
 class AdapterRecyclerViewNews internal constructor(private val arrayListRssContent: ArrayList<RecyclerViewNewsItem>) : RecyclerView.Adapter<AdapterRecyclerViewNews.ViewHolderRV>() {
 
-    private var lastPosition = -1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderRV {
 

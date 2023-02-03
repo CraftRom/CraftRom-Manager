@@ -96,7 +96,6 @@
     <string name="settings_dark_alwayslight">Always light</string>
     <string name="settings_dark_alwaysdark">Always dark</string>
 
-
     <string translatable="false" name="settings_web_font_size_key">fontSize</string>
     <string name="settings_web_font_size_title">Web font size</string>
 

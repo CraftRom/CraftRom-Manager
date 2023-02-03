@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.os.Build
 import com.craftrom.manager.R
 import com.craftrom.manager.core.ServiceContext.context
+import com.craftrom.manager.utils.Const.KALI_NAME
+import com.craftrom.manager.utils.Const.KERNEL_NAME
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -78,6 +80,9 @@ open class DeviceSystemInfo {
 
         fun chidoriName(): String = kernelVersion().substring(
             kernelVersion().indexOf("-")).substring(1, 8)
+
+        fun tsukuyoumiName(): String = kernelVersion().substring(
+            kernelVersion().indexOf("-")).substring(1, 11)
 
         @SuppressLint("SimpleDateFormat")
         fun date(): String {

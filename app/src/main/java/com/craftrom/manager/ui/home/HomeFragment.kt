@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.craftrom.manager.R
 import com.craftrom.manager.databinding.FragmentHomeBinding
 import com.craftrom.manager.events.RebootEvent
+import com.craftrom.manager.utils.Const.KALI_NAME
 import com.craftrom.manager.utils.Const.KERNEL_NAME
 import com.craftrom.manager.utils.Const.RSS_FEED_LINK
 import com.craftrom.manager.utils.Const.TAG
@@ -82,7 +83,7 @@ open class HomeFragment : Fragment(){
         codename.text = DeviceSystemInfo.device()
         platform.text = "${DeviceSystemInfo.board()} (${DeviceSystemInfo.hardware()}-${DeviceSystemInfo.arch()})"
         kernel.text = "${DeviceSystemInfo.osName()} ${DeviceSystemInfo.kernelVersion()}"
-        if (DeviceSystemInfo.chidoriName() == KERNEL_NAME)
+        if (DeviceSystemInfo.chidoriName() == KERNEL_NAME  || DeviceSystemInfo.tsukuyoumiName() == KALI_NAME)
         {
             chidori.text = resources.getString(R.string.yes) + " (${DeviceSystemInfo.deviceCode()})"
         } else {
