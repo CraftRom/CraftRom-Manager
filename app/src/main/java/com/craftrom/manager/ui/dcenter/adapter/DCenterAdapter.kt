@@ -79,6 +79,7 @@ class DCenterAdapter (
         holder.content_name.text = item?.name
         holder.content_device.text = DeviceSystemInfo.deviceCode() + "(" + DeviceSystemInfo.device() + ")"
         holder.content_date.text = item?.dateTime
+        holder.content_desc.text = item?.desc
     }
 
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -89,5 +90,6 @@ class DCenterAdapter (
         val content_device: TextView = itemView.findViewById(R.id.dcenter_device_codename_info)
         val content_version: TextView = itemView.findViewById(R.id.dcenter_version_info)
         val content_date: TextView = itemView.findViewById(R.id.dcenter_date_info)
+        val content_desc: TextView =itemView.findViewById(R.id.dcenter_desc_content)
     }
 }

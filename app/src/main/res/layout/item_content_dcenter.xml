@@ -74,10 +74,11 @@
                 tools:constraint_referenced_ids="dcenter_icon,dcenter_title,dcenter_status" />
 
             <HorizontalScrollView
+                android:id="@+id/block1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fadingEdgeLength="@dimen/l1"
-                android:requiresFadingEdge="horizontal"
+                android:requiresFadingEdge=""
                 android:scrollbars="none"
                 app:layout_constraintTop_toBottomOf="@+id/dcenter_icon">
 
@@ -87,7 +88,7 @@
                     android:orientation="horizontal">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
@@ -143,7 +144,7 @@
 
                         <LinearLayout
                             android:id="@+id/dcenter_date"
-                            style="@style/W.Home.Item.Bottom"
+                            style="@style/W.Home.Item"
                             app:layout_constraintStart_toStartOf="@+id/dcenter_type"
                             app:layout_constraintTop_toBottomOf="@+id/dcenter_version">
 
@@ -157,12 +158,19 @@
                                 tools:text="onclite" />
 
                         </LinearLayout>
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
 
             </HorizontalScrollView>
-
+            <LinearLayout
+                android:id="@+id/dcenter_desc"
+                style="@style/W.Home.Item.DescBottom"
+                app:layout_constraintTop_toBottomOf="@+id/block1">
+                <TextView
+                    android:id="@+id/dcenter_desc_content"
+                    style="@style/W.Home.ItemContent.Desc"
+                    tools:text="oncite" />
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

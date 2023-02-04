@@ -22,7 +22,7 @@ android {
         minSdk 29
         targetSdk 32
         versionCode 8
-        versionName "0.8"
+        versionName "0.8.16"
         vectorDrawables.useSupportLibrary = true
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
@@ -35,6 +35,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.sign
+            minifyEnabled = true
             proguardFiles("proguard-rules.pro")
         }
         release {
@@ -46,8 +47,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -96,7 +97,7 @@ dependencies {
     implementation 'com.github.japgolly.android:svg-android:2.0.6'
 
     // Koin main features for Android
-    implementation 'io.insert-koin:koin-android:3.2.3'
+    implementation 'io.insert-koin:koin-android:3.3.2'
 
     // Preference
     implementation "androidx.preference:preference-ktx:1.2.0"

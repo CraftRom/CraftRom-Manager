@@ -8,7 +8,7 @@
     <style name="W.Home" />
 
     <style name="W.Home.Item">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:paddingStart">@dimen/l1</item>
@@ -23,11 +23,21 @@
         <item name="android:paddingBottom">@dimen/l_75</item>
     </style>
 
+    <style name="W.Home.Item.DescBottom">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">@dimen/l_75</item>
+    </style>
+
     <style name="W.Home.ItemContent">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textAppearance">@style/AppearanceFoundation.Caption.Variant</item>
+    </style>
+
+    <style name="W.Home.ItemContent.Desc">
+        <item name="android:maxLines">3</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="W.Home.ItemContent.Right">

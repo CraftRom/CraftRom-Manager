@@ -9,6 +9,7 @@ data class ContentUpdateResponse(
     val version: String?,
     val fileName: String?,
     val dateTime: String?,
+    val desc: String?,
     ) {
     var baseUrl: String = Const.EXODUSOS_FILE_URL
 
