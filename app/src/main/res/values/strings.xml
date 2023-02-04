@@ -10,6 +10,10 @@
     <string name="title_logs">Logs</string>
     <string name="title_about">About</string>
 
+    <!-- Button -->
+    <string name="download">Download</string>
+    <string name="changelog">Changelog</string>
+
     <!-- Common -->
     <string name="common_empty_result" translatable="false">-</string>
 

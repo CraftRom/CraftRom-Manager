@@ -21,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/l1"
-            android:paddingTop="@dimen/l_50"
             android:paddingEnd="@dimen/l1"
+            android:paddingTop="@dimen/l_50"
             android:paddingBottom="@dimen/l_50"
             tools:layout_gravity="center">
 
@@ -172,5 +172,51 @@
                     style="@style/W.Home.ItemContent.Desc"
                     tools:text="oncite" />
             </LinearLayout>
+            <View
+                android:id="@+id/module_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/l_50"
+                android:background="?colorSurfaceSurfaceVariant"
+                app:layout_constraintTop_toBottomOf="@+id/dcenter_desc" />
+
+            <Button
+                android:id="@+id/dcenter_button_changelog"
+                style="@style/WidgetFoundation.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/changelog"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_list"
+                app:iconGravity="textEnd"
+                app:layout_constraintBottom_toBottomOf="@+id/dcenter_button_download"
+                app:layout_constraintEnd_toStartOf="@+id/dcenter_button_download"
+                app:layout_constraintTop_toTopOf="@+id/dcenter_button_download"
+                app:srcCompat="@drawable/ic_list" />
+
+            <Button
+                android:id="@+id/dcenter_button_download"
+                style="@style/WidgetFoundation.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/download"
+                android:textAllCaps="false"
+                android:theme="@style/WidgetFoundation.Button"
+                app:icon="@drawable/ic_download"
+                app:iconGravity="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/module_divider"
+                app:srcCompat="@drawable/ic_download" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/bottom_bar_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="start"
+                tools:constraint_referenced_ids="dcenter_button_changelog,dcenter_button_download" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
