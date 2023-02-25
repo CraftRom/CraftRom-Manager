@@ -111,10 +111,14 @@
     <string name="reboot_download">Reboot to Download</string>
     <string name="reboot_edl">Reboot to EDL</string>
 
+    <string name="menu_open_in_browser">Open in browser</string>
+    <string name="menu_copy_link">Copy link</string>
+
     <string name="settings">Settings</string>
 
     <!--Toasts, Dialogs-->
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="copied_to_clipboard">Link copied to clipboard</string>
     <string name="todo" translatable="false">TODO</string>
 </resources>
