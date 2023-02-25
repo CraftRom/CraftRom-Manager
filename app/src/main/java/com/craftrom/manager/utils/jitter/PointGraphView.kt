@@ -23,7 +23,7 @@ class PointGraphView(context: Context, attrs: AttributeSet?) : View(context, att
 
     companion object {
         private val JITTER_LINES_MS = floatArrayOf(
-            .5f, 1.0f, 1.5f, 2.0f, 3.0f, 4.0f, 5.0f
+            0.5f, 1.0f, 1.5f, 2.0f, 3.0f, 4.0f, 5.0f
         )
         private val JITTER_LINES_LABELS = JITTER_LINES_MS.makeLabels()
         private val JITTER_LINES_COLORS = intArrayOf(

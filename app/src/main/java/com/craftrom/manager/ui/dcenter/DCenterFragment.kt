@@ -1,11 +1,9 @@
 package com.craftrom.manager.ui.dcenter
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.craftrom.manager.databinding.FragmentDcenterBinding
@@ -18,44 +16,49 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DCenterFragment : Fragment() {
-    private var _binding: FragmentDcenterBinding? = null
-    private val binding get() = _binding!!
+    private var binding: FragmentDcenterBinding? = null
+    private lateinit var dCenterAdapter: DCenterAdapter
+    private val retrofitClient: RetrofitClient by lazy { RetrofitClient() }
 
-    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentDcenterBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        val layoutManager = LinearLayoutManager(context)
-        binding.contentList.layoutManager = layoutManager
+    ): View? {
+        binding = FragmentDcenterBinding.inflate(inflater, container, false)
+        val layoutManager = LinearLayoutManager(requireContext())
+        binding?.contentList?.layoutManager = layoutManager
 
-            RetrofitClient().getService()
-                .content(DeviceSystemInfo.deviceCode())
-                .enqueue(object : Callback<List<ContentUpdateResponse>> {
-                    override fun onFailure(call: Call<List<ContentUpdateResponse>>, t: Throwable) {
-                        Toast.makeText(context, t.localizedMessage, Toast.LENGTH_SHORT).show()
-                        binding.contentList.visibility =View.GONE
-                        binding.emptyHelp.visibility = View.VISIBLE
-                    }
+        dCenterAdapter = DCenterAdapter()
+        binding?.contentList?.adapter = dCenterAdapter // встановлюємо адаптер
+        fetchData()
 
-                    override fun onResponse(
-                        call: Call<List<ContentUpdateResponse>>,
-                        response: Response<List<ContentUpdateResponse>>
-                    ) {
-                        binding.emptyHelp.visibility = View.GONE
-                        binding.contentList.visibility =View.VISIBLE
-                        binding.contentList.adapter = DCenterAdapter(response.body())
-                    }
+        return binding?.root
+    }
 
-                })
-        return root
+    private fun fetchData() {
+        val call: Call<List<ContentUpdateResponse>> = retrofitClient.getService().content(DeviceSystemInfo.deviceCode())
+        call.enqueue(object : Callback<List<ContentUpdateResponse>> {
+            override fun onFailure(call: Call<List<ContentUpdateResponse>>, t: Throwable) {
+                binding?.emptyHelp?.visibility = View.VISIBLE
+                binding?.contentList?.visibility = View.GONE
+            }
+
+            override fun onResponse(
+                call: Call<List<ContentUpdateResponse>>,
+                response: Response<List<ContentUpdateResponse>>
+            ) {
+                response.body()?.let {data ->
+                    dCenterAdapter.setData(data) // оновлюємо дані в адаптері
+                    binding?.emptyHelp?.visibility = View.GONE
+                    binding?.contentList?.visibility = View.VISIBLE
+                }
+            }
+        })
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding = null
     }
 }

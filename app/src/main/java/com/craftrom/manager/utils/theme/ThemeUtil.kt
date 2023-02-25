@@ -1,7 +1,5 @@
 package com.craftrom.manager.utils.theme
 
-import android.content.Context
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 

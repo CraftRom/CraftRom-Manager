@@ -16,37 +16,32 @@ import org.koin.android.ext.android.inject
 
 @SuppressLint("CustomSplashScreen")
 abstract class SplashActivity : AppCompatActivity() {
+
     private val prefs: AppPrefs by inject()
+
     companion object {
         private var skipSplash = false
     }
 
-    private val getPermissions =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            if (it.resultCode == RESULT_OK) {
-                finish()
-            }
+    private val getPermissions = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            finish()
         }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme()
-        setDark()
         super.onCreate(savedInstanceState)
 
+        setTheme()
+        setDark()
+
         installSplashScreen().apply {
-            setKeepOnScreenCondition{
-                !skipSplash
-            }
+            setKeepOnScreenCondition { !skipSplash }
         }
 
         if (skipSplash) {
             showMainUI(savedInstanceState)
         } else {
-//            Shell.getShell(Shell.EXECUTOR) {
-//                if (!it.isRoot) {
-//                    return@getShell
-//                }
-//                preLoad(savedInstanceState)
-//            }
             if (!hasInstallPermissions()) {
                 checkUnknownResourceInstallation()
             } else {
@@ -54,8 +49,6 @@ abstract class SplashActivity : AppCompatActivity() {
             }
         }
     }
-
-    abstract fun showMainUI(savedInstanceState: Bundle?)
 
     private fun setTheme() {
         when (prefs.settings.theme) {
@@ -67,18 +60,27 @@ abstract class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun setDark(){
-        when (prefs.settings.darkTheme){
+    private fun setDark() {
+        when (prefs.settings.darkTheme) {
             "0" -> applyTheme(ThemeType.DEFAULT_MODE)
             "1" -> applyTheme(ThemeType.LIGHT_MODE)
             else -> applyTheme(ThemeType.DARK_MODE)
         }
     }
-    private fun preLoad(savedState: Bundle?) {
-        runOnUiThread {
-            skipSplash = true
-                showMainUI(savedState)
 
+    private fun preLoad(savedState: Bundle?) {
+        Shell.getShell(Shell.EXECUTOR) {
+            if (!it.isRoot) {
+                runOnUiThread {
+                    skipSplash = true
+                    showMainUI(savedState)
+                }
+                return@getShell
+            }
+            runOnUiThread {
+                skipSplash = true
+                showMainUI(savedState)
+            }
         }
     }
 
@@ -95,5 +97,5 @@ abstract class SplashActivity : AppCompatActivity() {
         )
     }
 
+    abstract fun showMainUI(savedInstanceState: Bundle?)
 }
-

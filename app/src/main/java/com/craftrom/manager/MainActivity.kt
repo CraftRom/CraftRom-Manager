@@ -9,9 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.craftrom.manager.databinding.ActivityMainBinding
-import com.craftrom.manager.utils.app.AppPrefs
 import com.google.android.material.navigation.NavigationView
-import org.koin.android.ext.android.inject
 
 class MainActivity : SplashActivity() {
 

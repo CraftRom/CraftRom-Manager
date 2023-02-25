@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Build
 import com.craftrom.manager.R
 import com.craftrom.manager.core.ServiceContext.context
-import com.craftrom.manager.utils.Const.KALI_NAME
-import com.craftrom.manager.utils.Const.KERNEL_NAME
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader

@@ -2,7 +2,6 @@ package com.craftrom.manager.utils
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 
 object Const {
 
@@ -12,7 +11,8 @@ object Const {
     const val CURRENT_YEAR = "2022"
     const val RSS_FEED_LINK = "https://www.craft-rom.pp.ua/"
     const val DC_CONTENT_URL = "https://raw.githubusercontent.com/CraftRom/host_content/live/"
-    const val EXODUSOS_FILE_URL = "https://sourceforge.net/projects/exodusos/files/ExodusOS/"
+    const val CHIDORI_FILE_URL = "https://sourceforge.net/projects/exodusos/files/Chidori_Kernel/"
+    const val EXODUS_FILE_URL = "https://sourceforge.net/projects/exodusos/files/ExodusOS/"
 
     fun getShare(context: Context, body: String?) {
         val intentShare = Intent(Intent.ACTION_SEND)

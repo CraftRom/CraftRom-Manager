@@ -19,6 +19,7 @@ import com.craftrom.manager.utils.Const.KERNEL_NAME
 import com.craftrom.manager.utils.Const.RSS_FEED_LINK
 import com.craftrom.manager.utils.Const.TAG
 import com.craftrom.manager.utils.DeviceSystemInfo
+import com.craftrom.manager.utils.ShellActuators.checkRoot
 import com.craftrom.manager.utils.app.NewsUtil
 import com.craftrom.manager.utils.rss.RssFeed
 import com.craftrom.manager.utils.rss.RssItem
@@ -30,16 +31,14 @@ import retrofit2.Response
 
 
 open class HomeFragment : Fragment(){
+
     companion object {
         var LIST_LIMIT: Int = 5
     }
 
-
     private lateinit var adapterRecyclerViewRssContent: AdapterRecyclerViewNews
-
     private val arrayListContent = ArrayList<RecyclerViewNewsItem>()
     private val newsUtil: NewsUtil by inject()
-
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
@@ -114,6 +113,7 @@ open class HomeFragment : Fragment(){
 
         call.enqueue(object : Callback<RssFeed> {
 
+            @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call<RssFeed>, response: Response<RssFeed>) {
 
                 Log.d("RssFeed", "Success")
@@ -133,13 +133,11 @@ open class HomeFragment : Fragment(){
                                 title = item.title
                             )
                         )
-
-                        adapterRecyclerViewRssContent.notifyDataSetChanged()
-
-//                        headerPage.text = "(${arrayListContent.size})"
-
-
                     }
+
+                    adapterRecyclerViewRssContent.notifyDataSetChanged()
+//              headerPage.text = "(${arrayListContent.size})"
+
                 }
             }
 
@@ -152,32 +150,37 @@ open class HomeFragment : Fragment(){
         })
     }
 
-    @Deprecated("Deprecated in Java")
+
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_home_md2, menu)
+        if (!checkRoot()) {
+            menu.removeItem(R.id.action_reboot)
+        }
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_reboot -> activity?.let { RebootEvent.inflateMenu(it).show() }
-            R.id.action_settings ->{
+        return when (item.itemId) {
+            R.id.action_reboot -> {
+                activity?.let { RebootEvent.inflateMenu(it).show() }
+                true
+            }
+            R.id.action_settings -> {
                 Log.i(TAG,"R.id.action_settings")
                 findNavController().navigate(
-                        R.id.nav_settings, null
+                    R.id.nav_settings, null
                 )
-                false
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
-        return true
     }
 
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        if (arrayListContent.size != 0){
+        if (arrayListContent.isNotEmpty()){
             arrayListContent.clear()
         }
     }

@@ -1,7 +1,7 @@
 package com.craftrom.manager.utils
 
-import androidx.appcompat.widget.ThemeUtils
-import com.craftrom.manager.utils.app.*
+import com.craftrom.manager.utils.app.AppPrefs
+import com.craftrom.manager.utils.app.NewsUtil
 import com.kryptoprefs.preferences.KryptoBuilder
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module

@@ -2,15 +2,11 @@ package com.craftrom.manager.utils.jitter
 
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import android.graphics.drawable.PictureDrawable
 import android.view.animation.AnimationUtils
-import com.caverock.androidsvg.SVG
-import com.larvalabs.svgandroid.SVGParser
-
 
 class AnimatedBackgroundDrawable : Drawable() {
 
-    private val paint: Paint = Paint()
+    private val paint = Paint()
     private var reverse = false
     private var startTime: Long = 0
     private var color = 0
@@ -70,11 +66,17 @@ class AnimatedBackgroundDrawable : Drawable() {
     }
 
     override fun setAlpha(alpha: Int) {}
-    override fun setColorFilter(colorFilter: ColorFilter?) {}
-    override fun getOpacity(): Int {
-        return PixelFormat.OPAQUE
-    }
 
+    override fun setColorFilter(colorFilter: ColorFilter?) {}
+
+
+    override fun getOpacity(): Int {
+        return when (color) {
+            Color.TRANSPARENT -> PixelFormat.TRANSPARENT
+            Color.BLACK -> PixelFormat.OPAQUE
+            else -> PixelFormat.TRANSLUCENT
+        }
+    }
     private fun stepColor() {
         if (startTime == 0L) {
             startTime = AnimationUtils.currentAnimationTimeMillis()
