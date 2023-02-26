@@ -189,7 +189,7 @@ open class HomeFragment : Fragment(){
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        if (arrayListContent.isNotEmpty()){
+        if (arrayListContent.isNotEmpty() or arrayListContent.isEmpty()){
             arrayListContent.clear()
         }
     }

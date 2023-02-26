@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -164,6 +165,7 @@ class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
                 holder.button_changelog.visibility = View.VISIBLE // отображаем кнопку
             }
         }
+        setAnimation(holder.itemView)
     }
 
     override fun getItemCount(): Int = min(contentList.size, 5)
@@ -190,4 +192,13 @@ class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
         val button_download: Button = itemView.findViewById(R.id.dcenter_button_download)
         val button_changelog: Button = itemView.findViewById(R.id.dcenter_button_changelog)
     }
+    /**
+     * Here is the key method to apply the animation
+     */
+    private fun setAnimation(view: View) {
+        // If the bound view wasn't previously displayed on screen, it's animated
+        val animation = AnimationUtils.loadAnimation(context, R.anim.recyclerview) // animation file
+        view.startAnimation(animation)
+    }
+
 }
