@@ -10,33 +10,41 @@
     app:fitsSystemWindowsInsets="top|bottom"
     tools:context=".ui.home.HomeFragment">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contentList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:orientation="vertical"
-        android:paddingTop="@dimen/l_50">
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_content_dcenter" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contentList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_content_dcenter" />
+    <TextView
+        android:id="@+id/emptyHelp"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="56dp"
+        android:drawablePadding="12dp"
+        android:text="@string/file_empty"
+        android:textAlignment="center"
+        android:textColor="?colorDisabledVariant"
+        android:textSize="16sp"
+        app:drawableTopCompat="@drawable/art_empty"
+        style="@style/AppearanceFoundation.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <TextView
-            android:id="@+id/emptyHelp"
-            android:layout_width="216dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="56dp"
-            android:drawablePadding="12dp"
-            android:text="@string/file_empty"
-            android:textAlignment="center"
-            android:textColor="?colorDisabledVariant"
-            android:textSize="16sp"
-            app:drawableTopCompat="@drawable/art_empty"
-            style="@style/AppearanceFoundation.Title" />
-    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
+        android:visibility="gone"
+        style="@style/WidgetFoundation.ProgressBar.Indeterminate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

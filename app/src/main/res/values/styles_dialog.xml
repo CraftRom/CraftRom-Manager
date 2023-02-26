@@ -64,18 +64,14 @@
     <style name="DialogTitle">
         <item name="android:textSize">20sp</item>
         <item name="android:textAppearance">@style/AppearanceFoundation.Title</item>
+        <item name="android:textColor">?colorPrimary</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="DialogTitleHidelable" parent="DialogTitle"/>
 
-    <style name="DialogText">
-        <item name="android:textAppearance">@style/AppearanceFoundation.Caption</item>
+    <style name="DialogTextGray" >
+        <item name="android:textAppearance">@style/AppearanceFoundation.Caption.Variant</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingMultiplier">1.1</item>
-    </style>
-
-    <style name="DialogTextGray" parent="DialogText">
-        <item name="android:textAppearance">@style/AppearanceFoundation.Caption.Primary</item>
         <item name="android:textAlignment">textStart</item>
     </style>
 
@@ -85,9 +81,9 @@
         <item name="colorPrimary">@android:color/transparent</item>
     </style>
 
-    <style name="DialogTabs">
+    <style name="DialogTabs" parent="DialogTabsHl">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:theme">@style/DialogTabsHl</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="tint">@color/color_primary_transient</item>
     </style>
 </resources>

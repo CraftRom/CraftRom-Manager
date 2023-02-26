@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.craftrom.manager.databinding.FragmentDcenterBinding
 import com.craftrom.manager.ui.dcenter.adapter.DCenterAdapter
 import com.craftrom.manager.utils.DeviceSystemInfo
 import com.craftrom.manager.utils.response.ContentUpdateResponse
 import com.craftrom.manager.utils.retrofit.RetrofitClient
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,8 +32,16 @@ class DCenterFragment : Fragment() {
         binding?.contentList?.layoutManager = layoutManager
 
         dCenterAdapter = DCenterAdapter()
-        binding?.contentList?.adapter = dCenterAdapter // встановлюємо адаптер
-        fetchData()
+        binding?.contentList?.adapter = dCenterAdapter // устанавливаем адаптер
+
+        // показываем ProgressBar
+        binding?.progressBar?.visibility = View.VISIBLE
+        binding?.emptyHelp?.visibility = View.GONE
+
+        // запускаем корутин для получения данных
+        viewLifecycleOwner.lifecycleScope.launch {
+            fetchData()
+        }
 
         return binding?.root
     }
@@ -40,6 +50,8 @@ class DCenterFragment : Fragment() {
         val call: Call<List<ContentUpdateResponse>> = retrofitClient.getService().content(DeviceSystemInfo.deviceCode())
         call.enqueue(object : Callback<List<ContentUpdateResponse>> {
             override fun onFailure(call: Call<List<ContentUpdateResponse>>, t: Throwable) {
+                // скрываем ProgressBar и отображаем сообщение об ошибке
+                binding?.progressBar?.visibility = View.GONE
                 binding?.emptyHelp?.visibility = View.VISIBLE
                 binding?.contentList?.visibility = View.GONE
             }
@@ -49,10 +61,12 @@ class DCenterFragment : Fragment() {
                 response: Response<List<ContentUpdateResponse>>
             ) {
                 response.body()?.let {data ->
-                    dCenterAdapter.setData(data) // оновлюємо дані в адаптері
+                    dCenterAdapter.setData(data) // обновляем данные в адаптере
                     binding?.emptyHelp?.visibility = View.GONE
                     binding?.contentList?.visibility = View.VISIBLE
                 }
+                // скрываем ProgressBar
+                binding?.progressBar?.visibility = View.GONE
             }
         })
     }

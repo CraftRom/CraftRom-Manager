@@ -16,6 +16,13 @@ import com.craftrom.manager.utils.DeviceSystemInfo
 import com.craftrom.manager.utils.response.ContentUpdateResponse
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlin.math.min
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import org.markdown4j.Markdown4jProcessor
 
 class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
     private lateinit var type: String
@@ -24,6 +31,7 @@ class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val viewInflated = layoutInflater.inflate(R.layout.item_content_dcenter, parent, false)
+
         return MyHolder(viewInflated)
     }
 
@@ -35,7 +43,7 @@ class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         val item = contentList[position]
         val types = item.type
-
+        holder.button_changelog.visibility = View.GONE // отображаем кнопку
         when (val version = item.version) {
             "raccoon" -> holder.content_version.text = "$version (Android 11)"
             "squirrel" -> holder.content_version.text = "$version (Android 12)"
@@ -100,39 +108,75 @@ class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
         holder.content_date.text = item.dateTime
         holder.content_desc.text = item.desc
 
-        holder.button_changelog.setOnClickListener {
-            // створюємо новий bottom sheet діалог
-            val dialog = BottomSheetDialog(context, R.style.ThemeBottomSheet)
+        val markdownUrl = when (types) {
+            "kernel" -> "https://raw.githubusercontent.com/CraftRom/host_content/live/changelog/${DeviceSystemInfo.deviceCode()}/$types.md"
+            "kali" -> "https://raw.githubusercontent.com/CraftRom/host_content/live/changelog/${DeviceSystemInfo.deviceCode()}/$types.md"
+            else -> "https://raw.githubusercontent.com/ExodusOS/exodus_vendor_RomOTA/${item.version}/changelog_rom.md"
+        }
 
-            // надуваємо наш layout файл
-            val card = LayoutInflater.from(context).inflate(R.layout.dialog_content, null, false)
+        GlobalScope.launch(Dispatchers.Main) {
+            val client = OkHttpClient()
+            val request = Request.Builder().url(markdownUrl).head().build()
+            holder.button_changelog.visibility = View.GONE // скрываем кнопку
+            try {
+                withContext(Dispatchers.IO) {
+                    val response = client.newCall(request).execute()
+                    val isAvailable = response.isSuccessful
+                    isAvailable to getMarkdownAsHtml(markdownUrl)
+                }.let { (isAvailable, texts) ->
+                    holder.button_changelog.isEnabled = isAvailable
+                    holder.button_changelog.visibility = View.VISIBLE // отображаем кнопку
+                    holder.button_changelog.setOnClickListener {
+                        // отримуємо контекст з view
+                        val context = holder.itemView.context
 
-            // знаходимо всі необхідні views в нашому layout
-            val dIcon = card.findViewById<ImageView>(R.id.dialogIcon)
-            val dTitle = card.findViewById<TextView>(R.id.dialogTitle)
-            val dContent = card.findViewById<TextView>(R.id.dialogContent)
+                        // створюємо новий bottom sheet діалог
+                        val dialog = BottomSheetDialog(context, R.style.ThemeBottomSheet)
 
-            // встановлюємо значення для views
-            dIcon.setImageResource(R.drawable.ic_list)
-            dTitle.text = "Changelog"
-            dContent.text = type
+                        // надуваємо наш layout файл
+                        val card = LayoutInflater.from(context).inflate(R.layout.dialog_content, null, false)
 
-            // встановлюємо можливість закриття діалогу при кліку на зовнішню область
-            dialog.setCancelable(true)
+                        // знаходимо всі необхідні views в нашому layout
+                        val dIcon = card.findViewById<ImageView>(R.id.dialogIcon)
+                        val dTitle = card.findViewById<TextView>(R.id.dialogTitle)
+                        val dContent = card.findViewById<TextView>(R.id.dialogContentList)
 
-            // встановлюємо наш layout як контент діалогу
-            dialog.setContentView(card)
+                        // встановлюємо значення для views
+                        dIcon.setImageResource(R.drawable.ic_list)
+                        dTitle.text = "Changelog"
+                        dContent.text = texts ?: "NULL"
 
-            // встановлюємо анімацію закриття діалогу
-            dialog.dismissWithAnimation = true
+                        // встановлюємо можливість закриття діалогу при кліку на зовнішню область
+                        dialog.setCancelable(true)
 
-            // відображаємо діалог
-            dialog.show()
+                        // встановлюємо наш layout як контент діалогу
+                        dialog.setContentView(card)
+
+                        // встановлюємо анімацію закриття діалогу
+                        dialog.dismissWithAnimation = true
+
+                        // відображаємо діалог
+                        dialog.show()
+                    }
+                }
+            } catch (e: Exception) {
+                holder.button_changelog.isEnabled = false
+                holder.button_changelog.visibility = View.VISIBLE // отображаем кнопку
+            }
         }
     }
 
     override fun getItemCount(): Int = min(contentList.size, 5)
 
+    private suspend fun getMarkdownAsHtml(url: String): String = withContext(Dispatchers.IO) {
+        val client = OkHttpClient()
+        val request = Request.Builder()
+            .url(url)
+            .build()
+        val response = client.newCall(request).execute()
+        val markdownFile = response.body.string()
+        Markdown4jProcessor().process(markdownFile)
+    }
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val content_icon: ImageView = itemView.findViewById(R.id.dcenter_icon)
         val content_statusIcon: ImageView = itemView.findViewById(R.id.dcenter_status_icon)

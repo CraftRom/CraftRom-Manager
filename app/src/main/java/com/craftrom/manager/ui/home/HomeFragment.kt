@@ -69,6 +69,11 @@ open class HomeFragment : Fragment(){
         val security_patch: TextView = binding.homeDeviceWrapper.homeSecurityInfo
 
 
+        // показываем ProgressBar
+        binding.progressBar.visibility = View.VISIBLE
+        binding.emptyHelp.visibility = View.GONE
+        binding.pageRecyclerview.visibility = View.GONE
+
         device.text = "${DeviceSystemInfo.brand()} ${DeviceSystemInfo.model()}"
         android_version.text = "${DeviceSystemInfo.releaseVersion()} (API ${DeviceSystemInfo.apiLevel()})"
         if (DeviceSystemInfo.exodusVersion().isNotEmpty())
@@ -107,6 +112,7 @@ open class HomeFragment : Fragment(){
 
     private fun fillArrayListRecyclerViewContent (){
 
+
         val call : Call<RssFeed> = setupRetrofitCall(
             RSS_FEED_LINK
             ,"feed.xml")
@@ -136,6 +142,9 @@ open class HomeFragment : Fragment(){
                     }
 
                     adapterRecyclerViewRssContent.notifyDataSetChanged()
+                    binding.progressBar.visibility = View.GONE
+                    binding.emptyHelp.visibility = View.GONE
+                    binding.pageRecyclerview.visibility = View.VISIBLE
 //              headerPage.text = "(${arrayListContent.size})"
 
                 }
