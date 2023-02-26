@@ -62,18 +62,18 @@
     <!-- Jitter -->
     <string name="jitter" translatable="false">Jitter</string>
     <string name="jitter_name">Identifying Jitter</string>
-    <string name="jitter_welcome">Jitter is the random system behavior that prevents perceptible work from running.</string>
     <string name="totalish_mma">"CPU-total duration: %.3fms"</string>
     <string name="ui_frametime_mma">"UI duration: %.3fms"</string>
     <string name="rt_frametime_mma">"RT duration: %.3fms"</string>
     <string name="total_mma">"Total duration: %.3fms"</string>
 
     <!-- About -->
-    <string name="love"><![CDATA[</> with ❤️ by MrShterben]]></string>
-    <string name="about_as">About Us</string>
-    <string name="about_as_desc">CraftRom is a community developing the Chidori Kernel for more devices.\n\nStability is our top priority.</string>
-    <string name="features">App Features</string>
-    <string name="features_deck" translatable="false">• Craft Rom news\n• Jitter</string>
+    <string name="love"><![CDATA[</> with ❤️ by MrShterben and 🧠 by ChatGPT]]></string>
+    <string name="about_us">About Us</string>
+    <string name="about_us_desc">CraftRom is a community that develops the Chidori Kernel for various devices.\nEnsuring stability is our top priority.</string>
+    <string name="app_features">App Features</string>
+    <string name="about_us_features" translatable="false">• Craft Rom news\n• Download center\n• Jitter</string>
+
 
     <!-- Settings -->
     <string name="settings_ui">Interface</string>
