@@ -72,7 +72,7 @@ class AboutFragment : Fragment(), View.OnClickListener {
     }
 
     private fun openGH() {
-        val uri = Uri.parse("https://github.com/CraftRom")
+        val uri = "https://github.com/CraftRom"
         val intent = Intent(ServiceContext.context, ItemWebViewActivity::class.java).apply {
             putExtra("feedItemUrl", uri)
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -81,7 +81,7 @@ class AboutFragment : Fragment(), View.OnClickListener {
     }
 
     private fun openWeb() {
-        val uri = Uri.parse("https://www.craft-rom.pp.ua/")
+        val uri = "https://www.craft-rom.pp.ua"
         val intent = Intent(ServiceContext.context, ItemWebViewActivity::class.java).apply {
             putExtra("feedItemUrl", uri)
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

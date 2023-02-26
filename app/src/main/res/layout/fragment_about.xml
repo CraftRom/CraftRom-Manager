@@ -144,25 +144,27 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="@dimen/overlain">
+                        android:padding="@dimen/overlain"
+                        android:paddingStart="@dimen/l1"
+                        android:paddingEnd="@dimen/l1">
 
                         <TextView
                             android:id="@+id/tv_about_us"
-                            android:textAppearance="@style/AppearanceFoundation.Title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/about_us"
+                            android:textAppearance="@style/AppearanceFoundation.Title"
                             android:textColor="?colorPrimary"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/desc_about"
-                            android:textAppearance="@style/AppearanceFoundation.Body"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="@dimen/overlain"
                             android:text="@string/about_us_desc"
+                            android:textAppearance="@style/AppearanceFoundation.Body"
                             app:layout_constraintTop_toBottomOf="@+id/tv_about_us" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -181,24 +183,26 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/overlain">
+                        android:padding="@dimen/overlain"
+                        android:paddingStart="@dimen/l1"
+                        android:paddingEnd="@dimen/l1">
 
                         <TextView
                             android:id="@+id/tv_upcoming"
-                            android:textAppearance="@style/AppearanceFoundation.Title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/app_features"
+                            android:textAppearance="@style/AppearanceFoundation.Title"
                             android:textColor="?colorPrimary"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:textAppearance="@style/AppearanceFoundation.Body"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="@dimen/overlain"
                             android:text="@string/about_us_features"
+                            android:textAppearance="@style/AppearanceFoundation.Body"
                             app:layout_constraintTop_toBottomOf="@+id/tv_upcoming" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
