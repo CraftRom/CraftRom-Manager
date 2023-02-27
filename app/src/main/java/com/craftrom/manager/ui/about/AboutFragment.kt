@@ -1,12 +1,15 @@
 package com.craftrom.manager.ui.about
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Bundle
+import android.os.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -19,7 +22,10 @@ class AboutFragment : Fragment(), View.OnClickListener {
     private lateinit var imageView: ImageView
     private lateinit var ghimg: ImageView
     private lateinit var webimg: ImageView
+    private lateinit var appimg: ImageView
     private lateinit var versionApp: TextView
+
+    private var clickCount = 0 // счетчик кликов
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +39,8 @@ class AboutFragment : Fragment(), View.OnClickListener {
         ghimg.setOnClickListener(this)
         webimg = root.findViewById(R.id.web_link)
         webimg.setOnClickListener(this)
+        appimg = root.findViewById(R.id.app_logo)
+        appimg.setOnClickListener(this)
 
         versionApp = root.findViewById(R.id.version)
 
@@ -47,8 +55,39 @@ class AboutFragment : Fragment(), View.OnClickListener {
             R.id.tg_link -> openTG()
             R.id.gh_link -> openGH()
             R.id.web_link -> openWeb()
+            R.id.app_logo -> {
+                clickCount++
+                if (clickCount >= 5) { // если было уже пять кликов
+                    startAnimationAndVibration()
+                    clickCount = 0
+                }
+            }
         }
     }
+
+    private fun startAnimationAndVibration() {
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(0, 500, 200, 500, 200, 500), -1))
+        val anim = AnimationUtils.loadAnimation(requireContext(), R.anim.heartbeat)
+        anim.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {}
+            override fun onAnimationEnd(animation: Animation?) {
+                appimg.clearAnimation()
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {}
+        })
+        appimg.startAnimation(anim)
+
+        // Stop the animation after the vibration has finished
+        val duration = anim.duration
+        Handler().postDelayed({
+            appimg.clearAnimation()
+        }, duration + 1600L)
+    }
+
+
+
 
     private fun openTG() {
         val uri = Uri.parse("https://t.me/craftrom")
