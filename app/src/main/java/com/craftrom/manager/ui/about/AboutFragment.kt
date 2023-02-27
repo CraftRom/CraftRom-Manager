@@ -26,6 +26,7 @@ class AboutFragment : Fragment(), View.OnClickListener {
     private lateinit var versionApp: TextView
 
     private var clickCount = 0 // счетчик кликов
+    private var timer: CountDownTimer? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,37 +58,50 @@ class AboutFragment : Fragment(), View.OnClickListener {
             R.id.web_link -> openWeb()
             R.id.app_logo -> {
                 clickCount++
-                if (clickCount >= 5) { // если было уже пять кликов
-                    startAnimationAndVibration()
+                if (clickCount == 1) {
+                    timer = object : CountDownTimer(5000, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {}
+
+                        override fun onFinish() {
+                            if (clickCount >= 7) {
+                                startAnimationAndVibration(v)
+                            }
+                            clickCount = 0
+                        }
+                    }
+                    timer?.start()
+                } else if (clickCount >= 7) {
+                    timer?.cancel()
+                    startAnimationAndVibration(v)
                     clickCount = 0
                 }
             }
         }
     }
 
-    private fun startAnimationAndVibration() {
+    private fun startAnimationAndVibration(v: View) {
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(0, 500, 200, 500, 200, 500), -1))
         val anim = AnimationUtils.loadAnimation(requireContext(), R.anim.heartbeat)
         anim.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {}
             override fun onAnimationEnd(animation: Animation?) {
-                appimg.clearAnimation()
+                v.clearAnimation()
+                v.isEnabled = true // включить возможность нажатия после окончания анимации
             }
 
             override fun onAnimationRepeat(animation: Animation?) {}
         })
-        appimg.startAnimation(anim)
+        v.isEnabled = false // отключить возможность нажатия до окончания анимации
+        v.startAnimation(anim)
 
         // Stop the animation after the vibration has finished
         val duration = anim.duration
         Handler().postDelayed({
-            appimg.clearAnimation()
+            v.clearAnimation()
+            v.isEnabled = true // включить возможность нажатия после окончания анимации (в случае, если анимация не завершилась правильно)
         }, duration + 1600L)
     }
-
-
-
 
     private fun openTG() {
         val uri = Uri.parse("https://t.me/craftrom")
