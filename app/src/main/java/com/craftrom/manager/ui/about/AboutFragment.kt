@@ -12,7 +12,9 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.craftrom.manager.BuildConfig
 import com.craftrom.manager.R
 import com.craftrom.manager.core.ServiceContext
@@ -64,7 +66,13 @@ class AboutFragment : Fragment(), View.OnClickListener {
 
                         override fun onFinish() {
                             if (clickCount >= 7) {
+                                val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ServiceContext.context)
+                                val editor = sharedPreferences.edit()
+                                editor.putBoolean("devOptions", true)
+                                editor.apply()
+
                                 startAnimationAndVibration(v)
+                                Toast.makeText(requireContext(), "Superpower activated", Toast.LENGTH_SHORT).show()
                             }
                             clickCount = 0
                         }
@@ -72,12 +80,20 @@ class AboutFragment : Fragment(), View.OnClickListener {
                     timer?.start()
                 } else if (clickCount >= 7) {
                     timer?.cancel()
+
+                    val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ServiceContext.context)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("devOptions", true)
+                    editor.apply()
+
                     startAnimationAndVibration(v)
+                    Toast.makeText(requireContext(), "Superpower activated", Toast.LENGTH_SHORT).show()
                     clickCount = 0
                 }
             }
         }
     }
+
 
     private fun startAnimationAndVibration(v: View) {
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator

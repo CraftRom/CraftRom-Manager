@@ -1,6 +1,7 @@
 package com.craftrom.manager.ui.home
 
 import android.annotation.SuppressLint
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -10,8 +11,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.craftrom.manager.R
+import com.craftrom.manager.core.ServiceContext
 import com.craftrom.manager.databinding.FragmentHomeBinding
 import com.craftrom.manager.events.RebootEvent
 import com.craftrom.manager.utils.Const.KALI_NAME
@@ -163,10 +166,20 @@ open class HomeFragment : Fragment(){
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_home_md2, menu)
-        if (!checkRoot()) {
-            menu.removeItem(R.id.action_reboot)
+
+        // Add a listener for changes to the "devOptions" preference
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ServiceContext.context)
+        val devOptions = sharedPreferences.getBoolean("devOptions", false)
+        val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+            if (key == "devOptions") {
+                val isVisible = sharedPreferences.getBoolean("devOptions", false)
+                menu.findItem(R.id.action_reboot)?.isVisible = isVisible && checkRoot()
+            }
         }
+        sharedPreferences.registerOnSharedPreferenceChangeListener(listener)
+        menu.findItem(R.id.action_reboot)?.isVisible = devOptions && checkRoot()
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
