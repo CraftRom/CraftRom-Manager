@@ -14,6 +14,9 @@ object Const {
     const val CHIDORI_FILE_URL = "https://sourceforge.net/projects/exodusos/files/Chidori_Kernel/"
     const val EXODUS_FILE_URL = "https://sourceforge.net/projects/exodusos/files/ExodusOS/"
 
+
+    const val PREF_KEY_ROOT_ENABLE = "root_enable"
+    const val PREF_KEY_DEV_OPTIONS = "devOptions"
     fun getShare(context: Context, body: String?) {
         val intentShare = Intent(Intent.ACTION_SEND)
         intentShare.type = "text/plain"

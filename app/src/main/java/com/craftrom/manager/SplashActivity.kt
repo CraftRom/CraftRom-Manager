@@ -8,6 +8,9 @@ import android.provider.Settings
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.preference.PreferenceManager
+import com.craftrom.manager.core.ServiceContext
+import com.craftrom.manager.utils.Const.PREF_KEY_ROOT_ENABLE
 import com.craftrom.manager.utils.app.AppPrefs
 import com.craftrom.manager.utils.theme.ThemeType
 import com.craftrom.manager.utils.theme.applyTheme
@@ -18,6 +21,8 @@ import org.koin.android.ext.android.inject
 abstract class SplashActivity : AppCompatActivity() {
 
     private val prefs: AppPrefs by inject()
+    private val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(
+        ServiceContext.context) }
 
     companion object {
         private var skipSplash = false
@@ -72,12 +77,15 @@ abstract class SplashActivity : AppCompatActivity() {
         Shell.getShell(Shell.EXECUTOR) {
             if (!it.isRoot) {
                 runOnUiThread {
+                    sharedPreferences.edit().putBoolean(PREF_KEY_ROOT_ENABLE, false).apply()
                     skipSplash = true
                     showMainUI(savedState)
                 }
                 return@getShell
             }
+
             runOnUiThread {
+                sharedPreferences.edit().putBoolean(PREF_KEY_ROOT_ENABLE, true).apply()
                 skipSplash = true
                 showMainUI(savedState)
             }

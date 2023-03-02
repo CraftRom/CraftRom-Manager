@@ -100,24 +100,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/l3">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewAboutUs"
                     style="@style/WidgetFoundation.Card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_generic"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="@dimen/margin_generic"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginVertical="@dimen/l_50"
+                    android:layout_marginHorizontal="@dimen/margin_generic"
                     tools:layout_gravity="center">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/overlain"
+                        android:layout_height="wrap_content"
                         android:paddingStart="@dimen/l1"
-                        android:paddingEnd="@dimen/l1">
+                        android:paddingEnd="@dimen/l1"
+                        android:padding="@dimen/overlain">
 
                         <TextView
                             android:id="@+id/tv_about_us"
@@ -133,7 +133,7 @@
                             android:id="@+id/desc_about"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="@dimen/overlain"
+                            android:layout_marginTop="@dimen/overlain"
                             android:text="@string/about_us_desc"
                             android:textAppearance="@style/AppearanceFoundation.Body"
                             app:layout_constraintTop_toBottomOf="@+id/tv_about_us" />
@@ -142,21 +142,21 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewUpcoming"
                     style="@style/WidgetFoundation.Card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_generic"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="@dimen/margin_generic"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="@dimen/l_50"
+                    android:layout_marginBottom="@dimen/l1"
+                    android:layout_marginHorizontal="@dimen/margin_generic"
                     tools:layout_gravity="center">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/overlain"
                         android:paddingStart="@dimen/l1"
-                        android:paddingEnd="@dimen/l1">
+                        android:paddingEnd="@dimen/l1"
+                        android:padding="@dimen/overlain">
 
                         <TextView
                             android:id="@+id/tv_upcoming"
@@ -171,13 +171,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="@dimen/overlain"
+                            android:layout_marginTop="@dimen/overlain"
                             android:text="@string/about_us_features"
                             android:textAppearance="@style/AppearanceFoundation.Body"
                             app:layout_constraintTop_toBottomOf="@+id/tv_upcoming" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

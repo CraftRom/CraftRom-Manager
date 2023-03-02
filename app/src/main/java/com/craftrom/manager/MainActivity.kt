@@ -10,8 +10,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
-import com.craftrom.manager.core.ServiceContext
 import com.craftrom.manager.databinding.ActivityMainBinding
+import com.craftrom.manager.utils.Const.PREF_KEY_DEV_OPTIONS
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : SplashActivity() {
@@ -31,11 +31,11 @@ class MainActivity : SplashActivity() {
 
         // Add a listener for changes to the "devOptions" preference
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val devOptions = sharedPreferences.getBoolean("devOptions", false)
+        val devOptions = sharedPreferences.getBoolean(PREF_KEY_DEV_OPTIONS, false)
         val navJitterItem = navView.menu.findItem(R.id.nav_jitter)
         val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-            if (key == "devOptions") {
-                val isVisible = sharedPreferences.getBoolean("devOptions", false)
+            if (key == PREF_KEY_DEV_OPTIONS) {
+                val isVisible = sharedPreferences.getBoolean(PREF_KEY_DEV_OPTIONS, false)
                 navJitterItem.isVisible = isVisible
             }
         }

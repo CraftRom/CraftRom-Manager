@@ -27,10 +27,18 @@
         <item name="colorOnBackground">#000</item>
         <item name="colorOnError">#FFF</item>
     </style>
-    <style name="ThemeFoundationColor.Aubergine" parent="ThemeFoundationColor.Default">
-        <item name="colorPrimary">#f000a4</item>
-        <item name="colorPrimaryVariant">#80F000A4</item>
-        <item name="colorSecondary">#b14a97</item>
-        <item name="colorSecondaryVariant">#80B14A97</item>
+
+    <style name="ThemeFoundationColor.Green" parent="ThemeFoundationColor.Default">
+        <item name="colorPrimary">#223834</item>
+        <item name="colorPrimaryVariant">#80223834</item>
+        <item name="colorSecondary">#416754</item>
+        <item name="colorSecondaryVariant">#80416754</item>
+    </style>
+
+    <style name="ThemeFoundationColor.Red" parent="ThemeFoundationColor.Default">
+        <item name="colorPrimary">#B71C1C</item>
+        <item name="colorPrimaryVariant">#80B71C1C</item>
+        <item name="colorSecondary">#D81B60</item>
+        <item name="colorSecondaryVariant">#80D81B60</item>
     </style>
     </resources>

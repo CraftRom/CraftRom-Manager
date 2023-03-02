@@ -19,6 +19,7 @@ import com.craftrom.manager.BuildConfig
 import com.craftrom.manager.R
 import com.craftrom.manager.core.ServiceContext
 import com.craftrom.manager.ui.view.ItemWebViewActivity
+import com.craftrom.manager.utils.Const.PREF_KEY_DEV_OPTIONS
 
 class AboutFragment : Fragment(), View.OnClickListener {
     private lateinit var imageView: ImageView
@@ -59,6 +60,9 @@ class AboutFragment : Fragment(), View.OnClickListener {
             R.id.gh_link -> openGH()
             R.id.web_link -> openWeb()
             R.id.app_logo -> {
+                val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ServiceContext.context)
+                val isDevOptionsEnabled = sharedPreferences.getBoolean(PREF_KEY_DEV_OPTIONS, false)
+
                 clickCount++
                 if (clickCount == 1) {
                     timer = object : CountDownTimer(5000, 1000) {
@@ -66,13 +70,17 @@ class AboutFragment : Fragment(), View.OnClickListener {
 
                         override fun onFinish() {
                             if (clickCount >= 7) {
-                                val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ServiceContext.context)
                                 val editor = sharedPreferences.edit()
-                                editor.putBoolean("devOptions", true)
+                                editor.putBoolean(PREF_KEY_DEV_OPTIONS, !isDevOptionsEnabled)
                                 editor.apply()
 
-                                startAnimationAndVibration(v)
-                                Toast.makeText(requireContext(), "Superpower activated", Toast.LENGTH_SHORT).show()
+                                if (isDevOptionsEnabled) {
+                                    startAnimationAndVibration(v)
+                                    Toast.makeText(requireContext(), "Superpower deactivated", Toast.LENGTH_SHORT).show()
+                                } else {
+                                    startAnimationAndVibration(v)
+                                    Toast.makeText(requireContext(), "Superpower activated", Toast.LENGTH_SHORT).show()
+                                }
                             }
                             clickCount = 0
                         }
@@ -81,13 +89,18 @@ class AboutFragment : Fragment(), View.OnClickListener {
                 } else if (clickCount >= 7) {
                     timer?.cancel()
 
-                    val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ServiceContext.context)
                     val editor = sharedPreferences.edit()
-                    editor.putBoolean("devOptions", true)
+                    editor.putBoolean(PREF_KEY_DEV_OPTIONS, !isDevOptionsEnabled)
                     editor.apply()
 
-                    startAnimationAndVibration(v)
-                    Toast.makeText(requireContext(), "Superpower activated", Toast.LENGTH_SHORT).show()
+                    if (isDevOptionsEnabled) {
+                        startAnimationAndVibration(v)
+                        Toast.makeText(requireContext(), "Superpower deactivated", Toast.LENGTH_SHORT).show()
+                    } else {
+                        startAnimationAndVibration(v)
+                        Toast.makeText(requireContext(), "Superpower activated", Toast.LENGTH_SHORT).show()
+                    }
+
                     clickCount = 0
                 }
             }

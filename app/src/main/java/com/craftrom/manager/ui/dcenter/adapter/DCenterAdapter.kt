@@ -1,6 +1,7 @@
 package com.craftrom.manager.ui.dcenter.adapter
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +9,10 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.RecyclerView
 import com.craftrom.manager.R
+import com.craftrom.manager.core.ServiceContext
 import com.craftrom.manager.core.ServiceContext.context
 import com.craftrom.manager.ui.view.ItemWebViewActivity
 import com.craftrom.manager.utils.Const
@@ -44,6 +47,21 @@ class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         val item = contentList[position]
         val types = item.type
+        // Add a listener for changes to the "devOptions" preference
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        val devOptions = sharedPreferences.getBoolean("devOptions", false)
+
+        // Hide items with types "kali" and "kernel" if devOptions is false
+        if (!devOptions && (types == "kali")) {
+            holder.itemView.visibility = View.GONE
+        } else {
+            holder.itemView.visibility = View.VISIBLE
+        }
+
+        // Show items with types "kali" and "kernel" if devOptions is true
+        if (devOptions && (types == "kali")) {
+            holder.itemView.visibility = View.VISIBLE
+        }
         holder.button_changelog.visibility = View.GONE // отображаем кнопку
         when (val version = item.version) {
             "raccoon" -> holder.content_version.text = "$version (Android 11)"
@@ -145,7 +163,7 @@ class DCenterAdapter : RecyclerView.Adapter<DCenterAdapter.MyHolder>() {
                         // встановлюємо значення для views
                         dIcon.setImageResource(R.drawable.ic_list)
                         dTitle.text = "Changelog"
-                        dContent.text = texts ?: "NULL"
+                        dContent.text = texts
 
                         // встановлюємо можливість закриття діалогу при кліку на зовнішню область
                         dialog.setCancelable(true)
