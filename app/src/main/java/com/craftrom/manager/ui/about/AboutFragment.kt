@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.craftrom.manager.BuildConfig
+import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.core.ServiceContext
 import com.craftrom.manager.ui.view.ItemWebViewActivity
@@ -45,7 +46,10 @@ class AboutFragment : Fragment(), View.OnClickListener {
         webimg.setOnClickListener(this)
         appimg = root.findViewById(R.id.app_logo)
         appimg.setOnClickListener(this)
-
+        val mainActivity = requireActivity() as MainActivity
+        val title: String = getString(R.string.title_about)
+        val subtitle: String = getString(R.string.subtitle_about)
+        mainActivity.setToolbarText(title, subtitle)
         versionApp = root.findViewById(R.id.version)
 
         val versionName = BuildConfig.VERSION_NAME

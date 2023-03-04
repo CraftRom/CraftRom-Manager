@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -16,6 +17,7 @@ import com.craftrom.manager.utils.theme.ThemeType
 import com.craftrom.manager.utils.theme.applyTheme
 import com.topjohnwu.superuser.Shell
 import org.koin.android.ext.android.inject
+import java.util.concurrent.Executors
 
 @SuppressLint("CustomSplashScreen")
 abstract class SplashActivity : AppCompatActivity() {

@@ -17,6 +17,8 @@ object Const {
 
     const val PREF_KEY_ROOT_ENABLE = "root_enable"
     const val PREF_KEY_DEV_OPTIONS = "devOptions"
+    const val PREF_KEY_LOG_LEVEL = "logLevel"
+
     fun getShare(context: Context, body: String?) {
         val intentShare = Intent(Intent.ACTION_SEND)
         intentShare.type = "text/plain"

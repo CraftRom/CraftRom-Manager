@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SeekBarPreference
+import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.utils.app.NewsUtil
 import org.koin.android.ext.android.inject
@@ -27,6 +28,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val toolbar = requireActivity().findViewById<Toolbar>(R.id.toolbar)
         (activity as AppCompatActivity).supportActionBar
         toolbar.navigationIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_arrow_back)
+        val mainActivity = requireActivity() as MainActivity
+        val title: String = getString(R.string.settings)
+        val subtitle: String = getString(R.string.subtitle_settings)
+        mainActivity.setToolbarText(title, subtitle)
         super.onViewCreated(view, savedInstanceState)
     }
 

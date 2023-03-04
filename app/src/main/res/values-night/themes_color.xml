@@ -29,16 +29,17 @@
     </style>
 
     <style name="ThemeFoundationColor.Green" parent="ThemeFoundationColor.Default">
-        <item name="colorPrimary">#223834</item>
-        <item name="colorPrimaryVariant">#80223834</item>
-        <item name="colorSecondary">#416754</item>
-        <item name="colorSecondaryVariant">#80416754</item>
+
+        <item name="colorPrimary">#6EBD91</item>
+        <item name="colorPrimaryVariant">#806EBD91</item>
+        <item name="colorSecondary">#4E9472</item>
+        <item name="colorSecondaryVariant">#804E9472</item>
     </style>
 
     <style name="ThemeFoundationColor.Red" parent="ThemeFoundationColor.Default">
-        <item name="colorPrimary">#B71C1C</item>
-        <item name="colorPrimaryVariant">#80B71C1C</item>
-        <item name="colorSecondary">#D81B60</item>
-        <item name="colorSecondaryVariant">#80D81B60</item>
+        <item name="colorPrimary">#EF5350</item>
+        <item name="colorPrimaryVariant">#80EF5350</item>
+        <item name="colorSecondary">#FF4081</item>
+        <item name="colorSecondaryVariant">#80FF4081</item>
     </style>
     </resources>

@@ -32,23 +32,24 @@
     </style>
 
     <style name="ThemeFoundationColor.Aubergine" parent="ThemeFoundationColor.Default">
-        <item name="colorPrimary">#6A1B9A</item>
-        <item name="colorPrimaryVariant">#9C4DCC</item>
-        <item name="colorSecondary">#4527A0</item>
-        <item name="colorSecondaryVariant">#7C4DFF</item>
+        <item name="colorPrimary">#5E2750</item>
+        <item name="colorPrimaryVariant">#8077216F</item>
+        <item name="colorSecondary">#2C001E</item>
+        <item name="colorSecondaryVariant">#805E2750</item>
     </style>
 
     <style name="ThemeFoundationColor.Green" parent="ThemeFoundationColor.Default">
-        <item name="colorPrimary">#6EBD91</item>
-        <item name="colorPrimaryVariant">#806EBD91</item>
-        <item name="colorSecondary">#4E9472</item>
-        <item name="colorSecondaryVariant">#804E9472</item>
+        <item name="colorPrimary">#3D645D</item>
+        <item name="colorPrimaryVariant">#804A716A</item>
+        <item name="colorSecondary">#416754</item>
+        <item name="colorSecondaryVariant">#80416754</item>
     </style>
 
     <style name="ThemeFoundationColor.Red" parent="ThemeFoundationColor.Default">
-        <item name="colorPrimary">#EF5350</item>
-        <item name="colorPrimaryVariant">#80EF5350</item>
-        <item name="colorSecondary">#FF4081</item>
-        <item name="colorSecondaryVariant">#80FF4081</item>
+
+        <item name="colorPrimary">#B71C1C</item>
+        <item name="colorPrimaryVariant">#80B71C1C</item>
+        <item name="colorSecondary">#D81B60</item>
+        <item name="colorSecondaryVariant">#80D81B60</item>
     </style>
 </resources>

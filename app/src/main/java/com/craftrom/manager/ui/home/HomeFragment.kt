@@ -1,5 +1,6 @@
     package com.craftrom.manager.ui.home
 
+    import com.craftrom.manager.core.ToolbarTitleProvider
     import android.annotation.SuppressLint
     import android.content.SharedPreferences
     import android.os.Build
@@ -13,6 +14,7 @@
     import androidx.navigation.fragment.findNavController
     import androidx.preference.PreferenceManager
     import androidx.recyclerview.widget.LinearLayoutManager
+    import com.craftrom.manager.MainActivity
     import com.craftrom.manager.R
     import com.craftrom.manager.core.ServiceContext
     import com.craftrom.manager.databinding.FragmentHomeBinding
@@ -34,7 +36,7 @@
     import retrofit2.Response
 
 
-    open class HomeFragment : Fragment(){
+    open class HomeFragment : Fragment(), ToolbarTitleProvider {
 
         companion object {
             var LIST_LIMIT: Int = 5
@@ -52,6 +54,12 @@
         override fun onStart() {
             super.onStart()
             setHasOptionsMenu(true)
+        }
+
+        override fun onResume() {
+            super.onResume()
+            val mainActivity = requireActivity() as MainActivity
+            mainActivity.setToolbarText(getTitle(), getSubtitle())
         }
 
         @SuppressLint("SetTextI18n")
@@ -72,6 +80,8 @@
             val chidori:TextView = binding.homeDeviceWrapper.homeDeviceChidoriInfo
             val security_patch: TextView = binding.homeDeviceWrapper.homeSecurityInfo
 
+            val mainActivity = requireActivity() as MainActivity
+            mainActivity.setToolbarText(getTitle(), getSubtitle())
 
             // показываем ProgressBar
             binding.progressBar.visibility = View.VISIBLE
@@ -202,6 +212,8 @@
             }
         }
 
+        override fun getTitle() = getString(R.string.title_home)
+        override fun getSubtitle() = getString(R.string.subtitle_home)
 
         override fun onDestroyView() {
             super.onDestroyView()

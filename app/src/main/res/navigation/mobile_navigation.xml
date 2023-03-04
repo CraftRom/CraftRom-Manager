@@ -20,6 +20,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/nav_log"
+        android:name="com.craftrom.manager.ui.log.LogFragment"
+        android:label="@string/title_logs"
+        tools:layout="@layout/fragment_log"/>
+
+    <fragment
         android:id="@+id/nav_jitter"
         android:name="com.craftrom.manager.ui.jitter.JitterFragment"
         android:label="@string/title_jitter"
@@ -76,6 +82,4 @@
         app:popEnterAnim="@anim/fragment_enter_pop"
         app:popExitAnim="@anim/fragment_exit_pop"
         app:popUpTo="@id/nav_home" />
-
-
 </navigation>

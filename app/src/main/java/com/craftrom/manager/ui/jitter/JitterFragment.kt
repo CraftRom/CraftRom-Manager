@@ -6,6 +6,7 @@ import android.view.*
 import android.view.Window.OnFrameMetricsAvailableListener
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.craftrom.manager.MainActivity
 import com.craftrom.manager.R
 import com.craftrom.manager.databinding.FragmentJitterBinding
 import com.craftrom.manager.utils.jitter.PointGraphView
@@ -130,6 +131,10 @@ class JitterFragment : Fragment() {
         _binding = FragmentJitterBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val content = root.findViewById<View>(R.id.content)
+        val mainActivity = requireActivity() as MainActivity
+        val title: String = getString(R.string.title_jitter)
+        val subtitle: String = getString(R.string.subtitle_jitter)
+        mainActivity.setToolbarText(title, subtitle)
         content.background = AnimatedBackgroundDrawable()
         content.keepScreenOn = true
         thread.start()

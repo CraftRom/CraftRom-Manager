@@ -23,6 +23,9 @@
             android:title="@string/menu_head_tools">
             <menu>
                 <item
+                    android:id="@+id/nav_log"
+                    android:title="@string/title_logs" />
+                <item
                     android:id="@+id/nav_jitter"
                     android:title="@string/jitter" />
             </menu>
